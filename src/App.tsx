@@ -31,12 +31,12 @@ const App = () => {
 									<Route path="/" exact component={HomePage}/>
 									<Route path="/profile" exact component={ProfilePage}/>
 
-									<Route path="/" render={() => <NotFoundPage/>}/>
+									<Route path="/" component={NotFoundPage}/>
 								</Switch>
 							</AdminLayout>
 						)}/>
 
-						<Route path="/" render={() => <NotFoundPage/>}/>
+						<Route path="/" component={NotFoundPage}/>
 					</Switch>
 				</Router>
 			</MenuContext.Provider>
