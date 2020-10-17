@@ -1,5 +1,20 @@
+@import './styles/font-awesome.min.css';
+
 .center{
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
+}
+
+body{
+    background: #eee;
+    overflow-x: hidden;
+}
+
+.bg-blue{
+    background: #3c8dbc;
+}
+
+.content{
+    min-height: calc(100% - 120px);
 }

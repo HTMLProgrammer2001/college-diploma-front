@@ -2,7 +2,7 @@ import React from 'react';
 import {reduxForm, InjectedFormProps, Field} from 'redux-form';
 import {Form, Card, Button, Spinner, Col, Alert} from 'react-bootstrap';
 
-import InputElement from '../../common/form/InputElement';
+import InputElement from '../../common/formElements/InputElement';
 import styles from './styles.module.scss';
 
 
