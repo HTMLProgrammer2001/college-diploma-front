@@ -1,8 +1,9 @@
 import React from 'react';
 import {reduxForm, Field, InjectedFormProps} from 'redux-form';
+import {Button, Row} from 'react-bootstrap';
 
 import InputElement from '../../../../common/formElements/InputElement';
-import {Row} from 'react-bootstrap';
+import DateElement from '../../../../common/formElements/DateElement';
 
 
 type IPublicationsFilterData = {
@@ -13,7 +14,7 @@ type IPublicationsFilterData = {
 
 type IPublicationsFilterProps = InjectedFormProps<IPublicationsFilterData>;
 const PublicationsFilterForm: React.FC<IPublicationsFilterProps> = ({handleSubmit}) => (
-	<form onSubmit={handleSubmit} className="w-100">
+	<form onSubmit={handleSubmit} className="w-100 center flex-column my-3">
 		<Row>
 			<Field
 				component={InputElement}
@@ -24,24 +25,26 @@ const PublicationsFilterForm: React.FC<IPublicationsFilterProps> = ({handleSubmi
 			/>
 		</Row>
 
-		<Row md={8}>
+		<Row md={12}>
 			<Field
-				component={InputElement}
-				type="text"
-				name="title"
-				label="Название публикации"
+				component={DateElement}
+				name="from"
+				dateFormat="dd.MM.yyyy"
+				label="С"
 			/>
 
 			<Field
-				component={InputElement}
-				type="text"
-				name="title"
-				label="Название публикации"
+				component={DateElement}
+				name="to"
+				dateFormat="dd.MM.yyyy"
+				label="По"
 			/>
 		</Row>
+
+		<Button variant="primary" className="w-25">Поиск</Button>
 	</form>
 );
 
 export default reduxForm<IPublicationsFilterData>({
 	form: 'profilePublicationsFilter'
-})(PublicationsFilterForm);
+})(PublicationsFilterForm)

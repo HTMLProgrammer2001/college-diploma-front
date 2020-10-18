@@ -6,12 +6,14 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 //reducers
 import me from './me/reducer';
 import logout from './logout/reducer';
+import publications from './publications/';
 
 
 //create reducer
 const rootReducer = combineReducers({
 	me,
 	logout,
+	publications,
 	form: formReducer
 });
 

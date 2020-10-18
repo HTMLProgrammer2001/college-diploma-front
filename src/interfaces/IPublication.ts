@@ -3,7 +3,7 @@ export type IPublication = {
 	title: string,
 	description: string,
 	date_of_publication: string,
-	another_authors: string,
-	publisher: string,
-	url: string
+	authors: string,
+	publisher?: string,
+	url?: string
 };

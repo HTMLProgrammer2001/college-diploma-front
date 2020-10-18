@@ -11,6 +11,8 @@ const Sidebar: React.FC<{}> = () => {
 
 	return (
 		<aside className={cn(styles.sidebar, {[styles.active]: isOpen})}>
+			<div className={styles.bg}/>
+
 			<div className={cn(styles.logo, "center")}>
 				{!isOpen ? "TRT" : "TrackTeacher"}
 			</div>

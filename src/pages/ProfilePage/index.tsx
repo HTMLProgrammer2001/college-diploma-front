@@ -14,8 +14,6 @@ const ProfilePage: React.FC<{}> = () => (
 			<Card.Body>
 				<ProfileInfo/>
 				<ProfileTabs/>
-
-				<Button variant="success" className="mt-2">Импорт</Button>
 			</Card.Body>
 
 			<Card.Footer>

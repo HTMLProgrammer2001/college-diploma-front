@@ -18,3 +18,15 @@ body{
 .content{
     min-height: calc(100% - 120px);
 }
+
+tbody th{
+    font-weight: 400;
+}
+
+.cur{
+    cursor: pointer;
+}
+
+.opacity-5{
+    opacity: .5;
+}
