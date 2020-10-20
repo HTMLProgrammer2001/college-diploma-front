@@ -6,11 +6,11 @@ import InternshipsFilterForm from './InternshipsFilterForm';
 import InternshipsTable from './InternshipsTable';
 import Paginator from '../../../../common/Paginator';
 import {RootState} from '../../../../redux';
-import {selectInternshipsPagination} from '../../../../redux/internships/show/selectors';
+import {selectProfileInternshipsPagination} from '../../../../redux/profile/internships/selectors';
 
 
 const mapStateToProps = (state: RootState) => ({
-	paginator: selectInternshipsPagination(state)
+	paginator: selectProfileInternshipsPagination(state)
 });
 
 const connected = connect(mapStateToProps);

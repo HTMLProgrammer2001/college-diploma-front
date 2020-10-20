@@ -1,12 +1,22 @@
 import React, {useContext} from 'react';
 import cn from 'classnames';
 import {Link} from 'react-router-dom';
+import {connect, ConnectedProps} from 'react-redux';
 
 import styles from './styles.module.scss';
 import MenuContext from '../../utils/contexts/MenuContext';
+import {RootState} from '../../redux';
+import {selectMeInfo} from '../../redux/me/selectors';
 
 
-const Sidebar: React.FC<{}> = () => {
+const mapStateToProps = (state: RootState) => ({
+	user: selectMeInfo(state)
+});
+
+const connected = connect(mapStateToProps);
+
+type ISidebarProps = ConnectedProps<typeof connected>;
+const Sidebar: React.FC<ISidebarProps> = ({user}) => {
 	const {isOpen} = useContext(MenuContext);
 
 	return (
@@ -19,12 +29,12 @@ const Sidebar: React.FC<{}> = () => {
 
 			<div className={styles.user}>
 				<img
-					src="http://127.0.0.1:8000/storage/avatars/default.gif"
+					src={user.avatar}
 					alt="Avatar"
 				/>
 
 				<div>
-					Yuri Prisyazhny
+					{user.fullName}
 				</div>
 			</div>
 
@@ -52,4 +62,4 @@ const Sidebar: React.FC<{}> = () => {
 	);
 };
 
-export default Sidebar;
+export default connected(Sidebar);

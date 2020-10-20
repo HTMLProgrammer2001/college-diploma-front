@@ -21,13 +21,14 @@ const initialState: IMeState = {
 		birthday: '20.03.2001',
 		email: 'cssuperpy@gmail.com',
 		address: 'prov Shidnii',
-		role: 50,
+		role: 1,
 		experience: 20,
 		pedagogicalTitle: 'Vchitel',
 		category: 'High',
 		commission: 'Random',
 		department: 'Test',
-		rank: 'Rank'
+		rank: 'Rank',
+		avatar: 'http://127.0.0.1:8000/storage/avatars/default.gif'
 	}
 };
 

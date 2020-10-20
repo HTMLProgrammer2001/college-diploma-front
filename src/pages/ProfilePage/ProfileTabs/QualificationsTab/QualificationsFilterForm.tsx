@@ -2,38 +2,28 @@ import React from 'react';
 import {reduxForm, Field, InjectedFormProps} from 'redux-form';
 import {Button, Row} from 'react-bootstrap';
 
-import InputElement from '../../../../common/formElements/InputElement';
 import DateElement from '../../../../common/formElements/DateElement';
+import SelectElement from '../../../../common/formElements/SelectElement';
 
 
-type IInternshipsFilterData = {
+export type IQualificationsFilterData = {
+	category: number,
 	from: string,
-	to: string,
-	moreHours: number,
-	lessHours: number,
-	theme: string,
-	category: string
+	to: string
 };
 
-type IInternshipsFilterProps = InjectedFormProps<IInternshipsFilterData>;
-const QualificationsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit}) => (
+type IQualificationsFilterProps = InjectedFormProps<IQualificationsFilterData>;
+const QualificationsFilterForm: React.FC<IQualificationsFilterProps> = ({handleSubmit}) => (
 	<form onSubmit={handleSubmit} className="w-100 center flex-column my-3">
 		<Row md={12}>
 			<Field
-				component={InputElement}
+				component={SelectElement}
 				name="category"
 				label="Категория"
-				type="text"
-				className="mr-1"
-			/>
-
-			<Field
-				component={InputElement}
-				name="theme"
-				label="Тема"
-				type="text"
-				className="ml-1"
-			/>
+			>
+				<option value={1}>Teach cat 1</option>
+				<option value={2}>Teach cat 2</option>
+			</Field>
 		</Row>
 
 		<Row md={12}>
@@ -52,28 +42,10 @@ const QualificationsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubm
 			/>
 		</Row>
 
-		<Row md={12}>
-			<Field
-				component={InputElement}
-				name="moreHours"
-				type="number"
-				label="Количество часов больше"
-				className="mr-1"
-			/>
-
-			<Field
-				component={InputElement}
-				name="lessHours"
-				type="number"
-				label="Количество часов меньше"
-				className="ml-1"
-			/>
-		</Row>
-
 		<Button variant="primary" className="w-25">Поиск</Button>
 	</form>
 );
 
-export default reduxForm<IInternshipsFilterData>({
-	form: 'profileInternshipsFilter'
+export default reduxForm<IQualificationsFilterData>({
+	form: 'profileQualificationsFilter'
 })(QualificationsFilterForm);

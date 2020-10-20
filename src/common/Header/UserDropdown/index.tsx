@@ -1,32 +1,47 @@
 import React from 'react';
 import {Dropdown} from 'react-bootstrap';
+import {connect, ConnectedProps} from 'react-redux';
 
 import styles from './styles.module.scss';
+import {RootState} from '../../../redux';
+import {selectMeInfo} from '../../../redux/me/selectors';
+import roleCodeToName from '../../../utils/helpers/RoleCodeToName';
+import thunkLogout from '../../../redux/logout/thunks';
 
 
-const UserDropdown: React.FC<{}> = () => (
+const mapStateToProps = (state: RootState) => ({
+	user: selectMeInfo(state)
+});
+
+const connected = connect(mapStateToProps, {
+	logout: thunkLogout
+});
+
+type IUserDropdownProps = ConnectedProps<typeof connected>;
+const UserDropdown: React.FC<IUserDropdownProps> = ({user}) => (
 	<Dropdown>
 		<Dropdown.Toggle className={styles.dropNo}>
 			<img
-				src="http://127.0.0.1:8000/storage/avatars/default.gif"
+				src={user.avatar}
 				alt="Avatar"
 				className={styles.avatar}
 			/>
 
-			<span>Yuri Prisyazhnyy</span>
+			<span>{user.fullName}</span>
 		</Dropdown.Toggle>
 
 		<Dropdown.Menu className="bg-blue p-2">
 			<div className="center flex-column text-white">
 				<img
-					src="http://127.0.0.1:8000/storage/avatars/default.gif"
+					src={user.avatar}
 					alt="Avatar"
 				/>
 
-				<div>Yuri Prisyazhnyy, Administrator</div>
+				<div>{user.fullName}</div>
+				<div>{roleCodeToName(user.role)}</div>
 			</div>
 		</Dropdown.Menu>
 	</Dropdown>
 );
 
-export default UserDropdown;
+export default connected(UserDropdown);

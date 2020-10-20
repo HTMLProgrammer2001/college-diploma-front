@@ -13,7 +13,7 @@ const thunkLogout = (): ILogoutThunkAction => {
 		dispatch(logoutStart());
 
 		try{
-
+			dispatch(logoutSuccess());
 		}
 		catch (e) {
 			dispatch(logoutError(e.message));

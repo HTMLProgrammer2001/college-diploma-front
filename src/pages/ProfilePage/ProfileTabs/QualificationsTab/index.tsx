@@ -6,18 +6,18 @@ import QualificationsFilterForm from './QualificationsFilterForm';
 import QualificationsTable from './QualificationsTable';
 import Paginator from '../../../../common/Paginator';
 import {RootState} from '../../../../redux';
-import {selectPublicationsPagination} from '../../../../redux/publications/show/selectors';
+import {selectProfileQualificationsPagination} from '../../../../redux/profile/qualifications/selectors';
 
 
 const mapStateToProps = (state: RootState) => ({
-	paginator: selectPublicationsPagination(state)
+	paginator: selectProfileQualificationsPagination(state)
 });
 
 const connected = connect(mapStateToProps);
 
-type IInternshipsTabProps = ConnectedProps<typeof connected>;
+type IQualificationsTabProps = ConnectedProps<typeof connected>;
 
-const QualificationsTab: React.FC<IInternshipsTabProps> = ({paginator}) => (
+const QualificationsTab: React.FC<IQualificationsTabProps> = ({paginator}) => (
 	<div className="mt-3">
 		<h3>Квалификации</h3>
 

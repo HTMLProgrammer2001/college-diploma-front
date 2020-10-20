@@ -7,11 +7,11 @@ import PublicationsFilterForm from './PublicationsFilterForm';
 import PublicationsTable from './PublicationsTable';
 import Paginator from '../../../../common/Paginator';
 import {RootState} from '../../../../redux';
-import {selectPublicationsPagination} from '../../../../redux/publications/show/selectors';
+import {selectProfilePublicationsPagination} from '../../../../redux/profile/publications/selectors';
 
 
 const mapStateToProps = (state: RootState) => ({
-	paginator: selectPublicationsPagination(state)
+	paginator: selectProfilePublicationsPagination(state)
 });
 
 const connected = connect(mapStateToProps);
