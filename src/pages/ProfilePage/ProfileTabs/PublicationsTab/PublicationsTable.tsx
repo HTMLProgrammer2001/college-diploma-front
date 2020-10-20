@@ -15,7 +15,7 @@ const mapStateToProps = (state: RootState) => ({
 });
 
 const connected = connect(mapStateToProps, {
-	publicationsShowChangeSort
+	changeSort: publicationsShowChangeSort
 });
 
 type IPublicationsTableProps = ConnectedProps<typeof connected>;
@@ -30,7 +30,7 @@ const PublicationsTable: React.FC<IPublicationsTableProps> = (props) => (
 					["fa-sort-amount-desc"]: props.sort.id == -1,
 					["opacity-5"]: props.sort.id == undefined,
 				})}
-				   onClick={() => props.publicationsShowChangeSort('id')}
+				   onClick={() => props.changeSort('id')}
 				/>
 			</th>
 
@@ -41,7 +41,7 @@ const PublicationsTable: React.FC<IPublicationsTableProps> = (props) => (
 						["fa-sort-amount-desc"]: props.sort.title == -1,
 						["opacity-5"]: props.sort.title == undefined,
 					})}
-				   onClick={() => props.publicationsShowChangeSort('title')}
+				   onClick={() => props.changeSort('title')}
 				/>
 			</th>
 
@@ -54,7 +54,7 @@ const PublicationsTable: React.FC<IPublicationsTableProps> = (props) => (
 					["fa-sort-amount-desc"]: props.sort.date == -1,
 					["opacity-5"]: props.sort.date == undefined,
 				})}
-				   onClick={() => props.publicationsShowChangeSort('date')}
+				   onClick={() => props.changeSort('date')}
 				/>
 			</th>
 

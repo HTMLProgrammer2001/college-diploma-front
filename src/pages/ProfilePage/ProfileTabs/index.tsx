@@ -2,7 +2,11 @@ import React from 'react';
 import {Tabs, Tab} from 'react-bootstrap';
 
 import styles from './styles.module.scss';
+
+//tabs
 import PublicationsTab from './PublicationsTab';
+import InternshipsTab from './InternshipsTab';
+import QualificationsTab from './QualificationsTab';
 
 
 const ProfileTabs: React.FC<{}> = () => (
@@ -12,11 +16,11 @@ const ProfileTabs: React.FC<{}> = () => (
 		</Tab>
 
 		<Tab eventKey="internships" title="Стажировки">
-			<div>Internships</div>
+			<InternshipsTab hours={30}/>
 		</Tab>
 
 		<Tab eventKey="qualifications" title="Повышения квалификации">
-			<div>Qualifications</div>
+			<QualificationsTab/>
 		</Tab>
 
 		<Tab eventKey="honors" title="Награды">

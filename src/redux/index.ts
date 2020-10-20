@@ -7,6 +7,7 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import me from './me/reducer';
 import logout from './logout/reducer';
 import publications from './publications/';
+import internships from './internships/';
 
 
 //create reducer
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
 	me,
 	logout,
 	publications,
+	internships,
 	form: formReducer
 });
 
