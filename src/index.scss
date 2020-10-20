@@ -35,3 +35,31 @@ tbody th{
     font-size: 2rem;
     font-family: monospace;
 }
+
+::-webkit-scrollbar{
+    width: 20px;
+    height: 20px;
+
+    background: none;
+}
+
+::-webkit-scrollbar-track{
+    background: none;
+    display: none;
+}
+
+::-webkit-scrollbar-thumb{
+    border: 7px solid transparent;
+    background: rgba(150, 150, 150, .85);
+    background-clip: padding-box;
+    border-radius: 10px
+}
+
+::-webkit-resizer, ::-webkit-scrollbar-button ::-webkit-scrollbar-track-piece, ::-webkit-scrollbar-corner{
+    display: none;
+}
+
+*{
+    scrollbar-color: rgba(212,214,219,.5) transparent;
+    scrollbar-width: thin;
+}

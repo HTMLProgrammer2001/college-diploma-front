@@ -17,9 +17,7 @@ const mapStateToProps = (state: RootState) => ({
 const connected = connect(mapStateToProps);
 
 const PublicationsTab: React.FC<ConnectedProps<typeof connected>> = ({paginator}) => (
-	<div className="mt-3">
-		<h3>Публикации</h3>
-
+	<div className="mt-5">
 		<Container>
 			<PublicationsFilterForm onSubmit={console.log}/>
 			<PublicationsTable/>

@@ -18,9 +18,7 @@ const connected = connect(mapStateToProps);
 type IInternshipsTabProps = ConnectedProps<typeof connected> & {hours: number};
 
 const InternshipsTab: React.FC<IInternshipsTabProps> = ({paginator, hours}) => (
-	<div className="mt-3">
-		<h3>Стажировки</h3>
-
+	<div className="mt-5">
 		<Container>
 			<InternshipsFilterForm onSubmit={console.log}/>
 			<InternshipsTable/>

@@ -18,9 +18,7 @@ const connected = connect(mapStateToProps);
 type IHonorsTabProps = ConnectedProps<typeof connected>;
 
 const HonorsTab: React.FC<IHonorsTabProps> = ({paginator}) => (
-	<div className="mt-3">
-		<h3>Награды</h3>
-
+	<div className="mt-5">
 		<Container>
 			<HonorsFilterForm onSubmit={console.log}/>
 			<HonorsTable/>

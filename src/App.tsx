@@ -1,16 +1,18 @@
-import React, {useState} from 'react';
+import React, {lazy, useState, Suspense} from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {Provider} from 'react-redux';
 
 import store from './redux/';
-import HomePage from './pages/HomePage/';
-import LoginPage from './pages/LoginPage';
-import ProfilePage from './pages/ProfilePage';
 import AdminLayout from './AdminLayout';
 
 import MenuContext, {IMenuContextData} from './utils/contexts/MenuContext';
 import NotFoundPage from './pages/NotFoundPage';
+import Loader from './common/Loader';
 
+//pages
+const HomePage = lazy(() => import('./pages/HomePage/'));
+const LoginPage = lazy(() => import('./pages/LoginPage'));
+const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 
 const App = () => {
 	const [isMenuOpen, changeMenuOpen] = useState(false),
@@ -23,21 +25,26 @@ const App = () => {
 		<Provider store={store}>
 			<MenuContext.Provider value={menuContextData}>
 				<Router>
-					<Switch>
-						<Route path="/login" exact component={LoginPage}/>
-						<Route path="/" render={() => (
-							<AdminLayout>
-								<Switch>
-									<Route path="/" exact component={HomePage}/>
-									<Route path="/profile" exact component={ProfilePage}/>
+					<Suspense fallback={<Loader/>}>
+						<Switch>
+							<Route path="/login" exact component={LoginPage}/>
 
-									<Route path="/" component={NotFoundPage}/>
-								</Switch>
-							</AdminLayout>
-						)}/>
+							<Route path="/" render={() => (
+								<AdminLayout>
+									<Suspense fallback={<Loader/>}>
+										<Switch>
+											<Route path="/" exact component={HomePage}/>
+											<Route path="/profile" exact component={ProfilePage}/>
 
-						<Route path="/" component={NotFoundPage}/>
-					</Switch>
+											<Route path="/" component={NotFoundPage}/>
+										</Switch>
+									</Suspense>
+								</AdminLayout>
+							)}/>
+
+							<Route path="/" component={NotFoundPage}/>
+						</Switch>
+					</Suspense>
 				</Router>
 			</MenuContext.Provider>
 		</Provider>

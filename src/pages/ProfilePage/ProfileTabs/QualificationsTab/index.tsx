@@ -18,9 +18,7 @@ const connected = connect(mapStateToProps);
 type IQualificationsTabProps = ConnectedProps<typeof connected> & {nextDate: string};
 
 const QualificationsTab: React.FC<IQualificationsTabProps> = ({paginator, nextDate}) => (
-	<div className="mt-3">
-		<h3>Квалификации</h3>
-
+	<div className="mt-5">
 		<Container>
 			<QualificationsFilterForm onSubmit={console.log}/>
 			<QualificationsTable/>
