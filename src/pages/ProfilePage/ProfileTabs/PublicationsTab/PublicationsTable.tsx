@@ -4,7 +4,7 @@ import {connect, ConnectedProps} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import {RootState} from '../../../../redux';
-import {IPublication} from '../../../../interfaces/IPublication';
+import {IPublication} from '../../../../interfaces/models/IPublication';
 import {selectProfilePublicationsState} from '../../../../redux/profile/publications/selectors';
 import {profilePublicationsChangeSort} from '../../../../redux/profile/publications/actions';
 import thunkProfilePublications from '../../../../redux/profile/publications/thunks';

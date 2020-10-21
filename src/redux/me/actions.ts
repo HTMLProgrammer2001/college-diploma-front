@@ -1,5 +1,5 @@
 import {ME_LOAD_ERROR, ME_LOAD_START, ME_LOAD_SUCCESS} from './types';
-import {IUser} from '../../interfaces/IUser';
+import {IUser} from '../../interfaces/models/IUser';
 
 
 export const meLoadStart = () => <const>({

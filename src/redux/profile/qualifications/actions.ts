@@ -4,7 +4,7 @@ import {
 	PROFILE_QUALIFICATIONS_START,
 	PROFILE_QUALIFICATIONS_SUCCESS
 } from './types';
-import {IQualification} from '../../../interfaces/IQualification';
+import {IQualification} from '../../../interfaces/models/IQualification';
 
 
 export const profileQualificationsStart = () => <const>({

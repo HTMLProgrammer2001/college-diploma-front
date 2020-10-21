@@ -4,7 +4,7 @@ import {
 	PROFILE_REBUKES_START,
 	PROFILE_REBUKES_SUCCESS
 } from './types';
-import {IRebuke} from '../../../interfaces/IRebuke';
+import {IRebuke} from '../../../interfaces/models/IRebuke';
 
 
 export const profileRebukesStart = () => <const>({

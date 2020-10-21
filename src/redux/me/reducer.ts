@@ -1,7 +1,7 @@
 import {ME_LOAD_SUCCESS, ME_LOAD_ERROR, ME_LOAD_START} from './types';
 import * as actionTypes from './actions';
 import {InferActionTypes} from '../';
-import {IUser} from '../../interfaces/IUser';
+import {IUser} from '../../interfaces/models/IUser';
 
 
 export type IMeActionTypes = InferActionTypes<typeof actionTypes>;

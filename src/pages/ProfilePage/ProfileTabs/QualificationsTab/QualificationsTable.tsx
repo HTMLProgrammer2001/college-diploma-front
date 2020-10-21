@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import cn from 'classnames';
 
 import {RootState} from '../../../../redux';
-import {IQualification} from '../../../../interfaces/IQualification';
+import {IQualification} from '../../../../interfaces/models/IQualification';
 import {selectProfileQualificationsState} from '../../../../redux/profile/qualifications/selectors';
 import {profileQualificationsChangeSort} from '../../../../redux/profile/qualifications/actions';
 import thunkProfileQualifications from '../../../../redux/profile/qualifications/thunks';

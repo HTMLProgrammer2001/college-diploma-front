@@ -6,7 +6,7 @@ import {
 } from './types';
 import {InferActionTypes} from '../../';
 import * as actionsCreators from './actions';
-import {IRebuke} from '../../../interfaces/IRebuke';
+import {IRebuke} from '../../../interfaces/models/IRebuke';
 
 
 export type IProfileRebukesActions = InferActionTypes<typeof actionsCreators>;

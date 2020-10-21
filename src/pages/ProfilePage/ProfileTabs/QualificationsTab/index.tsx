@@ -6,16 +6,20 @@ import QualificationsFilterForm from './QualificationsFilterForm';
 import QualificationsTable from './QualificationsTable';
 import Paginator from '../../../../common/Paginator';
 import {RootState} from '../../../../redux';
-import {selectProfileQualificationsPagination} from '../../../../redux/profile/qualifications/selectors';
+import {
+	selectProfileQualificationsPagination,
+	selectProfileQualificationsState
+} from '../../../../redux/profile/qualifications/selectors';
 
 
 const mapStateToProps = (state: RootState) => ({
-	paginator: selectProfileQualificationsPagination(state)
+	paginator: selectProfileQualificationsPagination(state),
+	nextDate: selectProfileQualificationsState(state).nextDate
 });
 
 const connected = connect(mapStateToProps);
 
-type IQualificationsTabProps = ConnectedProps<typeof connected> & {nextDate: string};
+type IQualificationsTabProps = ConnectedProps<typeof connected>;
 
 const QualificationsTab: React.FC<IQualificationsTabProps> = ({paginator, nextDate}) => (
 	<div className="mt-5">

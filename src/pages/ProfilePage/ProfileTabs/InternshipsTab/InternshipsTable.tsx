@@ -4,7 +4,7 @@ import {connect, ConnectedProps} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import {RootState} from '../../../../redux';
-import {IInternship} from '../../../../interfaces/IInternship';
+import {IInternship} from '../../../../interfaces/models/IInternship';
 import {selectProfileInternshipsState} from '../../../../redux/profile/internships/selectors';
 import {internshipsShowChangeSort} from '../../../../redux/internships/show/actions';
 import SortItem from '../../../../common/SortItem';

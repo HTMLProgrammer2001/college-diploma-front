@@ -16,7 +16,16 @@ body{
 }
 
 .content{
-    min-height: calc(100% - 120px);
+    min-height: calc(100vh - 120px);
+    width: 100%;
+}
+
+.wrapper{
+    width: 100%;
+
+    position: absolute;
+    left: 50px;
+    top: 60px;
 }
 
 tbody th{

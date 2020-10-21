@@ -13,6 +13,7 @@ import Loader from './common/Loader';
 const HomePage = lazy(() => import('./pages/HomePage/'));
 const LoginPage = lazy(() => import('./pages/LoginPage'));
 const ProfilePage = lazy(() => import('./pages/ProfilePage'));
+const ProfileEditPage = lazy(() => import('./pages/ProfileEditPage'));
 
 const App = () => {
 	const [isMenuOpen, changeMenuOpen] = useState(false),
@@ -35,6 +36,12 @@ const App = () => {
 										<Switch>
 											<Route path="/" exact component={HomePage}/>
 											<Route path="/profile" exact component={ProfilePage}/>
+
+											<Route
+												path="/profile/edit"
+												exact
+												component={ProfileEditPage}
+											/>
 
 											<Route path="/" component={NotFoundPage}/>
 										</Switch>

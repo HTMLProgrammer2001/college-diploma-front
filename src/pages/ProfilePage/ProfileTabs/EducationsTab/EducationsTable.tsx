@@ -7,25 +7,25 @@ import {RootState} from '../../../../redux';
 import SortItem from '../../../../common/SortItem';
 import Loader from '../../../../common/Loader';
 import ErrorElement from '../../../../common/ErrorElement';
-import {selectProfileRebukesState} from '../../../../redux/profile/rebukes/selectors';
-import {profileRebukesChangeSort} from '../../../../redux/profile/rebukes/actions';
-import thunkProfileRebukes from '../../../../redux/profile/rebukes/thunks';
-import {IRebuke} from '../../../../interfaces/models/IRebuke';
+import {selectProfileEducationsState} from '../../../../redux/profile/educations/selectors';
+import {profileEducationsChangeSort} from '../../../../redux/profile/educations/actions';
+import thunkProfileEducations from '../../../../redux/profile/educations/thunks';
+import {IEducation} from '../../../../interfaces/models/IEducation';
 
 
 const mapStateToProps = (state: RootState) => ({
-	...selectProfileRebukesState(state)
+	...selectProfileEducationsState(state)
 });
 
 const connected = connect(mapStateToProps, {
-	changeSort: profileRebukesChangeSort,
-	load: thunkProfileRebukes
+	changeSort: profileEducationsChangeSort,
+	load: thunkProfileEducations
 });
 
 type IRebukesTableProps = ConnectedProps<typeof connected>;
-const RebukesTable: React.FC<IRebukesTableProps> = (props) => {
+const EducationsTable: React.FC<IRebukesTableProps> = (props) => {
 	useEffect(() => {
-		if(!props.isLoading && !props.rebukes.length)
+		if(!props.isLoading && !props.educations.length)
 			props.load();
 	}, []);
 
@@ -39,17 +39,27 @@ const RebukesTable: React.FC<IRebukesTableProps> = (props) => {
 				</th>
 
 				<th>
-					<span className="pull-left">Название выговора</span>
-					<SortItem state={props.sort.title} change={props.changeSort} param="title"/>
+					<span className="pull-left">Учебное заведение</span>
+					<SortItem state={props.sort.institution} change={props.changeSort} param="institution"/>
 				</th>
 
 				<th>
-					<span className="pull-left">Дата выдачи</span>
+					<span className="pull-left">Год выпуска</span>
 
 					<SortItem
-						state={props.sort.presentation_date}
+						state={props.sort.graduate_year}
 						change={props.changeSort}
-						param="presentation_date"
+						param="graduate_date"
+					/>
+				</th>
+
+				<th>
+					<span className="pull-left">Квалификация</span>
+
+					<SortItem
+						state={props.sort.qualification}
+						change={props.changeSort}
+						param="qualification"
 					/>
 				</th>
 
@@ -76,7 +86,7 @@ const RebukesTable: React.FC<IRebukesTableProps> = (props) => {
 			}
 
 			{
-				!props.isLoading && !props.error && !props.rebukes.length &&
+				!props.isLoading && !props.error && !props.educations.length &&
 				<tr className="font-weight-bold text-center">
 					<th colSpan={6} className="text-center">
 						Нет наград подходящих под этот фильтр
@@ -86,13 +96,14 @@ const RebukesTable: React.FC<IRebukesTableProps> = (props) => {
 
 			{
 				!props.isLoading && !props.error &&
-				props.rebukes.map((rebuke: IRebuke) => (
-					<tr key={rebuke.id}>
-						<th>{rebuke.id}</th>
-						<th>{rebuke.title}</th>
-						<th>{rebuke.date_presentation}</th>
+				props.educations.map((education: IEducation) => (
+					<tr key={education.id}>
+						<th>{education.id}</th>
+						<th>{education.institution}</th>
+						<th>{education.graduate_year}</th>
+						<th>{education.qualification}</th>
 						<th>
-							<Link to={`/rebukes/${rebuke.id}`}>
+							<Link to={`/educations/${education.id}`}>
 								<i className="fa fa-eye"/>
 							</Link>
 						</th>
@@ -104,4 +115,4 @@ const RebukesTable: React.FC<IRebukesTableProps> = (props) => {
 	);
 };
 
-export default connected(RebukesTable);
+export default connected(EducationsTable);

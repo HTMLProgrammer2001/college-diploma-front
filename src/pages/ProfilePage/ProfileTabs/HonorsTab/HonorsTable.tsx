@@ -10,7 +10,7 @@ import ErrorElement from '../../../../common/ErrorElement';
 import {selectProfileHonorsState} from '../../../../redux/profile/honors/selectors';
 import {profileHonorsChangeSort} from '../../../../redux/profile/honors/actions';
 import thunkProfileHonors from '../../../../redux/profile/honors/thunks';
-import {IHonor} from '../../../../interfaces/IHonor';
+import {IHonor} from '../../../../interfaces/models/IHonor';
 
 
 const mapStateToProps = (state: RootState) => ({

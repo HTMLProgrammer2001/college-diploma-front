@@ -6,7 +6,7 @@ import {
 } from './types';
 import {InferActionTypes} from '../../';
 import * as actionsCreators from './actions';
-import {IPublication} from '../../../interfaces/IPublication';
+import {IPublication} from '../../../interfaces/models/IPublication';
 
 
 export type IProfilePublicationsActions = InferActionTypes<typeof actionsCreators>;

@@ -7,7 +7,7 @@ import {FormGroup, FormLabel, FormControl} from 'react-bootstrap';
 type IDateElementProps = WrappedFieldProps &
 	HTMLInputElement & {label: string} & ReactDatePickerProps;
 
-const DateElement: React.FC<IDateElementProps> = ({meta, input, name, label, dateFormat}) => (
+const DateElement: React.FC<IDateElementProps> = ({meta, input, name, label, dateFormat, className}) => (
 	<FormGroup>
 		{
 			label &&
@@ -16,7 +16,8 @@ const DateElement: React.FC<IDateElementProps> = ({meta, input, name, label, dat
 
 		<DatePicker
 			selected={input.value}
-			dateFormat={dateFormat}
+			className={className}
+			dateFormat="dd.MM.yyyy"
 			onChange={(date: any) => input.onChange(date, name)}
 		/>
 

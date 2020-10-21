@@ -12,3 +12,37 @@
     border-radius: 50%;
     margin-right: 10px;
 }
+
+.buttons{
+    padding: 1rem;
+
+    background: #f9f9f9;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button{
+    text-decoration: none;
+    color: #555;
+
+    display: block;
+    padding: 5px 10px;
+
+    border: 1px solid silver;
+    background: darken(#f9f9f9, 10%);
+    transition: .3s;
+    cursor: pointer;
+
+    &:hover{
+        text-decoration: none;
+        color: #555;
+
+        background: darken(#f9f9f9, 20%);
+    }
+}
+
+.dropdown{
+    min-width: 300px;
+}

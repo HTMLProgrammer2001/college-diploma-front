@@ -6,16 +6,20 @@ import InternshipsFilterForm from './InternshipsFilterForm';
 import InternshipsTable from './InternshipsTable';
 import Paginator from '../../../../common/Paginator';
 import {RootState} from '../../../../redux';
-import {selectProfileInternshipsPagination} from '../../../../redux/profile/internships/selectors';
+import {
+	selectProfileInternshipsPagination,
+	selectProfileInternshipsState
+} from '../../../../redux/profile/internships/selectors';
 
 
 const mapStateToProps = (state: RootState) => ({
-	paginator: selectProfileInternshipsPagination(state)
+	paginator: selectProfileInternshipsPagination(state),
+	hours: selectProfileInternshipsState(state).hours
 });
 
 const connected = connect(mapStateToProps);
 
-type IInternshipsTabProps = ConnectedProps<typeof connected> & {hours: number};
+type IInternshipsTabProps = ConnectedProps<typeof connected>;
 
 const InternshipsTab: React.FC<IInternshipsTabProps> = ({paginator, hours}) => (
 	<div className="mt-5">

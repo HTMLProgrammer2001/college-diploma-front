@@ -1,6 +1,8 @@
 import React from 'react';
 import {Dropdown} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
+import {Link} from 'react-router-dom';
+import cn from 'classnames';
 
 import styles from './styles.module.scss';
 import {RootState} from '../../../redux';
@@ -30,8 +32,8 @@ const UserDropdown: React.FC<IUserDropdownProps> = ({user}) => (
 			<span>{user.fullName}</span>
 		</Dropdown.Toggle>
 
-		<Dropdown.Menu className="bg-blue p-2">
-			<div className="center flex-column text-white">
+		<Dropdown.Menu className={cn("bg-blue p-0", styles.dropdown)}>
+			<div className="center flex-column text-white p-2">
 				<img
 					src={user.avatar}
 					alt="Avatar"
@@ -39,6 +41,11 @@ const UserDropdown: React.FC<IUserDropdownProps> = ({user}) => (
 
 				<div>{user.fullName}</div>
 				<div>{roleCodeToName(user.role)}</div>
+			</div>
+
+			<div className={styles.buttons}>
+				<Link to="/profile" className={styles.button}>Профиль</Link>
+				<div className={styles.button}>Выйти</div>
 			</div>
 		</Dropdown.Menu>
 	</Dropdown>

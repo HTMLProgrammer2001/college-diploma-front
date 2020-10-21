@@ -45,14 +45,12 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit}
 			<Field
 				component={DateElement}
 				name="from"
-				dateFormat="dd.MM.yyyy"
 				label="С"
 			/>
 
 			<Field
 				component={DateElement}
 				name="to"
-				dateFormat="dd.MM.yyyy"
 				label="По"
 			/>
 		</Row>

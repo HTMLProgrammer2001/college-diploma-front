@@ -4,7 +4,7 @@ import {
 	PUBLICATIONS_SHOW_SUCCESS,
 	PUBLICATIONS_SHOW_CHANGE_SORT
 } from './types';
-import {IPublication} from '../../../interfaces/IPublication';
+import {IPublication} from '../../../interfaces/models/IPublication';
 
 
 export const publicationsShowStart = () => <const>({

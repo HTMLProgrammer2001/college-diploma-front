@@ -6,7 +6,7 @@ import {
 } from './types';
 import {InferActionTypes} from '../../';
 import * as actionsCreators from './actions';
-import {IInternship} from '../../../interfaces/IInternship';
+import {IInternship} from '../../../interfaces/models/IInternship';
 
 
 export type IProfileInternshipsActions = InferActionTypes<typeof actionsCreators>;
@@ -18,7 +18,8 @@ type IProfileInternshipsState = {
 	currentPage: number,
 	total: number,
 	pageSize: number,
-	sort: {[key: string]: -1 | 1}
+	sort: {[key: string]: -1 | 1},
+	hours: number
 };
 
 const initialState: IProfileInternshipsState = {
@@ -28,7 +29,8 @@ const initialState: IProfileInternshipsState = {
 	currentPage: 0,
 	total: 0,
 	pageSize: 5,
-	sort: {}
+	sort: {},
+	hours: 30
 };
 
 const profileInternshipsReducer = (state = initialState,

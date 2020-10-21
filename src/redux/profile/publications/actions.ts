@@ -4,7 +4,7 @@ import {
 	PROFILE_PUBLICATIONS_START,
 	PROFILE_PUBLICATIONS_SUCCESS
 } from './types';
-import {IPublication} from '../../../interfaces/IPublication';
+import {IPublication} from '../../../interfaces/models/IPublication';
 
 
 export const profilePublicationsStart = () => <const>({

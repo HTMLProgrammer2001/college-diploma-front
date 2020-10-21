@@ -1,55 +1,55 @@
 import {
-	PROFILE_HONORS_CHANGE_SORT,
-	PROFILE_HONORS_SUCCESS,
-	PROFILE_HONORS_ERROR,
-	PROFILE_HONORS_START
+	PROFILE_EDUCATIONS_CHANGE_SORT,
+	PROFILE_EDUCATIONS_SUCCESS,
+	PROFILE_EDUCATIONS_ERROR,
+	PROFILE_EDUCATIONS_START
 } from './types';
 import {InferActionTypes} from '../../';
 import * as actionsCreators from './actions';
-import {IHonor} from '../../../interfaces/models/IHonor';
+import {IEducation} from '../../../interfaces/models/IEducation';
 
 
-export type IProfileHonorsActions = InferActionTypes<typeof actionsCreators>;
+export type IProfileEducationsActions = InferActionTypes<typeof actionsCreators>;
 
-type IProfileHonorsState = {
+type IProfileEducationsState = {
 	isLoading: boolean,
 	error: string,
-	honors: IHonor[],
+	educations: IEducation[],
 	currentPage: number,
 	total: number,
 	pageSize: number,
 	sort: {[key: string]: -1 | 1}
 };
 
-const initialState: IProfileHonorsState = {
+const initialState: IProfileEducationsState = {
 	isLoading: false,
 	error: null,
-	honors: [],
+	educations: [],
 	currentPage: 0,
 	total: 0,
 	pageSize: 5,
 	sort: {}
 };
 
-const profileHonorsReducer = (state = initialState,
-								 action: IProfileHonorsActions
-								): IProfileHonorsState => {
+const profileEducationsReducer = (state = initialState,
+								 action: IProfileEducationsActions
+								): IProfileEducationsState => {
 	switch(action.type){
-		case PROFILE_HONORS_START:
+		case PROFILE_EDUCATIONS_START:
 			return {...state, isLoading: true, error: null};
 
-		case PROFILE_HONORS_ERROR:
+		case PROFILE_EDUCATIONS_ERROR:
 			return {...state, isLoading: false, error: action.error};
 
-		case PROFILE_HONORS_SUCCESS:
+		case PROFILE_EDUCATIONS_SUCCESS:
 			return {
 				...state,
 				isLoading: false,
 				error: null,
-				honors: action.payload
+				educations: action.payload
 			};
 
-		case PROFILE_HONORS_CHANGE_SORT:
+		case PROFILE_EDUCATIONS_CHANGE_SORT:
 			return {
 				...state,
 				sort: {
@@ -63,4 +63,4 @@ const profileHonorsReducer = (state = initialState,
 	return state;
 };
 
-export default profileHonorsReducer;
+export default profileEducationsReducer;

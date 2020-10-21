@@ -4,7 +4,7 @@ import {
 	PROFILE_INTERNSHIPS_START,
 	PROFILE_INTERNSHIPS_SUCCESS
 } from './types';
-import {IInternship} from '../../../interfaces/IInternship';
+import {IInternship} from '../../../interfaces/models/IInternship';
 
 
 export const profileInternshipsStart = () => <const>({

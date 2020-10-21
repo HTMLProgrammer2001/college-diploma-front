@@ -4,7 +4,7 @@ import {
 	INTERNSHIPS_SHOW_SUCCESS,
 	INTERNSHIPS_SHOW_CHANGE_SORT
 } from './types';
-import {IInternship} from '../../../interfaces/IInternship';
+import {IInternship} from '../../../interfaces/models/IInternship';
 
 
 export const internshipsShowStart = () => <const>({

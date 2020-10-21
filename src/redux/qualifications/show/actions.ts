@@ -4,7 +4,7 @@ import {
 	QUALIFICATIONS_SHOW_SUCCESS,
 	QUALIFICATIONS_SHOW_CHANGE_SORT
 } from './types';
-import {IQualification} from '../../../interfaces/IQualification';
+import {IQualification} from '../../../interfaces/models/IQualification';
 
 
 export const qualificationsShowStart = () => <const>({

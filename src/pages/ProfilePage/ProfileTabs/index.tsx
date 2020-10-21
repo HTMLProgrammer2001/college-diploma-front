@@ -10,6 +10,7 @@ import InternshipsTab from './InternshipsTab';
 import QualificationsTab from './QualificationsTab';
 import HonorsTab from './HonorsTab';
 import RebukesTab from './RebukesTab';
+import EducationsTab from './EducationsTab';
 
 
 const ProfileTabs: React.FC<{}> = () => {
@@ -31,11 +32,11 @@ const ProfileTabs: React.FC<{}> = () => {
 			</Tab>
 
 			<Tab eventKey="internships" title="Стажировки">
-				<InternshipsTab hours={30}/>
+				<InternshipsTab/>
 			</Tab>
 
 			<Tab eventKey="qualifications" title="Повышения квалификации">
-				<QualificationsTab nextDate="20.03.2020"/>
+				<QualificationsTab/>
 			</Tab>
 
 			<Tab eventKey="honors" title="Награды">
@@ -47,7 +48,7 @@ const ProfileTabs: React.FC<{}> = () => {
 			</Tab>
 
 			<Tab eventKey="educations" title="Образования">
-				<div>Educations</div>
+				<EducationsTab/>
 			</Tab>
 		</Tabs>
 	);

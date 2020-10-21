@@ -1,34 +1,28 @@
 import React, {useEffect} from 'react';
 import {Button, Card, Row} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
 
-import ProfileInfo from './ProfileInfo';
-import ProfileTabs from './ProfileTabs';
 import BackButton from '../../common/BackButton';
+import ProfileEditForm from './EditProfileForm';
 
 
-const ProfilePage: React.FC<{}> = () => {
+const ProfileEditPage: React.FC<{}> = () => {
 	useEffect(() => {
 		document.head.title = 'Профиль';
 	}, []);
 
 	return (
 		<>
-			<div className="title">Профиль пользователя</div>
+			<div className="title">Редактирование профиля</div>
 
 			<Card className="mr-5">
 				<Card.Body>
-					<ProfileInfo/>
-					<ProfileTabs/>
+					<ProfileEditForm onSubmit={console.log}/>
 				</Card.Body>
 
 				<Card.Footer>
 					<Row className="justify-content-between p-2">
 						<BackButton/>
-
-						<Link to="/profile/edit">
-							<Button variant="warning">Редактировать</Button>
-						</Link>
+						<Button variant="warning">Сохранить</Button>
 					</Row>
 				</Card.Footer>
 			</Card>
@@ -36,4 +30,4 @@ const ProfilePage: React.FC<{}> = () => {
 	);
 };
 
-export default ProfilePage;
+export default ProfileEditPage;

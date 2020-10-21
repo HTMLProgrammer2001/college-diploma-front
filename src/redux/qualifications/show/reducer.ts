@@ -6,7 +6,7 @@ import {
 } from './types';
 import {InferActionTypes} from '../../';
 import * as actionsCreators from './actions';
-import {IQualification} from '../../../interfaces/IQualification';
+import {IQualification} from '../../../interfaces/models/IQualification';
 
 
 export type IShowQualificationsActions = InferActionTypes<typeof actionsCreators>;

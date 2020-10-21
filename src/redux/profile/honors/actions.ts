@@ -4,7 +4,7 @@ import {
 	PROFILE_HONORS_START,
 	PROFILE_HONORS_SUCCESS
 } from './types';
-import {IHonor} from '../../../interfaces/IHonor';
+import {IHonor} from '../../../interfaces/models/IHonor';
 
 
 export const profileHonorsStart = () => <const>({

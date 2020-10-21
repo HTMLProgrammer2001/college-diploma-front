@@ -11,8 +11,10 @@ const AdminLayout: React.FC<{}> = ({children}) => (
 
 		<div className="w-100">
 			<Header/>
-			<main className="p-3 content">{children}</main>
-			<Footer/>
+			<div className="wrapper">
+				<main className="p-3 content">{children}</main>
+				<Footer/>
+			</div>
 		</div>
 	</div>
 );

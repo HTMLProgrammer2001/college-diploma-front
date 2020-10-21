@@ -6,7 +6,7 @@ import {
 } from './types';
 import {InferActionTypes} from '../../';
 import * as actionsCreators from './actions';
-import {IQualification} from '../../../interfaces/IQualification';
+import {IQualification} from '../../../interfaces/models/IQualification';
 
 
 export type IProfileQualificationsActions = InferActionTypes<typeof actionsCreators>;
@@ -18,7 +18,8 @@ type IProfileQualificationsState = {
 	currentPage: number,
 	total: number,
 	pageSize: number,
-	sort: {[key: string]: -1 | 1}
+	sort: {[key: string]: -1 | 1},
+	nextDate: string
 };
 
 const initialState: IProfileQualificationsState = {
@@ -28,7 +29,8 @@ const initialState: IProfileQualificationsState = {
 	currentPage: 0,
 	total: 0,
 	pageSize: 5,
-	sort: {}
+	sort: {},
+	nextDate: '20.03.2025'
 };
 
 const profileQualificationsReducer = (state = initialState,
