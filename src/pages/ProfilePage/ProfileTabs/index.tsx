@@ -8,8 +8,8 @@ import styles from './styles.module.scss';
 import PublicationsTab from './PublicationsTab';
 import InternshipsTab from './InternshipsTab';
 import QualificationsTab from './QualificationsTab';
-import {useRouteMatch} from 'react-router';
 import HonorsTab from './HonorsTab';
+import RebukesTab from './RebukesTab';
 
 
 const ProfileTabs: React.FC<{}> = () => {
@@ -17,7 +17,7 @@ const ProfileTabs: React.FC<{}> = () => {
 		history = useHistory(),
 		selectHandler = (el: string) => {
 			//change path hash
-			history.push(`#${el}`);
+			history.replace(`#${el}`);
 		};
 
 	return (
@@ -43,7 +43,7 @@ const ProfileTabs: React.FC<{}> = () => {
 			</Tab>
 
 			<Tab eventKey="rebukes" title="Выговоры">
-				<div>Rebukes</div>
+				<RebukesTab/>
 			</Tab>
 
 			<Tab eventKey="educations" title="Образования">
