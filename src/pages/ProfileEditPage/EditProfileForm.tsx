@@ -3,6 +3,7 @@ import {InjectedFormProps, reduxForm, Field} from 'redux-form';
 
 import InputElement from '../../common/formElements/InputElement';
 import DateElement from '../../common/formElements/DateElement';
+import FileElement from '../../common/formElements/FileElement';
 
 
 export type IProfileEditData = {
@@ -13,7 +14,8 @@ export type IProfileEditData = {
 	birthday: string,
 	passport: string,
 	code: string,
-	address: string
+	address: string,
+	avatar: any
 };
 
 type IProfileEditFormProps = InjectedFormProps<IProfileEditData>;
@@ -80,9 +82,17 @@ const ProfileEditForm: React.FC<IProfileEditFormProps> = ({handleSubmit}) => (
 				/>
 			</div>
 		</div>
+
+		<div className="center w-100">
+			<Field
+				name="avatar"
+				label="Перетащите или выберите аватарку"
+				component={FileElement}
+			/>
+		</div>
 	</form>
 );
 
 export default reduxForm<IProfileEditData>({
-	form: 'editProfile'
+	form: 'editProfileForm'
 })(ProfileEditForm);

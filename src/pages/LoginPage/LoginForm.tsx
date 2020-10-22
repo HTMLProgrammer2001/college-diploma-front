@@ -4,12 +4,17 @@ import {Form, Card, Button, Spinner, Col, Alert} from 'react-bootstrap';
 
 import InputElement from '../../common/formElements/InputElement';
 import styles from './styles.module.scss';
+import required from '../../utils/validators/required';
+import email from '../../utils/validators/email';
+import lengthIn from '../../utils/validators/lengthIn';
 
 
 export type ILoginFormData = {
 	email: string,
 	password: string
 };
+
+const passwordLength = lengthIn(8, 32);
 
 type ILoginFormProps = InjectedFormProps<ILoginFormData>;
 const LoginForm: React.FC<ILoginFormProps> = ({handleSubmit, submitting, error}) => (
@@ -31,6 +36,8 @@ const LoginForm: React.FC<ILoginFormProps> = ({handleSubmit, submitting, error})
 						type="text"
 						name="email"
 						label="Email*"
+						validate={[required, email]}
+						onlyInValid={false}
 					/>
 
 					<Field
@@ -38,6 +45,8 @@ const LoginForm: React.FC<ILoginFormProps> = ({handleSubmit, submitting, error})
 						type="password"
 						name="password"
 						label="Password*"
+						validate={[required, passwordLength]}
+						onlyInValid={false}
 					/>
 
 					<button hidden/>

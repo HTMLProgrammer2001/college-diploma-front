@@ -1,11 +1,18 @@
 import React, {useEffect} from 'react';
 import {Button, Card, Row} from 'react-bootstrap';
+import {connect, ConnectedProps} from 'react-redux';
+import {submit} from 'redux-form';
 
 import BackButton from '../../common/BackButton';
 import ProfileEditForm from './EditProfileForm';
 
 
-const ProfileEditPage: React.FC<{}> = () => {
+const connected = connect(null, (dispatch) => ({
+	sendForm: () => dispatch(submit('editProfileForm'))
+}));
+
+type IProfileEditPageProps = ConnectedProps<typeof connected>;
+const ProfileEditPage: React.FC<IProfileEditPageProps> = ({sendForm}) => {
 	useEffect(() => {
 		document.head.title = 'Профиль';
 	}, []);
@@ -22,7 +29,7 @@ const ProfileEditPage: React.FC<{}> = () => {
 				<Card.Footer>
 					<Row className="justify-content-between p-2">
 						<BackButton/>
-						<Button variant="warning">Сохранить</Button>
+						<Button variant="warning" onClick={sendForm}>Сохранить</Button>
 					</Row>
 				</Card.Footer>
 			</Card>
@@ -30,4 +37,4 @@ const ProfileEditPage: React.FC<{}> = () => {
 	);
 };
 
-export default ProfileEditPage;
+export default connected(ProfileEditPage);

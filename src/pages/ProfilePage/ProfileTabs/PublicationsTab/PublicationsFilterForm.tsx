@@ -22,6 +22,7 @@ const PublicationsFilterForm: React.FC<IPublicationsFilterProps> = ({handleSubmi
 				name="title"
 				label="Название публикации"
 				className="w-100"
+				onlyInValid
 			/>
 		</Row>
 

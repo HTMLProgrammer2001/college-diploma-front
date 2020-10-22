@@ -21,7 +21,7 @@ const thunkProfileQualifications = (offset: number = 1): IProfileQualificationsT
 				setTimeout(res, 2000);
 			});
 
-			dispatch(profileQualificationsSuccess([{id: 1, name: 'Test', date: '20.10.2020', user: 'Yura'}]));
+			dispatch(profileQualificationsSuccess([{id: 1, name: 'Test', date: '20.10.2020', user: {fullName: 'User', id: 1}}]));
 		}
 		catch (e) {
 			dispatch(profileQualificationsError(e.message));

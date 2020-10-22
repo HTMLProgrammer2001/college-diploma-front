@@ -3,31 +3,31 @@ import {WrappedFieldProps} from 'redux-form';
 import {FormControl, FormGroup, FormLabel} from 'react-bootstrap';
 
 
-type ISelectElementProps = WrappedFieldProps & HTMLSelectElement & {label: string};
-const SelectElement: React.FC<ISelectElementProps> = ({meta, input, name, label, children, ...props}) => (
-	<FormGroup controlId={name}>
+type ISelectElementProps = WrappedFieldProps & HTMLSelectElement & {label: string, onlyInValid: boolean};
+const SelectElement: React.FC<ISelectElementProps> = ({onlyInValid = true, ...props}) => (
+	<FormGroup controlId={props.name}>
 		{
-			label &&
-			<FormLabel column={true}>{label}</FormLabel>
+			props.label &&
+			<FormLabel column={true}>{props.label}</FormLabel>
 		}
 
 		<FormControl
-			name={name}
+			name={props.name}
 			as="select"
-			value={input.value}
+			value={props.input.value}
 			className={props.className}
-			onChange={input.onChange}
-			isValid={meta.touched ? meta.valid : undefined}
-			isInvalid={meta.touched ? !meta.valid : undefined}
+			onChange={props.input.onChange}
+			isValid={!onlyInValid && props.meta.touched ? props.meta.valid : undefined}
+			isInvalid={props.meta.touched ? !props.meta.valid : undefined}
 			custom
 		>
-			{children}
+			{props.children}
 		</FormControl>
 
 		{
-			meta.error &&
+			props.meta.error &&
 			<FormControl.Feedback type="invalid" style={{display: 'block'}}>
-				{meta.touched && meta.error}
+				{props.meta.touched && props.meta.error}
 			</FormControl.Feedback>
 		}
 	</FormGroup>

@@ -20,7 +20,7 @@ const connected = connect(mapStateToProps, {
 });
 
 type IUserDropdownProps = ConnectedProps<typeof connected>;
-const UserDropdown: React.FC<IUserDropdownProps> = ({user}) => (
+const UserDropdown: React.FC<IUserDropdownProps> = ({user, logout}) => (
 	<Dropdown>
 		<Dropdown.Toggle className={styles.dropNo}>
 			<img
@@ -45,7 +45,7 @@ const UserDropdown: React.FC<IUserDropdownProps> = ({user}) => (
 
 			<div className={styles.buttons}>
 				<Link to="/profile" className={styles.button}>Профиль</Link>
-				<div className={styles.button}>Выйти</div>
+				<div className={styles.button} onClick={logout}>Выйти</div>
 			</div>
 		</Dropdown.Menu>
 	</Dropdown>

@@ -6,6 +6,8 @@ import InputElement from '../../../../common/formElements/InputElement';
 import DateElement from '../../../../common/formElements/DateElement';
 import SelectElement from '../../../../common/formElements/SelectElement';
 
+import positiveNumber from '../../../../utils/validators/positiveNumber';
+
 
 type IInternshipsFilterData = {
 	from: string,
@@ -27,6 +29,7 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit}
 				type="text"
 				className="mr-1"
 			>
+				<option value={0}>Все</option>
 				<option value={1}>Cat 1</option>
 				<option value={2}>Cat 2</option>
 				<option value={3}>Cat 3</option>
@@ -60,20 +63,30 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit}
 				component={InputElement}
 				name="moreHours"
 				type="number"
+				min={0}
 				label="Количество часов больше"
 				className="mr-1"
+				validate={[positiveNumber]}
 			/>
 
 			<Field
 				component={InputElement}
 				name="lessHours"
 				type="number"
+				min={0}
 				label="Количество часов меньше"
 				className="ml-1"
+				validate={[positiveNumber]}
 			/>
 		</Row>
 
-		<Button variant="primary" className="w-25">Поиск</Button>
+		<Button
+			variant="primary"
+			className="w-25"
+			type="submit"
+		>
+			Поиск
+		</Button>
 	</form>
 );
 

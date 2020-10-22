@@ -24,7 +24,7 @@ type IShowQualificationsState = {
 const initialState: IShowQualificationsState = {
 	isLoading: false,
 	error: null,
-	qualifications: [{id: 1, date: '20.03.2020', name: 'Spec', user: 'User'}],
+	qualifications: [],
 	currentPage: 1,
 	total: 6,
 	pageSize: 5,

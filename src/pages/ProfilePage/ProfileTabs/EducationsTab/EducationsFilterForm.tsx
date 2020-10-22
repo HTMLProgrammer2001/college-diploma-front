@@ -5,6 +5,8 @@ import {Button, Row} from 'react-bootstrap';
 import InputElement from '../../../../common/formElements/InputElement';
 import SelectElement from '../../../../common/formElements/SelectElement';
 
+import positiveNumber from '../../../../utils/validators/positiveNumber';
+
 
 type IEducationsFilterData = {
 	qualification: string,
@@ -20,6 +22,7 @@ const EducationsFilterForm: React.FC<IEducationsFilterProps> = ({handleSubmit}) 
 				component={SelectElement}
 				name="title"
 				label="Квалификация"
+				onlyInvalid
 			>
 				<option selected>Все</option>
 				<option>Младший специалист</option>
@@ -44,6 +47,7 @@ const EducationsFilterForm: React.FC<IEducationsFilterProps> = ({handleSubmit}) 
 				label="Год выпуска"
 				defaultValue={new Date().getFullYear()}
 				className="ml-1"
+				validate={[positiveNumber]}
 			/>
 		</Row>
 
