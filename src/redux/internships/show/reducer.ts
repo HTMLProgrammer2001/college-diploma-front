@@ -36,17 +36,17 @@ const showInternshipsReducer = (state = initialState,
 								): IShowInternshipsState => {
 	switch(action.type){
 		case INTERNSHIPS_SHOW_START:
-			return {isLoading: true, error: null, ...state};
+			return {...state, isLoading: true, error: null};
 
 		case INTERNSHIPS_SHOW_ERROR:
-			return {isLoading: false, error: action.error, ...state};
+			return {...state, isLoading: false, error: action.error};
 
 		case INTERNSHIPS_SHOW_SUCCESS:
 			return {
+				...state,
 				isLoading: false,
 				error: null,
-				internships: action.payload,
-				...state
+				internships: action.payload
 			};
 
 		case INTERNSHIPS_SHOW_CHANGE_SORT:

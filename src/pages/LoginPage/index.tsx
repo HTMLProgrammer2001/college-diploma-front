@@ -1,15 +1,27 @@
 import React from 'react';
 import {Col, Row, Container} from 'react-bootstrap';
-import {useDispatch} from 'react-redux';
-import {startSubmit} from 'redux-form';
+import {connect, ConnectedProps} from 'react-redux';
 
 import LoginForm, {ILoginFormData} from './LoginForm';
+import thunkLogin from '../../redux/login/thunks';
+import {useHistory} from 'react-router';
+import IsAuthenticated from '../../utils/HOC/IsAuthenticated';
 
+const mapDispatchToProps = (dispatch: any) => ({
+	login(vals: ILoginFormData){
+		return dispatch(thunkLogin(vals));
+	}
+});
 
-const LoginPage: React.FC<{}> = () => {
-	const dispatch = useDispatch();
-	const handler = () => {
-		dispatch(startSubmit('login'));
+const connected = connect(null, mapDispatchToProps);
+
+type ILoginPageProps = ConnectedProps<typeof connected>;
+const LoginPage: React.FC<ILoginPageProps> = ({login}) => {
+	const history = useHistory();
+	const handler = (vals: ILoginFormData) => {
+		login(vals).then(() => {
+			history.push('/profile');
+		});
 	};
 
 	return (
@@ -23,4 +35,4 @@ const LoginPage: React.FC<{}> = () => {
 	);
 };
 
-export default LoginPage;
+export default IsAuthenticated(false)(connected(LoginPage));

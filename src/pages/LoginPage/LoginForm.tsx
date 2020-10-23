@@ -1,6 +1,6 @@
 import React from 'react';
 import {reduxForm, InjectedFormProps, Field} from 'redux-form';
-import {Form, Card, Button, Spinner, Col, Alert} from 'react-bootstrap';
+import {Card, Button, Spinner, Col, Alert} from 'react-bootstrap';
 
 import InputElement from '../../common/formElements/InputElement';
 import styles from './styles.module.scss';
@@ -18,7 +18,7 @@ const passwordLength = lengthIn(8, 32);
 
 type ILoginFormProps = InjectedFormProps<ILoginFormData>;
 const LoginForm: React.FC<ILoginFormProps> = ({handleSubmit, submitting, error}) => (
-	<Form onSubmit={handleSubmit}>
+	<form onSubmit={handleSubmit}>
 		<Card>
 			<Card.Header>
 				<h4 className="text-center">Авторизация</h4>
@@ -28,7 +28,7 @@ const LoginForm: React.FC<ILoginFormProps> = ({handleSubmit, submitting, error})
 				<Col xs={12} md={8}>
 					{
 						error &&
-							<Alert variant="error">{error}</Alert>
+							<Alert variant="danger">{error}</Alert>
 					}
 
 					<Field
@@ -54,7 +54,7 @@ const LoginForm: React.FC<ILoginFormProps> = ({handleSubmit, submitting, error})
 			</Card.Body>
 
 			<Card.Footer className="d-flex justify-content-end">
-				<Button variant="success" type="submit" className="center">
+				<Button variant="success" type="submit" className="center" disabled={submitting}>
 					{
 						submitting &&
 							<Spinner animation="border" className={styles.spinner}/>
@@ -64,9 +64,9 @@ const LoginForm: React.FC<ILoginFormProps> = ({handleSubmit, submitting, error})
 				</Button>
 			</Card.Footer>
 		</Card>
-	</Form>
+	</form>
 );
 
 export default reduxForm<ILoginFormData>({
-	form: 'login'
+	form: 'loginForm'
 })(LoginForm);

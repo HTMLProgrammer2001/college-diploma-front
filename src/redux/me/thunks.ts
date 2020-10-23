@@ -6,7 +6,7 @@ import {meLoadError, meLoadStart, meLoadSuccess} from './actions';
 import userActionsApi from '../../utils/api/userActionsApi';
 
 
-export type IMeThunkAction = ThunkAction<void, RootState, unknown, IMeActionTypes>;
+export type IMeThunkAction = ThunkAction<Promise<boolean>, RootState, unknown, IMeActionTypes>;
 
 const thunkMe = (): IMeThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, IMeActionTypes>) => {
@@ -20,9 +20,12 @@ const thunkMe = (): IMeThunkAction => {
 		try{
 			const meResponse = await userActionsApi.getMe(token);
 			dispatch(meLoadSuccess(meResponse.data));
+
+			return true;
 		}
 		catch (e) {
 			dispatch(meLoadError(e.message));
+			return false;
 		}
 	};
 };

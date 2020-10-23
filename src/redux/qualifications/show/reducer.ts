@@ -36,17 +36,17 @@ const showQualificationsReducer = (state = initialState,
 								): IShowQualificationsState => {
 	switch(action.type){
 		case QUALIFICATIONS_SHOW_START:
-			return {isLoading: true, error: null, ...state};
+			return {...state, isLoading: true, error: null};
 
 		case QUALIFICATIONS_SHOW_ERROR:
-			return {isLoading: false, error: action.error, ...state};
+			return {...state, isLoading: false, error: action.error};
 
 		case QUALIFICATIONS_SHOW_SUCCESS:
 			return {
+				...state,
 				isLoading: false,
 				error: null,
-				qualifications: action.payload,
-				...state
+				qualifications: action.payload
 			};
 
 		case QUALIFICATIONS_SHOW_CHANGE_SORT:

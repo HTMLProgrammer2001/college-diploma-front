@@ -3,17 +3,14 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {Provider} from 'react-redux';
 
 import store from './redux/';
-import AdminLayout from './AdminLayout';
 
 import MenuContext, {IMenuContextData} from './utils/contexts/MenuContext';
 import NotFoundPage from './pages/NotFoundPage';
 import Loader from './common/Loader';
+import AdminRoutes from './AdminRoutes';
 
 //pages
-const HomePage = lazy(() => import('./pages/HomePage/'));
 const LoginPage = lazy(() => import('./pages/LoginPage'));
-const ProfilePage = lazy(() => import('./pages/ProfilePage'));
-const ProfileEditPage = lazy(() => import('./pages/ProfileEditPage'));
 
 const App = () => {
 	const [isMenuOpen, changeMenuOpen] = useState(false),
@@ -29,26 +26,7 @@ const App = () => {
 					<Suspense fallback={<Loader/>}>
 						<Switch>
 							<Route path="/login" exact component={LoginPage}/>
-
-							<Route path="/" render={() => (
-								<AdminLayout>
-									<Suspense fallback={<Loader/>}>
-										<Switch>
-											<Route path="/" exact component={HomePage}/>
-											<Route path="/profile" exact component={ProfilePage}/>
-
-											<Route
-												path="/profile/edit"
-												exact
-												component={ProfileEditPage}
-											/>
-
-											<Route path="/" component={NotFoundPage}/>
-										</Switch>
-									</Suspense>
-								</AdminLayout>
-							)}/>
-
+							<Route path="/" component={AdminRoutes}/>
 							<Route path="/" component={NotFoundPage}/>
 						</Switch>
 					</Suspense>

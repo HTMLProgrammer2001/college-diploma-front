@@ -27,7 +27,7 @@ const logoutReducer = (state = initialState, action: ILogoutActionTypes): ILogou
 			return {isLoading: false, error: null};
 	}
 
-	return initialState;
+	return state;
 };
 
 export default logoutReducer;

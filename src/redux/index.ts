@@ -10,10 +10,12 @@ import profile from './profile/';
 import publications from './publications/';
 import internships from './internships/';
 import qualifications from './qualifications/';
+import app from './app/reducer';
 
 
 //create reducer
 const rootReducer = combineReducers({
+	app,
 	me,
 	logout,
 	profile,

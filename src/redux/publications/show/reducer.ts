@@ -39,17 +39,17 @@ const showPublicationsReducer = (state = initialState,
 								): IShowPublicationsState => {
 	switch(action.type){
 		case PUBLICATIONS_SHOW_START:
-			return {isLoading: true, error: null, ...state};
+			return {...state, isLoading: true, error: null};
 
 		case PUBLICATIONS_SHOW_ERROR:
-			return {isLoading: false, error: action.error, ...state};
+			return {...state, isLoading: false, error: action.error};
 
 		case PUBLICATIONS_SHOW_SUCCESS:
 			return {
+				...state,
 				isLoading: false,
 				error: null,
-				publications: action.payload,
-				...state
+				publications: action.payload
 			};
 
 		case PUBLICATIONS_SHOW_CHANGE_SORT:
