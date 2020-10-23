@@ -19,7 +19,7 @@ const thunkMe = (): IMeThunkAction => {
 
 		try{
 			const meResponse = await userActionsApi.getMe(token);
-			dispatch(meLoadSuccess(meResponse.data));
+			dispatch(meLoadSuccess(meResponse.data.user));
 
 			return true;
 		}

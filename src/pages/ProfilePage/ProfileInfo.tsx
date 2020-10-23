@@ -4,6 +4,7 @@ import {Row} from 'react-bootstrap';
 
 import {RootState} from '../../redux';
 import {selectMeInfo} from '../../redux/me/selectors';
+import roleCodeToName from '../../utils/helpers/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -24,16 +25,15 @@ export const ProfileInfo: React.FC<ConnectedProps<typeof connected>> = ({me}) =>
 
 		<div>
 			<div>Имя: {me.fullName}</div>
-			<div>День рождения: {me.birthday}</div>
-			<div>Email: {me.email}</div>
-			<div>Аддресс: {me.address}</div>
-			<div>Роль: {me.role}</div>
-			<div>Отдел: {me.department}</div>
-			<div>Цикловая комиссия: {me.commission}</div>
-			<div>Категория: {me.category}</div>
-			<div>Розряд: {me.rank}</div>
-			<div>Педагогическое звание: {me.pedagogicalTitle}</div>
-			<div>Опыт: {me.experience}</div>
+			<div>День рождения: {me.birthday || 'Не установлено'}</div>
+			<div>Email: {me.email || 'Не установлено'}</div>
+			<div>Адрес: {me.address || 'Не установлено'}</div>
+			<div>Роль: {roleCodeToName(me.role)}</div>
+			<div>Отдел: {me.department?.name || 'Не установлено'}</div>
+			<div>Цикловая комиссия: {me.commission?.name || 'Не установлено'}</div>
+			<div>Розряд: {me.rank?.name || 'Не установлено'}</div>
+			<div>Педагогическое звание: {me.pedagogicalTitle || 'Не установлено'}</div>
+			<div>Опыт: {me.experience || 'Не установлено'}</div>
 		</div>
 	</Row>
 );

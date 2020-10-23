@@ -1,10 +1,25 @@
 import React from 'react';
 import {InjectedFormProps, reduxForm, Field} from 'redux-form';
+import {connect, ConnectedProps} from 'react-redux';
 
 import InputElement from '../../common/formElements/InputElement';
 import DateElement from '../../common/formElements/DateElement';
 import FileElement from '../../common/formElements/FileElement';
+import {RootState} from '../../redux';
+import {selectMeInfo} from '../../redux/me/selectors';
+import required from '../../utils/validators/required';
+import email from '../../utils/validators/email';
+import lengthIn from '../../utils/validators/lengthIn';
+import phone from '../../utils/validators/phone';
 
+
+const mapStateToProps = (state: RootState) => ({
+	user: selectMeInfo(state)
+});
+
+const connected = connect(mapStateToProps);
+
+const minMaxPassword = lengthIn(8, 32);
 
 export type IProfileEditData = {
 	email: string,
@@ -12,14 +27,13 @@ export type IProfileEditData = {
 	confirm_password: string,
 	phone: string,
 	birthday: string,
-	passport: string,
-	code: string,
 	address: string,
 	avatar: any
 };
 
-type IProfileEditFormProps = InjectedFormProps<IProfileEditData>;
-const ProfileEditForm: React.FC<IProfileEditFormProps> = ({handleSubmit}) => (
+type IOwnProps = ConnectedProps<typeof connected>;
+type IProfileEditFormProps = InjectedFormProps<IProfileEditData, IOwnProps> & IOwnProps;
+const ProfileEditForm: React.FC<IProfileEditFormProps> = ({handleSubmit, user}) => (
 	<form onSubmit={handleSubmit}>
 		<div className="d-md-flex">
 			<div className="w-100" style={{marginRight: '10px'}}>
@@ -27,7 +41,9 @@ const ProfileEditForm: React.FC<IProfileEditFormProps> = ({handleSubmit}) => (
 					type="text"
 					name="email"
 					label="Email"
+					defaultValue={user.email}
 					component={InputElement}
+					validate={[required, email]}
 				/>
 
 				<Field
@@ -35,6 +51,7 @@ const ProfileEditForm: React.FC<IProfileEditFormProps> = ({handleSubmit}) => (
 					name="password"
 					label="Пароль"
 					component={InputElement}
+					validate={[minMaxPassword]}
 				/>
 
 				<Field
@@ -42,43 +59,33 @@ const ProfileEditForm: React.FC<IProfileEditFormProps> = ({handleSubmit}) => (
 					name="confirm_password"
 					label="Повторите пароль"
 					component={InputElement}
-				/>
-
-				<Field
-					type="text"
-					name="phone"
-					label="Телефон"
-					component={InputElement}
+					validate={[minMaxPassword]}
 				/>
 			</div>
 
 			<div className="w-100" style={{marginLeft: '10px'}}>
 				<Field
-					name="birthday"
-					label="Дата рождения"
-					component={DateElement}
-					className="mb-2"
-				/>
-
-				<Field
 					type="text"
-					name="passport"
-					label="Номер паспорта"
+					name="phone"
+					label="Телефон"
+					defaultValue={user.phone}
 					component={InputElement}
-				/>
-
-				<Field
-					type="text"
-					name="code"
-					label="Идентификационный код"
-					component={InputElement}
+					validate={[phone]}
 				/>
 
 				<Field
 					type="text"
 					name="address"
-					label="Адресс"
+					label="Адрес"
+					defaultValue={user.address}
 					component={InputElement}
+				/>
+
+				<Field
+					name="birthday"
+					label="Дата рождения"
+					defaultValue={user.birthday}
+					component={DateElement}
 				/>
 			</div>
 		</div>
@@ -93,6 +100,6 @@ const ProfileEditForm: React.FC<IProfileEditFormProps> = ({handleSubmit}) => (
 	</form>
 );
 
-export default reduxForm<IProfileEditData>({
+export default connected(reduxForm<IProfileEditData, IOwnProps>({
 	form: 'editProfileForm'
-})(ProfileEditForm);
+})(ProfileEditForm));

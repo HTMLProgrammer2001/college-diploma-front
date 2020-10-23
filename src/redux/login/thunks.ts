@@ -12,8 +12,6 @@ export type ILoginThunkAction = ThunkAction<void, RootState, unknown, Action<any
 
 const thunkLogin = (vals: ILoginFormData): ILoginThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, Action<any>>) => {
-		console.log(vals);
-
 		dispatch(startSubmit('loginForm'));
 
 		try{

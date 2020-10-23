@@ -1,5 +1,6 @@
 let roles: any = {
-	'1': 'Администратор'
+	'1': 'Администратор',
+	'50': 'Пользователь'
 };
 
 const roleCodeToName = (code: number): string => {

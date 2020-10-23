@@ -19,8 +19,9 @@ type ILoginPageProps = ConnectedProps<typeof connected>;
 const LoginPage: React.FC<ILoginPageProps> = ({login}) => {
 	const history = useHistory();
 	const handler = (vals: ILoginFormData) => {
-		login(vals).then(() => {
-			history.push('/profile');
+		login(vals).then((val: boolean) => {
+			if(val)
+				history.push('/profile');
 		});
 	};
 

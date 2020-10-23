@@ -1,9 +1,11 @@
+$transitionDur: .3s;
+
 .sidebar{
     height: 100vh;
     width: 60px;
     position: relative;
 
-    transition: .3s;
+    transition: $transitionDur;
     z-index: 2;
 
     background: #222d32;
@@ -29,10 +31,12 @@
         padding: 5px;
 
         & > img{
-            max-width: 200px;
-            max-height: 200px;
+            max-width: 50px;
+            max-height: 50px;
 
             margin-right: 1rem;
+
+            transition: $transitionDur;
         }
 
         & > div{
@@ -94,7 +98,7 @@
         background: #222d32;
 
         z-index: -1;
-        transition: .3s;
+        transition: $transitionDur;
     }
 
     //active state
@@ -106,8 +110,8 @@
         color: white;
 
         & > img{
-            max-width: 50px;
-            max-height: 50px;
+            max-width: 100px;
+            max-height: 100px;
         }
 
         & > div{

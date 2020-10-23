@@ -14,7 +14,7 @@ const InputElement: React.FC<IInputElementProps> = ({onlyInValid = true, ...prop
 		<FormControl
 			type={props.type}
 			name={props.name}
-			value={props.input.value}
+			value={!props.meta.touched ? props.defaultValue : props.input.value}
 			className={props.className}
 			onChange={props.input.onChange}
 			isValid={!onlyInValid && props.meta.touched ? props.meta.valid : undefined}

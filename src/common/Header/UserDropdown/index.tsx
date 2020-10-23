@@ -1,7 +1,7 @@
 import React from 'react';
 import {Dropdown} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import cn from 'classnames';
 
 import styles from './styles.module.scss';
@@ -20,35 +20,45 @@ const connected = connect(mapStateToProps, {
 });
 
 type IUserDropdownProps = ConnectedProps<typeof connected>;
-const UserDropdown: React.FC<IUserDropdownProps> = ({user, logout}) => (
-	<Dropdown>
-		<Dropdown.Toggle className={styles.dropNo}>
-			<img
-				src={user.avatar}
-				alt="Avatar"
-				className={styles.avatar}
-			/>
+const UserDropdown: React.FC<IUserDropdownProps> = ({user, logout}) => {
+	const history = useHistory(),
+		  handler = () => {
+				logout().then((result: boolean) => {
+					if(result)
+						history.push('/login');
+				});
+		  };
 
-			<span>{user.fullName}</span>
-		</Dropdown.Toggle>
-
-		<Dropdown.Menu className={cn("bg-blue p-0", styles.dropdown)}>
-			<div className="center flex-column text-white p-2">
+	return (
+		<Dropdown>
+			<Dropdown.Toggle className={styles.dropNo}>
 				<img
 					src={user.avatar}
 					alt="Avatar"
+					className={styles.avatar}
 				/>
 
-				<div>{user.fullName}</div>
-				<div>{roleCodeToName(user.role)}</div>
-			</div>
+				<span>{user.fullName}</span>
+			</Dropdown.Toggle>
 
-			<div className={styles.buttons}>
-				<Link to="/profile" className={styles.button}>Профиль</Link>
-				<div className={styles.button} onClick={logout}>Выйти</div>
-			</div>
-		</Dropdown.Menu>
-	</Dropdown>
-);
+			<Dropdown.Menu className={cn("bg-blue p-0", styles.dropdown)}>
+				<div className="center flex-column text-white p-2">
+					<img
+						src={user.avatar}
+						alt="Avatar"
+					/>
+
+					<div>{user.fullName}</div>
+					<div>{roleCodeToName(user.role)}</div>
+				</div>
+
+				<div className={styles.buttons}>
+					<Link to="/profile" className={styles.button}>Профиль</Link>
+					<div className={styles.button} onClick={handler}>Выйти</div>
+				</div>
+			</Dropdown.Menu>
+		</Dropdown>
+	);
+};
 
 export default connected(UserDropdown);
