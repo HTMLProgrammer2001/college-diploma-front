@@ -2,6 +2,7 @@ import React from 'react';
 import {WrappedFieldProps} from 'redux-form';
 import DatePicker, {ReactDatePickerProps} from 'react-datepicker';
 import {FormGroup, FormLabel, FormControl} from 'react-bootstrap';
+import {instanceOf} from 'prop-types';
 
 
 type IDateElementProps = WrappedFieldProps &
@@ -18,7 +19,9 @@ const DateElement: React.FC<IDateElementProps> = ({meta, input, name, label, cla
 			selected={input.value}
 			className={className}
 			dateFormat="dd.MM.yyyy"
-			onChange={(date: any) => input.onChange(date, name)}
+			showMonthDropdown={true}
+			showYearDropdown={true}
+			onChange={(d: any) => input.onChange(d, name)}
 		/>
 
 		{

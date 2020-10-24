@@ -8,9 +8,9 @@ export const selectProfilePublications = (state: RootState) => (
 );
 
 export const selectProfilePublicationsPagination = (state: RootState) => ({
-	size: selectProfilePublicationsState(state).pageSize,
+	pageSize: selectProfilePublicationsState(state).pageSize,
 	curPage: selectProfilePublicationsState(state).currentPage,
-	total: selectProfilePublicationsState(state).total
+	totalItems: selectProfilePublicationsState(state).total
 });
 
 export const selectProfilePublicationsSort = (state: RootState) => (

@@ -7,8 +7,8 @@ import cn from 'classnames';
 import styles from './styles.module.scss';
 import {RootState} from '../../../redux';
 import {selectMeInfo} from '../../../redux/me/selectors';
-import roleCodeToName from '../../../utils/helpers/RoleCodeToName';
 import thunkLogout from '../../../redux/logout/thunks';
+import roleCodeToName from '../../../utils/helpers/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -45,6 +45,7 @@ const UserDropdown: React.FC<IUserDropdownProps> = ({user, logout}) => {
 				<div className="center flex-column text-white p-2">
 					<img
 						src={user.avatar}
+						className={styles.dropdown__avatar}
 						alt="Avatar"
 					/>
 

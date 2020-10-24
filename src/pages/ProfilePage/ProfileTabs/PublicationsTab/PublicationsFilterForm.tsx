@@ -6,20 +6,20 @@ import InputElement from '../../../../common/formElements/InputElement';
 import DateElement from '../../../../common/formElements/DateElement';
 
 
-type IPublicationsFilterData = {
-	title: string,
-	from: string,
-	to: string
+export type IProfilePublicationsFilterData = {
+	filterTitle: string,
+	filterFrom: string,
+	filterTo: string
 };
 
-type IPublicationsFilterProps = InjectedFormProps<IPublicationsFilterData>;
+type IPublicationsFilterProps = InjectedFormProps<IProfilePublicationsFilterData>;
 const PublicationsFilterForm: React.FC<IPublicationsFilterProps> = ({handleSubmit}) => (
 	<form onSubmit={handleSubmit} className="w-100 center flex-column my-3">
 		<Row>
 			<Field
 				component={InputElement}
 				type="text"
-				name="title"
+				name="filterTitle"
 				label="Название публикации"
 				className="w-100"
 				onlyInValid
@@ -29,21 +29,21 @@ const PublicationsFilterForm: React.FC<IPublicationsFilterProps> = ({handleSubmi
 		<Row md={12}>
 			<Field
 				component={DateElement}
-				name="from"
+				name="filterFrom"
 				label="С"
 			/>
 
 			<Field
 				component={DateElement}
-				name="to"
+				name="filterTo"
 				label="По"
 			/>
 		</Row>
 
-		<Button variant="primary" className="w-25">Поиск</Button>
+		<Button variant="primary" className="w-25" type="submit">Поиск</Button>
 	</form>
 );
 
-export default reduxForm<IPublicationsFilterData>({
+export default reduxForm<IProfilePublicationsFilterData>({
 	form: 'profilePublicationsFilter'
 })(PublicationsFilterForm)

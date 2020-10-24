@@ -17,10 +17,17 @@ const mapStateToProps = (state: RootState) => ({
 	...selectProfilePublicationsState(state)
 });
 
-const connected = connect(mapStateToProps, {
-	changeSort: profilePublicationsChangeSort,
-	load: thunkProfilePublications
+const mapDispatchToProps = (dispatch: any) => ({
+	load(page: number = 1){
+		dispatch(thunkProfilePublications(page));
+	},
+	changeSort(field: string){
+		dispatch(profilePublicationsChangeSort(field));
+		dispatch(thunkProfilePublications());
+	}
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IPublicationsTableProps = ConnectedProps<typeof connected>;
 const PublicationsTable: React.FC<IPublicationsTableProps> = (props) => {
@@ -35,19 +42,34 @@ const PublicationsTable: React.FC<IPublicationsTableProps> = (props) => {
 			<tr>
 				<th>
 					<span className="pull-left">ID</span>
-					<SortItem state={props.sort.id} change={props.changeSort} param="id"/>
+
+					<SortItem
+						state={props.sort.sortId}
+						change={props.changeSort}
+						param="sortId"
+					/>
 				</th>
 
 				<th>
 					<span className="pull-left">Название</span>
-					<SortItem state={props.sort.title} change={props.changeSort} param="title"/>
+
+					<SortItem
+						state={props.sort.sortTitle}
+						change={props.changeSort}
+						param="sortTitle"
+					/>
 				</th>
 
 				<th>Авторы</th>
 
 				<th>
 					<span className="pull-left">Дата публикации</span>
-					<SortItem state={props.sort.date} change={props.changeSort} param="date"/>
+
+					<SortItem
+						state={props.sort.sortDate}
+						change={props.changeSort}
+						param="sortDate"
+					/>
 				</th>
 
 				<th>Действия</th>

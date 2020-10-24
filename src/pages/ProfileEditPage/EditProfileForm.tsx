@@ -44,6 +44,7 @@ const ProfileEditForm: React.FC<IProfileEditFormProps> = ({handleSubmit, user}) 
 					defaultValue={user.email}
 					component={InputElement}
 					validate={[required, email]}
+					autocomplete={false}
 				/>
 
 				<Field
@@ -52,6 +53,7 @@ const ProfileEditForm: React.FC<IProfileEditFormProps> = ({handleSubmit, user}) 
 					label="Пароль"
 					component={InputElement}
 					validate={[minMaxPassword]}
+					autocomplete={false}
 				/>
 
 				<Field

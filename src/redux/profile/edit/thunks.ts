@@ -6,6 +6,7 @@ import {RootState} from '../../';
 import userActionsApi from '../../../utils/api/userActionsApi';
 import {IProfileEditData} from '../../../pages/ProfileEditPage/EditProfileForm';
 import {meLoadSuccess} from '../../me/actions';
+import prepareProfileEditData from '../../../utils/helpers/prepareEditProfileData';
 
 
 export type IMeThunkAction = ThunkAction<{}, RootState, unknown, Action<any>>;
@@ -15,7 +16,7 @@ const thunkProfileEdit = (vals: IProfileEditData): IMeThunkAction => {
 		dispatch(startSubmit('editProfileForm'));
 
 		try{
-			const resp = await userActionsApi.editProfile(vals);
+			const resp = await userActionsApi.editProfile(prepareProfileEditData(vals));
 
 			dispatch(meLoadSuccess(resp.data.newUser));
 			dispatch(stopSubmit('editProfileForm'));

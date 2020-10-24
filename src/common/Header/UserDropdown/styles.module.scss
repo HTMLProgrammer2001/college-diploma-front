@@ -45,4 +45,8 @@
 
 .dropdown{
     min-width: 300px;
+
+    &__avatar{
+        max-width: 280px;
+    }
 }

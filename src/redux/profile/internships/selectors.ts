@@ -8,9 +8,9 @@ export const selectProfileInternships = (state: RootState) => (
 );
 
 export const selectProfileInternshipsPagination = (state: RootState) => ({
-	size: selectProfileInternshipsState(state).pageSize,
+	pageSize: selectProfileInternshipsState(state).pageSize,
 	curPage: selectProfileInternshipsState(state).currentPage,
-	total: selectProfileInternshipsState(state).total
+	totalItems: selectProfileInternshipsState(state).total
 });
 
 export const selectProfileInternshipsSort = (state: RootState) => (

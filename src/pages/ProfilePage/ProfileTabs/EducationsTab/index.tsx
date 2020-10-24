@@ -31,3 +31,4 @@ const EducationsTab: React.FC<IEducationsTabProps> = ({paginator}) => (
 );
 
 export default connected(EducationsTab);
+

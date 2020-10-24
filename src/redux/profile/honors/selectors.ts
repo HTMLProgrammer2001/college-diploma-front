@@ -8,9 +8,9 @@ export const selectProfileHonors = (state: RootState) => (
 );
 
 export const selectProfileHonorsPagination = (state: RootState) => ({
-	size: selectProfileHonorsState(state).pageSize,
+	pageSize: selectProfileHonorsState(state).pageSize,
 	curPage: selectProfileHonorsState(state).currentPage,
-	total: selectProfileHonorsState(state).total
+	totalItems: selectProfileHonorsState(state).total
 });
 
 export const selectProfileHonorsSort = (state: RootState) => (

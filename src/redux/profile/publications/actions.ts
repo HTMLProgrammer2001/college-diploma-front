@@ -5,7 +5,10 @@ import {
 	PROFILE_PUBLICATIONS_SUCCESS
 } from './types';
 import {IPublication} from '../../../interfaces/models/IPublication';
+import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
 
+
+type IResponse = IGeneralPaginationResponse<IPublication>;
 
 export const profilePublicationsStart = () => <const>({
 	type: PROFILE_PUBLICATIONS_START
@@ -16,9 +19,9 @@ export const profilePublicationsError = (error: string) => <const>({
 	error
 });
 
-export const profilePublicationsSuccess = (publications: IPublication[]) => <const>({
+export const profilePublicationsSuccess = (publicationResponse: IResponse) => <const>({
 	type: PROFILE_PUBLICATIONS_SUCCESS,
-	payload: publications
+	payload: publicationResponse
 });
 
 export const profilePublicationsChangeSort = (field: string) => <const>({

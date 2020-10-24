@@ -25,8 +25,8 @@ const initialState: IProfilePublicationsState = {
 	isLoading: false,
 	error: null,
 	publications: [],
-	currentPage: 1,
-	total: 6,
+	currentPage: 0,
+	total: 0,
 	pageSize: 5,
 	sort: {}
 };
@@ -46,7 +46,10 @@ const profilePublicationsReducer = (state = initialState,
 				...state,
 				isLoading: false,
 				error: null,
-				publications: action.payload
+				publications: action.payload.data,
+				total: action.payload.meta.total,
+				currentPage: action.payload.meta.current_page,
+				pageSize: action.payload.meta.per_page
 			};
 
 		case PROFILE_PUBLICATIONS_CHANGE_SORT:

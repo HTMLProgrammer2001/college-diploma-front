@@ -8,22 +8,25 @@ import PublicationsTable from './PublicationsTable';
 import Paginator from '../../../../common/Paginator';
 import {RootState} from '../../../../redux';
 import {selectProfilePublicationsPagination} from '../../../../redux/profile/publications/selectors';
+import thunkProfilePublications from '../../../../redux/profile/publications/thunks';
 
 
 const mapStateToProps = (state: RootState) => ({
 	paginator: selectProfilePublicationsPagination(state)
 });
 
-const connected = connect(mapStateToProps);
+const connected = connect(mapStateToProps, {
+	changePage: thunkProfilePublications
+});
 
-const PublicationsTab: React.FC<ConnectedProps<typeof connected>> = ({paginator}) => (
+const PublicationsTab: React.FC<ConnectedProps<typeof connected>> = ({paginator, changePage}) => (
 	<div className="mt-5">
 		<Container>
-			<PublicationsFilterForm onSubmit={console.log}/>
+			<PublicationsFilterForm onSubmit={() => changePage(1)}/>
 			<PublicationsTable/>
 
 			<div className="d-flex my-3 justify-content-end">
-				<Paginator {...paginator} setCur={console.log}/>
+				<Paginator {...paginator} setCur={changePage}/>
 			</div>
 
 			<Link to="/publications/import">

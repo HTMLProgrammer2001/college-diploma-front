@@ -36,8 +36,8 @@ const userActionsApi = {
 		});
 	},
 
-	async editProfile(vals: IProfileEditData){
-		return await client.post<IProfileEditResponse>('/edit', vals, {
+	async editProfile(vals: IProfileEditData | FormData){
+		return await client.post<IProfileEditResponse>('/editMe', vals, {
 			headers: {
 				Authorization: `Bearer ${localStorage.getItem('token')}`
 			}

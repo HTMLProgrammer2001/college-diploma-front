@@ -8,9 +8,9 @@ export const selectProfileEducations = (state: RootState) => (
 );
 
 export const selectProfileEducationsPagination = (state: RootState) => ({
-	size: selectProfileEducationsState(state).pageSize,
+	pageSize: selectProfileEducationsState(state).pageSize,
 	curPage: selectProfileEducationsState(state).currentPage,
-	total: selectProfileEducationsState(state).total
+	totalItems: selectProfileEducationsState(state).total
 });
 
 export const selectProfileEducationsSort = (state: RootState) => (

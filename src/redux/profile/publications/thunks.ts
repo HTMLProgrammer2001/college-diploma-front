@@ -1,4 +1,5 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
+import {getFormValues} from 'redux-form';
 
 import {RootState} from '../../';
 import {IProfilePublicationsActions} from './reducer';
@@ -7,24 +8,25 @@ import {
 	profilePublicationsStart,
 	profilePublicationsSuccess
 } from './actions';
+import profileApi from '../../../utils/api/profileApi';
+import {selectProfilePublicationsPagination, selectProfilePublicationsSort} from './selectors';
 
 
 export type IProfilePublicationsThunkAction =
 	ThunkAction<void, RootState, unknown, IProfilePublicationsActions>;
 
-const thunkProfilePublications = (offset: number = 1): IProfilePublicationsThunkAction => {
-	return async (dispatch: ThunkDispatch<{}, {}, IProfilePublicationsActions>) => {
+const thunkProfilePublications = (page: number = 1): IProfilePublicationsThunkAction => {
+
+	return async (dispatch: ThunkDispatch<RootState, {}, IProfilePublicationsActions>, getState) => {
 		dispatch(profilePublicationsStart());
 
 		try{
-			await new Promise((res) => {
-				setTimeout(res, 2000);
-			});
+			const filters: (state: RootState) => any = getFormValues('profilePublicationsFilter'),
+				sort = selectProfilePublicationsSort(getState()),
+				pagination = selectProfilePublicationsPagination(getState());
 
-			dispatch(profilePublicationsSuccess([
-				{id: 1, title: 'Test', url: '', date_of_publication: '20.03.2001', description: '', publisher: 'Publisher', authors: 'Author'},
-				{id: 2, title: 'Test', url: '', date_of_publication: '20.03.2001', description: '', publisher: 'Publisher', authors: 'Author'}
-			]));
+			let resp = await profileApi.getPublications(filters(getState()), sort, page, pagination.pageSize);
+			dispatch(profilePublicationsSuccess(resp.data));
 		}
 		catch (e) {
 			dispatch(profilePublicationsError(e.message));

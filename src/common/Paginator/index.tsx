@@ -1,20 +1,22 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Pagination} from 'react-bootstrap';
 
 
 type IPaginatorProps = {
-	total: number,
+	totalItems: number,
 	curPage: number,
-	size: number,
+	size?: number,
+	pageSize: number,
 	setCur: (page: number) => void
 };
 
-const Paginator: React.FC<IPaginatorProps> = ({total, curPage, size, setCur}) => {
+const Paginator: React.FC<IPaginatorProps> = ({totalItems, curPage, setCur, pageSize, size = 5}) => {
 	let hasPrev = curPage > size,
-		hasNext = total > (Math.floor((curPage - 1) / size) + 1) * size,
+		totalPages = Math.ceil(totalItems/pageSize),
+		hasNext = totalPages > (Math.floor((curPage - 1) / size) + 1) * size,
 		curPaginator = Math.floor((curPage - 1) / size);
 
-	if (total <= 1)
+	if (totalPages <= 1)
 		return null;
 
 	return (
@@ -30,7 +32,7 @@ const Paginator: React.FC<IPaginatorProps> = ({total, curPage, size, setCur}) =>
 				new Array(size).fill('').map((val, index) => {
 					const curItemNumber = curPaginator * size + index + 1;
 
-					if(curItemNumber > total)
+					if(curItemNumber > totalPages)
 						return null;
 
 					return (

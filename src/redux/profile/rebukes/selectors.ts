@@ -8,9 +8,9 @@ export const selectProfileRebukes = (state: RootState) => (
 );
 
 export const selectProfileRebukesPagination = (state: RootState) => ({
-	size: selectProfileRebukesState(state).pageSize,
+	pageSize: selectProfileRebukesState(state).pageSize,
 	curPage: selectProfileRebukesState(state).currentPage,
-	total: selectProfileRebukesState(state).total
+	totalItems: selectProfileRebukesState(state).total
 });
 
 export const selectProfileRebukesSort = (state: RootState) => (
