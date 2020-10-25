@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 
 import {RootState} from '../../../../redux';
 import {IEducation} from '../../../../interfaces/models/IEducation';
+
 import {selectProfileEducationsState} from '../../../../redux/profile/educations/selectors';
 import {profileEducationsChangeSort} from '../../../../redux/profile/educations/actions';
 import thunkProfileEducations from '../../../../redux/profile/educations/thunks';
@@ -19,10 +20,17 @@ const mapStateToProps = (state: RootState) => ({
 	...selectProfileEducationsState(state)
 });
 
-const connected = connect(mapStateToProps, {
-	changeSort: profileEducationsChangeSort,
-	load: thunkProfileEducations
+const mapDispatchToProps = (dispatch: any) => ({
+	changeSort(field: string){
+		dispatch(profileEducationsChangeSort(field));
+		dispatch(thunkProfileEducations(1));
+	},
+	load(page = 1){
+		dispatch(thunkProfileEducations(page));
+	}
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IRebukesTableProps = ConnectedProps<typeof connected>;
 const EducationsTable: React.FC<IRebukesTableProps> = (props) => {
@@ -59,9 +67,9 @@ const EducationsTable: React.FC<IRebukesTableProps> = (props) => {
 					<span className="pull-left">Год выпуска</span>
 
 					<SortItem
-						state={findSortRule(props.sort, 'graduate_year')?.direction}
+						state={findSortRule(props.sort, 'graduateYear')?.direction}
 						change={props.changeSort}
-						param="graduate_year"
+						param="graduateYear"
 					/>
 				</th>
 

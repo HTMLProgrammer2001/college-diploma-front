@@ -5,9 +5,10 @@ import {
 	PROFILE_EDUCATIONS_START
 } from './types';
 import {InferActionTypes} from '../../';
-import * as actionsCreators from './actions';
 import {IEducation} from '../../../interfaces/models/IEducation';
 import {ISort} from '../../../interfaces/ISort';
+
+import * as actionsCreators from './actions';
 import changeSortHandler from '../../../utils/helpers/changeSortHandler';
 
 
@@ -29,7 +30,7 @@ const initialState: IProfileEducationsState = {
 	educations: [],
 	currentPage: 0,
 	total: 0,
-	pageSize: 5,
+	pageSize: 4,
 	sort: []
 };
 
@@ -48,7 +49,10 @@ const profileEducationsReducer = (state = initialState,
 				...state,
 				isLoading: false,
 				error: null,
-				educations: action.payload
+				educations: action.payload.data,
+				total: action.payload.meta.total,
+				currentPage: action.payload.meta.current_page,
+				pageSize: action.payload.meta.per_page
 			};
 
 		case PROFILE_EDUCATIONS_CHANGE_SORT:

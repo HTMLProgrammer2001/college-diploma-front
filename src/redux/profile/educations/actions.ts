@@ -5,7 +5,10 @@ import {
 	PROFILE_EDUCATIONS_SUCCESS
 } from './types';
 import {IEducation} from '../../../interfaces/models/IEducation';
+import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
 
+
+type IResponse = IGeneralPaginationResponse<IEducation>;
 
 export const profileEducationsStart = () => <const>({
 	type: PROFILE_EDUCATIONS_START
@@ -16,9 +19,9 @@ export const profileEducationsError = (error: string) => <const>({
 	error
 });
 
-export const profileEducationsSuccess = (educations: IEducation[]) => <const>({
+export const profileEducationsSuccess = (educationResponse: IResponse) => <const>({
 	type: PROFILE_EDUCATIONS_SUCCESS,
-	payload: educations
+	payload: educationResponse
 });
 
 export const profileEducationsChangeSort = (field: string) => <const>({

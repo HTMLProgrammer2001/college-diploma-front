@@ -2,14 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57a409a2-1ea6-4331-ae71-85b96f4252a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfilePublicationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfilePublicationRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Repositories/Interfaces/BaseRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Repositories/Interfaces/BaseRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Repositories/PublicationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Repositories/PublicationRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsFilterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsFilterForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/PublicationsTab/PublicationsTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/PublicationsTab/PublicationsTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile/educations/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/educations/actions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/profile/educations/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/educations/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile/publications/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/publications/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile/educations/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/educations/thunks.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/api/profileApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api/profileApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,12 +32,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/utils/api/profileApi.ts">
+        <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsTable.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+            <state relative-caret-position="-968">
+              <caret line="72" selection-start-line="72" selection-end-line="72" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/app/Repositories/EducationRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="19" column="42" lean-forward="true" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+              <folding>
+                <element signature="e#37#76#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,19 +103,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/database/migrations/2020_03_25_215109_create_publications_table.php" />
-        <option value="$PROJECT_DIR$/server/database/migrations/2020_04_05_111220_create_users_publication_table.php" />
-        <option value="$PROJECT_DIR$/server/database/factories/PublicationFactory.php" />
-        <option value="$PROJECT_DIR$/server/database/seeders/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/server/app/Models/Commission.php" />
-        <option value="$PROJECT_DIR$/server/app/Models/Department.php" />
-        <option value="$PROJECT_DIR$/server/app/Models/Rank.php" />
-        <option value="$PROJECT_DIR$/src/redux/profile/publications/actions.ts" />
-        <option value="$PROJECT_DIR$/server/app/Services/PhotoUploader.php" />
-        <option value="$PROJECT_DIR$/src/utils/api/userActionsApi.ts" />
-        <option value="$PROJECT_DIR$/src/utils/helpers/PrepareEditProfileData.ts" />
-        <option value="$PROJECT_DIR$/src/redux/profile/edit/thunks.ts" />
-        <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/src/common/Header/UserDropdown/index.tsx" />
         <option value="$PROJECT_DIR$/src/common/Header/UserDropdown/styles.module.scss" />
         <option value="$PROJECT_DIR$/server/app/Http/Resources/PublicationResource.php" />
@@ -108,16 +116,11 @@
         <option value="$PROJECT_DIR$/src/redux/profile/internships/selectors.ts" />
         <option value="$PROJECT_DIR$/src/redux/profile/qualifications/selectors.ts" />
         <option value="$PROJECT_DIR$/src/redux/profile/rebukes/selectors.ts" />
-        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/index.tsx" />
         <option value="$PROJECT_DIR$/src/redux/profile/publications/thunks.ts" />
         <option value="$PROJECT_DIR$/server/app/Http/Requests/Profile/PublicationRequest.php" />
-        <option value="$PROJECT_DIR$/server/app/Models/User.php" />
-        <option value="$PROJECT_DIR$/server/routes/api.php" />
         <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/PublicationsTab/index.tsx" />
         <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/PublicationsTab/PublicationsFilterForm.tsx" />
-        <option value="$PROJECT_DIR$/server/app/Repositories/PublicationRepository.php" />
         <option value="$PROJECT_DIR$/server/app/Repositories/BaseRepository.php" />
-        <option value="$PROJECT_DIR$/server/app/Providers/RepositoryServiceProvider.php" />
         <option value="$PROJECT_DIR$/server/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/server/config/app.php" />
         <option value="$PROJECT_DIR$/server/app/Repositories/Rules/SortRule.php" />
@@ -125,14 +128,32 @@
         <option value="$PROJECT_DIR$/src/interfaces/ISort.ts" />
         <option value="$PROJECT_DIR$/src/utils/helpers/findSortRule.ts" />
         <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/PublicationsTab/PublicationsTable.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsTable.tsx" />
         <option value="$PROJECT_DIR$/src/utils/helpers/changeSortHandler.ts" />
         <option value="$PROJECT_DIR$/src/redux/profile/publications/reducer.ts" />
-        <option value="$PROJECT_DIR$/src/redux/profile/educations/reducer.ts" />
         <option value="$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfilePublicationRequest.php" />
-        <option value="$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php" />
         <option value="$PROJECT_DIR$/src/utils/helpers/objToParams.ts" />
+        <option value="$PROJECT_DIR$/server/database/migrations/2020_04_30_152850_create_educations_table.php" />
+        <option value="$PROJECT_DIR$/server/database/factories/EducationFactory.php" />
+        <option value="$PROJECT_DIR$/server/app/Models/Education.php" />
+        <option value="$PROJECT_DIR$/server/database/seeders/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/server/app/Models/User.php" />
+        <option value="$PROJECT_DIR$/src/redux/profile/educations/actions.ts" />
         <option value="$PROJECT_DIR$/src/utils/api/profileApi.ts" />
+        <option value="$PROJECT_DIR$/src/redux/profile/educations/thunks.ts" />
+        <option value="$PROJECT_DIR$/server/routes/api.php" />
+        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/index.tsx" />
+        <option value="$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfileEducationsRequest.php" />
+        <option value="$PROJECT_DIR$/server/app/Repositories/Interfaces/BaseRepositoryInterface.php" />
+        <option value="$PROJECT_DIR$/server/app/Providers/RepositoryServiceProvider.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Resources/EducationResource.php" />
+        <option value="$PROJECT_DIR$/server/app/Repositories/PublicationRepository.php" />
+        <option value="$PROJECT_DIR$/src/AdminLayout.tsx" />
+        <option value="$PROJECT_DIR$/server/app/Http/Resources/EducationsGroupResource.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php" />
+        <option value="$PROJECT_DIR$/src/redux/profile/educations/reducer.ts" />
+        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsFilterForm.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsTable.tsx" />
+        <option value="$PROJECT_DIR$/server/app/Repositories/EducationRepository.php" />
       </list>
     </option>
   </component>
@@ -284,20 +305,20 @@
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Repositories" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -352,7 +373,7 @@
       <window_info id="npm" order="1" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.27100682" />
       <window_info id="Structure" order="3" sideWeight="0.5019531" side_tool="true" weight="0.30885693" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.18461539" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.21367522" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003785" side_tool="true" weight="0.5435898" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
@@ -398,148 +419,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/app/Models/Department.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding>
-            <element signature="e#30#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Models/Rank.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding>
-            <element signature="e#30#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/database/seeders/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/profile/publications/types.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/profile/publications/actions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="e#0#149#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Services/PhotoUploader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#34#67#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/api/userActionsApi.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="41" column="57" lean-forward="true" selection-start-line="41" selection-start-column="57" selection-end-line="41" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/helpers/prepareEditProfileData.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/profile/edit/thunks.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="29" column="6" lean-forward="true" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/Header/UserDropdown/styles.module.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/Header/UserDropdown/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/PublicationsGroupResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-33">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/PublicationResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Models/Publication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#30#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/interfaces/responses/IGeneralPaginationResponse.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/profile/publications/selectors.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/Paginator/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -585,67 +464,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Profile/PublicationRequest.php" />
-    <entry file="file://$PROJECT_DIR$/server/app/Models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="163" column="31" selection-start-line="163" selection-start-column="31" selection-end-line="163" selection-end-column="31" />
-          <folding>
-            <element signature="e#30#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="26" column="34" lean-forward="true" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
-          <folding>
-            <element signature="e#7#44#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/profile/publications/thunks.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/PublicationsTab/PublicationsFilterForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/PublicationsTab/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="24" column="51" lean-forward="true" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/app/Repositories/Rules/RuleInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -657,16 +476,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-412">
           <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Repositories/PublicationRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-922">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding>
-            <element signature="e#38#58#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -701,16 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Providers/RepositoryServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-          <folding>
-            <element signature="e#33#96#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="71">
@@ -732,52 +531,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsTable.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="116" column="28" lean-forward="true" selection-start-line="116" selection-start-column="28" selection-end-line="116" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/profile/educations/reducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
-          <folding>
-            <element signature="e#0#141#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/helpers/changeSortHandler.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret lean-forward="true" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/profile/publications/reducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="54" column="54" lean-forward="true" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#149#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/PublicationsTab/PublicationsTable.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -789,23 +548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfilePublicationRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
-          <folding>
-            <element signature="e#40#96#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/helpers/objToParams.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -813,12 +555,289 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/migrations/2020_04_30_152850_create_educations_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/factories/EducationFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="28" column="78" lean-forward="true" selection-start-line="28" selection-start-column="78" selection-end-line="28" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/seeders/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="197" lean-forward="true" selection-start-line="197" selection-end-line="197" />
+          <folding>
+            <element signature="e#30#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Models/Education.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#30#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/profile/publications/actions.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/profile/publications/reducer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="54" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/profile/educations/actions.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#0#141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/api/profileApi.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        <state relative-caret-position="24">
+          <caret line="17" column="50" lean-forward="true" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/profile/educations/thunks.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/profile/publications/thunks.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="25" column="77" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="25" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#7#44#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfilePublicationRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="29" column="6" lean-forward="true" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/PublicationsTab/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Repositories/Interfaces/PublicationRepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Repositories/Interfaces/BaseRepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Repositories/Interfaces/EducationRepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Providers/RepositoryServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#33#74#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/EducationResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Repositories/PublicationRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+          <folding>
+            <element signature="e#38#65#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AdminLayout.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/PublicationsGroupResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/EducationsGroupResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfileEducationsRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="42" column="60" lean-forward="true" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
+          <folding>
+            <element signature="e#40#95#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/profile/educations/reducer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+          <folding>
+            <element signature="e#0#141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsFilterForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="58" column="35" lean-forward="true" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/PublicationsTab/PublicationsFilterForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/PublicationsTab/PublicationsTable.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Repositories/EducationRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="19" column="42" lean-forward="true" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+          <folding>
+            <element signature="e#37#76#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsTable.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-968">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

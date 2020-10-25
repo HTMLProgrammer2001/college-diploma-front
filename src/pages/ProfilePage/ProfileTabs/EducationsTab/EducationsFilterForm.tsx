@@ -8,10 +8,10 @@ import SelectElement from '../../../../common/formElements/SelectElement';
 import positiveNumber from '../../../../utils/validators/positiveNumber';
 
 
-type IEducationsFilterData = {
-	qualification: string,
-	institution: string,
-	graduate_year: number
+export type IEducationsFilterData = {
+	filterQualification: string,
+	filterInstitution: string,
+	filterGraduateYear: number
 };
 
 type IEducationsFilterProps = InjectedFormProps<IEducationsFilterData>;
@@ -20,14 +20,14 @@ const EducationsFilterForm: React.FC<IEducationsFilterProps> = ({handleSubmit}) 
 		<Row md={12}>
 			<Field
 				component={SelectElement}
-				name="title"
+				name="filterQualification"
 				label="Квалификация"
 				onlyInvalid
 			>
-				<option selected>Все</option>
-				<option>Младший специалист</option>
-				<option>Бакалавр</option>
-				<option>Магистр</option>
+				<option selected value={-1}>Все</option>
+				<option value={0}>Младший специалист</option>
+				<option value={1}>Бакалавр</option>
+				<option value={2}>Магистр</option>
 			</Field>
 		</Row>
 
@@ -35,7 +35,7 @@ const EducationsFilterForm: React.FC<IEducationsFilterProps> = ({handleSubmit}) 
 			<Field
 				component={InputElement}
 				type="text"
-				name="institution"
+				name="filterInstitution"
 				label="Название заведения"
 				className="mr-1"
 			/>
@@ -43,7 +43,7 @@ const EducationsFilterForm: React.FC<IEducationsFilterProps> = ({handleSubmit}) 
 			<Field
 				component={InputElement}
 				type="number"
-				name="graduate_year"
+				name="filterGraduateYear"
 				label="Год выпуска"
 				defaultValue={new Date().getFullYear()}
 				className="ml-1"
@@ -51,7 +51,7 @@ const EducationsFilterForm: React.FC<IEducationsFilterProps> = ({handleSubmit}) 
 			/>
 		</Row>
 
-		<Button variant="primary" className="w-25">Поиск</Button>
+		<Button variant="primary" className="w-25" type="submit">Поиск</Button>
 	</form>
 );
 
