@@ -7,6 +7,9 @@ import {
 import {InferActionTypes} from '../../';
 import * as actionsCreators from './actions';
 import {IPublication} from '../../../interfaces/models/IPublication';
+import {ISort} from '../../../interfaces/ISort';
+import findSortRule from '../../../utils/helpers/findSortRule';
+import changeSortHandler from '../../../utils/helpers/changeSortHandler';
 
 
 export type IProfilePublicationsActions = InferActionTypes<typeof actionsCreators>;
@@ -18,7 +21,7 @@ type IProfilePublicationsState = {
 	currentPage: number,
 	total: number,
 	pageSize: number,
-	sort: {[key: string]: -1 | 1}
+	sort: ISort[]
 };
 
 const initialState: IProfilePublicationsState = {
@@ -28,7 +31,7 @@ const initialState: IProfilePublicationsState = {
 	currentPage: 0,
 	total: 0,
 	pageSize: 5,
-	sort: {}
+	sort: []
 };
 
 const profilePublicationsReducer = (state = initialState,
@@ -53,14 +56,7 @@ const profilePublicationsReducer = (state = initialState,
 			};
 
 		case PROFILE_PUBLICATIONS_CHANGE_SORT:
-			return {
-				...state,
-				sort: {
-					...state.sort,
-					[action.payload]: !state.sort[action.payload] ? 1 :
-						(state.sort[action.payload] == 1 ? -1 : undefined)
-				}
-			}
+			return {...state, sort: changeSortHandler(state.sort, action.payload)};
 	}
 
 	return state;

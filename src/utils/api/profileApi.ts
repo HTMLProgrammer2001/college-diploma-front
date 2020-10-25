@@ -2,6 +2,8 @@ import axios from 'axios';
 import {IGeneralPaginationResponse} from '../../interfaces/responses/IGeneralPaginationResponse';
 import {IPublication} from '../../interfaces/models/IPublication';
 import {IProfilePublicationsFilterData} from '../../pages/ProfilePage/ProfileTabs/PublicationsTab/PublicationsFilterForm';
+import {ISort} from '../../interfaces/ISort';
+import objToParams from '../helpers/objToParams';
 
 
 const client = axios.create({
@@ -12,15 +14,16 @@ const client = axios.create({
 });
 
 const profileApi = {
-	async getPublications(filters: IProfilePublicationsFilterData, sort: Object, page = 1, pageSize = 5){
+	async getPublications(filters: IProfilePublicationsFilterData, sort: ISort[], page = 1, pageSize = 5){
+		let sortRules = objToParams(sort, 'sort');
+
 		return await client.get<IGeneralPaginationResponse<IPublication>>('/publications', {
-			params: {...filters, ...sort, page, pageSize},
+			params: {...filters, ...sortRules, page, pageSize},
 			headers: {
 				'Authorization': `Bearer ${localStorage.getItem('token')}`
 			}
-		})
+		});
 	}
 };
 
 export default profileApi;
-

@@ -8,6 +8,8 @@ import {IPublication} from '../../../../interfaces/models/IPublication';
 import {selectProfilePublicationsState} from '../../../../redux/profile/publications/selectors';
 import {profilePublicationsChangeSort} from '../../../../redux/profile/publications/actions';
 import thunkProfilePublications from '../../../../redux/profile/publications/thunks';
+import findSortRule from '../../../../utils/helpers/findSortRule';
+
 import SortItem from '../../../../common/SortItem';
 import Loader from '../../../../common/Loader';
 import ErrorElement from '../../../../common/ErrorElement';
@@ -44,9 +46,9 @@ const PublicationsTable: React.FC<IPublicationsTableProps> = (props) => {
 					<span className="pull-left">ID</span>
 
 					<SortItem
-						state={props.sort.sortId}
+						state={findSortRule(props.sort, 'ID')?.direction}
 						change={props.changeSort}
-						param="sortId"
+						param="ID"
 					/>
 				</th>
 
@@ -54,9 +56,9 @@ const PublicationsTable: React.FC<IPublicationsTableProps> = (props) => {
 					<span className="pull-left">Название</span>
 
 					<SortItem
-						state={props.sort.sortTitle}
+						state={findSortRule(props.sort, 'title')?.direction}
 						change={props.changeSort}
-						param="sortTitle"
+						param="title"
 					/>
 				</th>
 
@@ -66,9 +68,9 @@ const PublicationsTable: React.FC<IPublicationsTableProps> = (props) => {
 					<span className="pull-left">Дата публикации</span>
 
 					<SortItem
-						state={props.sort.sortDate}
+						state={findSortRule(props.sort, 'date')?.direction}
 						change={props.changeSort}
-						param="sortDate"
+						param="date"
 					/>
 				</th>
 

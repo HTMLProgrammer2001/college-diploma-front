@@ -4,13 +4,15 @@ import {connect, ConnectedProps} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import {RootState} from '../../../../redux';
-import SortItem from '../../../../common/SortItem';
-import Loader from '../../../../common/Loader';
-import ErrorElement from '../../../../common/ErrorElement';
+import {IEducation} from '../../../../interfaces/models/IEducation';
 import {selectProfileEducationsState} from '../../../../redux/profile/educations/selectors';
 import {profileEducationsChangeSort} from '../../../../redux/profile/educations/actions';
 import thunkProfileEducations from '../../../../redux/profile/educations/thunks';
-import {IEducation} from '../../../../interfaces/models/IEducation';
+import findSortRule from '../../../../utils/helpers/findSortRule';
+
+import SortItem from '../../../../common/SortItem';
+import Loader from '../../../../common/Loader';
+import ErrorElement from '../../../../common/ErrorElement';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -35,21 +37,31 @@ const EducationsTable: React.FC<IRebukesTableProps> = (props) => {
 			<tr>
 				<th>
 					<span className="pull-left">ID</span>
-					<SortItem state={props.sort.id} change={props.changeSort} param="id"/>
+
+					<SortItem
+						state={findSortRule(props.sort, 'ID')?.direction}
+						change={props.changeSort}
+						param="ID"
+					/>
 				</th>
 
 				<th>
 					<span className="pull-left">Учебное заведение</span>
-					<SortItem state={props.sort.institution} change={props.changeSort} param="institution"/>
+
+					<SortItem
+						state={findSortRule(props.sort, 'institution')?.direction}
+						change={props.changeSort}
+						param="institution"
+					/>
 				</th>
 
 				<th>
 					<span className="pull-left">Год выпуска</span>
 
 					<SortItem
-						state={props.sort.graduate_year}
+						state={findSortRule(props.sort, 'graduate_year')?.direction}
 						change={props.changeSort}
-						param="graduate_date"
+						param="graduate_year"
 					/>
 				</th>
 
@@ -57,7 +69,7 @@ const EducationsTable: React.FC<IRebukesTableProps> = (props) => {
 					<span className="pull-left">Квалификация</span>
 
 					<SortItem
-						state={props.sort.qualification}
+						state={findSortRule(props.sort, 'qualification')?.direction}
 						change={props.changeSort}
 						param="qualification"
 					/>
