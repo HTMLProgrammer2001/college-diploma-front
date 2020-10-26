@@ -4,8 +4,12 @@ import {
 	PROFILE_REBUKES_START,
 	PROFILE_REBUKES_SUCCESS
 } from './types';
-import {IRebuke} from '../../../interfaces/models/IRebuke';
 
+import {IRebuke} from '../../../interfaces/models/IRebuke';
+import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
+
+
+type IResponse = IGeneralPaginationResponse<IRebuke>;
 
 export const profileRebukesStart = () => <const>({
 	type: PROFILE_REBUKES_START
@@ -16,9 +20,9 @@ export const profileRebukesError = (error: string) => <const>({
 	error
 });
 
-export const profileRebukesSuccess = (rebukes: IRebuke[]) => <const>({
+export const profileRebukesSuccess = (rebukesResponse: IResponse) => <const>({
 	type: PROFILE_REBUKES_SUCCESS,
-	payload: rebukes
+	payload: rebukesResponse
 });
 
 export const profileRebukesChangeSort = (field: string) => <const>({

@@ -4,23 +4,32 @@ import {connect, ConnectedProps} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import {RootState} from '../../../../redux';
+import {IRebuke} from '../../../../interfaces/models/IRebuke';
+
 import SortItem from '../../../../common/SortItem';
 import Loader from '../../../../common/Loader';
 import ErrorElement from '../../../../common/ErrorElement';
 import {selectProfileRebukesState} from '../../../../redux/profile/rebukes/selectors';
 import {profileRebukesChangeSort} from '../../../../redux/profile/rebukes/actions';
 import thunkProfileRebukes from '../../../../redux/profile/rebukes/thunks';
-import {IRebuke} from '../../../../interfaces/models/IRebuke';
+import findSortRule from '../../../../utils/helpers/findSortRule';
 
 
 const mapStateToProps = (state: RootState) => ({
 	...selectProfileRebukesState(state)
 });
 
-const connected = connect(mapStateToProps, {
-	changeSort: profileRebukesChangeSort,
-	load: thunkProfileRebukes
+const mapDispatchToProps = (dispatch: any) => ({
+	changeSort(field: string){
+		dispatch(profileRebukesChangeSort(field));
+		dispatch(thunkProfileRebukes(1));
+	},
+	load(page = 1){
+		dispatch(thunkProfileRebukes(page));
+	}
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IRebukesTableProps = ConnectedProps<typeof connected>;
 const RebukesTable: React.FC<IRebukesTableProps> = (props) => {
@@ -35,21 +44,31 @@ const RebukesTable: React.FC<IRebukesTableProps> = (props) => {
 			<tr>
 				<th>
 					<span className="pull-left">ID</span>
-					<SortItem state={props.sort.id} change={props.changeSort} param="id"/>
+
+					<SortItem
+						state={findSortRule(props.sort, 'ID')?.direction}
+						change={props.changeSort}
+						param="ID"
+					/>
 				</th>
 
 				<th>
 					<span className="pull-left">Название выговора</span>
-					<SortItem state={props.sort.title} change={props.changeSort} param="title"/>
+
+					<SortItem
+						state={findSortRule(props.sort, 'title')?.direction}
+						change={props.changeSort}
+						param="title"
+					/>
 				</th>
 
 				<th>
 					<span className="pull-left">Дата выдачи</span>
 
 					<SortItem
-						state={props.sort.presentation_date}
+						state={findSortRule(props.sort, 'datePresentation')?.direction}
 						change={props.changeSort}
-						param="presentation_date"
+						param="datePresentation"
 					/>
 				</th>
 
@@ -90,7 +109,7 @@ const RebukesTable: React.FC<IRebukesTableProps> = (props) => {
 					<tr key={rebuke.id}>
 						<th>{rebuke.id}</th>
 						<th>{rebuke.title}</th>
-						<th>{rebuke.date_presentation}</th>
+						<th>{rebuke.datePresentation}</th>
 						<th>
 							<Link to={`/rebukes/${rebuke.id}`}>
 								<i className="fa fa-eye"/>

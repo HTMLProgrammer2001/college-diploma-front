@@ -4,9 +4,13 @@ import {
 	PROFILE_REBUKES_ERROR,
 	PROFILE_REBUKES_START
 } from './types';
+
 import {InferActionTypes} from '../../';
-import * as actionsCreators from './actions';
 import {IRebuke} from '../../../interfaces/models/IRebuke';
+import {ISort} from '../../../interfaces/ISort';
+
+import * as actionsCreators from './actions';
+import changeSortHandler from '../../../utils/helpers/changeSortHandler';
 
 
 export type IProfileRebukesActions = InferActionTypes<typeof actionsCreators>;
@@ -18,7 +22,7 @@ type IProfileRebukesState = {
 	currentPage: number,
 	total: number,
 	pageSize: number,
-	sort: {[key: string]: -1 | 1}
+	sort: ISort[]
 };
 
 const initialState: IProfileRebukesState = {
@@ -28,7 +32,7 @@ const initialState: IProfileRebukesState = {
 	currentPage: 0,
 	total: 0,
 	pageSize: 5,
-	sort: {}
+	sort: []
 };
 
 const profileRebukesReducer = (state = initialState,
@@ -46,18 +50,14 @@ const profileRebukesReducer = (state = initialState,
 				...state,
 				isLoading: false,
 				error: null,
-				rebukes: action.payload
+				rebukes: action.payload.data,
+				pageSize: action.payload.meta.per_page,
+				currentPage: action.payload.meta.current_page,
+				total: action.payload.meta.total
 			};
 
 		case PROFILE_REBUKES_CHANGE_SORT:
-			return {
-				...state,
-				sort: {
-					...state.sort,
-					[action.payload]: !state.sort[action.payload] ? 1 :
-						(state.sort[action.payload] == 1 ? -1 : undefined)
-				}
-			}
+			return {...state, sort: changeSortHandler(state.sort, action.payload)}
 	}
 
 	return state;

@@ -10,6 +10,8 @@ import {IEducation} from '../../interfaces/models/IEducation';
 import {IProfileEducationsFilterData} from '../../pages/ProfilePage/ProfileTabs/EducationsTab/EducationsFilterForm';
 import {IProfileHonorsFilterData} from '../../pages/ProfilePage/ProfileTabs/HonorsTab/HonorsFilterForm';
 import {IHonor} from '../../interfaces/models/IHonor';
+import {IProfileRebukesFilterData} from '../../pages/ProfilePage/ProfileTabs/RebukesTab/RebukesFilterForm';
+import {IRebuke} from '../../interfaces/models/IRebuke';
 
 
 let client: AxiosInstance;
@@ -35,6 +37,14 @@ const profileApi = {
 		let sortRules = objToParams(sort, 'sort');
 
 		return await client.get<IGeneralPaginationResponse<IHonor>>('/honors', {
+			params: {...filters, ...sortRules, page, pageSize}
+		})
+	},
+
+	async getRebukes(filters: IProfileRebukesFilterData, sort: ISort[], page = 1, pageSize = 5){
+		let sortRules = objToParams(sort, 'sort');
+
+		return await client.get<IGeneralPaginationResponse<IRebuke>>('/rebukes', {
 			params: {...filters, ...sortRules, page, pageSize}
 		})
 	}

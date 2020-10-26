@@ -1,30 +1,32 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
+import {getFormValues} from 'redux-form';
 
 import {RootState} from '../../';
 import {IProfileRebukesActions} from './reducer';
+
 import {
 	profileRebukesError,
 	profileRebukesStart,
 	profileRebukesSuccess
 } from './actions';
+import {selectProfileRebukesPagination, selectProfileRebukesSort} from './selectors';
+import profileApi from '../../../utils/api/profileApi';
 
 
 export type IProfileRebukesThunkAction =
 	ThunkAction<void, RootState, unknown, IProfileRebukesActions>;
 
-const thunkProfileRebukes = (offset: number = 1): IProfileRebukesThunkAction => {
-	return async (dispatch: ThunkDispatch<{}, {}, IProfileRebukesActions>) => {
+const thunkProfileRebukes = (page = 1): IProfileRebukesThunkAction => {
+	return async (dispatch: ThunkDispatch<{}, {}, IProfileRebukesActions>, getState) => {
 		dispatch(profileRebukesStart());
 
 		try{
-			await new Promise((res) => {
-				setTimeout(res, 2000);
-			});
+			const filters: (state: RootState) => any = getFormValues('profileRebukesFilter'),
+				sort = selectProfileRebukesSort(getState()),
+				pagination = selectProfileRebukesPagination(getState());
 
-			dispatch(profileRebukesSuccess([
-				{id: 10, active: true, date_presentation: '20.03.2020', order: '123434', title: 'Test', user: {fullName: 'Name', id: 1}},
-				{id: 11, active: true, date_presentation: '31.12.2018', order: '234324', title: 'Title', user: {fullName: 'User', id: 1}}
-			]));
+			const resp = await profileApi.getRebukes(filters(getState()), sort, page, pagination.pageSize);
+			dispatch(profileRebukesSuccess(resp.data));
 		}
 		catch (e) {
 			dispatch(profileRebukesError(e.message));
