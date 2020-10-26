@@ -4,23 +4,32 @@ import {connect, ConnectedProps} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import {RootState} from '../../../../redux';
+import {IHonor} from '../../../../interfaces/models/IHonor';
+
 import SortItem from '../../../../common/SortItem';
 import Loader from '../../../../common/Loader';
 import ErrorElement from '../../../../common/ErrorElement';
 import {selectProfileHonorsState} from '../../../../redux/profile/honors/selectors';
 import {profileHonorsChangeSort} from '../../../../redux/profile/honors/actions';
 import thunkProfileHonors from '../../../../redux/profile/honors/thunks';
-import {IHonor} from '../../../../interfaces/models/IHonor';
+import findSortRule from '../../../../utils/helpers/findSortRule';
 
 
 const mapStateToProps = (state: RootState) => ({
 	...selectProfileHonorsState(state)
 });
 
-const connected = connect(mapStateToProps, {
-	changeSort: profileHonorsChangeSort,
-	load: thunkProfileHonors
+const mapDispatchToProps = (dispatch: any) => ({
+	changeSort(field: string){
+		dispatch(profileHonorsChangeSort(field));
+		dispatch(thunkProfileHonors(1));
+	},
+	load(page = 1){
+		dispatch(thunkProfileHonors(page));
+	}
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IInternshipsTableProps = ConnectedProps<typeof connected>;
 const HonorsTable: React.FC<IInternshipsTableProps> = (props) => {
@@ -35,26 +44,41 @@ const HonorsTable: React.FC<IInternshipsTableProps> = (props) => {
 			<tr>
 				<th>
 					<span className="pull-left">ID</span>
-					<SortItem state={props.sort.id} change={props.changeSort} param="id"/>
+
+					<SortItem
+						state={findSortRule(props.sort, 'ID')?.direction}
+						change={props.changeSort}
+						param="ID"
+					/>
 				</th>
 
 				<th>
 					<span className="pull-left">Название награды</span>
-					<SortItem state={props.sort.title} change={props.changeSort} param="title"/>
+
+					<SortItem
+						state={findSortRule(props.sort, 'title')?.direction}
+						change={props.changeSort}
+						param="title"
+					/>
 				</th>
 
 				<th>
 					<span className="pull-left">Тип награды</span>
-					<SortItem state={props.sort.type} change={props.changeSort} param="type"/>
+
+					<SortItem
+						state={findSortRule(props.sort, 'type')?.direction}
+						change={props.changeSort}
+						param="type"
+					/>
 				</th>
 
 				<th>
 					<span className="pull-left">Дата выдачи</span>
 
 					<SortItem
-						state={props.sort.presentation_date}
+						state={findSortRule(props.sort, 'date')?.direction}
 						change={props.changeSort}
-						param="presentation_date"
+						param="date"
 					/>
 				</th>
 
@@ -95,8 +119,8 @@ const HonorsTable: React.FC<IInternshipsTableProps> = (props) => {
 					<tr key={honor.id}>
 						<th>{honor.id}</th>
 						<th>{honor.title}</th>
-						<th>{honor.type}</th>
-						<th>{honor.date_presentation}</th>
+						<th>{honor.type || 'Тип не установлен'}</th>
+						<th>{honor.datePresentation || 'Дата не установлена'}</th>
 						<th>
 							<Link to={`/honors/${honor.id}`}>
 								<i className="fa fa-eye"/>

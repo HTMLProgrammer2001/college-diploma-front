@@ -4,9 +4,13 @@ import {
 	PROFILE_HONORS_ERROR,
 	PROFILE_HONORS_START
 } from './types';
+
 import {InferActionTypes} from '../../';
-import * as actionsCreators from './actions';
 import {IHonor} from '../../../interfaces/models/IHonor';
+import {ISort} from '../../../interfaces/ISort';
+
+import * as actionsCreators from './actions';
+import changeSortHandler from '../../../utils/helpers/changeSortHandler';
 
 
 export type IProfileHonorsActions = InferActionTypes<typeof actionsCreators>;
@@ -18,7 +22,7 @@ type IProfileHonorsState = {
 	currentPage: number,
 	total: number,
 	pageSize: number,
-	sort: {[key: string]: -1 | 1}
+	sort: ISort[]
 };
 
 const initialState: IProfileHonorsState = {
@@ -28,7 +32,7 @@ const initialState: IProfileHonorsState = {
 	currentPage: 0,
 	total: 0,
 	pageSize: 5,
-	sort: {}
+	sort: []
 };
 
 const profileHonorsReducer = (state = initialState,
@@ -46,18 +50,15 @@ const profileHonorsReducer = (state = initialState,
 				...state,
 				isLoading: false,
 				error: null,
-				honors: action.payload
+				honors: action.payload.data,
+				pageSize: action.payload.meta.per_page,
+				currentPage: action.payload.meta.current_page,
+				total: action.payload.meta.total
 			};
 
 		case PROFILE_HONORS_CHANGE_SORT:
-			return {
-				...state,
-				sort: {
-					...state.sort,
-					[action.payload]: !state.sort[action.payload] ? 1 :
-						(state.sort[action.payload] == 1 ? -1 : undefined)
-				}
-			}
+			const sort = changeSortHandler(state.sort, action.payload);
+			return {...state, sort};
 	}
 
 	return state;

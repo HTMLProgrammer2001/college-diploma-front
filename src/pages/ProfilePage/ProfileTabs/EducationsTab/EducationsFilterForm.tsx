@@ -8,13 +8,13 @@ import SelectElement from '../../../../common/formElements/SelectElement';
 import positiveNumber from '../../../../utils/validators/positiveNumber';
 
 
-export type IEducationsFilterData = {
+export type IProfileEducationsFilterData = {
 	filterQualification: string,
 	filterInstitution: string,
 	filterGraduateYear: number
 };
 
-type IEducationsFilterProps = InjectedFormProps<IEducationsFilterData>;
+type IEducationsFilterProps = InjectedFormProps<IProfileEducationsFilterData>;
 const EducationsFilterForm: React.FC<IEducationsFilterProps> = ({handleSubmit}) => (
 	<form onSubmit={handleSubmit} className="w-100 center flex-column my-3">
 		<Row md={12}>
@@ -55,6 +55,6 @@ const EducationsFilterForm: React.FC<IEducationsFilterProps> = ({handleSubmit}) 
 	</form>
 );
 
-export default reduxForm<IEducationsFilterData>({
+export default reduxForm<IProfileEducationsFilterData>({
 	form: 'profileEducationsFilter'
 })(EducationsFilterForm);

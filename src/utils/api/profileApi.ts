@@ -1,36 +1,58 @@
-import axios from 'axios';
+import axios, {AxiosInstance} from 'axios';
+
+import objToParams from '../helpers/objToParams';
 
 import {IGeneralPaginationResponse} from '../../interfaces/responses/IGeneralPaginationResponse';
 import {IPublication} from '../../interfaces/models/IPublication';
 import {IProfilePublicationsFilterData} from '../../pages/ProfilePage/ProfileTabs/PublicationsTab/PublicationsFilterForm';
 import {ISort} from '../../interfaces/ISort';
-import objToParams from '../helpers/objToParams';
 import {IEducation} from '../../interfaces/models/IEducation';
+import {IProfileEducationsFilterData} from '../../pages/ProfilePage/ProfileTabs/EducationsTab/EducationsFilterForm';
+import {IProfileHonorsFilterData} from '../../pages/ProfilePage/ProfileTabs/HonorsTab/HonorsFilterForm';
+import {IHonor} from '../../interfaces/models/IHonor';
 
 
-const client = axios.create({
-	baseURL: 'http://localhost:8000/api/profile',
-	headers: {'Access-Control-Allow-Origin': '*'}
-});
+let client: AxiosInstance;
 
 const profileApi = {
 	async getPublications(filters: IProfilePublicationsFilterData, sort: ISort[], page = 1, pageSize = 5){
 		let sortRules = objToParams(sort, 'sort');
 
 		return await client.get<IGeneralPaginationResponse<IPublication>>('/publications', {
-			params: {...filters, ...sortRules, page, pageSize},
-			headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}
+			params: {...filters, ...sortRules, page, pageSize}
 		});
 	},
 
-	async getEducations(filters: any, sort: ISort[], page = 1, pageSize = 5){
+	async getEducations(filters: IProfileEducationsFilterData, sort: ISort[], page = 1, pageSize = 5){
 		let sortRules = objToParams(sort, 'sort');
 
 		return await client.get<IGeneralPaginationResponse<IEducation>>('/educations', {
-			params: {...filters, ...sortRules, page, pageSize},
-			headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}
+			params: {...filters, ...sortRules, page, pageSize}
 		});
+	},
+
+	async getHonors(filters: IProfileHonorsFilterData, sort: ISort[], page = 1, pageSize = 5){
+		let sortRules = objToParams(sort, 'sort');
+
+		return await client.get<IGeneralPaginationResponse<IHonor>>('/honors', {
+			params: {...filters, ...sortRules, page, pageSize}
+		})
 	}
 };
 
-export default profileApi;
+// proxy api calls to add authorization header
+let proxyProfileApi = new Proxy<typeof profileApi>(profileApi, {
+	get(target: typeof profileApi, prop: keyof typeof profileApi) {
+		client = axios.create({
+			baseURL: 'http://localhost:8000/api/profile',
+			headers: {
+				'Access-Control-Allow-Origin': '*',
+				Authorization: `Bearer ${localStorage.getItem('token')}`
+			}
+		});
+
+		return target[prop];
+	}
+});
+
+export default proxyProfileApi;

@@ -6,19 +6,19 @@ import InputElement from '../../../../common/formElements/InputElement';
 import DateElement from '../../../../common/formElements/DateElement';
 
 
-type IHonorsFilterData = {
-	from: string,
-	to: string,
-	title: string
+export type IProfileHonorsFilterData = {
+	filterFrom: string,
+	filterTo: string,
+	filterTitle: string
 };
 
-type IHonorsFilterProps = InjectedFormProps<IHonorsFilterData>;
+type IHonorsFilterProps = InjectedFormProps<IProfileHonorsFilterData>;
 const HonorsFilterForm: React.FC<IHonorsFilterProps> = ({handleSubmit}) => (
 	<form onSubmit={handleSubmit} className="w-100 center flex-column my-3">
 		<Row md={12}>
 			<Field
 				component={InputElement}
-				name="title"
+				name="filterTitle"
 				type="text"
 				label="Название награды"
 			/>
@@ -27,21 +27,21 @@ const HonorsFilterForm: React.FC<IHonorsFilterProps> = ({handleSubmit}) => (
 		<Row md={12}>
 			<Field
 				component={DateElement}
-				name="from"
+				name="filterFrom"
 				label="С"
 			/>
 
 			<Field
 				component={DateElement}
-				name="to"
+				name="filterTo"
 				label="По"
 			/>
 		</Row>
 
-		<Button variant="primary" className="w-25">Поиск</Button>
+		<Button variant="primary" className="w-25" type="submit">Поиск</Button>
 	</form>
 );
 
-export default reduxForm<IHonorsFilterData>({
+export default reduxForm<IProfileHonorsFilterData>({
 	form: 'profileHonorsFilter'
 })(HonorsFilterForm);
