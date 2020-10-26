@@ -4,9 +4,13 @@ import {
 	PROFILE_QUALIFICATIONS_ERROR,
 	PROFILE_QUALIFICATIONS_START
 } from './types';
+
 import {InferActionTypes} from '../../';
-import * as actionsCreators from './actions';
 import {IQualification} from '../../../interfaces/models/IQualification';
+
+import * as actionsCreators from './actions';
+import changeSortHandler from '../../../utils/helpers/changeSortHandler';
+import {ISort} from '../../../interfaces/ISort';
 
 
 export type IProfileQualificationsActions = InferActionTypes<typeof actionsCreators>;
@@ -18,7 +22,7 @@ type IProfileQualificationsState = {
 	currentPage: number,
 	total: number,
 	pageSize: number,
-	sort: {[key: string]: -1 | 1},
+	sort: ISort[],
 	nextDate: string
 };
 
@@ -29,7 +33,7 @@ const initialState: IProfileQualificationsState = {
 	currentPage: 0,
 	total: 0,
 	pageSize: 5,
-	sort: {},
+	sort: [],
 	nextDate: '20.03.2025'
 };
 
@@ -48,18 +52,14 @@ const profileQualificationsReducer = (state = initialState,
 				...state,
 				isLoading: false,
 				error: null,
-				qualifications: action.payload
+				qualifications: action.payload.data,
+				pageSize: action.payload.meta.per_page,
+				currentPage: action.payload.meta.current_page,
+				total: action.payload.meta.total
 			};
 
 		case PROFILE_QUALIFICATIONS_CHANGE_SORT:
-			return {
-				...state,
-				sort: {
-					...state.sort,
-					[action.payload]: !state.sort[action.payload] ? 1 :
-						(state.sort[action.payload] == 1 ? -1 : undefined)
-				}
-			}
+			return {...state, sort: changeSortHandler(state.sort, action.payload)}
 	}
 
 	return state;

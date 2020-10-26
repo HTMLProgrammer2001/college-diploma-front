@@ -1,27 +1,32 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
+import {getFormValues} from 'redux-form';
 
 import {RootState} from '../../';
 import {IProfileQualificationsActions} from './reducer';
+
 import {
 	profileQualificationsError,
 	profileQualificationsStart,
 	profileQualificationsSuccess
 } from './actions';
+import profileApi from '../../../utils/api/profileApi';
+import {selectProfileQualificationsPagination, selectProfileQualificationsSort} from './selectors';
 
 
 export type IProfileQualificationsThunkAction =
 	ThunkAction<void, RootState, unknown, IProfileQualificationsActions>;
 
-const thunkProfileQualifications = (offset: number = 1): IProfileQualificationsThunkAction => {
-	return async (dispatch: ThunkDispatch<{}, {}, IProfileQualificationsActions>) => {
+const thunkProfileQualifications = (page: number = 1): IProfileQualificationsThunkAction => {
+	return async (dispatch: ThunkDispatch<{}, {}, IProfileQualificationsActions>, getState) => {
 		dispatch(profileQualificationsStart());
 
 		try{
-			await new Promise((res) => {
-				setTimeout(res, 2000);
-			});
+			const filters: (state: RootState) => any = getFormValues('profileQualificationsFilter'),
+				sort = selectProfileQualificationsSort(getState()),
+				pagination = selectProfileQualificationsPagination(getState());
 
-			dispatch(profileQualificationsSuccess([{id: 1, name: 'Test', date: '20.10.2020', user: {fullName: 'User', id: 1}}]));
+			let resp = await profileApi.getQualifications(filters(getState()), sort, page, pagination.pageSize);
+			dispatch(profileQualificationsSuccess(resp.data));
 		}
 		catch (e) {
 			dispatch(profileQualificationsError(e.message));

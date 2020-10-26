@@ -6,19 +6,19 @@ import DateElement from '../../../../common/formElements/DateElement';
 import SelectElement from '../../../../common/formElements/SelectElement';
 
 
-export type IQualificationsFilterData = {
-	category: number,
-	from: string,
-	to: string
+export type IProfileQualificationsFilterData = {
+	filterCategory: number,
+	filterFrom: string,
+	filterTo: string
 };
 
-type IQualificationsFilterProps = InjectedFormProps<IQualificationsFilterData>;
+type IQualificationsFilterProps = InjectedFormProps<IProfileQualificationsFilterData>;
 const QualificationsFilterForm: React.FC<IQualificationsFilterProps> = ({handleSubmit}) => (
 	<form onSubmit={handleSubmit} className="w-100 center flex-column my-3">
 		<Row md={12}>
 			<Field
 				component={SelectElement}
-				name="category"
+				name="filterCategory"
 				label="Категория"
 			>
 				<option value={1}>Teach cat 1</option>
@@ -29,21 +29,21 @@ const QualificationsFilterForm: React.FC<IQualificationsFilterProps> = ({handleS
 		<Row md={12}>
 			<Field
 				component={DateElement}
-				name="from"
+				name="filterFrom"
 				label="С"
 			/>
 
 			<Field
 				component={DateElement}
-				name="to"
+				name="filterTo"
 				label="По"
 			/>
 		</Row>
 
-		<Button variant="primary" className="w-25">Поиск</Button>
+		<Button variant="primary" className="w-25" type="submit">Поиск</Button>
 	</form>
 );
 
-export default reduxForm<IQualificationsFilterData>({
+export default reduxForm<IProfileQualificationsFilterData>({
 	form: 'profileQualificationsFilter'
 })(QualificationsFilterForm);

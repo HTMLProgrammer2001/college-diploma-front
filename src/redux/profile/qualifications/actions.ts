@@ -5,7 +5,10 @@ import {
 	PROFILE_QUALIFICATIONS_SUCCESS
 } from './types';
 import {IQualification} from '../../../interfaces/models/IQualification';
+import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
 
+
+type IResponse = IGeneralPaginationResponse<IQualification>;
 
 export const profileQualificationsStart = () => <const>({
 	type: PROFILE_QUALIFICATIONS_START
@@ -16,9 +19,9 @@ export const profileQualificationsError = (error: string) => <const>({
 	error
 });
 
-export const profileQualificationsSuccess = (qualifications: IQualification[]) => <const>({
+export const profileQualificationsSuccess = (qualificationsResponse: IResponse) => <const>({
 	type: PROFILE_QUALIFICATIONS_SUCCESS,
-	payload: qualifications
+	payload: qualificationsResponse
 });
 
 export const profileQualificationsChangeSort = (field: string) => <const>({

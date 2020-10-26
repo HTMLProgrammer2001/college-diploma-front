@@ -3,16 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="57a409a2-1ea6-4331-ae71-85b96f4252a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/models/IRebuke.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/models/IRebuke.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/RebukesTab/RebukesFilterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/RebukesTab/RebukesFilterForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/RebukesTab/RebukesTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/RebukesTab/RebukesTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/RebukesTab/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/RebukesTab/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile/rebukes/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/rebukes/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile/rebukes/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/rebukes/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile/rebukes/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/rebukes/thunks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/QualificationsTab/QualificationsFilterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/QualificationsTab/QualificationsFilterForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/QualificationsTab/QualificationsTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/QualificationsTab/QualificationsTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/QualificationsTab/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/QualificationsTab/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile/qualifications/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/qualifications/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile/qualifications/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/qualifications/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile/qualifications/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/qualifications/thunks.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/api/profileApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api/profileApi.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,12 +27,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/RebukesTab/RebukesFilterForm.tsx">
+        <entry file="file://$PROJECT_DIR$/server/app/Repositories/QualificationRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="42" column="2" lean-forward="true" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
+            <state relative-caret-position="334">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#38#67#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,25 +81,11 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/server" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/database/migrations/2020_04_30_152850_create_educations_table.php" />
-        <option value="$PROJECT_DIR$/server/database/factories/EducationFactory.php" />
-        <option value="$PROJECT_DIR$/server/app/Models/Education.php" />
-        <option value="$PROJECT_DIR$/server/app/Models/User.php" />
-        <option value="$PROJECT_DIR$/src/redux/profile/educations/actions.ts" />
-        <option value="$PROJECT_DIR$/src/redux/profile/educations/thunks.ts" />
-        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/index.tsx" />
-        <option value="$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfileEducationsRequest.php" />
-        <option value="$PROJECT_DIR$/server/app/Http/Resources/EducationResource.php" />
-        <option value="$PROJECT_DIR$/src/AdminLayout.tsx" />
-        <option value="$PROJECT_DIR$/server/app/Http/Resources/EducationsGroupResource.php" />
-        <option value="$PROJECT_DIR$/src/redux/profile/educations/reducer.ts" />
-        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsTable.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsFilterForm.tsx" />
         <option value="$PROJECT_DIR$/src/redux/profile/honors/actions.ts" />
         <option value="$PROJECT_DIR$/src/redux/profile/honors/thunks.ts" />
         <option value="$PROJECT_DIR$/server/database/migrations/2020_04_31_212900_create_honors_table.php" />
@@ -119,24 +105,38 @@
         <option value="$PROJECT_DIR$/server/app/Repositories/HonorRepository.php" />
         <option value="$PROJECT_DIR$/server/app/Repositories/PublicationRepository.php" />
         <option value="$PROJECT_DIR$/server/database/migrations/2020_05_1_213543_create_rebukes_table.php" />
-        <option value="$PROJECT_DIR$/server/app/Providers/RepositoryServiceProvider.php" />
         <option value="$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfileRebukeRequest.php" />
-        <option value="$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php" />
         <option value="$PROJECT_DIR$/server/app/Http/Resources/RebukesGroupResource.php" />
         <option value="$PROJECT_DIR$/server/app/Http/Resources/RebukeResource.php" />
         <option value="$PROJECT_DIR$/server/database/factories/RebukeFactory.php" />
         <option value="$PROJECT_DIR$/server/app/Models/Rebuke.php" />
-        <option value="$PROJECT_DIR$/server/database/seeders/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/server/routes/api.php" />
         <option value="$PROJECT_DIR$/src/redux/profile/rebukes/actions.ts" />
         <option value="$PROJECT_DIR$/src/redux/profile/rebukes/reducer.ts" />
-        <option value="$PROJECT_DIR$/src/utils/api/profileApi.ts" />
         <option value="$PROJECT_DIR$/src/redux/profile/rebukes/thunks.ts" />
         <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/RebukesTab/index.tsx" />
         <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/RebukesTab/RebukesTable.tsx" />
         <option value="$PROJECT_DIR$/src/interfaces/models/IRebuke.ts" />
         <option value="$PROJECT_DIR$/server/app/Repositories/RebukeRepository.php" />
         <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/RebukesTab/RebukesFilterForm.tsx" />
+        <option value="$PROJECT_DIR$/server/database/migrations/2020_05_2_203907_create_qualifications_table.php" />
+        <option value="$PROJECT_DIR$/server/app/Models/User.php" />
+        <option value="$PROJECT_DIR$/server/app/Providers/RepositoryServiceProvider.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Resources/QualificationsGroupResource.php" />
+        <option value="$PROJECT_DIR$/server/routes/api.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Resources/QualificationResource.php" />
+        <option value="$PROJECT_DIR$/src/utils/api/profileApi.ts" />
+        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/QualificationsTab/index.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/QualificationsTab/QualificationsTable.tsx" />
+        <option value="$PROJECT_DIR$/src/redux/profile/qualifications/actions.ts" />
+        <option value="$PROJECT_DIR$/src/redux/profile/qualifications/reducer.ts" />
+        <option value="$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php" />
+        <option value="$PROJECT_DIR$/server/database/factories/QualificationFactory.php" />
+        <option value="$PROJECT_DIR$/server/database/seeders/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/server/app/Models/Qualification.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfileQualificationRequest.php" />
+        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/QualificationsTab/QualificationsFilterForm.tsx" />
+        <option value="$PROJECT_DIR$/src/redux/profile/qualifications/thunks.ts" />
+        <option value="$PROJECT_DIR$/server/app/Repositories/QualificationRepository.php" />
       </list>
     </option>
   </component>
@@ -287,37 +287,46 @@
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="redux" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="ProfilePage" type="462c0819:PsiDirectoryNode" />
+              <item name="redux" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="ProfilePage" type="462c0819:PsiDirectoryNode" />
-              <item name="ProfileTabs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="ProfilePage" type="462c0819:PsiDirectoryNode" />
-              <item name="ProfileTabs" type="462c0819:PsiDirectoryNode" />
-              <item name="RebukesTab" type="462c0819:PsiDirectoryNode" />
+              <item name="redux" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
+              <item name="qualifications" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -371,9 +380,9 @@
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.27554882" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.2316427" />
       <window_info id="Structure" order="3" sideWeight="0.5019531" side_tool="true" weight="0.30885693" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.13333334" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.24273504" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003785" side_tool="true" weight="0.5435898" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
@@ -419,172 +428,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AdminLayout.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/PublicationsGroupResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/EducationsGroupResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfileEducationsRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/profile/educations/reducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="e#0#141#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/PublicationsTab/PublicationsFilterForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/PublicationsTab/PublicationsTable.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsTable.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1027">
-          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/profile/educations/thunks.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="25" column="75" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="25" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsFilterForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/profile/honors/actions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="e#0#125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/database/migrations/2020_04_31_212900_create_honors_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#7#52#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfilePublicationRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="30" column="10" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="30" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfileHonorsRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/HonorsGroupResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/HonorResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-87">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Repositories/Interfaces/HonorRepositoryInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/profile/honors/reducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1608">
-          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
-          <folding>
-            <element signature="e#0#125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/app/Models/Honor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -690,16 +533,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Providers/RepositoryServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
-          <folding>
-            <element signature="e#33#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfileRebukeRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -731,27 +564,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/database/seeders/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/database/factories/RebukeFactory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
           <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#7#44#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -795,16 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/api/profileApi.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/interfaces/models/IRebuke.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -832,16 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="79" column="1" lean-forward="true" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
-          <folding>
-            <element signature="e#40#95#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/app/Repositories/RebukeRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -859,12 +655,222 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="45" column="4" lean-forward="true" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/RebukesTab/RebukesFilterForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="42" column="2" lean-forward="true" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
+        <state relative-caret-position="227">
+          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/migrations/2020_05_2_203907_create_qualifications_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="197" lean-forward="true" selection-start-line="197" selection-end-line="197" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Repositories/Interfaces/QualificationRepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Providers/RepositoryServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#33#74#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/QualificationsGroupResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#7#44#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/QualificationResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/QualificationsTab/QualificationsTable.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="107" column="77" lean-forward="true" selection-start-line="107" selection-start-column="77" selection-end-line="107" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/profile/qualifications/actions.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#0#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/profile/qualifications/reducer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/profile/publications/thunks.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="28" column="60" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="28" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/HomePage/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AdminRoutes.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/api/profileApi.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="85" column="64" lean-forward="true" selection-start-line="85" selection-start-column="64" selection-end-line="85" selection-end-column="64" />
+          <folding>
+            <element signature="e#40#95#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/factories/QualificationFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#38#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Models/Qualification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/seeders/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfileQualificationRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/profile/qualifications/thunks.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/QualificationsTab/QualificationsFilterForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="47" column="38" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/QualificationsTab/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Repositories/QualificationRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#38#67#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -2,26 +2,34 @@ import React, {useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {Link} from 'react-router-dom';
-import cn from 'classnames';
 
 import {RootState} from '../../../../redux';
 import {IQualification} from '../../../../interfaces/models/IQualification';
+
 import {selectProfileQualificationsState} from '../../../../redux/profile/qualifications/selectors';
 import {profileQualificationsChangeSort} from '../../../../redux/profile/qualifications/actions';
 import thunkProfileQualifications from '../../../../redux/profile/qualifications/thunks';
 import SortItem from '../../../../common/SortItem';
 import Loader from '../../../../common/Loader';
 import ErrorElement from '../../../../common/ErrorElement';
+import findSortRule from '../../../../utils/helpers/findSortRule';
 
 
 const mapStateToProps = (state: RootState) => ({
 	...selectProfileQualificationsState(state)
 });
 
-const connected = connect(mapStateToProps, {
-	changeSort: profileQualificationsChangeSort,
-	load: thunkProfileQualifications
+const mapDispatchToProps = (dispatch: any) => ({
+	changeSort(field: string){
+		dispatch(profileQualificationsChangeSort(field));
+		dispatch(thunkProfileQualifications(1));
+	},
+	load(page = 1){
+		dispatch(thunkProfileQualifications(page));
+	}
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IQualificationsTableProps = ConnectedProps<typeof connected>;
 const QualificationsTable: React.FC<IQualificationsTableProps> = (props) => {
@@ -36,13 +44,19 @@ const QualificationsTable: React.FC<IQualificationsTableProps> = (props) => {
 			<tr>
 				<th>
 					<span className="pull-left">ID</span>
-					<SortItem state={props.sort.id} change={props.changeSort} param="id"/>
+
+					<SortItem
+						state={findSortRule(props.sort, 'ID')?.direction}
+						change={props.changeSort}
+						param="ID"
+					/>
 				</th>
 
 				<th>
 					<span className="pull-left">Категория</span>
+
 					<SortItem
-						state={props.sort.category}
+						state={findSortRule(props.sort, 'category')?.direction}
 						change={props.changeSort}
 						param="category"
 					/>
@@ -50,7 +64,12 @@ const QualificationsTable: React.FC<IQualificationsTableProps> = (props) => {
 
 				<th>
 					<span className="pull-left">Дата</span>
-					<SortItem state={props.sort.date} change={props.changeSort} param="date"/>
+
+					<SortItem
+						state={findSortRule(props.sort, 'date')?.direction}
+						change={props.changeSort}
+						param="date"
+					/>
 				</th>
 
 				<th>Действия</th>
