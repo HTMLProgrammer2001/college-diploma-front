@@ -5,12 +5,12 @@ import {Col} from 'react-bootstrap';
 import InputElement from '../../../common/formElements/InputElement';
 
 
-export type IDepartmentsEditData = {
+export type IDepartmentsAddData = {
 	name: string
 };
 
-type IDepartmentsEditFormProps = InjectedFormProps<IDepartmentsEditData>;
-const DepartmentsEditForm: React.FC<IDepartmentsEditFormProps> = ({handleSubmit}) => (
+type IDepartmentsAddFormProps = InjectedFormProps<IDepartmentsAddData>;
+const DepartmentsAddForm: React.FC<IDepartmentsAddFormProps> = ({handleSubmit}) => (
 	<form onSubmit={handleSubmit}>
 		<Col xs={4}>
 			<Field
@@ -24,6 +24,6 @@ const DepartmentsEditForm: React.FC<IDepartmentsEditFormProps> = ({handleSubmit}
 	</form>
 );
 
-export default reduxForm<IDepartmentsEditData>({
-	form: 'departmentsEditForm'
-})(DepartmentsEditForm);
+export default reduxForm<IDepartmentsAddData>({
+	form: 'departmentsAddForm'
+})(DepartmentsAddForm);
