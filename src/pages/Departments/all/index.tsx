@@ -1,7 +1,11 @@
 import React from 'react';
-import {Card, Row} from 'react-bootstrap';
+import {Button, Card, Row} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 import BackButton from '../../../common/BackButton';
+import DepartmentsFilterForm from './DepartmentsFilterForm';
+import DepartmentsTable from './DepartmentsTable';
+import Paginator from '../../../common/Paginator';
 
 
 const AllDepartmentsPage: React.FC<{}> = () => (
@@ -10,7 +14,19 @@ const AllDepartmentsPage: React.FC<{}> = () => (
 
 		<Card className="mr-5">
 			<Card.Body>
-				<div>Card body</div>
+				<Row className="justify-content-between px-2 mb-3">
+					<Link to="/departments/add">
+						<Button variant="success">Добавить</Button>
+					</Link>
+
+					<DepartmentsFilterForm onSubmit={console.log}/>
+				</Row>
+
+				<DepartmentsTable/>
+
+				<div className="d-flex my-3 justify-content-end">
+					<Paginator totalItems={10} curPage={1} pageSize={5} setCur={console.log}/>
+				</div>
 			</Card.Body>
 
 			<Card.Footer>
