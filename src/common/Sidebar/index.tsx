@@ -55,7 +55,7 @@ const Sidebar: React.FC<ISidebarProps> = ({user}) => {
 
 				<li className={styles.menu__item}>
 					<i className="fa fa-user"/>
-					<Link to="/publications">Публикации</Link>
+					<Link to="/departments">Отделения</Link>
 				</li>
 			</ul>
 		</aside>

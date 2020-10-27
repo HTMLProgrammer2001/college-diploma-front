@@ -14,6 +14,8 @@ import {IProfileRebukesFilterData} from '../../pages/ProfilePage/ProfileTabs/Reb
 import {IRebuke} from '../../interfaces/models/IRebuke';
 import {IQualification} from '../../interfaces/models/IQualification';
 import {IProfileQualificationsFilterData} from '../../pages/ProfilePage/ProfileTabs/QualificationsTab/QualificationsFilterForm';
+import {IProfileInternshipsFilterData} from '../../pages/ProfilePage/ProfileTabs/InternshipsTab/InternshipsFilterForm';
+import {IInternship} from '../../interfaces/models/IInternship';
 
 
 let client: AxiosInstance;
@@ -55,6 +57,14 @@ const profileApi = {
 		let sortRules = objToParams(sort, 'sort');
 
 		return await client.get<IGeneralPaginationResponse<IQualification>>('/qualifications', {
+			params: {...filters, ...sortRules, page, pageSize}
+		})
+	},
+
+	async getInternships(filters: IProfileInternshipsFilterData, sort: ISort[], page = 1, pageSize = 5){
+		let sortRules = objToParams(sort, 'sort');
+
+		return await client.get<IGeneralPaginationResponse<IInternship>>('/internships', {
 			params: {...filters, ...sortRules, page, pageSize}
 		})
 	}

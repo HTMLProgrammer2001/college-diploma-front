@@ -9,22 +9,22 @@ import SelectElement from '../../../../common/formElements/SelectElement';
 import positiveNumber from '../../../../utils/validators/positiveNumber';
 
 
-type IInternshipsFilterData = {
-	from: string,
-	to: string,
-	moreHours: number,
-	lessHours: number,
-	theme: string,
-	category: number
+export type IProfileInternshipsFilterData = {
+	filterFrom: string,
+	filterTo: string,
+	filterMoreHours: number,
+	filterLessHours: number,
+	filterTheme: string,
+	filterCategory: number
 };
 
-type IInternshipsFilterProps = InjectedFormProps<IInternshipsFilterData>;
+type IInternshipsFilterProps = InjectedFormProps<IProfileInternshipsFilterData>;
 const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit}) => (
 	<form onSubmit={handleSubmit} className="w-100 center flex-column my-3">
 		<Row md={12}>
 			<Field
 				component={SelectElement}
-				name="category"
+				name="filterCategory"
 				label="Категория"
 				type="text"
 				className="mr-1"
@@ -37,7 +37,7 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit}
 
 			<Field
 				component={InputElement}
-				name="theme"
+				name="filterTheme"
 				label="Тема"
 				type="text"
 				className="ml-1"
@@ -47,13 +47,13 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit}
 		<Row md={12}>
 			<Field
 				component={DateElement}
-				name="from"
+				name="filterFrom"
 				label="С"
 			/>
 
 			<Field
 				component={DateElement}
-				name="to"
+				name="filterTo"
 				label="По"
 			/>
 		</Row>
@@ -61,7 +61,7 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit}
 		<Row md={12}>
 			<Field
 				component={InputElement}
-				name="moreHours"
+				name="filterMoreHours"
 				type="number"
 				min={0}
 				label="Количество часов больше"
@@ -71,7 +71,7 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit}
 
 			<Field
 				component={InputElement}
-				name="lessHours"
+				name="filterLessHours"
 				type="number"
 				min={0}
 				label="Количество часов меньше"
@@ -80,16 +80,12 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit}
 			/>
 		</Row>
 
-		<Button
-			variant="primary"
-			className="w-25"
-			type="submit"
-		>
+		<Button variant="primary" className="w-25" type="submit">
 			Поиск
 		</Button>
 	</form>
 );
 
-export default reduxForm<IInternshipsFilterData>({
+export default reduxForm<IProfileInternshipsFilterData>({
 	form: 'profileInternshipsFilter'
 })(InternshipsFilterForm);

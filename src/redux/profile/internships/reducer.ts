@@ -4,9 +4,12 @@ import {
 	PROFILE_INTERNSHIPS_ERROR,
 	PROFILE_INTERNSHIPS_START
 } from './types';
-import {InferActionTypes} from '../../';
 import * as actionsCreators from './actions';
+import changeSortHandler from '../../../utils/helpers/changeSortHandler';
+
 import {IInternship} from '../../../interfaces/models/IInternship';
+import {InferActionTypes} from '../../';
+import {ISort} from '../../../interfaces/ISort';
 
 
 export type IProfileInternshipsActions = InferActionTypes<typeof actionsCreators>;
@@ -18,7 +21,7 @@ type IProfileInternshipsState = {
 	currentPage: number,
 	total: number,
 	pageSize: number,
-	sort: {[key: string]: -1 | 1},
+	sort: ISort[],
 	hours: number
 };
 
@@ -29,7 +32,7 @@ const initialState: IProfileInternshipsState = {
 	currentPage: 0,
 	total: 0,
 	pageSize: 5,
-	sort: {},
+	sort: [],
 	hours: 30
 };
 
@@ -48,18 +51,14 @@ const profileInternshipsReducer = (state = initialState,
 				...state,
 				isLoading: false,
 				error: null,
-				internships: action.payload
+				internships: action.payload.data,
+				pageSize: action.payload.meta.per_page,
+				total: action.payload.meta.total,
+				currentPage: action.payload.meta.current_page
 			};
 
 		case PROFILE_INTERNSHIPS_CHANGE_SORT:
-			return {
-				...state,
-				sort: {
-					...state.sort,
-					[action.payload]: !state.sort[action.payload] ? 1 :
-						(state.sort[action.payload] == 1 ? -1 : undefined)
-				}
-			}
+			return {...state, sort: changeSortHandler(state.sort, action.payload)};
 	}
 
 	return state;

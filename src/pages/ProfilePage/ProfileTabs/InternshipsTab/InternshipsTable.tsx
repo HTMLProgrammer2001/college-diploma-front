@@ -6,21 +6,29 @@ import {Link} from 'react-router-dom';
 import {RootState} from '../../../../redux';
 import {IInternship} from '../../../../interfaces/models/IInternship';
 import {selectProfileInternshipsState} from '../../../../redux/profile/internships/selectors';
-import {internshipsShowChangeSort} from '../../../../redux/internships/show/actions';
 import SortItem from '../../../../common/SortItem';
 import Loader from '../../../../common/Loader';
 import ErrorElement from '../../../../common/ErrorElement';
 import thunkProfileInternships from '../../../../redux/profile/internships/thunks';
+import findSortRule from '../../../../utils/helpers/findSortRule';
+import {profileInternshipsChangeSort} from '../../../../redux/profile/internships/actions';
 
 
 const mapStateToProps = (state: RootState) => ({
 	...selectProfileInternshipsState(state)
 });
 
-const connected = connect(mapStateToProps, {
-	changeSort: internshipsShowChangeSort,
-	load: thunkProfileInternships
+const mapDispatchToProps = (dispatch: any) => ({
+	changeSort(field: string){
+		dispatch(profileInternshipsChangeSort(field));
+		dispatch(thunkProfileInternships(1));
+	},
+	load(page = 1){
+		dispatch(thunkProfileInternships(page));
+	}
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IInternshipsTableProps = ConnectedProps<typeof connected>;
 const InternshipsTable: React.FC<IInternshipsTableProps> = (props) => {
@@ -35,27 +43,52 @@ const InternshipsTable: React.FC<IInternshipsTableProps> = (props) => {
 			<tr>
 				<th>
 					<span className="pull-left">ID</span>
-					<SortItem state={props.sort.id} change={props.changeSort} param="id"/>
+
+					<SortItem
+						state={findSortRule(props.sort, 'ID')?.direction}
+						change={props.changeSort}
+						param="ID"
+					/>
 				</th>
 
 				<th>
 					<span className="pull-left">Категория</span>
-					<SortItem state={props.sort.category} change={props.changeSort} param="category"/>
+
+					<SortItem
+						state={findSortRule(props.sort, 'category')?.direction}
+						change={props.changeSort}
+						param="category"
+					/>
 				</th>
 
 				<th>
 					<span className="pull-left">Тема</span>
-					<SortItem state={props.sort.theme} change={props.changeSort} param="theme"/>
+
+					<SortItem
+						state={findSortRule(props.sort, 'theme')?.direction}
+						change={props.changeSort}
+						param="theme"
+					/>
 				</th>
 
 				<th>
 					<span className="pull-left">Количество часов</span>
-					<SortItem state={props.sort.hours} change={props.changeSort} param="hours"/>
+
+					<SortItem
+						state={findSortRule(props.sort, 'hours')?.direction}
+						change={props.changeSort}
+						param="hours"
+					/>
 				</th>
 
 				<th>
 					<span className="pull-left">Дата окончания</span>
-					<SortItem state={props.sort.end_date} change={props.changeSort} param="end_date"/>
+
+					<SortItem
+						state={findSortRule(props.sort, 'to')?.direction}
+						change={props.changeSort}
+						param="to"
+					/>
 				</th>
 
 				<th>Действия</th>
@@ -93,8 +126,8 @@ const InternshipsTable: React.FC<IInternshipsTableProps> = (props) => {
 				!props.isLoading && !props.error &&
 				props.internships.map((internship: IInternship) => (
 					<tr key={internship.id}>
-						<th>{internship.user.fullName}</th>
-						<th>{internship.category.name}</th>
+						<th>{internship.id}</th>
+						<th>{internship.category?.name}</th>
 						<th>{internship.title}</th>
 						<th>{internship.hours}</th>
 						<th>{internship.to}</th>
