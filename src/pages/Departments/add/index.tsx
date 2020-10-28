@@ -1,27 +1,49 @@
 import React from 'react';
-import {Button, Card, Row} from 'react-bootstrap';
+import {Button, Card, Row, Spinner} from 'react-bootstrap';
+import {ConnectedProps, connect} from 'react-redux';
+import {submit, isSubmitting} from 'redux-form';
 
+import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
 import AddDepartmentForm from './AddDepartmentForm';
+import thunkAddDepartment from '../../../redux/departments/add/thunks';
 
 
-const AddDepartmentPage: React.FC<{}> = () => (
+const mapStateToProps = (state: RootState) => ({
+	submitting: isSubmitting('departmentsAddForm')(state)
+});
+
+const connected = connect(mapStateToProps, {
+	add: thunkAddDepartment,
+	send: submit
+});
+
+type IAddDepartmentPageProps = ConnectedProps<typeof connected>;
+const AddDepartmentPage: React.FC<IAddDepartmentPageProps> = ({add, send, submitting}) => (
 	<>
 		<div className="title">Добавить отделение</div>
 
 		<Card className="mr-5">
 			<Card.Body>
-				<AddDepartmentForm onSubmit={console.log}/>
+				<AddDepartmentForm onSubmit={add}/>
 			</Card.Body>
 
 			<Card.Footer>
 				<Row className="justify-content-between p-2">
 					<BackButton/>
-					<Button variant="success">Создать</Button>
+
+					<Button
+						variant="success"
+						onClick={() => send('departmentsAddForm')}
+						disabled={submitting}
+					>
+						{submitting && <Spinner size="sm" animation="border"/>}
+						Создать
+					</Button>
 				</Row>
 			</Card.Footer>
 		</Card>
 	</>
 );
 
-export default AddDepartmentPage;
+export default connected(AddDepartmentPage);

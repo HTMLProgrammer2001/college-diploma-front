@@ -1,14 +1,26 @@
 import React from 'react';
 import {Button, Card, Row} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import {connect, ConnectedProps} from 'react-redux';
+
+import {RootState} from '../../../redux';
 
 import BackButton from '../../../common/BackButton';
 import DepartmentsFilterForm from './DepartmentsFilterForm';
 import DepartmentsTable from './DepartmentsTable';
 import Paginator from '../../../common/Paginator';
+import thunkAllDepartments from '../../../redux/departments/all/thunks';
+import {selectAllDepartmentsPagination} from '../../../redux/departments/all/selectors';
 
 
-const AllDepartmentsPage: React.FC<{}> = () => (
+const mapStateToProps = (state: RootState) => ({
+	paginator: selectAllDepartmentsPagination(state)
+});
+
+const connected = connect(mapStateToProps, {changePage: thunkAllDepartments});
+
+type IAllDepartmentsPageProps = ConnectedProps<typeof connected>;
+const AllDepartmentsPage: React.FC<IAllDepartmentsPageProps> = ({changePage, paginator}) => (
 	<>
 		<div className="title">Отделения</div>
 
@@ -19,13 +31,13 @@ const AllDepartmentsPage: React.FC<{}> = () => (
 						<Button variant="success">Добавить</Button>
 					</Link>
 
-					<DepartmentsFilterForm onSubmit={console.log}/>
+					<DepartmentsFilterForm onSubmit={() => changePage(1)}/>
 				</Row>
 
 				<DepartmentsTable/>
 
 				<div className="d-flex my-3 justify-content-end">
-					<Paginator totalItems={10} curPage={1} pageSize={5} setCur={console.log}/>
+					<Paginator {...paginator} setCur={changePage}/>
 				</div>
 			</Card.Body>
 
@@ -38,4 +50,4 @@ const AllDepartmentsPage: React.FC<{}> = () => (
 	</>
 );
 
-export default AllDepartmentsPage;
+export default connected(AllDepartmentsPage);

@@ -1,6 +1,4 @@
-import axios, {AxiosInstance} from 'axios';
-
-import objToParams from '../helpers/objToParams';
+import {AxiosInstance} from 'axios';
 
 import {IGeneralPaginationResponse} from '../../interfaces/responses/IGeneralPaginationResponse';
 import {IPublication} from '../../interfaces/models/IPublication';
@@ -17,11 +15,12 @@ import {IProfileQualificationsFilterData} from '../../pages/ProfilePage/ProfileT
 import {IProfileInternshipsFilterData} from '../../pages/ProfilePage/ProfileTabs/InternshipsTab/InternshipsFilterForm';
 import {IInternship} from '../../interfaces/models/IInternship';
 
+import proxyApi from './proxyApi';
+import objToParams from '../helpers/objToParams';
 
-let client: AxiosInstance;
 
-const profileApi = {
-	async getPublications(filters: IProfilePublicationsFilterData, sort: ISort[], page = 1, pageSize = 5){
+const profileApiFunc = (client: AxiosInstance) => ({
+	async getPublications(filters: IProfilePublicationsFilterData, sort: ISort[], page = 1, pageSize = 5) {
 		let sortRules = objToParams(sort, 'sort');
 
 		return await client.get<IGeneralPaginationResponse<IPublication>>('/publications', {
@@ -29,7 +28,7 @@ const profileApi = {
 		});
 	},
 
-	async getEducations(filters: IProfileEducationsFilterData, sort: ISort[], page = 1, pageSize = 5){
+	async getEducations(filters: IProfileEducationsFilterData, sort: ISort[], page = 1, pageSize = 5) {
 		let sortRules = objToParams(sort, 'sort');
 
 		return await client.get<IGeneralPaginationResponse<IEducation>>('/educations', {
@@ -37,7 +36,7 @@ const profileApi = {
 		});
 	},
 
-	async getHonors(filters: IProfileHonorsFilterData, sort: ISort[], page = 1, pageSize = 5){
+	async getHonors(filters: IProfileHonorsFilterData, sort: ISort[], page = 1, pageSize = 5) {
 		let sortRules = objToParams(sort, 'sort');
 
 		return await client.get<IGeneralPaginationResponse<IHonor>>('/honors', {
@@ -45,7 +44,7 @@ const profileApi = {
 		})
 	},
 
-	async getRebukes(filters: IProfileRebukesFilterData, sort: ISort[], page = 1, pageSize = 5){
+	async getRebukes(filters: IProfileRebukesFilterData, sort: ISort[], page = 1, pageSize = 5) {
 		let sortRules = objToParams(sort, 'sort');
 
 		return await client.get<IGeneralPaginationResponse<IRebuke>>('/rebukes', {
@@ -53,7 +52,7 @@ const profileApi = {
 		})
 	},
 
-	async getQualifications(filters: IProfileQualificationsFilterData, sort: ISort[], page = 1, pageSize = 5){
+	async getQualifications(filters: IProfileQualificationsFilterData, sort: ISort[], page = 1, pageSize = 5) {
 		let sortRules = objToParams(sort, 'sort');
 
 		return await client.get<IGeneralPaginationResponse<IQualification>>('/qualifications', {
@@ -61,28 +60,15 @@ const profileApi = {
 		})
 	},
 
-	async getInternships(filters: IProfileInternshipsFilterData, sort: ISort[], page = 1, pageSize = 5){
+	async getInternships(filters: IProfileInternshipsFilterData, sort: ISort[], page = 1, pageSize = 5) {
 		let sortRules = objToParams(sort, 'sort');
 
 		return await client.get<IGeneralPaginationResponse<IInternship>>('/internships', {
 			params: {...filters, ...sortRules, page, pageSize}
 		})
 	}
-};
-
-// proxy api calls to add authorization header
-let proxyProfileApi = new Proxy<typeof profileApi>(profileApi, {
-	get(target: typeof profileApi, prop: keyof typeof profileApi) {
-		client = axios.create({
-			baseURL: 'http://localhost:8000/api/profile',
-			headers: {
-				'Access-Control-Allow-Origin': '*',
-				Authorization: `Bearer ${localStorage.getItem('token')}`
-			}
-		});
-
-		return target[prop];
-	}
 });
 
-export default proxyProfileApi;
+export default proxyApi(profileApiFunc, {
+	baseURL: 'https://localhost:8000/api/profile'
+});

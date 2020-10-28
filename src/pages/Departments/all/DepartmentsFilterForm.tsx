@@ -20,7 +20,7 @@ const DepartmentsFilterForm: React.FC<IDepartmentsFilterFormProps> = ({handleSub
 			placeholder="Поиск по названию отделения"
 		/>
 
-		<Button variant="info" className="ml-1">Поиск</Button>
+		<Button variant="info" className="ml-1" type="submit">Поиск</Button>
 	</form>
 );
 

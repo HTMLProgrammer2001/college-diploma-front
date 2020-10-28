@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
-import {Link} from 'react-router-dom';
 
 import {RootState} from '../../../redux';
 import {IDepartment} from '../../../interfaces/models/IDepartment';
@@ -9,18 +8,31 @@ import {IDepartment} from '../../../interfaces/models/IDepartment';
 import SortItem from '../../../common/SortItem';
 import Loader from '../../../common/Loader';
 import ErrorElement from '../../../common/ErrorElement';
-import {selectProfileEducationsState} from '../../../redux/profile/educations/selectors';
 import findSortRule from '../../../utils/helpers/findSortRule';
+import {selectAllDepartmentsState} from '../../../redux/departments/all/selectors';
+import {allDepartmentsChangeSort} from '../../../redux/departments/all/actions';
+import thunkAllDepartments from '../../../redux/departments/all/thunks';
+import {selectDeleteDepartments} from '../../../redux/departments/delete/selectors';
+import thunkDeleteDepartment from '../../../redux/departments/delete/thunks';
+import DepartmentItem from './DepartmentItem';
 
 
 const mapStateToProps = (state: RootState) => ({
-	...selectProfileEducationsState(state),
-	educations: [{id: 1, name: 'Test'}]
+	...selectAllDepartmentsState(state),
+	deleting: selectDeleteDepartments(state)
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
-	changeSort(field: string){},
-	load(page = 1){}
+	changeSort(field: string){
+		dispatch(allDepartmentsChangeSort(field));
+		dispatch(thunkAllDepartments(1));
+	},
+	load(page = 1){
+		dispatch(thunkAllDepartments(page));
+	},
+	deleteItem(id: number){
+		dispatch(thunkDeleteDepartment(id));
+	}
 });
 
 const connected = connect(mapStateToProps, mapDispatchToProps);
@@ -28,7 +40,7 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 type IDepartmentsTableProps = ConnectedProps<typeof connected>;
 const DepartmentsTable: React.FC<IDepartmentsTableProps> = (props) => {
 	useEffect(() => {
-		if(!props.isLoading && !props.educations.length)
+		if(!props.isLoading && !props.departments.length)
 			props.load();
 	}, []);
 
@@ -79,7 +91,7 @@ const DepartmentsTable: React.FC<IDepartmentsTableProps> = (props) => {
 			}
 
 			{
-				!props.isLoading && !props.error && !props.educations.length &&
+				!props.isLoading && !props.error && !props.departments.length &&
 				<tr className="font-weight-bold text-center">
 					<th colSpan={3} className="text-center">
 						Нет отделений подходящих под этот фильтр
@@ -89,21 +101,14 @@ const DepartmentsTable: React.FC<IDepartmentsTableProps> = (props) => {
 
 			{
 				!props.isLoading && !props.error &&
-				(props.educations as any).map((department: IDepartment) => (
-					<tr key={department.id}>
-						<th>{department.id}</th>
-						<th>{department.name}</th>
-						<th>
-							<Link to={`/departments/${department.id}/edit`}>
-								<i className="fa fa-pencil"/>
-							</Link>
-
-							<Link to="#">
-								<i className="fa fa-close"/>
-							</Link>
-						</th>
-					</tr>
-				))
+				 props.departments.map((department: IDepartment) => (
+					<DepartmentItem
+						key={department.id}
+						department={department}
+						isDeleting={props.deleting.find((id) => id == department.id) == -1}
+						del={props.deleteItem}
+					/>
+ 				))
 			}
 			</tbody>
 		</Table>
