@@ -11,6 +11,7 @@ const HomePage = lazy(() => import('./pages/HomePage/'));
 const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 const ProfileEditPage = lazy(() => import('./pages/ProfileEditPage'));
 const Departments = lazy(() => import('./pages/Departments/'));
+const Commissions = lazy(() => import('./pages/Commissions/'));
 
 
 const AdminRoutes: React.FC<{}> = () => (
@@ -23,6 +24,7 @@ const AdminRoutes: React.FC<{}> = () => (
 				<Route path="/profile/edit" exact component={ProfileEditPage}/>
 
 				<Route path="/departments" component={Departments}/>
+				<Route path="/commissions" component={Commissions}/>
 
 				<Route path="/" component={NotFoundPage}/>
 			</Switch>

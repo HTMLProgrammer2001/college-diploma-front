@@ -9,6 +9,7 @@ import logout from './logout/reducer';
 import profile from './profile/';
 import app from './app/reducer';
 import departments from './departments/';
+import commissions from './commissions/';
 
 
 import publications from './publications/';
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
 	logout,
 	profile,
 	departments,
+	commissions,
 	form: formReducer
 });
 
