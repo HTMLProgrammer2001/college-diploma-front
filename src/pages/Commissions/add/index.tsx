@@ -34,7 +34,7 @@ const AddCommissionPage: React.FC<IAddCommissionPageProps> = ({add, send, submit
 
 					<Button
 						variant="success"
-						onClick={() => send('departmentsAddForm')}
+						onClick={() => send('commissionsAddForm')}
 						disabled={submitting}
 					>
 						{submitting && <Spinner size="sm" animation="border"/>}

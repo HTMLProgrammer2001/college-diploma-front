@@ -9,9 +9,9 @@ import AddCommissionPage from './add';
 
 const Commissions: React.FC<{}> = () => (
 	<Switch>
-		<Route path="/departments" exact component={AllCommissionsPage}/>
-		<Route path="/departments/add" exact component={AddCommissionPage}/>
-		<Route path="/departments/:id/edit" exact component={EditCommissionPage}/>
+		<Route path="/commissions" exact component={AllCommissionsPage}/>
+		<Route path="/commissions/add" exact component={AddCommissionPage}/>
+		<Route path="/commissions/:id/edit" exact component={EditCommissionPage}/>
 		<Route path="/" component={NotFoundPage}/>
 	</Switch>
 );

@@ -16,7 +16,7 @@ const CommissionItem: React.FC<ICommissionItemProps> = ({commission, isDeleting,
 		<th>{commission.id}</th>
 		<th>{commission.name}</th>
 		<th>
-			<Link to={`/departments/${commission.id}/edit`}>
+			<Link to={`/commissions/${commission.id}/edit`}>
 				<i className="fa fa-pencil"/>
 			</Link>
 

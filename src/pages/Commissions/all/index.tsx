@@ -27,7 +27,7 @@ const AllDepartmentsPage: React.FC<IAllDepartmentsPageProps> = ({changePage, pag
 		<Card className="mr-5">
 			<Card.Body>
 				<Row className="justify-content-between px-2 mb-3">
-					<Link to="/departments/add">
+					<Link to="/commissions/add">
 						<Button variant="success">Добавить</Button>
 					</Link>
 
