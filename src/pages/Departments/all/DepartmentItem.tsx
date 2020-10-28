@@ -20,17 +20,14 @@ const DepartmentItem: React.FC<IDepartmentItemProps> = ({department, isDeleting,
 				<i className="fa fa-pencil"/>
 			</Link>
 
-			<Link to="#">
-				{
-					isDeleting ?
-						<i
-							className="fa fa-close"
-							onClick={() => del(department.id)}
-						/>
-						:
-						<Spinner animation="border"/>
-				}
-			</Link>
+			{
+				isDeleting ?
+					<Link to="#">
+						<i className="fa fa-close" onClick={() => del(department.id)}/>
+					</Link>
+					:
+					<Spinner animation="border" size="sm"/>
+			}
 		</th>
 	</tr>
 );

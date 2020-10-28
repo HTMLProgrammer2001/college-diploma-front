@@ -1,4 +1,4 @@
-import {AxiosInstance} from 'axios';
+import axios from 'axios';
 
 import {IGeneralPaginationResponse} from '../../interfaces/responses/IGeneralPaginationResponse';
 import {IPublication} from '../../interfaces/models/IPublication';
@@ -15,11 +15,18 @@ import {IProfileQualificationsFilterData} from '../../pages/ProfilePage/ProfileT
 import {IProfileInternshipsFilterData} from '../../pages/ProfilePage/ProfileTabs/InternshipsTab/InternshipsFilterForm';
 import {IInternship} from '../../interfaces/models/IInternship';
 
-import proxyApi from './proxyApi';
 import objToParams from '../helpers/objToParams';
 
 
-const profileApiFunc = (client: AxiosInstance) => ({
+const client = axios.create({
+	baseURL: 'http://localhost:8000/api/profile',
+	headers: {
+		'Access-Control-Allow-Origin': '*',
+		Authorization: `Bearer ${localStorage.getItem('token')}`
+	}
+});
+
+const profileApi = {
 	async getPublications(filters: IProfilePublicationsFilterData, sort: ISort[], page = 1, pageSize = 5) {
 		let sortRules = objToParams(sort, 'sort');
 
@@ -67,8 +74,6 @@ const profileApiFunc = (client: AxiosInstance) => ({
 			params: {...filters, ...sortRules, page, pageSize}
 		})
 	}
-});
+};
 
-export default proxyApi(profileApiFunc, {
-	baseURL: 'https://localhost:8000/api/profile'
-});
+export default profileApi;

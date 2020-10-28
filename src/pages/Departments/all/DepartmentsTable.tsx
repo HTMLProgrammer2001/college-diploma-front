@@ -105,7 +105,7 @@ const DepartmentsTable: React.FC<IDepartmentsTableProps> = (props) => {
 					<DepartmentItem
 						key={department.id}
 						department={department}
-						isDeleting={props.deleting.find((id) => id == department.id) == -1}
+						isDeleting={props.deleting.findIndex((id) => id == department.id) == -1}
 						del={props.deleteItem}
 					/>
  				))

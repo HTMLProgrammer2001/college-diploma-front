@@ -15,7 +15,7 @@ const thunkEditDepartmentLoad = (id: number): IEditDepartmentLoadThunkAction => 
 
 		try{
 			const resp = await departmentsApi.getDepartment(id);
-			dispatch(editDepartmentLoadSuccess(resp.data));
+			dispatch(editDepartmentLoadSuccess(resp.data.data));
 		}
 		catch (e) {
 			dispatch(editDepartmentLoadError(e.response?.data.message || e.message));

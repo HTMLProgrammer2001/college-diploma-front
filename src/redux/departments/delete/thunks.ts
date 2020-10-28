@@ -1,24 +1,31 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
+import {toast} from 'react-toastify';
 
 import {RootState} from '../../index';
 import {IDeleteDepartmentActions} from './reducer';
 
 import departmentsApi from '../../../utils/api/models/departmentsApi';
 import {deleteDepartmentError, deleteDepartmentStart, deleteDepartmentSuccess} from './actions';
+import {allDepartmentsDelete} from '../all/actions';
 
 
-export type IDepartmentEditThunkAction = ThunkAction<void, RootState, unknown, IDeleteDepartmentActions>;
+type IActions = IDeleteDepartmentActions | ReturnType<typeof allDepartmentsDelete>;
+export type IDepartmentEditThunkAction = ThunkAction<void, RootState, unknown, IActions>;
 
 const thunkDeleteDepartment = (id: number): IDepartmentEditThunkAction => {
-	return async (dispatch: ThunkDispatch<{}, {}, IDeleteDepartmentActions>) => {
+	return async (dispatch: ThunkDispatch<{}, {}, IActions>) => {
 		dispatch(deleteDepartmentStart(id));
 
 		try{
 			await departmentsApi.deleteDepartment(id);
+
 			dispatch(deleteDepartmentSuccess(id));
+			dispatch(allDepartmentsDelete(id));
+			toast.success(`Отделение с id ${id} удалено`);
 		}
 		catch (e) {
 			dispatch(deleteDepartmentError(id, e.response?.data.message || e.message));
+			toast.error(`Ошибка: ${e.response?.data.message || e.message}`);
 		}
 	};
 };

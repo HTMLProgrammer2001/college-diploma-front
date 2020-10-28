@@ -6,7 +6,7 @@ import {Button} from 'react-bootstrap';
 
 
 export type IDepartmentsFilterData = {
-	name: string
+	filterName: string
 };
 
 type IDepartmentsFilterFormProps = InjectedFormProps<IDepartmentsFilterData>;
@@ -15,7 +15,7 @@ const DepartmentsFilterForm: React.FC<IDepartmentsFilterFormProps> = ({handleSub
 		<Field
 			component={InputElement}
 			type="text"
-			name="name"
+			name="filterName"
 			className="m-0"
 			placeholder="Поиск по названию отделения"
 		/>

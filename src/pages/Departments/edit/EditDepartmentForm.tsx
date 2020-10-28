@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {reduxForm, InjectedFormProps, Field} from 'redux-form';
 import {Col} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
@@ -21,20 +21,25 @@ export type IDepartmentsEditData = {
 type IOwnProps = ConnectedProps<typeof connected>;
 
 type IDepartmentsEditFormProps = InjectedFormProps<IDepartmentsEditData, IOwnProps> & IOwnProps;
-const DepartmentsEditForm: React.FC<IDepartmentsEditFormProps> = ({handleSubmit, department}) => (
-	<form onSubmit={handleSubmit}>
-		<Col xs={4}>
-			<Field
-				component={InputElement}
-				type="text"
-				name="name"
-				className="m-0"
-				label="Название отделения"
-				defaultValue={department.name}
-			/>
-		</Col>
-	</form>
-);
+const DepartmentsEditForm: React.FC<IDepartmentsEditFormProps> = ({handleSubmit, department, initialize}) => {
+	useEffect(() => {
+		initialize({name: department.name});
+	}, []);
+
+	return (
+		<form onSubmit={handleSubmit}>
+			<Col xs={4}>
+				<Field
+					component={InputElement}
+					type="text"
+					name="name"
+					className="m-0"
+					label="Название отделения"
+				/>
+			</Col>
+		</form>
+	);
+}
 
 export default connected(
 	reduxForm<IDepartmentsEditData, IOwnProps>({

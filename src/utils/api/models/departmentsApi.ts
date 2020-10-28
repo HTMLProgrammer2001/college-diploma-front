@@ -1,4 +1,4 @@
-import {AxiosInstance} from 'axios';
+import axios from 'axios';
 
 import {ISort} from '../../../interfaces/ISort';
 import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
@@ -7,10 +7,17 @@ import {IDepartmentsEditData} from '../../../pages/Departments/edit/EditDepartme
 import {IDepartmentsAddData} from '../../../pages/Departments/add/AddDepartmentForm';
 
 import objToParams from '../../helpers/objToParams';
-import proxyApi from '../proxyApi';
 
 
-const departmentsApiFunc = (client: AxiosInstance) => ({
+const client = axios.create({
+	baseURL: 'http://localhost:8000/api/departments',
+	headers: {
+		'Access-Control-Allow-Origin': '*',
+		Authorization: `Bearer ${localStorage.getItem('token')}`
+	}
+});
+
+const departmentsApi = {
 	async getDepartments(filters: any = {}, sort: ISort[] = [], page = 1, pageSize = 5) {
 		const sortRules = objToParams(sort, 'sort');
 
@@ -20,7 +27,7 @@ const departmentsApiFunc = (client: AxiosInstance) => ({
 	},
 
 	async getDepartment(id: number) {
-		return await client.get<IDepartment>(`/${id}`);
+		return await client.get<{data: IDepartment}>(`/${id}`);
 	},
 
 	async editDepartment(id: number, vals: IDepartmentsEditData) {
@@ -34,8 +41,6 @@ const departmentsApiFunc = (client: AxiosInstance) => ({
 	async addDepartment(vals: IDepartmentsAddData) {
 		return await client.post('/add', vals);
 	}
-});
+};
 
-export default proxyApi(departmentsApiFunc, {
-	baseURL: 'https://localhost:8000/api/departments'
-});
+export default departmentsApi;

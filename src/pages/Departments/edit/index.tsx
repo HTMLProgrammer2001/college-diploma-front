@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
-import {Button, Card, Row} from 'react-bootstrap';
+import {Button, Card, Row, Spinner} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {RouteComponentProps} from 'react-router-dom';
-import {submit} from 'redux-form';
+import {isSubmitting, submit} from 'redux-form';
 
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
@@ -15,7 +15,8 @@ import thunkEditDepartment from '../../../redux/departments/edit/thunks/thunkEdi
 
 
 const mapStateToProps = (state: RootState) => ({
-	editState: selectEditDepartmentState(state)
+	editState: selectEditDepartmentState(state),
+	submitting: isSubmitting('departmentsEditForm')(state)
 });
 
 const connected = connect(mapStateToProps, {
@@ -37,6 +38,9 @@ const EditDepartmentPage: React.FC<IEditDepartmentPageProps> = ({editState, load
 	const submitHandler = (vals: IDepartmentsEditData) => {
 		props.editDepartment(+props.match.params.id, vals);
 	};
+
+	if(!editState.department && !editState.isLoading)
+		return null;
 
 	return (
 		<>
@@ -69,7 +73,13 @@ const EditDepartmentPage: React.FC<IEditDepartmentPageProps> = ({editState, load
 								<Button
 									variant="warning"
 									onClick={clickHandler}
+									disabled={props.submitting}
 								>
+									{
+										props.submitting &&
+											<Spinner animation="border" size="sm"/>
+									}
+
 									Редактировать
 								</Button>
 						}
@@ -80,4 +90,4 @@ const EditDepartmentPage: React.FC<IEditDepartmentPageProps> = ({editState, load
 	);
 };
 
-export default EditDepartmentPage;
+export default connected(EditDepartmentPage);

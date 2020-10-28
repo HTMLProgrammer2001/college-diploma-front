@@ -7,6 +7,7 @@ import {
 import {InferActionTypes} from '../../';
 
 import * as actionsCreators from './actions';
+import {allDepartmentsDelete} from '../all/actions';
 
 
 export type IDeleteDepartmentActions = InferActionTypes<typeof actionsCreators>;
@@ -23,10 +24,10 @@ const deleteDepartmentReducer = (state = initialState, action: IDeleteDepartment
 			return [...state, action.payload];
 
 		case DELETE_DEPARTMENT_ERROR:
-			return [...state.filter((id) => id != action.payload)];
+			return state.filter((id) => id != action.payload);
 
 		case DELETE_DEPARTMENT_SUCCESS:
-			return [...state.filter((id) => id != action.payload)];
+			return state.filter((id) => id != action.payload);
 	}
 
 	return state;

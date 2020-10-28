@@ -2,7 +2,8 @@ import {
 	ALL_DEPARTMENTS_CHANGE_SORT,
 	ALL_DEPARTMENTS_ERROR,
 	ALL_DEPARTMENTS_START,
-	ALL_DEPARTMENTS_SUCCESS
+	ALL_DEPARTMENTS_SUCCESS,
+	ALL_DEPARTMENTS_DELETE
 } from './types';
 
 import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
@@ -28,4 +29,9 @@ export const allDepartmentsSuccess = (departmentsResponse: IResponse) => <const>
 export const allDepartmentsChangeSort = (field: string) => <const>({
 	type: ALL_DEPARTMENTS_CHANGE_SORT,
 	payload: field
+});
+
+export const allDepartmentsDelete = (id: number) => <const>({
+	type: ALL_DEPARTMENTS_DELETE,
+	payload: id
 });

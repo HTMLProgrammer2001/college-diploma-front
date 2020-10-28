@@ -2,7 +2,8 @@ import {
 	ALL_DEPARTMENTS_CHANGE_SORT,
 	ALL_DEPARTMENTS_SUCCESS,
 	ALL_DEPARTMENTS_ERROR,
-	ALL_DEPARTMENTS_START
+	ALL_DEPARTMENTS_START,
+	ALL_DEPARTMENTS_DELETE
 } from './types';
 
 import {InferActionTypes} from '../../';
@@ -57,6 +58,9 @@ const allDepartmentsReducer = (state = initialState, action: IAllDepartmentsActi
 		case ALL_DEPARTMENTS_CHANGE_SORT:
 			const sort = changeSortHandler(state.sort, action.payload);
 			return {...state, sort};
+
+		case ALL_DEPARTMENTS_DELETE:
+			return {...state, departments: state.departments.filter(({id}) => id != action.payload)}
 	}
 
 	return state;
