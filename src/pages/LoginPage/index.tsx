@@ -6,6 +6,7 @@ import LoginForm, {ILoginFormData} from './LoginForm';
 import thunkLogin from '../../redux/login/thunks';
 import {useHistory} from 'react-router';
 import IsAuthenticated from '../../utils/HOC/IsAuthenticated';
+import styles from './styles.module.scss';
 
 const mapDispatchToProps = (dispatch: any) => ({
 	login(vals: ILoginFormData){
@@ -26,8 +27,8 @@ const LoginPage: React.FC<ILoginPageProps> = ({login}) => {
 	};
 
 	return (
-		<Container>
-			<Row className="w-100 justify-content-center mt-3">
+		<Container className={styles.h100}>
+			<Row className="w-100 h-100 align-items-center justify-content-center">
 				<Col md={8}>
 					<LoginForm onSubmit={handler}/>
 				</Col>

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Container} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
+import {useTranslation} from 'react-i18next';
 
 import InternshipsFilterForm from './InternshipsFilterForm';
 import InternshipsTable from './InternshipsTable';
@@ -22,19 +23,23 @@ const connected = connect(mapStateToProps, {changePage: thunkProfileInternships}
 
 type IInternshipsTabProps = ConnectedProps<typeof connected>;
 
-const InternshipsTab: React.FC<IInternshipsTabProps> = ({paginator, hours, changePage}) => (
-	<div className="mt-5">
-		<Container>
-			<InternshipsFilterForm onSubmit={() => changePage(1)}/>
-			<InternshipsTable/>
+const InternshipsTab: React.FC<IInternshipsTabProps> = ({paginator, hours, changePage}) => {
+	const {t} = useTranslation();
 
-			<div className="d-flex my-3 justify-content-end">
-				<Paginator {...paginator} setCur={changePage}/>
-			</div>
+	return (
+		<div className="mt-5">
+			<Container>
+				<InternshipsFilterForm onSubmit={() => changePage(1)}/>
+				<InternshipsTable/>
 
-			<b>Часов с последнего повышения квалификации: {hours}</b>
-		</Container>
-	</div>
-);
+				<div className="d-flex my-3 justify-content-end">
+					<Paginator {...paginator} setCur={changePage}/>
+				</div>
+
+				<b>{t('profile.tabs.internships.hoursFromLast', {hours})}</b>
+			</Container>
+		</div>
+	);
+};
 
 export default connected(InternshipsTab);

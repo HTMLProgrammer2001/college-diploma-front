@@ -1,6 +1,7 @@
 import React from 'react';
 import {Container} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
+import {useTranslation} from 'react-i18next';
 
 import QualificationsFilterForm from './QualificationsFilterForm';
 import QualificationsTable from './QualificationsTable';
@@ -22,21 +23,25 @@ const connected = connect(mapStateToProps, {changePage: thunkProfileQualificatio
 
 type IQualificationsTabProps = ConnectedProps<typeof connected>;
 
-const QualificationsTab: React.FC<IQualificationsTabProps> = ({paginator, nextDate, changePage}) => (
-	<div className="mt-5">
-		<Container>
-			<QualificationsFilterForm onSubmit={() => changePage(1)}/>
-			<QualificationsTable/>
+const QualificationsTab: React.FC<IQualificationsTabProps> = ({paginator, nextDate, changePage}) => {
+	const {t} = useTranslation();
 
-			<div className="d-flex my-3 justify-content-end">
-				<Paginator {...paginator} setCur={changePage}/>
-			</div>
+	return (
+		<div className="mt-5">
+			<Container>
+				<QualificationsFilterForm onSubmit={() => changePage(1)}/>
+				<QualificationsTable/>
 
-			<div className="mt-2">
-				<b>Термин следующего повышения: {nextDate}</b>
-			</div>
-		</Container>
-	</div>
-);
+				<div className="d-flex my-3 justify-content-end">
+					<Paginator {...paginator} setCur={changePage}/>
+				</div>
+
+				<div className="mt-2">
+					<b>{t('profile.tabs.qualifications.nextDate', {nextDate})}</b>
+				</div>
+			</Container>
+		</div>
+	);
+};
 
 export default connected(QualificationsTab);

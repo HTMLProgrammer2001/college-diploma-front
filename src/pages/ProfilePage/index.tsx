@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {Button, Card, Row} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import {useTranslation} from 'react-i18next';
 
 import ProfileInfo from './ProfileInfo';
 import ProfileTabs from './ProfileTabs';
@@ -8,13 +9,15 @@ import BackButton from '../../common/BackButton';
 
 
 const ProfilePage: React.FC<{}> = () => {
+	const {t} = useTranslation();
+
 	useEffect(() => {
-		document.head.title = 'Профиль';
+		document.title = t('profile.pageTitle');
 	}, []);
 
 	return (
 		<>
-			<div className="title">Профиль пользователя</div>
+			<div className="title">{t("profile.pageLabel")}</div>
 
 			<Card className="mr-5">
 				<Card.Body>
@@ -27,7 +30,7 @@ const ProfilePage: React.FC<{}> = () => {
 						<BackButton/>
 
 						<Link to="/profile/edit">
-							<Button variant="warning">Редактировать</Button>
+							<Button variant="warning">{t("common.edit")}</Button>
 						</Link>
 					</Row>
 				</Card.Footer>

@@ -6,7 +6,7 @@ import {RootState} from '../../../redux';
 import {IDepartment} from '../../../interfaces/models/IDepartment';
 
 import SortItem from '../../../common/SortItem';
-import Loader from '../../../common/Loader';
+import Loader from '../../../common/Loader/Loader';
 import ErrorElement from '../../../common/ErrorElement';
 import findSortRule from '../../../utils/helpers/findSortRule';
 import {selectAllDepartmentsState} from '../../../redux/departments/all/selectors';

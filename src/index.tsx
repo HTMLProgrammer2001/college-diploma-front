@@ -7,7 +7,6 @@ import 'react-toastify/scss/main.scss'
 import './index.scss';
 
 import * as serviceWorker from './serviceWorker';
-
 import App from './App';
 
 ReactDOM.render(

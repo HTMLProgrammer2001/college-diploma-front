@@ -2,7 +2,7 @@ import React, {lazy, Suspense} from 'react';
 import {Route, Switch} from 'react-router';
 
 import IsAuthenticated from './utils/HOC/IsAuthenticated';
-import Loader from './common/Loader';
+import Loader from './common/Loader/Loader';
 import AdminLayout from './AdminLayout';
 import NotFoundPage from './pages/NotFoundPage';
 
@@ -17,17 +17,19 @@ const Commissions = lazy(() => import('./pages/Commissions/'));
 const AdminRoutes: React.FC<{}> = () => (
 	<AdminLayout>
 		<Suspense fallback={<Loader/>}>
-			<Switch>
-				<Route path="/" exact component={HomePage}/>
+			<div className="w-100">
+				<Switch>
+					<Route path="/" exact component={HomePage}/>
 
-				<Route path="/profile" exact component={ProfilePage}/>
-				<Route path="/profile/edit" exact component={ProfileEditPage}/>
+					<Route path="/profile" exact component={ProfilePage}/>
+					<Route path="/profile/edit" exact component={ProfileEditPage}/>
 
-				<Route path="/departments" component={Departments}/>
-				<Route path="/commissions" component={Commissions}/>
+					<Route path="/departments" component={Departments}/>
+					<Route path="/commissions" component={Commissions}/>
 
-				<Route path="/" component={NotFoundPage}/>
-			</Switch>
+					<Route path="/" component={NotFoundPage}/>
+				</Switch>
+			</div>
 		</Suspense>
 	</AdminLayout>
 );

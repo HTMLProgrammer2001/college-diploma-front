@@ -10,7 +10,7 @@ import EditDepartmentForm, {IDepartmentsEditData} from './EditDepartmentForm';
 import {selectEditDepartmentState} from '../../../redux/departments/edit/selectors';
 import thunkEditDepartmentLoad from '../../../redux/departments/edit/thunks/thunkEditDepartmentLoad';
 import ErrorElement from '../../../common/ErrorElement';
-import Loader from '../../../common/Loader';
+import Loader from '../../../common/Loader/Loader';
 import thunkEditDepartment from '../../../redux/departments/edit/thunks/thunkEditDepartment';
 
 

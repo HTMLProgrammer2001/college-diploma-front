@@ -9,6 +9,7 @@ import Paginator from '../../../../common/Paginator';
 import {RootState} from '../../../../redux';
 import {selectProfilePublicationsPagination} from '../../../../redux/profile/publications/selectors';
 import thunkProfilePublications from '../../../../redux/profile/publications/thunks';
+import {useTranslation} from 'react-i18next';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -19,21 +20,27 @@ const connected = connect(mapStateToProps, {
 	changePage: thunkProfilePublications
 });
 
-const PublicationsTab: React.FC<ConnectedProps<typeof connected>> = ({paginator, changePage}) => (
-	<div className="mt-5">
-		<Container>
-			<PublicationsFilterForm onSubmit={() => changePage(1)}/>
-			<PublicationsTable/>
+const PublicationsTab: React.FC<ConnectedProps<typeof connected>> = ({paginator, changePage}) => {
+	const {t} = useTranslation();
 
-			<div className="d-flex my-3 justify-content-end">
-				<Paginator {...paginator} setCur={changePage}/>
-			</div>
+	return (
+		<div className="mt-5">
+			<Container>
+				<PublicationsFilterForm onSubmit={() => changePage(1)}/>
+				<PublicationsTable/>
 
-			<Link to="/publications/import">
-				<Button variant="success" className="mt-2">Импорт</Button>
-			</Link>
-		</Container>
-	</div>
-);
+				<div className="d-flex my-3 justify-content-end">
+					<Paginator {...paginator} setCur={changePage}/>
+				</div>
+
+				<Link to="/publications/import">
+					<Button variant="success" className="mt-2">
+						{t('common.import')}
+					</Button>
+				</Link>
+			</Container>
+		</div>
+	);
+}
 
 export default connected(PublicationsTab);

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Tabs, Tab} from 'react-bootstrap';
 import {useHistory, useLocation} from 'react-router-dom';
 
@@ -11,6 +11,7 @@ import QualificationsTab from './QualificationsTab';
 import HonorsTab from './HonorsTab';
 import RebukesTab from './RebukesTab';
 import EducationsTab from './EducationsTab';
+import {useTranslation} from 'react-i18next';
 
 
 const ProfileTabs: React.FC<{}> = () => {
@@ -19,7 +20,8 @@ const ProfileTabs: React.FC<{}> = () => {
 		selectHandler = (el: string) => {
 			//change path hash
 			history.replace(`#${el}`);
-		};
+		},
+		{t} = useTranslation();
 
 	return (
 		<Tabs
@@ -27,27 +29,27 @@ const ProfileTabs: React.FC<{}> = () => {
 			className={styles.tabs}
 			onSelect={selectHandler}
 		>
-			<Tab eventKey="publications" title="Публикации">
+			<Tab eventKey="publications" title={t("profile.tabs.publications.title")}>
 				<PublicationsTab/>
 			</Tab>
 
-			<Tab eventKey="internships" title="Стажировки">
+			<Tab eventKey="internships" title={t("profile.tabs.internships.title")}>
 				<InternshipsTab/>
 			</Tab>
 
-			<Tab eventKey="qualifications" title="Повышения квалификации">
+			<Tab eventKey="qualifications" title={t("profile.tabs.qualifications.title")}>
 				<QualificationsTab/>
 			</Tab>
 
-			<Tab eventKey="honors" title="Награды">
+			<Tab eventKey="honors" title={t("profile.tabs.honors.title")}>
 				<HonorsTab/>
 			</Tab>
 
-			<Tab eventKey="rebukes" title="Выговоры">
+			<Tab eventKey="rebukes" title={t("profile.tabs.rebukes.title")}>
 				<RebukesTab/>
 			</Tab>
 
-			<Tab eventKey="educations" title="Образования">
+			<Tab eventKey="educations" title={t("profile.tabs.educations.title")}>
 				<EducationsTab/>
 			</Tab>
 		</Tabs>

@@ -6,7 +6,7 @@ import {RootState} from '../../redux';
 import {selectMeInfo} from '../../redux/me/selectors';
 import {selectAppState} from '../../redux/app/selectors';
 import thunkApp from '../../redux/app/thunks';
-import Loader from '../../common/Loader';
+import Loader from '../../common/Loader/Loader';
 
 
 const IsAuthenticated = (isAuth: boolean = true) =>

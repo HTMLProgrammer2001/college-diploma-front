@@ -7,11 +7,13 @@ import store from './redux/';
 
 import MenuContext, {IMenuContextData} from './utils/contexts/MenuContext';
 import NotFoundPage from './pages/NotFoundPage';
-import Loader from './common/Loader';
+import Loader from './common/Loader/Loader';
 import AdminRoutes from './AdminRoutes';
+import './translate';
 
 //pages
 const LoginPage = lazy(() => import('./pages/LoginPage'));
+
 
 const App = () => {
 	const [isMenuOpen, changeMenuOpen] = useState(false),
@@ -40,4 +42,3 @@ const App = () => {
 };
 
 export default App;
-

@@ -1,7 +1,10 @@
-import * as React from 'react';
+import React from 'react';
+
+import styles from './styles.module.scss';
+
 
 const Loader: React.FC<{}> = () => (
-	<div className="loader">
+	<div className={styles.loader}>
 		<svg width="200px" height="200px"
 			 viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
 			<circle cx="75" cy="50" fill="#f24421" r="5">

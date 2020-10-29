@@ -8,7 +8,7 @@ import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
 import EditCommissionForm, {ICommissionsEditData} from './EditCommissionForm';
 import ErrorElement from '../../../common/ErrorElement';
-import Loader from '../../../common/Loader';
+import Loader from '../../../common/Loader/Loader';
 import {selectEditCommissionState} from '../../../redux/commissions/edit/selectors';
 import thunkEditCommissionLoad from '../../../redux/commissions/edit/thunks/thunkEditCommissionLoad';
 import thunkEditCommission from '../../../redux/commissions/edit/thunks/thunkEditCommission';
