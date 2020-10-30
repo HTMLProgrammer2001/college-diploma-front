@@ -6,6 +6,7 @@ import {connect, ConnectedProps} from 'react-redux';
 import InputElement from '../../../common/formElements/InputElement';
 import {RootState} from '../../../redux';
 import {selectEditCommission} from '../../../redux/commissions/edit/selectors';
+import {useTranslation} from 'react-i18next';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -26,15 +27,17 @@ const CommissionsEditForm: React.FC<ICommissionsEditFormProps> = ({handleSubmit,
 		initialize({name: commission.name});
 	}, []);
 
+	const {t} = useTranslation();
+
 	return (
 		<form onSubmit={handleSubmit}>
-			<Col xs={4}>
+			<Col xs={12} md={6} xl={4}>
 				<Field
 					component={InputElement}
 					type="text"
 					name="name"
 					className="m-0"
-					label="Название отделения"
+					label={t('commissions.edit.name')}
 				/>
 			</Col>
 		</form>

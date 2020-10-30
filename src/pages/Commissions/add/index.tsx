@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, Card, Row, Spinner} from 'react-bootstrap';
 import {ConnectedProps, connect} from 'react-redux';
 import {submit, isSubmitting} from 'redux-form';
+import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
@@ -19,31 +20,41 @@ const connected = connect(mapStateToProps, {
 });
 
 type IAddCommissionPageProps = ConnectedProps<typeof connected>;
-const AddCommissionPage: React.FC<IAddCommissionPageProps> = ({add, send, submitting}) => (
-	<>
-		<div className="title">Добавить цикловую комиссию</div>
+const AddCommissionPage: React.FC<IAddCommissionPageProps> = ({add, send, submitting}) => {
+	const {t} = useTranslation();
 
-		<Card className="mr-5">
-			<Card.Body>
-				<AddCommissionForm onSubmit={add}/>
-			</Card.Body>
+	useEffect(() => {
+		document.title = t('commissions.add.pageTitle');
+	}, []);
 
-			<Card.Footer>
-				<Row className="justify-content-between p-2">
-					<BackButton/>
+	return (
+		<>
+			<div className="title">
+				{t('commissions.add.pageTitle')}
+			</div>
 
-					<Button
-						variant="success"
-						onClick={() => send('commissionsAddForm')}
-						disabled={submitting}
-					>
-						{submitting && <Spinner size="sm" animation="border"/>}
-						Создать
-					</Button>
-				</Row>
-			</Card.Footer>
-		</Card>
-	</>
-);
+			<Card className="mr-5">
+				<Card.Body>
+					<AddCommissionForm onSubmit={add}/>
+				</Card.Body>
+
+				<Card.Footer>
+					<Row className="justify-content-between p-2">
+						<BackButton/>
+
+						<Button
+							variant="success"
+							onClick={() => send('commissionsAddForm')}
+							disabled={submitting}
+						>
+							{submitting && <Spinner size="sm" animation="border"/>}
+							{t('common.add')}
+						</Button>
+					</Row>
+				</Card.Footer>
+			</Card>
+		</>
+	);
+};
 
 export default connected(AddCommissionPage);

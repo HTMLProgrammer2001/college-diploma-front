@@ -3,6 +3,7 @@ import {Button, Card, Row, Spinner} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {RouteComponentProps} from 'react-router-dom';
 import {isSubmitting, submit} from 'redux-form';
+import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
@@ -27,8 +28,11 @@ const connected = connect(mapStateToProps, {
 
 type IEditCommissionPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
 const EditCommissionPage: React.FC<IEditCommissionPageProps> = ({editState, loadCommission, ...props}) => {
+	const {t} = useTranslation();
+
 	useEffect(() => {
 		loadCommission(+props.match.params.id);
+		document.title = t('commissions.edit.pageTitle');
 	}, []);
 
 	const clickHandler = () => {
@@ -44,7 +48,7 @@ const EditCommissionPage: React.FC<IEditCommissionPageProps> = ({editState, load
 
 	return (
 		<>
-			<div className="title">Редактировать комиссию</div>
+			<div className="title">{t('commissions.edit.pageTitle')}</div>
 
 			<Card className="mr-5">
 				<Card.Body>
@@ -80,7 +84,7 @@ const EditCommissionPage: React.FC<IEditCommissionPageProps> = ({editState, load
 											<Spinner animation="border" size="sm"/>
 									}
 
-									Редактировать
+									{t('common.edit')}
 								</Button>
 						}
 					</Row>

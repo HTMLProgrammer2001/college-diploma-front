@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {InjectedFormProps, reduxForm, Field} from 'redux-form';
 import {connect, ConnectedProps} from 'react-redux';
+import {Translation} from 'react-i18next';
 
 import InputElement from '../../common/formElements/InputElement';
 import DateElement from '../../common/formElements/DateElement';
@@ -33,74 +34,92 @@ export type IProfileEditData = {
 
 type IOwnProps = ConnectedProps<typeof connected>;
 type IProfileEditFormProps = InjectedFormProps<IProfileEditData, IOwnProps> & IOwnProps;
-const ProfileEditForm: React.FC<IProfileEditFormProps> = ({handleSubmit, user}) => (
-	<form onSubmit={handleSubmit}>
-		<div className="d-md-flex">
-			<div className="w-100" style={{marginRight: '10px'}}>
-				<Field
-					type="text"
-					name="email"
-					label="Email"
-					defaultValue={user.email}
-					component={InputElement}
-					validate={[required, email]}
-					autocomplete={false}
-				/>
+const ProfileEditForm: React.FC<IProfileEditFormProps> = ({handleSubmit, user, initialize}) => {
+	useEffect(() => {
+		initialize({
+			email: user.email,
+			phone: user.phone,
+			birthday: user.birthday
+		});
+	}, []);
 
-				<Field
-					type="password"
-					name="password"
-					label="Пароль"
-					component={InputElement}
-					validate={[minMaxPassword]}
-					autocomplete={false}
-				/>
+	return (
+		<form onSubmit={handleSubmit}>
+			<Translation>
+				{t => (
+					<div className="d-md-flex">
+						<div className="w-100 mr-md-3">
+							<Field
+								type="text"
+								name="email"
+								label="Email"
+								defaultValue={user.email}
+								component={InputElement}
+								validate={[required, email]}
+								autocomplete={false}
+							/>
 
-				<Field
-					type="password"
-					name="confirm_password"
-					label="Повторите пароль"
-					component={InputElement}
-					validate={[minMaxPassword]}
-				/>
-			</div>
+							<Field
+								type="password"
+								name="password"
+								label={t('profileEdit.password')}
+								component={InputElement}
+								validate={[minMaxPassword]}
+								autocomplete={false}
+							/>
 
-			<div className="w-100" style={{marginLeft: '10px'}}>
-				<Field
-					type="text"
-					name="phone"
-					label="Телефон"
-					defaultValue={user.phone}
-					component={InputElement}
-					validate={[phone]}
-				/>
+							<Field
+								type="password"
+								name="confirm_password"
+								label={t('profileEdit.confirmPassword')}
+								component={InputElement}
+								validate={[minMaxPassword]}
+							/>
+						</div>
 
-				<Field
-					type="text"
-					name="address"
-					label="Адрес"
-					defaultValue={user.address}
-					component={InputElement}
-				/>
+						<div className="w-100 ml-md-3">
+							<Field
+								type="text"
+								name="phone"
+								label={t('profileEdit.phone')}
+								defaultValue={user.phone}
+								component={InputElement}
+								validate={[phone]}
+							/>
 
-				<Field
-					name="birthday"
-					label="Дата рождения"
-					defaultValue={user.birthday}
-					component={DateElement}
-				/>
-			</div>
-		</div>
+							<Field
+								type="text"
+								name="address"
+								label={t('profileEdit.address')}
+								defaultValue={user.address}
+								component={InputElement}
+							/>
 
-		<div className="center w-100">
-			<Field
-				name="avatar"
-				label="Перетащите или выберите аватарку"
-				component={FileElement}
-			/>
-		</div>
-	</form>
-);
+							<Field
+								name="birthday"
+								label={t('profileEdit.birthday')}
+								defaultValue={user.birthday}
+								component={DateElement}
+							/>
+						</div>
+					</div>
+				)}
+			</Translation>
+
+			<Translation>
+				{t => (
+					<div className="center w-100">
+						<Field
+							name="avatar"
+							label={t('profileEdit.avatar')}
+							component={FileElement}
+						/>
+					</div>
+				)}
+			</Translation>
+		</form>
+	);
+};
 
 export default connected(reduxForm<IProfileEditData, IOwnProps>({
 	form: 'editProfileForm'

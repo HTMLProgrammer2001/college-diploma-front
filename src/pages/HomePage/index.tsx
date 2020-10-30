@@ -1,10 +1,16 @@
 import React from 'react';
+import {withTranslation, WithTranslationProps} from 'react-i18next';
+import {Card} from 'react-bootstrap';
 
 
-const HomePage: React.FC<{}> = () => (
+const HomePage: React.FC<WithTranslationProps> = ({t}: any) => (
 	<div>
-		Привет, это админ панель
+		<Card>
+			<Card.Body>
+				<div>{t('home.hello')}</div>
+			</Card.Body>
+		</Card>
 	</div>
 );
 
-export default HomePage;
+export default withTranslation()(HomePage);

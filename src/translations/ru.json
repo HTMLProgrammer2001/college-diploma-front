@@ -1,86 +1,120 @@
 {
-  "common": {
-    "edit": "Редактировать",
-    "import": "Импорт",
-    "avatar": "Аватар",
-    "notSetted": "Не установлено",
-    "search": "Поиск",
-    "actions": "Действия",
-    "noItems": "Нет {{what}} подходящих под этот фильтр",
-    "from": "С",
-    "to": "По",
-    "all": "Все"
-  },
+	"common": {
+		"edit": "Редактировать",
+		"import": "Импорт",
+		"avatar": "Аватар",
+		"notSetted": "Не установлено",
+		"search": "Поиск",
+		"actions": "Действия",
+		"noItems": "Нет {{what}} подходящих под этот фильтр",
+		"from": "С",
+		"to": "По",
+		"all": "Все",
+		"save": "Сохранить",
+		"add": "Добавить"
+	},
 
-  "login": {
-    "authorization": "Авторизация",
-    "password": "Пароль",
-    "enter": "Войти"
-  },
+	"home": {
+		"hello": "Привет, это админка"
+	},
 
-  "profile": {
-    "pageLabel": "Профиль пользователя",
-    "pageTitle": "Профиль",
+	"login": {
+		"authorization": "Авторизация",
+		"password": "Пароль",
+		"enter": "Войти"
+	},
+	"profile": {
+		"pageLabel": "Профиль пользователя",
+		"pageTitle": "Профиль",
+		"info": {
+			"fullName": "<0>Имя: <1>{{fullName}}</1></0>",
+			"birthday": "<0>День рождения: <1>{{birthday}}</1></0>",
+			"email": "<0>Email: <1>{{email}}</1></0>",
+			"address": "<0>Адресс: <1>{{address}}</1></0>",
+			"role": "<0>Роль: <1>{{role}}</1></0>",
+			"department": "<0>Отдел: <1>{{department}}</1></0>",
+			"commission": "<0>Комиссия: <1>{{commission}}</1></0>",
+			"rank": "<0>Ранг: <1>{{rank}}</1></0>",
+			"pedagogicalTitle": "<0>Педагогическое звание: <1>{{pedTitle}}</1></0>",
+			"experience": "<0>Опыт: <1>{{experience}}</1></0>"
+		},
+		"tabs": {
+			"publications": {
+				"title": "Публикации",
+				"publicationName": "Название публикации",
+				"authors": "Авторы",
+				"publicationDate": "Дата публикации"
+			},
+			"internships": {
+				"title": "Стажировки",
+				"hoursFromLast": "Часов с последнего повышения квалификации: {{hours}}",
+				"category": "Категория",
+				"theme": "Тема",
+				"hoursMore": "Количество часов больше",
+				"hoursLess": "Количество часов меньше",
+				"hoursCount": "Количество часов",
+				"endDate": "Дата окончания"
+			},
+			"qualifications": {
+				"title": "Повышения квалификаций",
+				"nextDate": "Термин следующей квалификации: {{nextDate}}",
+				"category": "Категория",
+				"date": "Дата"
+			},
+			"honors": {
+				"title": "Награды",
+				"honorName": "Название награды",
+				"presDate": "Дата выдачи",
+				"honorType": "Тип награды"
+			},
+			"rebukes": {
+				"title": "Выговоры",
+				"rebukeName": "Название выговора",
+				"date": "Дата"
+			},
+			"educations": {
+				"title": "Образования",
+				"qualification": "Квалификация",
+				"qualList": [
+					"Все",
+					"Младший специалист",
+					"Бакалавр",
+					"Магистр"
+				],
+				"institutionName": "Учебное заведение",
+				"graduateYear": "Год выпуска"
+			}
+		}
+	},
 
-    "info": {
-      "fullName": "<0>Имя: <1>{{fullName}}</1></0>",
-      "birthday": "<0>День рождения: <1>{{birthday}}</1></0>",
-      "email": "<0>Email: <1>{{email}}</1></0>",
-      "address": "<0>Адресс: <1>{{address}}</1></0>",
-      "role": "<0>Роль: <1>{{role}}</1></0>",
-      "department": "<0>Отдел: <1>{{department}}</1></0>",
-      "commission": "<0>Комиссия: <1>{{commission}}</1></0>",
-      "rank": "<0>Ранг: <1>{{rank}}</1></0>",
-      "pedagogicalTitle": "<0>Педагогическое звание: <1>{{pedTitle}}</1></0>",
-      "experience": "<0>Опыт: <1>{{experience}}</1></0>"
-    },
+	"profileEdit": {
+		"pageTitle": "Редактирование профиля",
+		"password": "Новый пароль",
+		"confirmPassword": "Повторите пароль",
+		"phone": "Телефон",
+		"address": "Адрес",
+		"birthday": "Дата рождения",
+		"avatar": "Перетащите или выберите аватарку"
+	},
 
-    "tabs": {
-      "publications": {
-        "title": "Публикации",
-        "publicationName": "Название публикации",
-        "authors": "Авторы",
-        "publicationDate": "Дата публикации"
-      },
+	"commissions": {
+		"name": "Цикловые комиссии",
 
-      "internships": {
-        "title": "Стажировки",
-        "hoursFromLast": "Часов с последнего повышения квалификации: {{hours}}",
-        "category": "Категория",
-        "theme": "Тема",
-        "hoursMore": "Количество часов больше",
-        "hoursLess": "Количество часов меньше",
-        "hoursCount": "Количество часов",
-        "endDate": "Дата окончания"
-      },
+		"all": {
+			"pageTitle": "Цикловые комиссии",
+			"filterName": "Поиск по названию отделения",
+			"name": "Название",
+			"noForm": "цикловых комиссий"
+		},
 
-      "qualifications": {
-        "title": "Повышения квалификаций",
-        "nextDate": "Термин следующей квалификации: {{nextDate}}",
-        "category": "Категория",
-        "date": "Дата"
-      },
+		"add": {
+			"pageTitle": "Добавить цикловую комиссию",
+			"name": "Название цикловой комиссии"
+		},
 
-      "honors": {
-        "title": "Награды",
-        "honorName": "Название награды",
-        "presDate": "Дата выдачи",
-        "honorType": "Тип награды"
-      },
-
-      "rebukes": {
-        "title": "Выговоры",
-        "rebukeName": "Название выговора",
-        "date": "Дата"
-      },
-
-      "educations": {
-        "title": "Образования",
-        "qualification": "Квалификация",
-        "qualList": ["Все", "Младший специалист", "Бакалавр", "Магистр"],
-        "institutionName": "Учебное заведение",
-        "graduateYear": "Год выпуска"
-      }
-    }
-  }
+		"edit": {
+			"pageTitle": "Редактировать цикловую комиссию",
+			"name": "Название цикловой комиссии"
+		}
+	}
 }
