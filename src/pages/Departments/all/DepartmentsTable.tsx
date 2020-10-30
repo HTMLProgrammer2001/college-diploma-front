@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
+import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
 import {IDepartment} from '../../../interfaces/models/IDepartment';
@@ -23,14 +24,14 @@ const mapStateToProps = (state: RootState) => ({
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
-	changeSort(field: string){
+	changeSort(field: string) {
 		dispatch(allDepartmentsChangeSort(field));
 		dispatch(thunkAllDepartments(1));
 	},
-	load(page = 1){
+	load(page = 1) {
 		dispatch(thunkAllDepartments(page));
 	},
-	deleteItem(id: number){
+	deleteItem(id: number) {
 		dispatch(thunkDeleteDepartment(id));
 	}
 });
@@ -40,78 +41,88 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 type IDepartmentsTableProps = ConnectedProps<typeof connected>;
 const DepartmentsTable: React.FC<IDepartmentsTableProps> = (props) => {
 	useEffect(() => {
-		if(!props.isLoading && !props.departments.length)
+		if (!props.isLoading && !props.departments.length)
 			props.load();
 	}, []);
 
+	const {t} = useTranslation();
+
 	return (
-		<Table striped bordered hover>
-			<thead>
-			<tr>
-				<th>
-					<span className="pull-left">ID</span>
-
-					<SortItem
-						state={findSortRule(props.sort, 'ID')?.direction}
-						change={props.changeSort}
-						param="ID"
-					/>
-				</th>
-
-				<th>
-					<span className="pull-left">Название</span>
-
-					<SortItem
-						state={findSortRule(props.sort, 'name')?.direction}
-						change={props.changeSort}
-						param="name"
-					/>
-				</th>
-
-				<th>Действия</th>
-			</tr>
-			</thead>
-			<tbody>
-			{
-				props.isLoading &&
+		<div className="table-wrapper">
+			<Table striped bordered hover style={{minWidth: '600px'}}>
+				<thead>
 				<tr>
-					<th colSpan={3} className="text-center">
-						<Loader/>
-					</th>
-				</tr>
-			}
+					<th>
+						<span className="pull-left">ID</span>
 
-			{
-				props.error &&
-				<tr className="text-center text-danger">
-					<th colSpan={3} className="text-center">
-						<ErrorElement error={props.error}/>
+						<SortItem
+							state={findSortRule(props.sort, 'ID')?.direction}
+							change={props.changeSort}
+							param="ID"
+						/>
 					</th>
-				</tr>
-			}
 
-			{
-				!props.isLoading && !props.error && !props.departments.length &&
-				<tr className="font-weight-bold text-center">
-					<th colSpan={3} className="text-center">
-						Нет отделений подходящих под этот фильтр
+					<th>
+					<span className="pull-left">
+						{t('departments.all.name')}
+					</span>
+
+						<SortItem
+							state={findSortRule(props.sort, 'name')?.direction}
+							change={props.changeSort}
+							param="name"
+						/>
 					</th>
-				</tr>
-			}
 
-			{
-				!props.isLoading && !props.error &&
-				 props.departments.map((department: IDepartment) => (
-					<DepartmentItem
-						key={department.id}
-						department={department}
-						isDeleting={props.deleting.findIndex((id) => id == department.id) == -1}
-						del={props.deleteItem}
-					/>
- 				))
-			}
-			</tbody>
-		</Table>
+					<th>{t('common.actions')}</th>
+				</tr>
+				</thead>
+				<tbody>
+				{
+					props.isLoading &&
+					<tr>
+						<th colSpan={3} className="text-center">
+							<Loader/>
+						</th>
+					</tr>
+				}
+
+				{
+					props.error &&
+					<tr className="text-center text-danger">
+						<th colSpan={3} className="text-center">
+							<ErrorElement error={props.error}/>
+						</th>
+					</tr>
+				}
+
+				{
+					!props.isLoading && !props.error && !props.departments.length &&
+					<tr className="font-weight-bold text-center">
+						<th colSpan={3} className="text-center">
+							{
+								t('common.noItems', {
+									what: t('departments.all.noForm')
+								})
+							}
+						</th>
+					</tr>
+				}
+
+				{
+					!props.isLoading && !props.error &&
+					props.departments.map((department: IDepartment) => (
+						<DepartmentItem
+							key={department.id}
+							department={department}
+							isDeleting={props.deleting.findIndex((id) => id == department.id) == -1}
+							del={props.deleteItem}
+						/>
+					))
+				}
+				</tbody>
+			</Table>
+		</div>
 	);
 };
 

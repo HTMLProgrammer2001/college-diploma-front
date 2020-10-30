@@ -8,6 +8,8 @@ import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
 import AddCommissionForm from './AddCommissionForm';
 import thunkAddCommission from '../../../redux/commissions/add/thunks';
+import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -57,4 +59,4 @@ const AddCommissionPage: React.FC<IAddCommissionPageProps> = ({add, send, submit
 	);
 };
 
-export default connected(AddCommissionPage);
+export default IsUserRoleMore(Roles.MODERATOR, true)(connected(AddCommissionPage));

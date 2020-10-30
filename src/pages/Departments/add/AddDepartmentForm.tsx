@@ -1,6 +1,7 @@
 import React from 'react';
 import {reduxForm, InjectedFormProps, Field} from 'redux-form';
 import {Col} from 'react-bootstrap';
+import {Translation} from 'react-i18next';
 
 import InputElement from '../../../common/formElements/InputElement';
 import required from '../../../utils/validators/required';
@@ -19,16 +20,20 @@ const DepartmentsAddForm: React.FC<IDepartmentsAddFormProps> = ({handleSubmit, e
 				<div>{error}</div>
 		}
 
-		<Col xs={4}>
-			<Field
-				component={InputElement}
-				type="text"
-				name="name"
-				className="m-0"
-				label="Название отделения"
-				validate={[required]}
-			/>
-		</Col>
+		<Translation>
+			{t => (
+				<Col xs={4}>
+					<Field
+						component={InputElement}
+						type="text"
+						name="name"
+						className="m-0"
+						label={t('departments.add.name')}
+						validate={[required]}
+					/>
+				</Col>
+			)}
+		</Translation>
 	</form>
 );
 

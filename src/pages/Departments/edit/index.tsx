@@ -3,6 +3,7 @@ import {Button, Card, Row, Spinner} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {RouteComponentProps} from 'react-router-dom';
 import {isSubmitting, submit} from 'redux-form';
+import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
@@ -12,6 +13,8 @@ import thunkEditDepartmentLoad from '../../../redux/departments/edit/thunks/thun
 import ErrorElement from '../../../common/ErrorElement';
 import Loader from '../../../common/Loader/Loader';
 import thunkEditDepartment from '../../../redux/departments/edit/thunks/thunkEditDepartment';
+import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -27,8 +30,11 @@ const connected = connect(mapStateToProps, {
 
 type IEditDepartmentPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
 const EditDepartmentPage: React.FC<IEditDepartmentPageProps> = ({editState, loadDepartment, ...props}) => {
+	const {t} = useTranslation();
+
 	useEffect(() => {
 		loadDepartment(+props.match.params.id);
+		document.title = t('departments.edit.pageTitle');
 	}, []);
 
 	const clickHandler = () => {
@@ -44,7 +50,9 @@ const EditDepartmentPage: React.FC<IEditDepartmentPageProps> = ({editState, load
 
 	return (
 		<>
-			<div className="title">Редактировать отделения</div>
+			<div className="title">
+				{t('departments.edit.pageTitle')}
+			</div>
 
 			<Card className="mr-5">
 				<Card.Body>
@@ -80,7 +88,7 @@ const EditDepartmentPage: React.FC<IEditDepartmentPageProps> = ({editState, load
 											<Spinner animation="border" size="sm"/>
 									}
 
-									Редактировать
+									{t('common.edit')}
 								</Button>
 						}
 					</Row>
@@ -90,4 +98,4 @@ const EditDepartmentPage: React.FC<IEditDepartmentPageProps> = ({editState, load
 	);
 };
 
-export default connected(EditDepartmentPage);
+export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditDepartmentPage));

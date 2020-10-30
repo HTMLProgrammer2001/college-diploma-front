@@ -12,6 +12,8 @@ import CommissionsTable from './CommissionsTable';
 import Paginator from '../../../common/Paginator';
 import {selectAllCommissionsPagination} from '../../../redux/commissions/all/selectors';
 import thunkAllCommissions from '../../../redux/commissions/all/thunks';
+import UserCan from '../../../common/UserCan';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -37,11 +39,15 @@ const AllDepartmentsPage: React.FC<IAllDepartmentsPageProps> = ({changePage, pag
 			<Card className="mr-5">
 				<Card.Body>
 					<div className="model__filter-form">
-						<Link to="/commissions/add">
-							<Button variant="success">
-								{t('common.add')}
-							</Button>
-						</Link>
+						<div>
+							<UserCan role={Roles.MODERATOR}>
+								<Link to="/commissions/add">
+									<Button variant="success">
+										{t('common.add')}
+									</Button>
+								</Link>
+							</UserCan>
+						</div>
 
 						<CommissionsFilterForm onSubmit={() => changePage(1)}/>
 					</div>

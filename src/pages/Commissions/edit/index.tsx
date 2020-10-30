@@ -13,6 +13,8 @@ import Loader from '../../../common/Loader/Loader';
 import {selectEditCommissionState} from '../../../redux/commissions/edit/selectors';
 import thunkEditCommissionLoad from '../../../redux/commissions/edit/thunks/thunkEditCommissionLoad';
 import thunkEditCommission from '../../../redux/commissions/edit/thunks/thunkEditCommission';
+import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -94,4 +96,4 @@ const EditCommissionPage: React.FC<IEditCommissionPageProps> = ({editState, load
 	);
 };
 
-export default connected(EditCommissionPage);
+export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditCommissionPage));

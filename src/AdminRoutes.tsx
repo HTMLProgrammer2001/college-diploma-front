@@ -4,7 +4,7 @@ import {Route, Switch} from 'react-router';
 import IsAuthenticated from './utils/HOC/IsAuthenticated';
 import Loader from './common/Loader/Loader';
 import AdminLayout from './AdminLayout';
-import NotFoundPage from './pages/NotFoundPage';
+import NotFoundPage from './pages/ErrorPages/NotFoundPage';
 
 //pages
 const HomePage = lazy(() => import('./pages/HomePage/'));

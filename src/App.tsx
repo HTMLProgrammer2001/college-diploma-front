@@ -6,7 +6,7 @@ import {ToastContainer} from 'react-toastify';
 import store from './redux/';
 
 import MenuContext, {IMenuContextData} from './utils/contexts/MenuContext';
-import NotFoundPage from './pages/NotFoundPage';
+import NotFoundPage from './pages/ErrorPages/NotFoundPage';
 import Loader from './common/Loader/Loader';
 import AdminRoutes from './AdminRoutes';
 import './translate';

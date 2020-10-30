@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, Card, Row} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {connect, ConnectedProps} from 'react-redux';
+import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
 
@@ -11,6 +12,8 @@ import DepartmentsTable from './DepartmentsTable';
 import Paginator from '../../../common/Paginator';
 import thunkAllDepartments from '../../../redux/departments/all/thunks';
 import {selectAllDepartmentsPagination} from '../../../redux/departments/all/selectors';
+import UserCan from '../../../common/UserCan';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -20,34 +23,50 @@ const mapStateToProps = (state: RootState) => ({
 const connected = connect(mapStateToProps, {changePage: thunkAllDepartments});
 
 type IAllDepartmentsPageProps = ConnectedProps<typeof connected>;
-const AllDepartmentsPage: React.FC<IAllDepartmentsPageProps> = ({changePage, paginator}) => (
-	<>
-		<div className="title">Отделения</div>
+const AllDepartmentsPage: React.FC<IAllDepartmentsPageProps> = ({changePage, paginator}) => {
+	const {t} = useTranslation();
 
-		<Card className="mr-5">
-			<Card.Body>
-				<Row className="justify-content-between px-2 mb-3">
-					<Link to="/departments/add">
-						<Button variant="success">Добавить</Button>
-					</Link>
+	useEffect(() => {
+		document.title = t('departments.all.pageTitle');
+	}, []);
 
-					<DepartmentsFilterForm onSubmit={() => changePage(1)}/>
-				</Row>
+	return (
+		<>
+			<div className="title">
+				{t('departments.all.pageTitle')}
+			</div>
 
-				<DepartmentsTable/>
+			<Card className="mr-5">
+				<Card.Body>
+					<div className="model__filter-form">
+						<div>
+							<UserCan role={Roles.MODERATOR}>
+								<Link to="/departments/add">
+									<Button variant="success">
+										{t('common.add')}
+									</Button>
+								</Link>
+							</UserCan>
+						</div>
 
-				<div className="d-flex my-3 justify-content-end">
-					<Paginator {...paginator} setCur={changePage}/>
-				</div>
-			</Card.Body>
+						<DepartmentsFilterForm onSubmit={() => changePage(1)}/>
+					</div>
 
-			<Card.Footer>
-				<Row className="justify-content-between p-2">
-					<BackButton/>
-				</Row>
-			</Card.Footer>
-		</Card>
-	</>
-);
+					<DepartmentsTable/>
+
+					<div className="d-flex my-3 justify-content-end">
+						<Paginator {...paginator} setCur={changePage}/>
+					</div>
+				</Card.Body>
+
+				<Card.Footer>
+					<Row className="justify-content-between p-2">
+						<BackButton/>
+					</Row>
+				</Card.Footer>
+			</Card>
+		</>
+	);
+};
 
 export default connected(AllDepartmentsPage);

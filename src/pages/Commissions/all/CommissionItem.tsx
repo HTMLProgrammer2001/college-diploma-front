@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import {Spinner} from 'react-bootstrap';
 
 import {ICommission} from '../../../interfaces/models/ICommission';
+import UserCan from '../../../common/UserCan';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 
 type ICommissionItemProps = {
@@ -16,18 +18,20 @@ const CommissionItem: React.FC<ICommissionItemProps> = ({commission, isDeleting,
 		<th>{commission.id}</th>
 		<th>{commission.name}</th>
 		<th>
-			<Link to={`/commissions/${commission.id}/edit`}>
-				<i className="fa fa-pencil"/>
-			</Link>
+			<UserCan role={Roles.MODERATOR}>
+				<Link to={`/commissions/${commission.id}/edit`}>
+					<i className="fa fa-pencil"/>
+				</Link>
 
-			{
-				isDeleting ?
-					<Link to="#">
-						<i className="fa fa-close" onClick={() => del(commission.id)}/>
-					</Link>
-					:
-					<Spinner animation="border" size="sm"/>
-			}
+				{
+					isDeleting ?
+						<Link to="#">
+							<i className="fa fa-close" onClick={() => del(commission.id)}/>
+						</Link>
+						:
+						<Spinner animation="border" size="sm"/>
+				}
+			</UserCan>
 		</th>
 	</tr>
 );

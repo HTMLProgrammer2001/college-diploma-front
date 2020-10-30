@@ -3,6 +3,7 @@ import {Dropdown} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {Link, useHistory} from 'react-router-dom';
 import cn from 'classnames';
+import {useTranslation} from 'react-i18next';
 
 import styles from './styles.module.scss';
 import {RootState} from '../../../redux';
@@ -29,6 +30,8 @@ const UserDropdown: React.FC<IUserDropdownProps> = ({user, logout}) => {
 				});
 		  };
 
+	const {t} = useTranslation();
+
 	return (
 		<Dropdown>
 			<Dropdown.Toggle className={styles.dropNo}>
@@ -46,7 +49,7 @@ const UserDropdown: React.FC<IUserDropdownProps> = ({user, logout}) => {
 					<img
 						src={user.avatar}
 						className={styles.dropdown__avatar}
-						alt="Avatar"
+						alt={t('common.avatar')}
 					/>
 
 					<div>{user.fullName}</div>
@@ -54,8 +57,13 @@ const UserDropdown: React.FC<IUserDropdownProps> = ({user, logout}) => {
 				</div>
 
 				<div className={styles.buttons}>
-					<Link to="/profile" className={styles.button}>Профиль</Link>
-					<div className={styles.button} onClick={handler}>Выйти</div>
+					<Link to="/profile" className={styles.button}>
+						{t('layout.header.profile')}
+					</Link>
+
+					<div className={styles.button} onClick={handler}>
+						{t('layout.header.exit')}
+					</div>
 				</div>
 			</Dropdown.Menu>
 		</Dropdown>

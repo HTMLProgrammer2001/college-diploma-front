@@ -1,12 +1,13 @@
 import React, {useContext} from 'react';
 import cn from 'classnames';
-import {Link} from 'react-router-dom';
 import {connect, ConnectedProps} from 'react-redux';
+import {useTranslation} from 'react-i18next';
 
 import styles from './styles.module.scss';
 import MenuContext from '../../utils/contexts/MenuContext';
 import {RootState} from '../../redux';
 import {selectMeInfo} from '../../redux/me/selectors';
+import Links from './Links/';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -18,6 +19,7 @@ const connected = connect(mapStateToProps);
 type ISidebarProps = ConnectedProps<typeof connected>;
 const Sidebar: React.FC<ISidebarProps> = ({user}) => {
 	const {isOpen} = useContext(MenuContext);
+	const {t} = useTranslation();
 
 	return (
 		<aside className={cn(styles.sidebar, {[styles.active]: isOpen})}>
@@ -30,7 +32,7 @@ const Sidebar: React.FC<ISidebarProps> = ({user}) => {
 			<div className={styles.user}>
 				<img
 					src={user.avatar}
-					alt="Avatar"
+					alt={t('common.avatar')}
 				/>
 
 				<div>
@@ -39,30 +41,10 @@ const Sidebar: React.FC<ISidebarProps> = ({user}) => {
 			</div>
 
 			<div className={styles.header}>
-				Навигационное меню
+				{t('layout.sidebar.menu')}
 			</div>
 
-			<ul className={styles.menu}>
-				<li className={styles.menu__item}>
-					<i className="fa fa-dashboard"/>
-					<Link to="/">Админ панель</Link>
-				</li>
-
-				<li className={styles.menu__item}>
-					<i className="fa fa-user"/>
-					<Link to="/profile">Профиль</Link>
-				</li>
-
-				<li className={styles.menu__item}>
-					<i className="fa fa-user"/>
-					<Link to="/departments">Отделения</Link>
-				</li>
-
-				<li className={styles.menu__item}>
-					<i className="fa fa-user"/>
-					<Link to="/commissions">Комиссии</Link>
-				</li>
-			</ul>
+			<Links/>
 		</aside>
 	);
 };
