@@ -16,6 +16,8 @@ import {IProfileInternshipsFilterData} from '../../pages/ProfilePage/ProfileTabs
 import {IInternship} from '../../interfaces/models/IInternship';
 
 import objToParams from '../helpers/objToParams';
+import {IProfileInternshipsResponse} from '../../interfaces/responses/IProfileInternshipsResponse';
+import {IProfileQualificationsResponse} from '../../interfaces/responses/IProfileQualificationsResponse';
 
 
 const client = axios.create({
@@ -62,7 +64,7 @@ const profileApi = {
 	async getQualifications(filters: IProfileQualificationsFilterData, sort: ISort[], page = 1, pageSize = 5) {
 		let sortRules = objToParams(sort, 'sort');
 
-		return await client.get<IGeneralPaginationResponse<IQualification>>('/qualifications', {
+		return await client.get<IProfileQualificationsResponse>('/qualifications', {
 			params: {...filters, ...sortRules, page, pageSize}
 		})
 	},
@@ -70,7 +72,7 @@ const profileApi = {
 	async getInternships(filters: IProfileInternshipsFilterData, sort: ISort[], page = 1, pageSize = 5) {
 		let sortRules = objToParams(sort, 'sort');
 
-		return await client.get<IGeneralPaginationResponse<IInternship>>('/internships', {
+		return await client.get<IProfileInternshipsResponse>('/internships', {
 			params: {...filters, ...sortRules, page, pageSize}
 		})
 	}

@@ -2,7 +2,8 @@ import {
 	PROFILE_INTERNSHIPS_CHANGE_SORT,
 	PROFILE_INTERNSHIPS_SUCCESS,
 	PROFILE_INTERNSHIPS_ERROR,
-	PROFILE_INTERNSHIPS_START
+	PROFILE_INTERNSHIPS_START,
+	PROFILE_INTERNSHIPS_HOURS
 } from './types';
 import * as actionsCreators from './actions';
 import changeSortHandler from '../../../utils/helpers/changeSortHandler';
@@ -33,7 +34,7 @@ const initialState: IProfileInternshipsState = {
 	total: 0,
 	pageSize: 5,
 	sort: [],
-	hours: 30
+	hours: 0
 };
 
 const profileInternshipsReducer = (state = initialState,
@@ -59,6 +60,9 @@ const profileInternshipsReducer = (state = initialState,
 
 		case PROFILE_INTERNSHIPS_CHANGE_SORT:
 			return {...state, sort: changeSortHandler(state.sort, action.payload)};
+
+		case PROFILE_INTERNSHIPS_HOURS:
+			return {...state, hours: action.payload};
 	}
 
 	return state;

@@ -2,14 +2,12 @@ import {
 	PROFILE_INTERNSHIPS_CHANGE_SORT,
 	PROFILE_INTERNSHIPS_ERROR,
 	PROFILE_INTERNSHIPS_START,
-	PROFILE_INTERNSHIPS_SUCCESS
+	PROFILE_INTERNSHIPS_SUCCESS,
+	PROFILE_INTERNSHIPS_HOURS
 } from './types';
 
-import {IInternship} from '../../../interfaces/models/IInternship';
-import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
+import {IProfileInternshipsResponse} from '../../../interfaces/responses/IProfileInternshipsResponse';
 
-
-type IResponse = IGeneralPaginationResponse<IInternship>;
 
 export const profileInternshipsStart = () => <const>({
 	type: PROFILE_INTERNSHIPS_START
@@ -20,7 +18,7 @@ export const profileInternshipsError = (error: string) => <const>({
 	error
 });
 
-export const profileInternshipsSuccess = (internshipsResponse: IResponse) => <const>({
+export const profileInternshipsSuccess = (internshipsResponse: IProfileInternshipsResponse) => <const>({
 	type: PROFILE_INTERNSHIPS_SUCCESS,
 	payload: internshipsResponse
 });
@@ -28,4 +26,9 @@ export const profileInternshipsSuccess = (internshipsResponse: IResponse) => <co
 export const profileInternshipsChangeSort = (field: string) => <const>({
 	type: PROFILE_INTERNSHIPS_CHANGE_SORT,
 	payload: field
+});
+
+export const profileInternshipsHours = (hours: number) => <const>({
+	type: PROFILE_INTERNSHIPS_HOURS,
+	payload: hours
 });

@@ -7,7 +7,8 @@ import {IProfileQualificationsActions} from './reducer';
 import {
 	profileQualificationsError,
 	profileQualificationsStart,
-	profileQualificationsSuccess
+	profileQualificationsSuccess,
+	profileQualificationsSetNext
 } from './actions';
 import profileApi from '../../../utils/api/profileApi';
 import {selectProfileQualificationsPagination, selectProfileQualificationsSort} from './selectors';
@@ -27,6 +28,7 @@ const thunkProfileQualifications = (page: number = 1): IProfileQualificationsThu
 
 			let resp = await profileApi.getQualifications(filters(getState()), sort, page, pagination.pageSize);
 			dispatch(profileQualificationsSuccess(resp.data));
+			dispatch(profileQualificationsSetNext(resp.data.nextDate));
 		}
 		catch (e) {
 			dispatch(profileQualificationsError(e.message));

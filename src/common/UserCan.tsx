@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect, ConnectedProps} from 'react-redux';
 
-import IsUserRoleMore from '../utils/HOC/IsUserRoleMore';
 import {RootState} from '../redux';
 import {selectMeInfo} from '../redux/me/selectors';
 

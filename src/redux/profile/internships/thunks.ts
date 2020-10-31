@@ -1,10 +1,10 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {getFormValues} from 'redux-form';
 
-import {RootState} from '../../';
+import {RootState} from '../../index';
 import {IProfileInternshipsActions} from './reducer';
 import {
-	profileInternshipsError,
+	profileInternshipsError, profileInternshipsHours,
 	profileInternshipsStart,
 	profileInternshipsSuccess
 } from './actions';
@@ -26,6 +26,7 @@ const thunkProfileInternships = (page: number = 1): IProfileInternshipsThunkActi
 
 			const resp = await profileApi.getInternships(filters(getState()), sort, page, pagination.pageSize);
 			dispatch(profileInternshipsSuccess(resp.data));
+			dispatch(profileInternshipsHours(resp.data.hours));
 		}
 		catch (e) {
 			dispatch(profileInternshipsError(e.message));

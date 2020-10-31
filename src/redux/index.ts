@@ -10,11 +10,7 @@ import profile from './profile/';
 import app from './app/reducer';
 import departments from './departments/';
 import commissions from './commissions/';
-
-
-import publications from './publications/';
-import internships from './internships/';
-import qualifications from './qualifications/';
+import ranks from './ranks/';
 
 
 //create reducer
@@ -25,6 +21,7 @@ const rootReducer = combineReducers({
 	profile,
 	departments,
 	commissions,
+	ranks,
 	form: formReducer
 });
 
