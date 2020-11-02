@@ -11,46 +11,46 @@ import ErrorElement from '../../../common/ErrorElement';
 import Loader from '../../../common/Loader/Loader';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
-import {selectEditRankState} from '../../../redux/ranks/edit/selectors';
-import thunkEditRankLoad from '../../../redux/ranks/edit/thunks/thunkEditRankLoad';
-import thunkEditRank from '../../../redux/ranks/edit/thunks/thunkEditRank';
-import EditRankForm, {IRanksEditData} from './EditRankForm';
+import {selectEditPublicationState} from '../../../redux/publications/edit/selectors';
+import thunkEditPublicationLoad from '../../../redux/publications/edit/thunks/thunkEditPublicationLoad';
+import thunkEditPublication from '../../../redux/publications/edit/thunks/thunkEditPublication';
+import EditPublicationForm, {IPublicationsEditData} from './EditPublicationForm';
 
 
 const mapStateToProps = (state: RootState) => ({
-	editState: selectEditRankState(state),
-	submitting: isSubmitting('ranksEditForm')(state)
+	editState: selectEditPublicationState(state),
+	submitting: isSubmitting('publicationsEditForm')(state)
 });
 
 const connected = connect(mapStateToProps, {
-	loadRank: thunkEditRankLoad,
+	loadPublication: thunkEditPublicationLoad,
 	send: submit,
-	editRank: thunkEditRank
+	editPublication: thunkEditPublication
 });
 
-type IEditRankPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
-const EditRankPage: React.FC<IEditRankPageProps> = ({editState, loadRank, ...props}) => {
+type IEditPublicationPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
+const EditPublicationPage: React.FC<IEditPublicationPageProps> = ({editState, loadPublication, ...props}) => {
 	const {t} = useTranslation();
 
 	useEffect(() => {
-		loadRank(+props.match.params.id);
-		document.title = t('ranks.edit.pageTitle');
+		loadPublication(+props.match.params.id);
+		document.title = t('publications.edit.pageTitle');
 	}, []);
 
 	const clickHandler = () => {
-		props.send('ranksEditForm');
+		props.send('publicationsEditForm');
 	};
 
-	const submitHandler = (vals: IRanksEditData) => {
-		props.editRank(+props.match.params.id, vals);
+	const submitHandler = (vals: IPublicationsEditData) => {
+		props.editPublication(+props.match.params.id, vals);
 	};
 
-	if(!editState.rank && !editState.isLoading)
+	if(!editState.publication && !editState.isLoading)
 		return null;
 
 	return (
 		<>
-			<div className="title">{t('ranks.edit.pageTitle')}</div>
+			<div className="title">{t('publications.edit.pageTitle')}</div>
 
 			<Card className="mr-5">
 				<Card.Body>
@@ -66,7 +66,7 @@ const EditRankPage: React.FC<IEditRankPageProps> = ({editState, loadRank, ...pro
 
 					{
 						!editState.isLoading && !editState.error &&
-							<EditRankForm onSubmit={submitHandler}/>
+							<EditPublicationForm onSubmit={submitHandler}/>
 					}
 				</Card.Body>
 
@@ -96,4 +96,4 @@ const EditRankPage: React.FC<IEditRankPageProps> = ({editState, loadRank, ...pro
 	);
 };
 
-export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditRankPage));
+export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditPublicationPage));

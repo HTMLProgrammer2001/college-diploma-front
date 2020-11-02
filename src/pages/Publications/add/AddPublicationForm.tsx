@@ -14,7 +14,8 @@ export type IPublicationsAddData = {
 	publisher: string,
 	date: string,
 	authors: number,
-	another_authors: string
+	another_authors: string,
+	description?: string
 };
 
 type IPublicationsAddFormProps = InjectedFormProps<IPublicationsAddData>;
@@ -70,7 +71,7 @@ const PublicationsAddForm: React.FC<IPublicationsAddFormProps> = ({handleSubmit,
 							component={DataListElement}
 							name="authors"
 							placeholder={t('publications.add.authors')}
-							url={`${process.env.REACT_APP_SERVER_URL}/users`}
+							url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
 							multiple
 						/>
 
@@ -84,6 +85,20 @@ const PublicationsAddForm: React.FC<IPublicationsAddFormProps> = ({handleSubmit,
 				)}
 			</Translation>
 		</div>
+
+		<Translation>
+			{t => (
+				<div className="w-100 mt-2">
+					<Field
+						component="textarea"
+						className="form-control"
+						name="description"
+						rows={5}
+						label={t('publications.add.description')}
+					/>
+				</div>
+			)}
+		</Translation>
 	</form>
 );
 

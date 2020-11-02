@@ -3,18 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="57a409a2-1ea6-4331-ae71-85b96f4252a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfileInternshipRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfileInternshipRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Repositories/InternshipRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Repositories/InternshipRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Http/Controllers/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Controllers/SearchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Repositories/PublicationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Repositories/PublicationRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AdminRoutes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AdminRoutes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Sidebar/Links/ViewerUserLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Sidebar/Links/ViewerUserLinks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Publications/add/AddRankForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/add/AddPublicationForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Publications/add/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/add/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Publications/all/RankItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/all/PublicationItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Publications/all/RanksFilterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/all/PublicationsFilterForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Publications/all/RanksTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/all/PublicationsTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Publications/all/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/all/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Publications/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Publications/add/AddPublicationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/add/AddPublicationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Publications/all/PublicationsFilterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/all/PublicationsFilterForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Publications/edit/EditRankForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/edit/EditPublicationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Publications/edit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/edit/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/translations/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/translations/ru.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,10 +25,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/common/Sidebar/Links/ViewerUserLinks.tsx">
+        <entry file="file://$PROJECT_DIR$/src/pages/Publications/all/PublicationsFilterForm.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="40" column="19" lean-forward="true" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+            <state relative-caret-position="840">
+              <caret line="35" column="42" lean-forward="true" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -41,10 +37,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/translations/ru.json">
+        <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/PublicationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+            <state relative-caret-position="194">
+              <caret line="25" column="64" lean-forward="true" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+              <folding>
+                <element signature="e#40#96#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -61,7 +60,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>PUBLICATIONS</find>
       <find>INTERNSHIPS</find>
       <find>PUBLICATIONS_</find>
       <find>Publications</find>
@@ -88,12 +86,12 @@
       <find>Commission</find>
       <find>Ranks</find>
       <find>RANK</find>
+      <find>Add</find>
+      <find>add</find>
       <find>Rank</find>
+      <find>rank</find>
     </findStrings>
     <replaceStrings>
-      <replace>QUALIFICATIONS</replace>
-      <replace>INTERNSHIPS_</replace>
-      <replace>Internships</replace>
       <replace>QUALIFICATIONS_</replace>
       <replace>Qualifications</replace>
       <replace>HONORS_</replace>
@@ -120,28 +118,18 @@
       <replace>Rank</replace>
       <replace>Publications</replace>
       <replace>PUBLICATION</replace>
+      <replace>Edit</replace>
+      <replace>edit</replace>
       <replace>Publication</replace>
+      <replace>publication</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/server" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/app/Repositories/RankRepository.php" />
-        <option value="$PROJECT_DIR$/server/routes/api.php" />
-        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/InternshipsTab/InternshipsFilterForm.tsx" />
-        <option value="$PROJECT_DIR$/server/app/Http/Resources/Categories/SearchCategoriesGroupResource.php" />
-        <option value="$PROJECT_DIR$/server/app/Http/Resources/Categories/SearchCategoryResource.php" />
-        <option value="$PROJECT_DIR$/src/utils/helpers/debounce.ts" />
-        <option value="$PROJECT_DIR$/server/app/Http/Controllers/SearchController.php" />
-        <option value="$PROJECT_DIR$/src/utils/hooks/useHttp.ts" />
-        <option value="$PROJECT_DIR$/server/app/Http/Requests/Profile/ProfileInternshipRequest.php" />
-        <option value="$PROJECT_DIR$/src/common/formElements/DataListElement.tsx" />
-        <option value="$PROJECT_DIR$/server/app/Repositories/InternshipRepository.php" />
-        <option value="$PROJECT_DIR$/src/App.tsx" />
-        <option value="$PROJECT_DIR$/src/redux/publications/index.ts" />
         <option value="$PROJECT_DIR$/src/redux/index.ts" />
         <option value="$PROJECT_DIR$/src/redux/publications/add/thunks.ts" />
         <option value="$PROJECT_DIR$/src/redux/publications/all/types.ts" />
@@ -174,12 +162,25 @@
         <option value="$PROJECT_DIR$/src/AdminRoutes.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Publications/all/PublicationsTable.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Publications/index.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Publications/all/PublicationsFilterForm.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Publications/all/index.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Publications/add/index.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Publications/add/AddPublicationForm.tsx" />
         <option value="$PROJECT_DIR$/src/common/Sidebar/Links/ViewerUserLinks.tsx" />
+        <option value="$PROJECT_DIR$/server/app/Http/Resources/Users/SearchUsersGroupResource.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Resources/Users/SearchUserResource.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Controllers/SearchController.php" />
+        <option value="$PROJECT_DIR$/server/app/Repositories/UserRepository.php" />
+        <option value="$PROJECT_DIR$/server/app/Providers/RepositoryServiceProvider.php" />
+        <option value="$PROJECT_DIR$/server/routes/api.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Requests/Publication/AllPublicationRequest.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Requests/Publication/AddPublicationRequest.php" />
+        <option value="$PROJECT_DIR$/src/pages/Publications/add/AddPublicationForm.tsx" />
+        <option value="$PROJECT_DIR$/server/app/Repositories/PublicationRepository.php" />
+        <option value="$PROJECT_DIR$/src/pages/Publications/edit/index.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/Publications/edit/EditPublicationForm.tsx" />
+        <option value="$PROJECT_DIR$/server/app/Http/Requests/Publication/EditPublicationRequest.php" />
         <option value="$PROJECT_DIR$/src/translations/ru.json" />
+        <option value="$PROJECT_DIR$/src/pages/Publications/all/PublicationsFilterForm.tsx" />
+        <option value="$PROJECT_DIR$/server/app/Http/Controllers/PublicationController.php" />
       </list>
     </option>
   </component>
@@ -330,34 +331,39 @@
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="Sidebar" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="Publications" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="Sidebar" type="462c0819:PsiDirectoryNode" />
-              <item name="Links" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="translations" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="Publications" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -414,9 +420,9 @@
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.28387585" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.28160486" />
       <window_info id="Structure" order="3" sideWeight="0.5019531" side_tool="true" weight="0.30885693" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.26837608" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.22393163" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003785" side_tool="true" weight="0.5435898" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
@@ -469,131 +475,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/common/formElements/DataListElement.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Repositories/InternshipRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="46" column="72" lean-forward="true" selection-start-line="46" selection-start-column="72" selection-end-line="46" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/favicon.ico">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/robots.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/logo512.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/logo192.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-            <element signature="e#227#257#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/publications/add/thunks.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/publications/all/actions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="e#0#159#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/publications/all/types.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/publications/all/reducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="e#0#159#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/publications/all/selectors.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/publications/all/thunks.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/publications/delete/types.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="59" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/publications/delete/actions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/publications/delete/reducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/publications/delete/selectors.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -853,16 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Publications/all/PublicationsFilterForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Publications/add/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1124">
@@ -879,16 +750,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Publications/add/AddPublicationForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/Sidebar/Links/ViewerUserLinks.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
@@ -899,10 +760,167 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/Users/SearchUsersGroupResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/Users/SearchUserResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Repositories/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding>
+            <element signature="e#38#94#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Providers/RepositoryServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="60" column="1" lean-forward="true" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/SearchController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+          <folding>
+            <element signature="e#7#44#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Publication/AllPublicationRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/RankController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Publication/AddPublicationRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="19" column="53" lean-forward="true" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Models/Publication.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Publications/add/AddPublicationForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="70" column="24" lean-forward="true" selection-end-line="107" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Departments/edit/EditDepartmentForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-541">
+          <caret line="19" column="2" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Departments/edit/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="9" column="48" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Publications/edit/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Publication/EditPublicationRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/translations/ru.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+        <state relative-caret-position="297">
+          <caret line="215" column="9" lean-forward="true" selection-start-line="215" selection-start-column="9" selection-end-line="215" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Publications/edit/EditPublicationForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="43" column="24" lean-forward="true" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Repositories/PublicationRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-84">
+          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Publications/all/PublicationsFilterForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="35" column="42" lean-forward="true" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/PublicationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="25" column="64" lean-forward="true" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+          <folding>
+            <element signature="e#40#96#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

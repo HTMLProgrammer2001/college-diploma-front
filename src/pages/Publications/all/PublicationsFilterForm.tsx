@@ -9,7 +9,7 @@ import DateElement from '../../../common/formElements/DateElement';
 
 
 export type IPublicationsFilterData = {
-	filterName: string,
+	filterTitle: string,
 	filterUser: number,
 	filterFrom: string,
 	filterTo: string
@@ -33,7 +33,7 @@ const PublicationsFilterForm: React.FC<IPublicationsFilterFormProps> = ({handleS
 					<Field
 						component={InputElement}
 						type="text"
-						name="filterName"
+						name="filterTitle"
 						className="w-100 ml-1"
 						label={t('publications.all.filterName')}
 					/>
