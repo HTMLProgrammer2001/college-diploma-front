@@ -1,5 +1,5 @@
 import React, {lazy, useState, Suspense} from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {HashRouter as Router, Switch, Route} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {ToastContainer} from 'react-toastify';
 

@@ -8,7 +8,7 @@ import objToParams from '../../helpers/objToParams';
 
 
 const client = axios.create({
-	baseURL: 'http://localhost:8000/api/ranks',
+	baseURL: `${process.env.REACT_APP_SERVER_URL}/ranks`,
 	headers: {
 		'Access-Control-Allow-Origin': '*',
 		Authorization: `Bearer ${localStorage.getItem('token')}`

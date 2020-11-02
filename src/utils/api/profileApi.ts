@@ -10,10 +10,8 @@ import {IProfileHonorsFilterData} from '../../pages/ProfilePage/ProfileTabs/Hono
 import {IHonor} from '../../interfaces/models/IHonor';
 import {IProfileRebukesFilterData} from '../../pages/ProfilePage/ProfileTabs/RebukesTab/RebukesFilterForm';
 import {IRebuke} from '../../interfaces/models/IRebuke';
-import {IQualification} from '../../interfaces/models/IQualification';
 import {IProfileQualificationsFilterData} from '../../pages/ProfilePage/ProfileTabs/QualificationsTab/QualificationsFilterForm';
 import {IProfileInternshipsFilterData} from '../../pages/ProfilePage/ProfileTabs/InternshipsTab/InternshipsFilterForm';
-import {IInternship} from '../../interfaces/models/IInternship';
 
 import objToParams from '../helpers/objToParams';
 import {IProfileInternshipsResponse} from '../../interfaces/responses/IProfileInternshipsResponse';
@@ -21,7 +19,7 @@ import {IProfileQualificationsResponse} from '../../interfaces/responses/IProfil
 
 
 const client = axios.create({
-	baseURL: 'http://localhost:8000/api/profile',
+	baseURL: `${process.env.REACT_APP_SERVER_URL}/profile`,
 	headers: {
 		'Access-Control-Allow-Origin': '*',
 		Authorization: `Bearer ${localStorage.getItem('token')}`

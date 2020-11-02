@@ -9,7 +9,7 @@ import {IProfileEditResponse} from '../../interfaces/responses/IProfileEditRespo
 
 
 const client = axios.create({
-	baseURL: 'http://localhost:8000/api',
+	baseURL: process.env.REACT_APP_SERVER_URL,
 	headers: {
 		'Access-Control-Allow-Origin': '*'
 	}
