@@ -5,7 +5,7 @@ import {Translation} from 'react-i18next';
 
 import InputElement from '../../../../common/formElements/InputElement';
 import DateElement from '../../../../common/formElements/DateElement';
-import SelectElement from '../../../../common/formElements/SelectElement';
+import DataListElement from '../../../../common/formElements/DataListElement';
 
 import positiveNumber from '../../../../utils/validators/positiveNumber';
 
@@ -26,17 +26,13 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit}
 			{t => (
 				<Row md={12}>
 					<Field
-						component={SelectElement}
+						component={DataListElement}
 						name="filterCategory"
-						label={t('profile.tabs.internships.category')}
-						type="text"
+						id="filterCategory"
+						placeholder={t('profile.tabs.internships.category')}
 						className="mr-1"
-					>
-						<option value={0}>{t('common.all')}</option>
-						<option value={1}>Cat 1</option>
-						<option value={2}>Cat 2</option>
-						<option value={3}>Cat 3</option>
-					</Field>
+						url="http://localhost:8000/api/search/categories"
+					/>
 
 					<Field
 						component={InputElement}

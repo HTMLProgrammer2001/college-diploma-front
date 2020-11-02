@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom';
 import {Spinner} from 'react-bootstrap';
 
 import {IRank} from '../../../interfaces/models/IRank';
-import UserCan from '../../../common/UserCan';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import UserCan from '../../../common/UserCan';
 
 
 type IRankItemProps = {
@@ -19,7 +19,7 @@ const RankItem: React.FC<IRankItemProps> = ({rank, isDeleting, del}) => (
 		<th>{rank.name}</th>
 		<th>
 			<UserCan role={Roles.MODERATOR}>
-				<Link to={`/commissions/${rank.id}/edit`}>
+				<Link to={`/ranks/${rank.id}/edit`}>
 					<i className="fa fa-pencil"/>
 				</Link>
 

@@ -20,7 +20,7 @@ const thunkAllRanks = (page: number = 1): IAllRanksThunkAction => {
 		dispatch(allRanksStart());
 
 		try{
-			const form = getFormValues('departmentsFilterForm'),
+			const form = getFormValues('ranksFilterForm'),
 				sort = selectAllRanksSort(getState()),
 				pagination = selectAllRanksPagination(getState());
 

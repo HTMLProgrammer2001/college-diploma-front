@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-datepicker/dist/react-datepicker-min.module.css';
 import 'react-toastify/scss/main.scss'
+import 'react-bootstrap-typeahead/css/Typeahead.min.css';
+
 import './index.scss';
 
 import * as serviceWorker from './serviceWorker';
