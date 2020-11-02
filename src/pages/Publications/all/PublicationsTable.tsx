@@ -4,45 +4,44 @@ import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
-import {ICommission} from '../../../interfaces/models/ICommission';
+import {IPublication} from '../../../interfaces/models/IPublication';
 
 import SortItem from '../../../common/SortItem';
 import Loader from '../../../common/Loader/Loader';
 import ErrorElement from '../../../common/ErrorElement';
 import findSortRule from '../../../utils/helpers/findSortRule';
-import RankItem from './RankItem';
-import {selectAllRanksState} from '../../../redux/ranks/all/selectors';
-import {selectDeleteRanks} from '../../../redux/ranks/delete/selectors';
-import {allRanksChangeSort} from '../../../redux/ranks/all/actions';
-import thunkAllRanks from '../../../redux/ranks/all/thunks';
-import thunkDeleteRank from '../../../redux/ranks/delete/thunks';
-import {IRank} from '../../../interfaces/models/IRank';
+import PublicationItem from './PublicationItem';
+import {selectAllPublicationsState} from '../../../redux/publications/all/selectors';
+import {selectDeletePublications} from '../../../redux/publications/delete/selectors';
+import {allPublicationsChangeSort} from '../../../redux/publications/all/actions';
+import thunkAllPublications from '../../../redux/publications/all/thunks';
+import thunkDeletePublication from '../../../redux/publications/delete/thunks';
 
 
 const mapStateToProps = (state: RootState) => ({
-	...selectAllRanksState(state),
-	deleting: selectDeleteRanks(state)
+	...selectAllPublicationsState(state),
+	deleting: selectDeletePublications(state)
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
 	changeSort(field: string) {
-		dispatch(allRanksChangeSort(field));
-		dispatch(thunkAllRanks(1));
+		dispatch(allPublicationsChangeSort(field));
+		dispatch(thunkAllPublications(1));
 	},
 	load(page = 1) {
-		dispatch(thunkAllRanks(page));
+		dispatch(thunkAllPublications(page));
 	},
 	deleteItem(id: number) {
-		dispatch(thunkDeleteRank(id));
+		dispatch(thunkDeletePublication(id));
 	}
 });
 
 const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type ICommissionsTableProps = ConnectedProps<typeof connected>;
-const RanksTable: React.FC<ICommissionsTableProps> = (props) => {
+const PublicationsTable: React.FC<ICommissionsTableProps> = (props) => {
 	useEffect(() => {
-		if (!props.isLoading && !props.ranks.length)
+		if (!props.isLoading && !props.publications.length)
 			props.load();
 	}, []);
 
@@ -65,13 +64,37 @@ const RanksTable: React.FC<ICommissionsTableProps> = (props) => {
 
 					<th>
 					<span className="pull-left">
-						{t('ranks.all.name')}
+						{t('publications.all.name')}
 					</span>
 
 						<SortItem
 							state={findSortRule(props.sort, 'name')?.direction}
 							change={props.changeSort}
 							param="name"
+						/>
+					</th>
+
+					<th>
+					<span className="pull-left">
+						{t('publications.all.authors')}
+					</span>
+
+						<SortItem
+							state={findSortRule(props.sort, 'authors')?.direction}
+							change={props.changeSort}
+							param="authors"
+						/>
+					</th>
+
+					<th>
+					<span className="pull-left">
+						{t('publications.all.date')}
+					</span>
+
+						<SortItem
+							state={findSortRule(props.sort, 'date')?.direction}
+							change={props.changeSort}
+							param="date"
 						/>
 					</th>
 
@@ -82,7 +105,7 @@ const RanksTable: React.FC<ICommissionsTableProps> = (props) => {
 				{
 					props.isLoading &&
 					<tr>
-						<th colSpan={3} className="text-center">
+						<th colSpan={5} className="text-center">
 							<Loader/>
 						</th>
 					</tr>
@@ -91,19 +114,19 @@ const RanksTable: React.FC<ICommissionsTableProps> = (props) => {
 				{
 					props.error &&
 					<tr className="text-center text-danger">
-						<th colSpan={3} className="text-center">
+						<th colSpan={5} className="text-center">
 							<ErrorElement error={props.error}/>
 						</th>
 					</tr>
 				}
 
 				{
-					!props.isLoading && !props.error && !props.ranks.length &&
+					!props.isLoading && !props.error && !props.publications.length &&
 					<tr className="font-weight-bold text-center">
-						<th colSpan={3} className="text-center">
+						<th colSpan={5} className="text-center">
 							{
 								t('common.noItems', {
-									what: t('ranks.all.noForm')
+									what: t('publications.all.noForm')
 								})
 							}
 						</th>
@@ -112,11 +135,11 @@ const RanksTable: React.FC<ICommissionsTableProps> = (props) => {
 
 				{
 					!props.isLoading && !props.error &&
-					props.ranks.map((rank: IRank) => (
-						<RankItem
-							key={rank.id}
-							rank={rank}
-							isDeleting={props.deleting.findIndex((id) => id == rank.id) == -1}
+					props.publications.map((publication: IPublication) => (
+						<PublicationItem
+							key={publication.id}
+							publication={publication}
+							isDeleting={props.deleting.findIndex((id) => id == publication.id) == -1}
 							del={props.deleteItem}
 						/>
 					))
@@ -127,4 +150,4 @@ const RanksTable: React.FC<ICommissionsTableProps> = (props) => {
 	);
 };
 
-export default connected(RanksTable);
+export default connected(PublicationsTable);

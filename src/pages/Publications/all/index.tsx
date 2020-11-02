@@ -7,33 +7,33 @@ import {useTranslation} from 'react-i18next';
 import {RootState} from '../../../redux';
 
 import BackButton from '../../../common/BackButton';
-import RanksFilterForm from './RanksFilterForm';
-import RanksTable from './RanksTable';
+import PublicationsFilterForm from './PublicationsFilterForm';
+import PublicationsTable from './PublicationsTable';
 import Paginator from '../../../common/Paginator';
-import {selectAllRanksPagination} from '../../../redux/ranks/all/selectors';
-import thunkAllRanks from '../../../redux/ranks/all/thunks';
 import UserCan from '../../../common/UserCan';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {selectAllPublicationsPagination} from '../../../redux/publications/all/selectors';
+import thunkAllPublications from '../../../redux/publications/all/thunks';
 
 
 const mapStateToProps = (state: RootState) => ({
-	paginator: selectAllRanksPagination(state)
+	paginator: selectAllPublicationsPagination(state)
 });
 
-const connected = connect(mapStateToProps, {changePage: thunkAllRanks});
+const connected = connect(mapStateToProps, {changePage: thunkAllPublications});
 
-type IAllRanksPageProps = ConnectedProps<typeof connected>;
-const AllRanksPage: React.FC<IAllRanksPageProps> = ({changePage, paginator}) => {
+type IAllPublicationsPageProps = ConnectedProps<typeof connected>;
+const AllPublicationsPage: React.FC<IAllPublicationsPageProps> = ({changePage, paginator}) => {
 	const {t} = useTranslation();
 
 	useEffect(() => {
-		document.title = t('ranks.all.pageTitle');
+		document.title = t('publications.all.pageTitle');
 	}, []);
 
 	return (
 		<>
 			<div className="title">
-				{t('ranks.name')}
+				{t('publications.name')}
 			</div>
 
 			<Card className="mr-5">
@@ -41,7 +41,7 @@ const AllRanksPage: React.FC<IAllRanksPageProps> = ({changePage, paginator}) => 
 					<div className="model__filter-form">
 						<div>
 							<UserCan role={Roles.MODERATOR}>
-								<Link to="/ranks/add">
+								<Link to="/publications/add">
 									<Button variant="success">
 										{t('common.add')}
 									</Button>
@@ -49,12 +49,24 @@ const AllRanksPage: React.FC<IAllRanksPageProps> = ({changePage, paginator}) => 
 							</UserCan>
 						</div>
 
-						<RanksFilterForm onSubmit={() => changePage(1)}/>
+						<div>
+							<UserCan role={Roles.MODERATOR}>
+								<Link to="/publications/import">
+									<Button variant="primary">
+										{t('common.import')}
+									</Button>
+								</Link>
+							</UserCan>
+						</div>
 					</div>
 
-					<RanksTable/>
+					<PublicationsFilterForm onSubmit={() => changePage(1)}/>
 
-					<div className="d-flex my-3 justify-content-end">
+					<div className="d-flex justify-content-center w-100">
+						<PublicationsTable/>
+					</div>
+
+					<div className="d-flex my-3 justify-content-end w-100">
 						<Paginator {...paginator} setCur={changePage}/>
 					</div>
 				</Card.Body>
@@ -69,4 +81,4 @@ const AllRanksPage: React.FC<IAllRanksPageProps> = ({changePage, paginator}) => 
 	);
 };
 
-export default connected(AllRanksPage);
+export default connected(AllPublicationsPage);

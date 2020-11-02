@@ -6,38 +6,38 @@ import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
-import AddRankForm from './AddRankForm';
-import thunkAddRank from '../../../redux/ranks/add/thunks';
+import AddPublicationForm from './AddPublicationForm';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import thunkAddPublication from '../../../redux/publications/add/thunks';
 
 
 const mapStateToProps = (state: RootState) => ({
-	submitting: isSubmitting('ranksAddForm')(state)
+	submitting: isSubmitting('publicationsAddForm')(state)
 });
 
 const connected = connect(mapStateToProps, {
-	add: thunkAddRank,
+	add: thunkAddPublication,
 	send: submit
 });
 
-type IAddRankPageProps = ConnectedProps<typeof connected>;
-const AddRankPage: React.FC<IAddRankPageProps> = ({add, send, submitting}) => {
+type IAddPublicationPageProps = ConnectedProps<typeof connected>;
+const AddPublicationPage: React.FC<IAddPublicationPageProps> = ({add, send, submitting}) => {
 	const {t} = useTranslation();
 
 	useEffect(() => {
-		document.title = t('ranks.add.pageTitle');
+		document.title = t('publications.add.pageTitle');
 	}, []);
 
 	return (
 		<>
 			<div className="title">
-				{t('ranks.add.pageTitle')}
+				{t('publications.add.pageTitle')}
 			</div>
 
 			<Card className="mr-5">
 				<Card.Body>
-					<AddRankForm onSubmit={add}/>
+					<AddPublicationForm onSubmit={add}/>
 				</Card.Body>
 
 				<Card.Footer>
@@ -46,7 +46,7 @@ const AddRankPage: React.FC<IAddRankPageProps> = ({add, send, submitting}) => {
 
 						<Button
 							variant="success"
-							onClick={() => send('ranksAddForm')}
+							onClick={() => send('publicationsAddForm')}
 							disabled={submitting}
 						>
 							{submitting && <Spinner size="sm" animation="border"/>}
@@ -59,4 +59,4 @@ const AddRankPage: React.FC<IAddRankPageProps> = ({add, send, submitting}) => {
 	);
 };
 
-export default IsUserRoleMore(Roles.MODERATOR, true)(connected(AddRankPage));
+export default IsUserRoleMore(Roles.MODERATOR, true)(connected(AddPublicationPage));
