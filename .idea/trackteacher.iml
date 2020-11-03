@@ -38,9 +38,14 @@
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/league/mime-type-detection" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/league/oauth2-server" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/maatwebsite/excel" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/maennchen/zipstream-php" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/markbaker/complex" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/markbaker/matrix" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/myclabs/php-enum" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/nunomaduro/collision" />
@@ -53,6 +58,7 @@
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/phpoffice/phpspreadsheet" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/phpoption/phpoption" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/phpseclib/phpseclib" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/phpspec/prophecy" />
