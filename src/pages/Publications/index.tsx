@@ -5,6 +5,7 @@ import NotFoundPage from '../ErrorPages/NotFoundPage';
 import AllPublicationsPage from './all';
 import EditPublicationPage from './edit';
 import AddPublicationPage from './add';
+import SinglePublicationPage from './single';
 
 import IsUserRoleMore from '../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../utils/helpers/RoleCodeToName';
@@ -15,6 +16,7 @@ const Publications: React.FC<{}> = () => (
 		<Route path="/publications" exact component={AllPublicationsPage}/>
 		<Route path="/publications/add" exact component={AddPublicationPage}/>
 		<Route path="/publications/:id/edit" exact component={EditPublicationPage}/>
+		<Route path="/publications/:id" exact component={SinglePublicationPage}/>
 		<Route path="/" component={NotFoundPage}/>
 	</Switch>
 );

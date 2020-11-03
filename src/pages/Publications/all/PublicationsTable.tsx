@@ -78,12 +78,6 @@ const PublicationsTable: React.FC<ICommissionsTableProps> = (props) => {
 					<span className="pull-left">
 						{t('publications.all.authors')}
 					</span>
-
-						<SortItem
-							state={findSortRule(props.sort, 'authors')?.direction}
-							change={props.changeSort}
-							param="authors"
-						/>
 					</th>
 
 					<th>

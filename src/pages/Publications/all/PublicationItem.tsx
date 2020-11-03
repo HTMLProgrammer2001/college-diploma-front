@@ -21,6 +21,10 @@ const PublicationItem: React.FC<IPublicationItemProps> = ({publication, isDeleti
 		<th>{publication.date_of_publication}</th>
 		<th>
 			<UserCan role={Roles.MODERATOR}>
+				<Link to={`/publications/${publication.id}`}>
+					<i className="fa fa-eye"/>
+				</Link>
+
 				<Link to={`/publications/${publication.id}/edit`}>
 					<i className="fa fa-pencil"/>
 				</Link>

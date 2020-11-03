@@ -22,7 +22,7 @@ export type IPublicationsEditData = {
 	url: string,
 	publisher: string,
 	date: string,
-	authors: number,
+	authors: number[],
 	another_authors: string,
 	description?: string
 };

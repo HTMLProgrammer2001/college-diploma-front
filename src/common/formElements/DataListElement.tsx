@@ -12,7 +12,9 @@ type IDataListOwnProps = {
 	url: string,
 	id: string,
 	placeholder?: string,
-	size?: number
+	size?: number,
+	multiple?: boolean,
+	isFilter?: boolean
 };
 
 type IOption = {
@@ -22,10 +24,11 @@ type IOption = {
 
 type IDataListElementProps = WrappedFieldProps & IDataListOwnProps;
 const DataListElement: React.FC<IDataListElementProps> = (props) => {
-	const {id, placeholder, url, size = 5, input: {onChange, name}} = props;
+	const {id, placeholder, url, size = 5, multiple, isFilter, input: {onChange, name, value}} = props;
 
 	//hooks
 	const [query, setQuery] = useState(null);
+	const [selected, setSelected] = useState<IOption[]>([]);
 	const {request, error, isLoading, data: reqData} = useHttp<IGeneralPaginationResponse<IOption>>();
 
 	//hook query changes
@@ -33,6 +36,14 @@ const DataListElement: React.FC<IDataListElementProps> = (props) => {
 		if (query != null && query.length >= 1)
 			makeRequest();
 	}, [query]);
+
+	//hook for selected
+	useEffect(() => {
+		if(!multiple)
+			setSelected(value ? selected.filter(({id}) => id == value) : []);
+		else
+			setSelected(value ? selected.filter(({id}) => value.includes(id)) : []);
+	}, [value]);
 
 	//wrapper for making http request
 	const makeRequest = async (page = 1) => {
@@ -43,17 +54,16 @@ const DataListElement: React.FC<IDataListElementProps> = (props) => {
 	//input change handler
 	const onInputChange = debounce(async (query: string) => {
 		//change cur query
-		onChange(null, name);
 		setQuery(query);
 	}, 500);
 
-	const onPaginate = async () => {
-		//get items from next page
-		await makeRequest(reqData.meta.current_page + 1);
-	};
+	const onSelect = (selectedOptions: IOption[]) => {
+		setSelected(selectedOptions);
 
-	const onSelect = (id: number) => {
-		onChange(id as any, name);
+		if(!multiple)
+			onChange(selectedOptions[0].id as any, name);
+		else
+			onChange(selectedOptions.map((opt) => opt.id) as any, name);
 	};
 
 	return (
@@ -65,27 +75,25 @@ const DataListElement: React.FC<IDataListElementProps> = (props) => {
 
 			<AsyncTypeahead
 				onInputChange={onInputChange}
-				onPaginate={onPaginate}
-				onSearch={() => {
-					console.log('Search')
-				}}
+				onSearch={() => {console.log('Search')}}
 				filterBy={['title']}
 				labelKey="title"
-				delay={500}
 
-				id={id}
+				id={name}
 				maxResults={size}
 				minLength={1}
-				options={[{id: -1, title: 'All'}, ...(reqData?.data ? reqData.data : [])]}
+				options={(isFilter ? [{id: -1, title: 'All'}] : []).concat(reqData?.data ? reqData.data : [])}
 				isLoading={isLoading}
 				placeholder={placeholder}
-				paginate
 				emptyLabel="No items"
 				searchText="Search..."
 				isInvalid={!!error}
+				onChange={onSelect}
+				selected={selected}
+				multiple={multiple}
 
 				renderMenuItemChildren={(option: IOption) => (
-					<div key={option.id} onClick={() => onSelect(option.id)}>
+					<div key={option.id}>
 						{option.title}
 					</div>
 				)}
