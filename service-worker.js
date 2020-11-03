@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/trackTeacherFront/precache-manifest.af05d22d702b53f34e95ef2af49a0f42.js"
+  "/trackTeacherFront/precache-manifest.bcffde72ff6e3bbefa4aef496bae345c.js"
 );
 
 self.addEventListener('message', (event) => {
