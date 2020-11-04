@@ -12,6 +12,7 @@ import departments from './departments/';
 import commissions from './commissions/';
 import ranks from './ranks/';
 import publications from './publications/';
+import categories from './categories';
 
 
 //create reducer
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
 	commissions,
 	ranks,
 	publications,
+	categories,
 	form: formReducer
 });
 

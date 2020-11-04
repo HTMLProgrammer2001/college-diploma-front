@@ -4,6 +4,7 @@ import {ISort} from '../../../interfaces/ISort';
 import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
 import {ICommission} from '../../../interfaces/models/ICommission';
 import {ICommissionsAddData} from '../../../pages/Commissions/add/AddCommissionForm';
+import {ICommissionsEditData} from '../../../pages/Commissions/edit/EditCommissionForm';
 
 import objToParams from '../../helpers/objToParams';
 
@@ -29,7 +30,7 @@ const commissionsApi = {
 		return await client.get<{data: ICommission}>(`/${id}`);
 	},
 
-	async editCommission(id: number, vals: any) {
+	async editCommission(id: number, vals: ICommissionsEditData) {
 		return await client.put<ICommission>(`/${id}`, vals);
 	},
 

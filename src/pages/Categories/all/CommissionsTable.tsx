@@ -4,44 +4,44 @@ import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
-import {IPublication} from '../../../interfaces/models/IPublication';
+import {ICommission} from '../../../interfaces/models/ICommission';
 
 import SortItem from '../../../common/SortItem';
 import Loader from '../../../common/Loader/Loader';
 import ErrorElement from '../../../common/ErrorElement';
 import findSortRule from '../../../utils/helpers/findSortRule';
-import PublicationItem from './PublicationItem';
-import {selectAllPublicationsState} from '../../../redux/publications/all/selectors';
-import {selectDeletePublications} from '../../../redux/publications/delete/selectors';
-import {allPublicationsChangeSort} from '../../../redux/publications/all/actions';
-import thunkAllPublications from '../../../redux/publications/all/thunks';
-import thunkDeletePublication from '../../../redux/publications/delete/thunks';
+import CommissionItem from './CommissionItem';
+import {selectAllCommissionsState} from '../../../redux/commissions/all/selectors';
+import {selectDeleteCommissions} from '../../../redux/commissions/delete/selectors';
+import {allCommissionsChangeSort} from '../../../redux/commissions/all/actions';
+import thunkAllCommissions from '../../../redux/commissions/all/thunks';
+import thunkDeleteCommission from '../../../redux/commissions/delete/thunks';
 
 
 const mapStateToProps = (state: RootState) => ({
-	...selectAllPublicationsState(state),
-	deleting: selectDeletePublications(state)
+	...selectAllCommissionsState(state),
+	deleting: selectDeleteCommissions(state)
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
 	changeSort(field: string) {
-		dispatch(allPublicationsChangeSort(field));
-		dispatch(thunkAllPublications(1));
+		dispatch(allCommissionsChangeSort(field));
+		dispatch(thunkAllCommissions(1));
 	},
 	load(page = 1) {
-		dispatch(thunkAllPublications(page));
+		dispatch(thunkAllCommissions(page));
 	},
 	deleteItem(id: number) {
-		dispatch(thunkDeletePublication(id));
+		dispatch(thunkDeleteCommission(id));
 	}
 });
 
 const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type ICommissionsTableProps = ConnectedProps<typeof connected>;
-const PublicationsTable: React.FC<ICommissionsTableProps> = (props) => {
+const CommissionsTable: React.FC<ICommissionsTableProps> = (props) => {
 	useEffect(() => {
-		if (!props.isLoading && !props.publications.length)
+		if (!props.isLoading && !props.commissions.length)
 			props.load();
 	}, []);
 
@@ -64,31 +64,13 @@ const PublicationsTable: React.FC<ICommissionsTableProps> = (props) => {
 
 					<th>
 					<span className="pull-left">
-						{t('publications.all.name')}
+						{t('commissions.all.name')}
 					</span>
 
 						<SortItem
 							state={findSortRule(props.sort, 'name')?.direction}
 							change={props.changeSort}
 							param="name"
-						/>
-					</th>
-
-					<th>
-					<span className="pull-left">
-						{t('publications.all.authors')}
-					</span>
-					</th>
-
-					<th>
-					<span className="pull-left">
-						{t('publications.all.date')}
-					</span>
-
-						<SortItem
-							state={findSortRule(props.sort, 'date')?.direction}
-							change={props.changeSort}
-							param="date"
 						/>
 					</th>
 
@@ -99,7 +81,7 @@ const PublicationsTable: React.FC<ICommissionsTableProps> = (props) => {
 				{
 					props.isLoading &&
 					<tr>
-						<th colSpan={5} className="text-center">
+						<th colSpan={3} className="text-center">
 							<Loader/>
 						</th>
 					</tr>
@@ -108,19 +90,19 @@ const PublicationsTable: React.FC<ICommissionsTableProps> = (props) => {
 				{
 					props.error &&
 					<tr className="text-center text-danger">
-						<th colSpan={5} className="text-center">
+						<th colSpan={3} className="text-center">
 							<ErrorElement error={props.error}/>
 						</th>
 					</tr>
 				}
 
 				{
-					!props.isLoading && !props.error && !props.publications.length &&
+					!props.isLoading && !props.error && !props.commissions.length &&
 					<tr className="font-weight-bold text-center">
-						<th colSpan={5} className="text-center">
+						<th colSpan={3} className="text-center">
 							{
 								t('common.noItems', {
-									what: t('publications.all.noForm')
+									what: t('commissions.all.noForm')
 								})
 							}
 						</th>
@@ -129,11 +111,11 @@ const PublicationsTable: React.FC<ICommissionsTableProps> = (props) => {
 
 				{
 					!props.isLoading && !props.error &&
-					props.publications.map((publication: IPublication) => (
-						<PublicationItem
-							key={publication.id}
-							publication={publication}
-							isDeleting={props.deleting.findIndex((id: number) => id == publication.id) == -1}
+					props.commissions.map((commission: ICommission) => (
+						<CommissionItem
+							key={commission.id}
+							commission={commission}
+							isDeleting={props.deleting.findIndex((id) => id == commission.id) == -1}
 							del={props.deleteItem}
 						/>
 					))
@@ -144,4 +126,4 @@ const PublicationsTable: React.FC<ICommissionsTableProps> = (props) => {
 	);
 };
 
-export default connected(PublicationsTable);
+export default connected(CommissionsTable);
