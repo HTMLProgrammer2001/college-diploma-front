@@ -38,8 +38,7 @@ const ProfileEditForm: React.FC<IProfileEditFormProps> = ({handleSubmit, user, i
 	useEffect(() => {
 		initialize({
 			email: user.email,
-			phone: user.phone,
-			birthday: user.birthday
+			phone: user.phone
 		});
 	}, []);
 

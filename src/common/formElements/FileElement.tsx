@@ -3,13 +3,12 @@ import Dropzone from 'react-dropzone';
 import {WrappedFieldProps} from 'redux-form';
 
 import styles from './styles.module.scss';
+import {FormControl} from 'react-bootstrap';
 
 
 type IFileElementProps = WrappedFieldProps & {label: string, name: string};
-const FileElement: React.FC<IFileElementProps> = ({name, label, input}) => {
-	const [file, setFile] = useState<File>(null),
-		handler = (acceptedFiles: File[]) => {
-			setFile(acceptedFiles[0]);
+const FileElement: React.FC<IFileElementProps> = ({name, label, input, meta}) => {
+		const handler = (acceptedFiles: File[]) => {
 			input.onChange(acceptedFiles[0] as any, name);
 		};
 
@@ -45,16 +44,23 @@ const FileElement: React.FC<IFileElementProps> = ({name, label, input}) => {
 
 								<p className={styles.fileDrop__label}>
 									<div>{label}</div>
-									<div>{file?.name}</div>
+									<div>{input.value?.name}</div>
 								</p>
 							</div>
 						</section>
 					)
 				}
 			</Dropzone>
+
+			{
+				meta.touched && meta.error &&
+				<FormControl.Feedback style={{display: 'block'}}>
+					{meta.error}
+				</FormControl.Feedback>
+			}
 		</div>
 	);
-}
+};
 
 export default FileElement;
 

@@ -3,6 +3,7 @@ import {reduxForm, InjectedFormProps, Field} from 'redux-form';
 import {Translation} from 'react-i18next';
 
 import FileElement from '../../../common/formElements/FileElement';
+import required from '../../../utils/validators/required';
 
 
 export type IPublicationsImportData = {
@@ -25,6 +26,7 @@ const PublicationsImportForm: React.FC<IPublicationsImportFormProps> = ({handleS
 						name="importFile"
 						label={t('publications.import.file')}
 						component={FileElement}
+						validate={[required]}
 					/>
 				</div>
 			)}
@@ -33,5 +35,5 @@ const PublicationsImportForm: React.FC<IPublicationsImportFormProps> = ({handleS
 );
 
 export default reduxForm<IPublicationsImportData>({
-	form: 'ranksAddForm'
+	form: 'importPublicationsForm'
 })(PublicationsImportForm);

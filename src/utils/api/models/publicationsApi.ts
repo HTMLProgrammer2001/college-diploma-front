@@ -5,6 +5,8 @@ import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneral
 import {IPublication} from '../../../interfaces/models/IPublication';
 
 import objToParams from '../../helpers/objToParams';
+import {IPublicationsAddData} from '../../../pages/Publications/add/AddPublicationForm';
+import {IPublicationsImportData} from '../../../pages/Publications/import/ImportPublicationsForm';
 
 
 const client = axios.create({
@@ -36,8 +38,18 @@ const publicationsApi = {
 		return await client.delete<{ message: string }>(`/${id}`);
 	},
 
-	async addPublication(vals: any) {
+	async addPublication(vals: IPublicationsAddData) {
 		return await client.post('/add', vals);
+	},
+
+	async importPublications(vals: IPublicationsImportData | FormData){
+		let formData = new FormData();
+
+		for(let key in vals){
+			formData.append(key, (vals as any)[key]);
+		}
+
+		return await client.post('/import', formData);
 	}
 };
 

@@ -31,7 +31,7 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit}
 						id="filterCategory"
 						placeholder={t('profile.tabs.internships.category')}
 						className="mr-1"
-						url="http://localhost:8000/api/search/categories"
+						url={`${process.env.REACT_APP_SERVER_URL}/search/categories`}
 					/>
 
 					<Field
