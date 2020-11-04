@@ -4,44 +4,44 @@ import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
-import {ICommission} from '../../../interfaces/models/ICommission';
+import {ICategory} from '../../../interfaces/models/ICategory';
 
 import SortItem from '../../../common/SortItem';
 import Loader from '../../../common/Loader/Loader';
 import ErrorElement from '../../../common/ErrorElement';
 import findSortRule from '../../../utils/helpers/findSortRule';
-import CommissionItem from './CommissionItem';
-import {selectAllCommissionsState} from '../../../redux/commissions/all/selectors';
-import {selectDeleteCommissions} from '../../../redux/commissions/delete/selectors';
-import {allCommissionsChangeSort} from '../../../redux/commissions/all/actions';
-import thunkAllCommissions from '../../../redux/commissions/all/thunks';
-import thunkDeleteCommission from '../../../redux/commissions/delete/thunks';
+import CategoryItem from './CategoryItem';
+import {selectDeleteCategories} from '../../../redux/categories/delete/selectors';
+import {selectAllCategoriesState} from '../../../redux/categories/all/selectors';
+import {allCategoriesChangeSort} from '../../../redux/categories/all/actions';
+import thunkAllCategories from '../../../redux/categories/all/thunks';
+import thunkDeleteCategory from '../../../redux/categories/delete/thunks';
 
 
 const mapStateToProps = (state: RootState) => ({
-	...selectAllCommissionsState(state),
-	deleting: selectDeleteCommissions(state)
+	...selectAllCategoriesState(state),
+	deleting: selectDeleteCategories(state)
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
 	changeSort(field: string) {
-		dispatch(allCommissionsChangeSort(field));
-		dispatch(thunkAllCommissions(1));
+		dispatch(allCategoriesChangeSort(field));
+		dispatch(thunkAllCategories(1));
 	},
 	load(page = 1) {
-		dispatch(thunkAllCommissions(page));
+		dispatch(thunkAllCategories(page));
 	},
 	deleteItem(id: number) {
-		dispatch(thunkDeleteCommission(id));
+		dispatch(thunkDeleteCategory(id));
 	}
 });
 
 const connected = connect(mapStateToProps, mapDispatchToProps);
 
-type ICommissionsTableProps = ConnectedProps<typeof connected>;
-const CommissionsTable: React.FC<ICommissionsTableProps> = (props) => {
+type ICategoriesTableProps = ConnectedProps<typeof connected>;
+const CategoriesTable: React.FC<ICategoriesTableProps> = (props) => {
 	useEffect(() => {
-		if (!props.isLoading && !props.commissions.length)
+		if (!props.isLoading && !props.categories.length)
 			props.load();
 	}, []);
 
@@ -64,7 +64,7 @@ const CommissionsTable: React.FC<ICommissionsTableProps> = (props) => {
 
 					<th>
 					<span className="pull-left">
-						{t('commissions.all.name')}
+						{t('categories.all.name')}
 					</span>
 
 						<SortItem
@@ -97,12 +97,12 @@ const CommissionsTable: React.FC<ICommissionsTableProps> = (props) => {
 				}
 
 				{
-					!props.isLoading && !props.error && !props.commissions.length &&
+					!props.isLoading && !props.error && !props.categories.length &&
 					<tr className="font-weight-bold text-center">
 						<th colSpan={3} className="text-center">
 							{
 								t('common.noItems', {
-									what: t('commissions.all.noForm')
+									what: t('categories.all.noForm')
 								})
 							}
 						</th>
@@ -111,11 +111,11 @@ const CommissionsTable: React.FC<ICommissionsTableProps> = (props) => {
 
 				{
 					!props.isLoading && !props.error &&
-					props.commissions.map((commission: ICommission) => (
-						<CommissionItem
-							key={commission.id}
-							commission={commission}
-							isDeleting={props.deleting.findIndex((id) => id == commission.id) == -1}
+					props.categories.map((category: ICategory) => (
+						<CategoryItem
+							key={category.id}
+							category={category}
+							isDeleting={props.deleting.findIndex((id) => id == category.id) == -1}
 							del={props.deleteItem}
 						/>
 					))
@@ -126,4 +126,4 @@ const CommissionsTable: React.FC<ICommissionsTableProps> = (props) => {
 	);
 };
 
-export default connected(CommissionsTable);
+export default connected(CategoriesTable);

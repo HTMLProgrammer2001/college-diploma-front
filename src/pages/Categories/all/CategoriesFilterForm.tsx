@@ -6,12 +6,12 @@ import InputElement from '../../../common/formElements/InputElement';
 import {Button} from 'react-bootstrap';
 
 
-export type ICommissionsFilterData = {
+export type ICategoriesFilterData = {
 	filterName: string
 };
 
-type ICommissionsFilterFormProps = InjectedFormProps<ICommissionsFilterData>;
-const CommissionsFilterForm: React.FC<ICommissionsFilterFormProps> = ({handleSubmit}) => (
+type ICategoriesFilterFormProps = InjectedFormProps<ICategoriesFilterData>;
+const CategoriesFilterForm: React.FC<ICategoriesFilterFormProps> = ({handleSubmit}) => (
 	<form onSubmit={handleSubmit} className="d-flex">
 		<Translation>
 			{t => (
@@ -20,7 +20,7 @@ const CommissionsFilterForm: React.FC<ICommissionsFilterFormProps> = ({handleSub
 					type="text"
 					name="filterName"
 					className="m-0"
-					placeholder={t('commissions.all.filterName')}
+					placeholder={t('categories.all.filterName')}
 				/>
 			)}
 		</Translation>
@@ -37,6 +37,6 @@ const CommissionsFilterForm: React.FC<ICommissionsFilterFormProps> = ({handleSub
 	</form>
 );
 
-export default reduxForm<ICommissionsFilterData>({
-	form: 'commissionsFilterForm'
-})(CommissionsFilterForm);
+export default reduxForm<ICategoriesFilterData>({
+	form: 'categoriesFilterForm'
+})(CategoriesFilterForm);

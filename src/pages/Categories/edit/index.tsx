@@ -7,29 +7,29 @@ import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
-import EditCategoryForm, {ICategoriesEditData} from './EditCategoryForm';
 import ErrorElement from '../../../common/ErrorElement';
 import Loader from '../../../common/Loader/Loader';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
-import {selectEditCommissionState} from '../../../redux/commissions/edit/selectors';
-import thunkEditCommissionLoad from '../../../redux/commissions/edit/thunks/thunkEditCommissionLoad';
-import thunkEditCommission from '../../../redux/commissions/edit/thunks/thunkEditCommission';
+import {selectEditCategoryState} from '../../../redux/categories/edit/selectors';
+import thunkEditCategoryLoad from '../../../redux/categories/edit/thunks/thunkEditCommissionLoad';
+import thunkEditCategory from '../../../redux/categories/edit/thunks/thunkEditCategory';
+import EditCategoryForm, {ICategoriesEditData} from './EditCategoryForm';
 
 
 const mapStateToProps = (state: RootState) => ({
-	editState: selectEditCommissionState(state),
+	editState: selectEditCategoryState(state),
 	submitting: isSubmitting('categoriesEditForm')(state)
 });
 
 const connected = connect(mapStateToProps, {
-	loadCategory: thunkEditCommissionLoad,
+	loadCategory: thunkEditCategoryLoad,
 	send: submit,
-	editCategory: thunkEditCommission
+	editCategory: thunkEditCategory
 });
 
-type IEditCommissionPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
-const EditCommissionPage: React.FC<IEditCommissionPageProps> = ({editState, loadCategory, ...props}) => {
+type IEditCategoryPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
+const EditCategoryPage: React.FC<IEditCategoryPageProps> = ({editState, loadCategory, ...props}) => {
 	const {t} = useTranslation();
 
 	useEffect(() => {
@@ -45,12 +45,12 @@ const EditCommissionPage: React.FC<IEditCommissionPageProps> = ({editState, load
 		props.editCategory(+props.match.params.id, vals);
 	};
 
-	if(!editState.commission && !editState.isLoading)
+	if(!editState.category && !editState.isLoading)
 		return null;
 
 	return (
 		<>
-			<div className="title">{t('commissions.edit.pageTitle')}</div>
+			<div className="title">{t('categories.edit.pageTitle')}</div>
 
 			<Card className="mr-5">
 				<Card.Body>
@@ -96,4 +96,4 @@ const EditCommissionPage: React.FC<IEditCommissionPageProps> = ({editState, load
 	);
 };
 
-export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditCommissionPage));
+export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditCategoryPage));

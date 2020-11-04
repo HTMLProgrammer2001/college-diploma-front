@@ -7,8 +7,8 @@ import {useTranslation} from 'react-i18next';
 import {RootState} from '../../../redux';
 
 import BackButton from '../../../common/BackButton';
-import CommissionsFilterForm from './CommissionsFilterForm';
-import CommissionsTable from './CommissionsTable';
+import CommissionsFilterForm from './CategoriesFilterForm';
+import CommissionsTable from './CategoriesTable';
 import Paginator from '../../../common/Paginator';
 import {selectAllCommissionsPagination} from '../../../redux/commissions/all/selectors';
 import thunkAllCommissions from '../../../redux/commissions/all/thunks';

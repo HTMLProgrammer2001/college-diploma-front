@@ -2,31 +2,31 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {Spinner} from 'react-bootstrap';
 
-import {ICommission} from '../../../interfaces/models/ICommission';
 import UserCan from '../../../common/UserCan';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {ICategory} from '../../../interfaces/models/ICategory';
 
 
-type ICommissionItemProps = {
-	commission: ICommission,
+type ICategoryItemProps = {
+	category: ICategory,
 	isDeleting: boolean,
 	del: (id: number) => void
 };
 
-const CommissionItem: React.FC<ICommissionItemProps> = ({commission, isDeleting, del}) => (
+const CategoryItem: React.FC<ICategoryItemProps> = ({category, isDeleting, del}) => (
 	<tr>
-		<th>{commission.id}</th>
-		<th>{commission.name}</th>
+		<th>{category.id}</th>
+		<th>{category.name}</th>
 		<th>
 			<UserCan role={Roles.MODERATOR}>
-				<Link to={`/commissions/${commission.id}/edit`}>
+				<Link to={`/categories/${category.id}/edit`}>
 					<i className="fa fa-pencil"/>
 				</Link>
 
 				{
 					isDeleting ?
 						<Link to="#">
-							<i className="fa fa-close" onClick={() => del(commission.id)}/>
+							<i className="fa fa-close" onClick={() => del(category.id)}/>
 						</Link>
 						:
 						<Spinner animation="border" size="sm"/>
@@ -36,4 +36,4 @@ const CommissionItem: React.FC<ICommissionItemProps> = ({commission, isDeleting,
 	</tr>
 );
 
-export default CommissionItem;
+export default CategoryItem;

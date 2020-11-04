@@ -2,15 +2,15 @@ import React, {useEffect} from 'react';
 import {reduxForm, InjectedFormProps, Field} from 'redux-form';
 import {Col} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
+import {useTranslation} from 'react-i18next';
 
 import InputElement from '../../../common/formElements/InputElement';
 import {RootState} from '../../../redux';
-import {useTranslation} from 'react-i18next';
-import {ICategory} from '../../../interfaces/models/ICategory';
+import {selectEditCategory} from '../../../redux/categories/edit/selectors';
 
 
 const mapStateToProps = (state: RootState) => ({
-	category: null as ICategory
+	category: selectEditCategory(state)
 });
 
 const connected = connect(mapStateToProps);
