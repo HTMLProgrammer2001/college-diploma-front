@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
 
 import styles from '../styles.module.scss';
-import HeadUserLinks from './ViewerUserLinks';
-import CommissionUserLinks from './ModeratorUserLinks';
+import ViewerLinks from './ViewerUserLinks';
+import ModeratorLinks from './ModeratorUserLinks';
 import AdminUserLinks from './AdminUserLinks';
 
 
@@ -23,8 +23,8 @@ const Links: React.FC<{}> = () => {
 				<Link to="/profile">{t('layout.sidebar.profile')}</Link>
 			</li>
 
-			<HeadUserLinks/>
-			<CommissionUserLinks/>
+			<ViewerLinks/>
+			<ModeratorLinks/>
 			<AdminUserLinks/>
 		</ul>
 	);

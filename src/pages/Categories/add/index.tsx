@@ -9,6 +9,7 @@ import BackButton from '../../../common/BackButton';
 import AddCategoryForm from './AddCategoryForm';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import thunkAddCategory from '../../../redux/categories/add/thunks';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -16,7 +17,7 @@ const mapStateToProps = (state: RootState) => ({
 });
 
 const connected = connect(mapStateToProps, {
-	add: () => {},
+	add: thunkAddCategory,
 	send: () => submit('categoriesAddForm')
 });
 

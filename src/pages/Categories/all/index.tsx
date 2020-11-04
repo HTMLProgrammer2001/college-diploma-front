@@ -7,33 +7,33 @@ import {useTranslation} from 'react-i18next';
 import {RootState} from '../../../redux';
 
 import BackButton from '../../../common/BackButton';
-import CommissionsFilterForm from './CategoriesFilterForm';
-import CommissionsTable from './CategoriesTable';
 import Paginator from '../../../common/Paginator';
-import {selectAllCommissionsPagination} from '../../../redux/commissions/all/selectors';
-import thunkAllCommissions from '../../../redux/commissions/all/thunks';
 import UserCan from '../../../common/UserCan';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import thunkAllCategories from '../../../redux/categories/all/thunks';
+import {selectAllCategoriesPagination} from '../../../redux/categories/all/selectors';
+import CategoriesFilterForm from './CategoriesFilterForm';
+import CategoriesTable from './CategoriesTable';
 
 
 const mapStateToProps = (state: RootState) => ({
-	paginator: selectAllCommissionsPagination(state)
+	paginator: selectAllCategoriesPagination(state)
 });
 
-const connected = connect(mapStateToProps, {changePage: thunkAllCommissions});
+const connected = connect(mapStateToProps, {changePage: thunkAllCategories});
 
-type IAllDepartmentsPageProps = ConnectedProps<typeof connected>;
-const AllDepartmentsPage: React.FC<IAllDepartmentsPageProps> = ({changePage, paginator}) => {
+type IAllCategoriesPageProps = ConnectedProps<typeof connected>;
+const AllCategoriesPage: React.FC<IAllCategoriesPageProps> = ({changePage, paginator}) => {
 	const {t} = useTranslation();
 
 	useEffect(() => {
-		document.title = t('commissions.all.pageTitle');
+		document.title = t('categories.all.pageTitle');
 	}, []);
 
 	return (
 		<>
 			<div className="title">
-				{t('commissions.name')}
+				{t('categories.name')}
 			</div>
 
 			<Card className="mr-5">
@@ -41,7 +41,7 @@ const AllDepartmentsPage: React.FC<IAllDepartmentsPageProps> = ({changePage, pag
 					<div className="model__filter-form">
 						<div>
 							<UserCan role={Roles.MODERATOR}>
-								<Link to="/commissions/add">
+								<Link to="/categories/add">
 									<Button variant="success">
 										{t('common.add')}
 									</Button>
@@ -49,10 +49,10 @@ const AllDepartmentsPage: React.FC<IAllDepartmentsPageProps> = ({changePage, pag
 							</UserCan>
 						</div>
 
-						<CommissionsFilterForm onSubmit={() => changePage(1)}/>
+						<CategoriesFilterForm onSubmit={() => changePage(1)}/>
 					</div>
 
-					<CommissionsTable/>
+					<CategoriesTable/>
 
 					<div className="d-flex my-3 justify-content-end">
 						<Paginator {...paginator} setCur={changePage}/>
@@ -69,4 +69,4 @@ const AllDepartmentsPage: React.FC<IAllDepartmentsPageProps> = ({changePage, pag
 	);
 };
 
-export default connected(AllDepartmentsPage);
+export default connected(AllCategoriesPage);
