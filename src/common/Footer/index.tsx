@@ -1,6 +1,8 @@
 import React from 'react';
 import {Trans} from 'react-i18next';
 
+import LanguageSelect from '../LanguageSelect';
+
 
 const Footer: React.FC<{}> = () => (
 	<footer className="p-3 border-top bg-white">
@@ -14,6 +16,10 @@ const Footer: React.FC<{}> = () => (
 		<span>
 			<Trans i18nKey="layout.footer.rights"/>
 		</span>
+
+		<div>
+			<LanguageSelect/>
+		</div>
 	</footer>
 );
 

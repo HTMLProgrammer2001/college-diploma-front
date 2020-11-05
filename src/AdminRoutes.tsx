@@ -15,6 +15,7 @@ const Commissions = lazy(() => import('./pages/Commissions/'));
 const Ranks = lazy(() => import('./pages/Ranks/'));
 const Publications = lazy(() => import('./pages/Publications/'));
 const Categories = lazy(() => import('./pages/Categories/'));
+const Honors = lazy(() => import('./pages/Honors/'));
 
 
 const AdminRoutes: React.FC<{}> = () => (
@@ -32,6 +33,7 @@ const AdminRoutes: React.FC<{}> = () => (
 					<Route path="/ranks" component={Ranks}/>
 					<Route path="/publications" component={Publications}/>
 					<Route path="/categories" component={Categories}/>
+					<Route path="/honors" component={Honors}/>
 
 					<Route path="/" component={NotFoundPage}/>
 				</Switch>
