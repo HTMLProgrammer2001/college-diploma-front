@@ -115,7 +115,7 @@ const CategoriesTable: React.FC<ICategoriesTableProps> = (props) => {
 						<CategoryItem
 							key={category.id}
 							category={category}
-							isDeleting={props.deleting.findIndex((id) => id == category.id) == -1}
+							isDeleting={props.deleting.findIndex((id: number) => id == category.id) == -1}
 							del={props.deleteItem}
 						/>
 					))

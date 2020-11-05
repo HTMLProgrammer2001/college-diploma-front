@@ -1,6 +1,7 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {startSubmit, stopSubmit} from 'redux-form';
+import {toast} from 'react-toastify';
 
 import {RootState} from '../../';
 import userActionsApi from '../../../utils/api/userActionsApi';
@@ -20,12 +21,16 @@ const thunkProfileEdit = (vals: IProfileEditData): IMeThunkAction => {
 
 			dispatch(meLoadSuccess(resp.data.newUser));
 			dispatch(stopSubmit('editProfileForm'));
+
+			toast.success('Профиль отредактирован');
 		}
 		catch (e) {
 			dispatch(stopSubmit('editProfileForm', {
 				_error: e.response?.data.message || e.message,
 				...e.response?.data.errors
 			}));
+
+			toast.error(e.response?.data.message || e.message);
 		}
 	};
 };
