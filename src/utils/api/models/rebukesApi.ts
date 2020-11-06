@@ -5,6 +5,9 @@ import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneral
 
 import objToParams from '../../helpers/objToParams';
 import {IRebuke} from '../../../interfaces/models/IRebuke';
+import {IRebukesEditData} from '../../../pages/Rebukes/edit/EditRebukeForm';
+import {IRebukesAddData} from '../../../pages/Rebukes/add/AddRebukeForm';
+import {IRebukesImportData} from '../../../pages/Rebukes/import/ImportRebukesForm';
 
 
 const client = axios.create({
@@ -28,7 +31,7 @@ const rebukesApi = {
 		return await client.get<{data: IRebuke}>(`/${id}`);
 	},
 
-	async editRebuke(id: number, vals: any) {
+	async editRebuke(id: number, vals: IRebukesEditData) {
 		return await client.put<IRebuke>(`/${id}`, vals);
 	},
 
@@ -36,11 +39,11 @@ const rebukesApi = {
 		return await client.delete<{ message: string }>(`/${id}`);
 	},
 
-	async addRebuke(vals: any) {
+	async addRebuke(vals: IRebukesAddData) {
 		return await client.post('/add', vals);
 	},
 
-	async importRebukes(vals: any){
+	async importRebukes(vals: IRebukesImportData){
 		let formData = new FormData();
 
 		for(let key in vals){
