@@ -57,9 +57,15 @@ const UserDropdown: React.FC<IUserDropdownProps> = ({user, logout}) => {
 				</div>
 
 				<div className={styles.buttons}>
-					<Link to="/profile" className={styles.button}>
-						{t('layout.header.profile')}
-					</Link>
+					<div className="d-flex">
+						<Link to="/profile" className={styles.button}>
+							{t('layout.header.profile')}
+						</Link>
+
+						<Link to="/profile/edit" className={styles.button}>
+							<i className="fa fa-cog"/>
+						</Link>
+					</div>
 
 					<div className={styles.button} onClick={handler}>
 						{t('layout.header.exit')}

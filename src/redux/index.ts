@@ -14,6 +14,7 @@ import ranks from './ranks/';
 import publications from './publications/';
 import categories from './categories';
 import honors from './honors';
+import rebukes from './rebukes';
 
 
 //create reducer
@@ -28,6 +29,7 @@ const rootReducer = combineReducers({
 	publications,
 	categories,
 	honors,
+	rebukes,
 	form: formReducer
 });
 

@@ -11,7 +11,7 @@ export type IAddHonorThunkAction = ThunkAction<void, RootState, unknown, Action<
 
 const thunkAddHonor = (vals: any): IAddHonorThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, Action<any>>) => {
-		dispatch(startSubmit('publicationsAddForm'));
+		dispatch(startSubmit('honorsAddForm'));
 
 		try{
 			await honorsApi.addHonor(vals);

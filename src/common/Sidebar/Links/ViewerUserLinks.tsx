@@ -40,6 +40,14 @@ const ViewerUserLinks: React.FC<{}> = () => (
 				<Trans i18nKey="layout.sidebar.honors"/>
 			</Link>
 		</li>
+
+		<li className={styles.menu__item}>
+			<i className="fa fa-user"/>
+
+			<Link to="/rebukes">
+				<Trans i18nKey="layout.sidebar.rebukes"/>
+			</Link>
+		</li>
 	</>
 );
 

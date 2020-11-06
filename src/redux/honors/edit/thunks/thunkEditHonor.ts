@@ -11,7 +11,7 @@ export type IHonorEditThunkAction = ThunkAction<void, RootState, unknown, Action
 
 const thunkEditHonor = (id: number, vals: any): IHonorEditThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, Action<any>>) => {
-		dispatch(startSubmit('publicationsEditForm'));
+		dispatch(startSubmit('honorsEditForm'));
 
 		try{
 			await honorsApi.editHonor(id, vals);
