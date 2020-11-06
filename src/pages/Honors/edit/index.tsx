@@ -11,46 +11,46 @@ import ErrorElement from '../../../common/ErrorElement';
 import Loader from '../../../common/Loader/Loader';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
-import {selectEditPublicationState} from '../../../redux/publications/edit/selectors';
-import thunkEditPublicationLoad from '../../../redux/publications/edit/thunks/thunkEditPublicationLoad';
-import thunkEditPublication from '../../../redux/publications/edit/thunks/thunkEditPublication';
-import EditPublicationForm, {IPublicationsEditData} from './EditPublicationForm';
+import {selectEditHonorState} from '../../../redux/honors/edit/selectors';
+import thunkEditHonorLoad from '../../../redux/honors/edit/thunks/thunkEditHonorLoad';
+import thunkEditHonor from '../../../redux/honors/edit/thunks/thunkEditHonor';
+import EditHonorForm, {IHonorsEditData} from './EditHonorForm';
 
 
 const mapStateToProps = (state: RootState) => ({
-	editState: selectEditPublicationState(state),
-	submitting: isSubmitting('publicationsEditForm')(state)
+	editState: selectEditHonorState(state),
+	submitting: isSubmitting('honorsEditForm')(state)
 });
 
 const connected = connect(mapStateToProps, {
-	loadPublication: thunkEditPublicationLoad,
+	loadHonor: thunkEditHonorLoad,
 	send: submit,
-	editPublication: thunkEditPublication
+	editHonor: thunkEditHonor
 });
 
-type IEditPublicationPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
-const EditPublicationPage: React.FC<IEditPublicationPageProps> = ({editState, loadPublication, ...props}) => {
+type IEditHonorPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
+const EditHonorPage: React.FC<IEditHonorPageProps> = ({editState, loadHonor, ...props}) => {
 	const {t} = useTranslation();
 
 	useEffect(() => {
-		loadPublication(+props.match.params.id);
-		document.title = t('publications.edit.pageTitle');
+		loadHonor(+props.match.params.id);
+		document.title = t('honors.edit.pageTitle');
 	}, []);
 
 	const clickHandler = () => {
-		props.send('publicationsEditForm');
+		props.send('honorsEditForm');
 	};
 
-	const submitHandler = (vals: IPublicationsEditData) => {
-		props.editPublication(+props.match.params.id, vals);
+	const submitHandler = (vals: IHonorsEditData) => {
+		props.editHonor(+props.match.params.id, vals);
 	};
 
-	if(!editState.publication && !editState.isLoading)
+	if(!editState.honor && !editState.isLoading)
 		return null;
 
 	return (
 		<>
-			<div className="title">{t('publications.edit.pageTitle')}</div>
+			<div className="title">{t('honors.edit.pageTitle')}</div>
 
 			<Card className="mr-5">
 				<Card.Body>
@@ -66,7 +66,7 @@ const EditPublicationPage: React.FC<IEditPublicationPageProps> = ({editState, lo
 
 					{
 						!editState.isLoading && !editState.error &&
-							<EditPublicationForm onSubmit={submitHandler}/>
+							<EditHonorForm onSubmit={submitHandler}/>
 					}
 				</Card.Body>
 
@@ -96,4 +96,4 @@ const EditPublicationPage: React.FC<IEditPublicationPageProps> = ({editState, lo
 	);
 };
 
-export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditPublicationPage));
+export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditHonorPage));

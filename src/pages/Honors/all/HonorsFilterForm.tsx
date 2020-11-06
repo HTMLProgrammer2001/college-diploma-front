@@ -65,28 +65,6 @@ const HonorsFilterForm: React.FC<IHonorsFilterFormProps> = ({handleSubmit}) => (
 
 		<Translation>
 			{t => (
-				<Row>
-					<Field
-						component={SelectElement}
-						name="filterType"
-						className="w-100"
-						label={t('honors.all.filterType')}
-					>
-						<option value={0}>{t('honors.types.0')}</option>
-						<option value={1}>{t('honors.types.1')}</option>
-						<option value={2}>{t('honors.types.2')}</option>
-						<option value={3}>{t('honors.types.3')}</option>
-						<option value={4}>{t('honors.types.4')}</option>
-						<option value={5}>{t('honors.types.5')}</option>
-						<option value={6}>{t('honors.types.6')}</option>
-						<option value={7}>{t('honors.types.7')}</option>
-					</Field>
-				</Row>
-			)}
-		</Translation>
-
-		<Translation>
-			{t => (
 				<div>
 					<Button variant="info" type="submit">
 						{t('common.search')}

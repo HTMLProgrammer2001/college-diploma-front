@@ -12,7 +12,6 @@ const HonorItem: React.FC<IHonorItemProps> = ({honor}) => (
 	<tr>
 		<th>{honor.id}</th>
 		<th>{honor.title}</th>
-		<th>{honor.type || 'Тип не установлен'}</th>
 		<th>{honor.datePresentation || 'Дата не установлена'}</th>
 		<th>
 			<Link to={`/honors/${honor.id}`}>
@@ -23,3 +22,4 @@ const HonorItem: React.FC<IHonorItemProps> = ({honor}) => (
 );
 
 export default HonorItem;
+

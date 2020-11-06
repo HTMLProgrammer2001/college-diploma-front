@@ -16,9 +16,8 @@ type IHonorItemProps = {
 const HonorItem: React.FC<IHonorItemProps> = ({honor, isDeleting, del}) => (
 	<tr>
 		<th>{honor.id}</th>
-		<th>{honor.user}</th>
+		<th>{honor.user.fullName}</th>
 		<th>{honor.title}</th>
-		<th>{honor.type}</th>
 		<th>{honor.datePresentation}</th>
 		<th>
 			<UserCan role={Roles.VIEWER}>

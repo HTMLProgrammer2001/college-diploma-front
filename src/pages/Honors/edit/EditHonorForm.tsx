@@ -8,33 +8,30 @@ import required from '../../../utils/validators/required';
 import DateElement from '../../../common/formElements/DateElement';
 import DataListElement from '../../../common/formElements/DataListElement';
 import {RootState} from '../../../redux';
-import {selectEditPublication} from '../../../redux/publications/edit/selectors';
+import {selectEditHonor} from '../../../redux/honors/edit/selectors';
 
 
 const mapStateToProps = (state: RootState) => ({
-	publication: selectEditPublication(state)
+	honor: selectEditHonor(state)
 });
 
 const connected = connect(mapStateToProps);
 
-export type IPublicationsEditData = {
+export type IHonorsEditData = {
+	order: string,
+	datePresentation: string,
 	title: string,
-	url: string,
-	publisher: string,
-	date: string,
-	authors: number[],
-	another_authors: string,
-	description?: string
+	user: number
 };
 
 type IOwnProps = ConnectedProps<typeof connected>;
 
-type IPublicationsEditFormProps = InjectedFormProps<IPublicationsEditData, IOwnProps> & IOwnProps;
-const PublicationsEditForm: React.FC<IPublicationsEditFormProps> = (props) => {
-	const {handleSubmit, error, initialize, publication} = props;
+type IHonorsEditFormProps = InjectedFormProps<IHonorsEditData, IOwnProps> & IOwnProps;
+const HonorsEditForm: React.FC<IHonorsEditFormProps> = (props) => {
+	const {handleSubmit, error, initialize, honor} = props;
 	
 	useEffect(() => {
-		initialize({...publication} as any);
+		initialize({...honor, datePresentation: null} as any);
 	}, []);
 	
 	return (
@@ -53,23 +50,16 @@ const PublicationsEditForm: React.FC<IPublicationsEditFormProps> = (props) => {
 								component={InputElement}
 								type="text"
 								name="title"
-								label={t('publications.edit.name')}
+								label={t('honors.edit.title')}
 								validate={[required]}
 							/>
 
 							<Field
 								component={InputElement}
 								type="text"
-								name="publisher"
-								label={t('publications.edit.publisher')}
+								name="order"
+								label={t('honors.edit.order')}
 								validate={[required]}
-							/>
-
-							<Field
-								component={InputElement}
-								type="text"
-								name="url"
-								label={t('publications.edit.url')}
 							/>
 						</div>
 					)}
@@ -80,49 +70,27 @@ const PublicationsEditForm: React.FC<IPublicationsEditFormProps> = (props) => {
 						<div className="w-100 pl-3">
 							<Field
 								component={DateElement}
-								name="date"
+								name="datePresentation"
 								className="mb-2"
-								label={t('publications.edit.date')}
+								label={t('honors.edit.date')}
 							/>
 
 							<Field
 								component={DataListElement}
-								name="authors"
-								placeholder={t('publications.edit.authors')}
+								name="user"
+								placeholder={t('honors.edit.user')}
 								url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
-								multiple
-							/>
-
-							<Field
-								component={InputElement}
-								type="text"
-								name="another_authors"
-								label={t('publications.edit.anotherAuthors')}
 							/>
 						</div>
 					)}
 				</Translation>
 			</div>
-
-			<Translation>
-				{t => (
-					<div className="w-100 mt-2">
-						<Field
-							component="textarea"
-							className="form-control"
-							name="description"
-							rows={5}
-							label={t('publications.edit.description')}
-						/>
-					</div>
-				)}
-			</Translation>
 		</form>
 	);
 };
 
 export default connected(
-		reduxForm<IPublicationsEditData, IOwnProps>({
-			form: 'publicationsEditForm'
-		})(PublicationsEditForm)
+		reduxForm<IHonorsEditData, IOwnProps>({
+			form: 'honorsEditForm'
+		})(HonorsEditForm)
 );

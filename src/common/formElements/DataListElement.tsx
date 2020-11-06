@@ -60,8 +60,12 @@ const DataListElement: React.FC<IDataListElementProps> = (props) => {
 	const onSelect = (selectedOptions: IOption[]) => {
 		setSelected(selectedOptions);
 
-		if(!multiple)
-			onChange(selectedOptions[0].id as any, name);
+		if(!multiple) {
+			if (!selectedOptions.length)
+				onChange(null, name);
+			else
+				onChange(selectedOptions[0].id as any, name);
+		}
 		else
 			onChange(selectedOptions.map((opt) => opt.id) as any, name);
 	};
@@ -84,7 +88,6 @@ const DataListElement: React.FC<IDataListElementProps> = (props) => {
 				minLength={1}
 				options={(isFilter ? [{id: -1, title: 'All'}] : []).concat(reqData?.data ? reqData.data : [])}
 				isLoading={isLoading}
-				placeholder={placeholder}
 				emptyLabel="No items"
 				searchText="Search..."
 				isInvalid={!!error}

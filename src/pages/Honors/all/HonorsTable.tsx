@@ -89,25 +89,13 @@ const HonorsTable: React.FC<IHonorsTableProps> = (props) => {
 
 					<th>
 					<span className="pull-left">
-						{t('honors.all.type')}
-					</span>
-
-						<SortItem
-							state={findSortRule(props.sort, 'type')?.direction}
-							change={props.changeSort}
-							param="type"
-						/>
-					</th>
-
-					<th>
-					<span className="pull-left">
 						{t('honors.all.date')}
 					</span>
 
 						<SortItem
-							state={findSortRule(props.sort, 'date')?.direction}
+							state={findSortRule(props.sort, 'datePresentation')?.direction}
 							change={props.changeSort}
-							param="date"
+							param="datePresentation"
 						/>
 					</th>
 

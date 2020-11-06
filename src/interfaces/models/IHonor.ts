@@ -7,6 +7,5 @@ export type IHonor = {
 	datePresentation: string,
 	title: string,
 	active: boolean,
-	user: IUserShort,
-	type: string
+	user: IUserShort
 };

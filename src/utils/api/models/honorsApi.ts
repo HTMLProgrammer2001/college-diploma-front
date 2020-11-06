@@ -5,6 +5,9 @@ import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneral
 
 import objToParams from '../../helpers/objToParams';
 import {IHonor} from '../../../interfaces/models/IHonor';
+import {IHonorsAddData} from '../../../pages/Honors/add/AddHonorForm';
+import {IHonorsImportData} from '../../../pages/Honors/import/ImportHonorsForm';
+import {IHonorsEditData} from '../../../pages/Honors/edit/EditHonorForm';
 
 
 const client = axios.create({
@@ -28,7 +31,7 @@ const honorsApi = {
 		return await client.get<{data: IHonor}>(`/${id}`);
 	},
 
-	async editHonor(id: number, vals: any) {
+	async editHonor(id: number, vals: IHonorsEditData) {
 		return await client.put<IHonor>(`/${id}`, vals);
 	},
 
@@ -36,11 +39,11 @@ const honorsApi = {
 		return await client.delete<{ message: string }>(`/${id}`);
 	},
 
-	async addHonor(vals: any) {
+	async addHonor(vals: IHonorsAddData) {
 		return await client.post('/add', vals);
 	},
 
-	async importHonors(vals: any){
+	async importHonors(vals: IHonorsImportData){
 		let formData = new FormData();
 
 		for(let key in vals){

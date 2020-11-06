@@ -71,18 +71,6 @@ const HonorsTable: React.FC<IInternshipsTableProps> = (props) => {
 
 					<th>
 					<span className="pull-left">
-						{t('profile.tabs.honors.honorType')}
-					</span>
-
-						<SortItem
-							state={findSortRule(props.sort, 'type')?.direction}
-							change={props.changeSort}
-							param="type"
-						/>
-					</th>
-
-					<th>
-					<span className="pull-left">
 						{t('profile.tabs.honors.presDate')}
 					</span>
 
