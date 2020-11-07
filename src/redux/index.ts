@@ -15,6 +15,7 @@ import publications from './publications/';
 import categories from './categories';
 import honors from './honors';
 import rebukes from './rebukes';
+import educations from './educations';
 
 
 //create reducer
@@ -30,6 +31,7 @@ const rootReducer = combineReducers({
 	categories,
 	honors,
 	rebukes,
+	educations,
 	form: formReducer
 });
 
@@ -40,8 +42,8 @@ export default store;
 export type RootState = ReturnType<typeof rootReducer>;
 
 //action types getter
-type ActionCreators = {[key: string]: (...args: any) => any};
-type PropertiesTypes<T> = T extends {[key: string]: infer U} ? U : never;
+type ActionCreators = {[key: string]: (...args: any) => any} | Array<(...args: any) => any>;
+type PropertiesTypes<T> = T extends {[key: number]: infer U} ? U : never;
 export type InferActionTypes<T extends ActionCreators> = ReturnType<PropertiesTypes<T>>;
 
 export type PropType<T, K extends keyof T> = T[K];
