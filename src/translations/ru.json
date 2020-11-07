@@ -41,7 +41,8 @@
 			"publications": "Публикации",
 			"categories": "Категории стажировки",
 			"honors": "Награды",
-			"rebukes": "Выговоры"
+			"rebukes": "Выговоры",
+			"educations": "Образования"
 		}
 	},
 
@@ -327,6 +328,51 @@
 		},
 		"import": {
 			"pageTitle": "Импорт выговоров"
+		}
+	},
+
+	"educations": {
+		"name": "Образования",
+		"all": {
+			"pageTitle": "Образования",
+			"noForm": "образований",
+			"filterUser": "Поиск по пользователю",
+			"filterInstitution": "Поиск по заведению",
+			"filterQualification": "Поиск по квалификации",
+			"filterGraduateFrom": "Выпуск с",
+			"filterGraduateTo": "Выпуск по",
+			"filterSpecialty": "Специальность",
+			"user": "Пользователь",
+			"graduateYear": "Год выпуска",
+			"institution": "Заведение",
+			"qualification": "Квалификация"
+		},
+		"add": {
+			"pageTitle": "Добавить образование",
+			"institution": "Заведения образования",
+			"qualification": "Квалификация",
+			"graduateYear": "Выпуск",
+			"specialty": "Специальность",
+			"user": "Пользователь"
+		},
+		"edit": {
+			"pageTitle": "Редактировать образование",
+			"institution": "Заведения образования",
+			"qualification": "Квалификация",
+			"graduateYear": "Выпуск",
+			"specialty": "Специальность",
+			"user": "Пользователь"
+		},
+		"single": {
+			"pageTitle": "Страница образования",
+			"info": {
+				"id": "<0>ID: <1>{{id}}</1></0>",
+				"institution": "<0>Учебное заведение: <1>{{institution}}</1></0>",
+				"user": "<0>Пользователь: <1>{{user}}</1></0>",
+				"qualification": "<0>Квалификация: <1>{{qualification}}</1></0>",
+				"specialty": "<0>Специальность: <1>{{specialty}}</1></0>",
+				"graduateYear": "<0>Год выпуска: <1>{{graduateYear}}</1></0>"
+			}
 		}
 	}
 }
