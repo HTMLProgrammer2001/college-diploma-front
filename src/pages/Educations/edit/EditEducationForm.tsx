@@ -9,6 +9,7 @@ import DataListElement from '../../../common/formElements/DataListElement';
 import {RootState} from '../../../redux';
 import {selectEditEducation} from '../../../redux/educations/edit/selectors';
 import positiveNumber from '../../../utils/validators/positiveNumber';
+import SelectElement from '../../../common/formElements/SelectElement';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -63,12 +64,15 @@ const EducationsEditForm: React.FC<IEducationsEditFormProps> = (props) => {
 							/>
 
 							<Field
-								component={InputElement}
-								type="text"
+								component={SelectElement}
 								name="qualification"
-								label={t('educations.edit.qualification')}
-								validate={[required]}
-							/>
+								label={t("educations.all.qualification")}
+								onlyInvalid
+							>
+								<option value={0}>{t('profile.tabs.educations.qualList.1')}</option>
+								<option value={1}>{t('profile.tabs.educations.qualList.2')}</option>
+								<option value={2}>{t('profile.tabs.educations.qualList.3')}</option>
+							</Field>
 						</div>
 					)}
 				</Translation>

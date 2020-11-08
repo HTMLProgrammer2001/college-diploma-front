@@ -10,7 +10,7 @@ import positiveNumber from '../../../../utils/validators/positiveNumber';
 
 
 export type IProfileEducationsFilterData = {
-	filterQualification: string,
+	filterQualification: number,
 	filterInstitution: string,
 	filterGraduateYear: number
 };

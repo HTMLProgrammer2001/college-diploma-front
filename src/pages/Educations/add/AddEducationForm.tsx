@@ -6,12 +6,13 @@ import InputElement from '../../../common/formElements/InputElement';
 import required from '../../../utils/validators/required';
 import DataListElement from '../../../common/formElements/DataListElement';
 import positiveNumber from '../../../utils/validators/positiveNumber';
+import SelectElement from '../../../common/formElements/SelectElement';
 
 
 export type IEducationsAddData = {
 	institution: string,
 	graduateYear: string,
-	qualification: string,
+	qualification: number,
 	user: number,
 	specialty?: string
 };
@@ -45,12 +46,15 @@ const EducationsAddForm: React.FC<IEducationsAddFormProps> = ({handleSubmit, err
 						/>
 
 						<Field
-							component={InputElement}
-							type="text"
+							component={SelectElement}
 							name="qualification"
-							label={t('educations.add.qualification')}
-							validate={[required]}
-						/>
+							label={t("educations.all.qualification")}
+							onlyInvalid
+						>
+							<option value={0} selected>{t('profile.tabs.educations.qualList.1')}</option>
+							<option value={1}>{t('profile.tabs.educations.qualList.2')}</option>
+							<option value={2}>{t('profile.tabs.educations.qualList.3')}</option>
+						</Field>
 					</div>
 				)}
 			</Translation>

@@ -5,13 +5,13 @@ import {Button, Row} from 'react-bootstrap';
 
 import InputElement from '../../../common/formElements/InputElement';
 import DataListElement from '../../../common/formElements/DataListElement';
-import DateElement from '../../../common/formElements/DateElement';
 import positiveNumber from '../../../utils/validators/positiveNumber';
+import SelectElement from '../../../common/formElements/SelectElement';
 
 
 export type IEducationsFilterData = {
 	filterUser: number,
-	filterQualification: string,
+	filterQualification: number,
 	filterInstitution: string,
 	filterSpecialty: string,
 	filterGraduateFrom: number,
@@ -34,12 +34,16 @@ const EducationsFilterForm: React.FC<IEducationsFilterFormProps> = ({handleSubmi
 					/>
 
 					<Field
-						component={InputElement}
-						type="text"
+						component={SelectElement}
 						name="filterQualification"
-						className="w-100 ml-1"
-						label={t('educations.all.filterQualification')}
-					/>
+						label={t("educations.all.qualification")}
+						onlyInvalid
+					>
+						<option selected value={-1}>{t('profile.tabs.educations.qualList.0')}</option>
+						<option value={0}>{t('profile.tabs.educations.qualList.1')}</option>
+						<option value={1}>{t('profile.tabs.educations.qualList.2')}</option>
+						<option value={2}>{t('profile.tabs.educations.qualList.3')}</option>
+					</Field>
 				</Row>
 			)}
 		</Translation>
