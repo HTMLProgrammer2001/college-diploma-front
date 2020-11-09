@@ -1,10 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import {Trans} from 'react-i18next';
 
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
 import styles from '../styles.module.scss';
-import {Link} from 'react-router-dom';
-import {Trans} from 'react-i18next';
 
 
 const ViewerUserLinks: React.FC<{}> = () => (
@@ -54,6 +54,14 @@ const ViewerUserLinks: React.FC<{}> = () => (
 
 			<Link to="/educations">
 				<Trans i18nKey="layout.sidebar.educations"/>
+			</Link>
+		</li>
+
+		<li className={styles.menu__item}>
+			<i className="fa fa-user"/>
+
+			<Link to="/internships">
+				<Trans i18nKey="layout.sidebar.internships"/>
 			</Link>
 		</li>
 	</>
