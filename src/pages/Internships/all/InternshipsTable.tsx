@@ -89,13 +89,13 @@ const InternshipsTable: React.FC<IInternshipsTableProps> = (props) => {
 
 					<th>
 						<span className="pull-left">
-							{t('internships.all.title')}
+							{t('internships.all.theme')}
 						</span>
 
 						<SortItem
-							state={findSortRule(props.sort, 'title')?.direction}
+							state={findSortRule(props.sort, 'theme')?.direction}
 							change={props.changeSort}
-							param="title"
+							param="theme"
 						/>
 					</th>
 

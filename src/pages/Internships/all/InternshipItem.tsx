@@ -17,7 +17,7 @@ const InternshipItem: React.FC<IInternshipItemProps> = ({internship, isDeleting,
 	<tr>
 		<th>{internship.id}</th>
 		<th>{internship.user.fullName}</th>
-		<th>{internship.category}</th>
+		<th>{internship.category.name}</th>
 		<th>{internship.title}</th>
 		<th>{internship.hours}</th>
 		<th>{internship.to}</th>

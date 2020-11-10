@@ -56,7 +56,7 @@ const InternshipsEditForm: React.FC<IInternshipsEditFormProps> = ({handleSubmit,
 								component={DataListElement}
 								name="category"
 								placeholder={t('internships.edit.category')}
-								url={`${process.env.REACT_APP_SERVER_URL}/search/internCategories`}
+								url={`${process.env.REACT_APP_SERVER_URL}/search/categories`}
 							/>
 
 							<Field

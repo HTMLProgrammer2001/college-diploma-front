@@ -14,8 +14,8 @@ export type IInternshipsFilterData = {
 	filterFrom: string,
 	filterTo: string,
 	filterTheme: string,
-	filterHoursMore: number,
-	filterHoursLess: number
+	filterMoreHours: number,
+	filterLessHours: number
 };
 
 type IInternshipsFilterFormProps = InjectedFormProps<IInternshipsFilterData>;
@@ -39,7 +39,7 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterFormProps> = ({handleSub
 						id="filterCategory"
 						className="w-100"
 						placeholder={t('internships.all.filterCategory')}
-						url={`${process.env.REACT_APP_SERVER_URL}/search/internCategories`}
+						url={`${process.env.REACT_APP_SERVER_URL}/search/categories`}
 					/>
 				</Row>
 			)}
@@ -83,7 +83,7 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterFormProps> = ({handleSub
 				<Row>
 					<Field
 						component={InputElement}
-						name="filterHoursMore"
+						name="filterMoreHours"
 						type="number"
 						className="w-100"
 						label={t('internships.all.filterHoursMore')}
@@ -91,7 +91,7 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterFormProps> = ({handleSub
 
 					<Field
 						component={InputElement}
-						name="filterHoursLess"
+						name="filterLessHours"
 						type="number"
 						className="w-100"
 						label={t('internships.all.filterHoursLess')}

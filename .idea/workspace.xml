@@ -2,10 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57a409a2-1ea6-4331-ae71-85b96f4252a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Internships/add/AddInternshipForm.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Internships/edit/EditHonorForm.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Internships/edit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Internships/edit/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Exports/InternshipsExampleExporter.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Exports/InternshipsExampleExporter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Http/Controllers/ExportExampleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Controllers/ExportExampleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Http/Controllers/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Controllers/SearchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Http/Resources/InternshipResource.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Http/Resources/InternshipsGroupResource.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Imports/InternshipsImport.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Imports/InternshipsImport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Repositories/BaseRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Repositories/BaseRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Repositories/CategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Repositories/CategoryRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Repositories/InternshipRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Repositories/InternshipRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Repositories/Rules/SortAssociateRule.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Repositories/Rules/SortAssociateRule.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database/migrations/2020_05_06_100951_add_internships_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/migrations/2020_05_06_100951_add_internships_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Internships/add/AddInternshipForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Internships/add/AddInternshipForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Internships/all/InternshipItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Internships/all/InternshipItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Internships/all/InternshipsFilterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Internships/all/InternshipsFilterForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Internships/all/InternshipsTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Internships/all/InternshipsTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Internships/edit/EditInternshipForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Internships/edit/EditInternshipForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Internships/single/InternshipInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Internships/single/InternshipInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/translations/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/translations/ru.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +34,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/translations/ru.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="440" lean-forward="true" selection-start-line="440" selection-end-line="440" />
+            <state relative-caret-position="439">
+              <caret line="436" column="53" lean-forward="true" selection-start-line="436" selection-start-column="53" selection-end-line="436" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/Internships/single/InternshipInfo.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="82">
+              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,11 +92,11 @@
       <find>Publication</find>
       <find>department</find>
       <find>HONOR</find>
-      <find>honor</find>
       <find>Add</find>
       <find>add</find>
       <find>Honor</find>
       <find>edit</find>
+      <find>honor</find>
     </findStrings>
     <replaceStrings>
       <replace>Publications</replace>
@@ -97,11 +124,11 @@
       <replace>Education</replace>
       <replace>education</replace>
       <replace>INTERNSHIP</replace>
-      <replace>internship</replace>
       <replace>Edit</replace>
       <replace>edit</replace>
       <replace>Internship</replace>
       <replace>add</replace>
+      <replace>internship</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -110,24 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pages/Educations/all/EducationsFilterForm.tsx" />
-        <option value="$PROJECT_DIR$/server/app/Http/Requests/Education/AddEducationRequest.php" />
-        <option value="$PROJECT_DIR$/src/pages/Educations/add/AddEducationForm.tsx" />
-        <option value="$PROJECT_DIR$/server/app/Models/Education.php" />
-        <option value="$PROJECT_DIR$/server/app/Http/Requests/Education/EditEducationRequest.php" />
-        <option value="$PROJECT_DIR$/server/app/Http/Controllers/EducationController.php" />
-        <option value="$PROJECT_DIR$/server/app/Repositories/EducationRepository.php" />
-        <option value="$PROJECT_DIR$/src/pages/Educations/edit/EditEducationForm.tsx" />
-        <option value="$PROJECT_DIR$/server/public/.htaccess" />
-        <option value="$PROJECT_DIR$/src/redux/internships/index.ts" />
-        <option value="$PROJECT_DIR$/src/utils/api/models/internshipsApi.ts" />
-        <option value="$PROJECT_DIR$/src/redux/internships/add/thunks.ts" />
-        <option value="$PROJECT_DIR$/src/redux/internships/all/types.ts" />
-        <option value="$PROJECT_DIR$/src/redux/internships/all/actions.ts" />
-        <option value="$PROJECT_DIR$/src/redux/internships/all/reducer.ts" />
-        <option value="$PROJECT_DIR$/src/redux/index.ts" />
-        <option value="$PROJECT_DIR$/src/redux/internships/all/selectors.ts" />
-        <option value="$PROJECT_DIR$/src/redux/internships/all/thunks.ts" />
         <option value="$PROJECT_DIR$/src/redux/internships/delete/types.ts" />
         <option value="$PROJECT_DIR$/src/redux/internships/delete/actions.ts" />
         <option value="$PROJECT_DIR$/src/redux/internships/delete/reducer.ts" />
@@ -148,19 +157,37 @@
         <option value="$PROJECT_DIR$/src/pages/Internships/index.tsx" />
         <option value="$PROJECT_DIR$/src/AdminRoutes.tsx" />
         <option value="$PROJECT_DIR$/src/common/Sidebar/Links/ViewerUserLinks.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Internships/all/InternshipItem.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Internships/all/InternshipsTable.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Internships/all/InternshipsFilterForm.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Internships/all/index.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Internships/single/index.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Internships/single/InternshipInfo.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Internships/import/ImportInternshipsForm.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Internships/import/index.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Internships/add/EditInternshipForm.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Internships/add/index.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Internships/edit/index.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Internships/add/AddInternshipForm.tsx" />
+        <option value="$PROJECT_DIR$/server/app/Http/Resources/Internships/InternshipsGroupResource.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Resources/Internships/InternshipResource.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Requests/Internship/AllInternshipsRequest.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Requests/Internship/AddInternshipRequest.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Requests/Internship/EditInternshipRequest.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Controllers/ExportExampleController.php" />
+        <option value="$PROJECT_DIR$/server/app/Imports/InternshipsImport.php" />
+        <option value="$PROJECT_DIR$/server/routes/api.php" />
+        <option value="$PROJECT_DIR$/src/pages/Internships/all/InternshipItem.tsx" />
+        <option value="$PROJECT_DIR$/server/app/Repositories/Rules/SortAssociateRule.php" />
+        <option value="$PROJECT_DIR$/server/app/Repositories/BaseRepository.php" />
+        <option value="$PROJECT_DIR$/src/pages/Internships/all/InternshipsFilterForm.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/Internships/all/InternshipsTable.tsx" />
         <option value="$PROJECT_DIR$/src/translations/ru.json" />
+        <option value="$PROJECT_DIR$/server/app/Http/Controllers/SearchController.php" />
+        <option value="$PROJECT_DIR$/src/pages/Internships/add/AddInternshipForm.tsx" />
+        <option value="$PROJECT_DIR$/server/app/Repositories/InternshipRepository.php" />
+        <option value="$PROJECT_DIR$/src/pages/Internships/edit/EditInternshipForm.tsx" />
+        <option value="$PROJECT_DIR$/server/app/Repositories/CategoryRepository.php" />
+        <option value="$PROJECT_DIR$/server/app/Exports/InternshipsExampleExporter.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Controllers/InternshipController.php" />
+        <option value="$PROJECT_DIR$/server/database/migrations/2020_05_06_100951_add_internships_table.php" />
+        <option value="$PROJECT_DIR$/src/pages/Internships/single/InternshipInfo.tsx" />
       </list>
     </option>
   </component>
@@ -296,7 +323,7 @@
       <path value="$PROJECT_DIR$/server/vendor/league/flysystem-aws-s3-v3" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -404,9 +431,9 @@
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.24375473" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.23996972" />
       <window_info id="Structure" order="3" sideWeight="0.5019531" side_tool="true" weight="0.30885693" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.051282052" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.102564104" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003785" side_tool="true" weight="0.5435898" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
@@ -459,183 +486,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/bootstrap/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-616">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/public/robots.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/public/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Educations/edit/EditEducationForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/api/models/internshipsApi.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/internships/add/thunks.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/internships/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#65#97#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/internships/all/actions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#154#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/internships/all/selectors.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/internships/all/thunks.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/internships/all/types.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/internships/all/reducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="66" column="2" lean-forward="true" selection-start-line="66" selection-start-column="2" selection-end-line="66" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#154#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/internships/delete/types.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/internships/delete/thunks.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/internships/delete/selectors.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/internships/delete/reducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/internships/delete/actions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/internships/single/types.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/internships/single/actions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-87">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/internships/single/reducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="36" column="71" selection-start-line="36" selection-start-column="71" selection-end-line="36" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/internships/single/selectors.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -803,43 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Internships/all/InternshipsFilterForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-181">
-          <caret line="96" column="65" selection-start-line="96" selection-start-column="50" selection-end-line="96" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Internships/all/InternshipsTable.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1765">
-          <caret line="91" column="53" selection-start-line="91" selection-start-column="48" selection-end-line="91" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Internships/all/InternshipItem.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="961">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Internships/add/AddInternshipForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="60" column="61" lean-forward="true" selection-start-line="60" selection-start-column="61" selection-end-line="60" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Internships/add/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-984">
@@ -847,30 +660,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Internships/edit/EditInternshipForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Internships/import/ImportInternshipsForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="809">
           <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Internships/import/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -897,20 +690,245 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Internships/single/InternshipInfo.tsx">
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/HonorController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-37">
-          <caret line="40" column="48" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="48" />
+        <state relative-caret-position="308">
+          <caret line="85" column="5" selection-start-line="16" selection-start-column="4" selection-end-line="85" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/Internships/InternshipResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#50#98#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/InternshipResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="27" column="10" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="27" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/Internships/InternshipsGroupResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
+          <folding>
+            <element signature="e#40#95#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Internship/AllInternshipsRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Internship/EditInternshipRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="888">
+          <caret line="37" column="1" lean-forward="true" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Internship/AddInternshipRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="34" column="39" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="34" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/all/InternshipItem.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/import/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="141" selection-start-line="141" selection-end-line="141" />
+          <folding>
+            <element signature="e#7#44#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Repositories/BaseRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Repositories/Rules/SortAssociateRule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Repositories/Rules/SortRule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="15" column="60" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/all/InternshipsTable.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="106" column="33" lean-forward="true" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/all/InternshipsFilterForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="52" column="41" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/SearchController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/add/AddInternshipForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Repositories/InternshipRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="108" column="44" selection-start-line="108" selection-start-column="44" selection-end-line="108" selection-end-column="44" />
+          <folding>
+            <element signature="e#38#64#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/edit/EditInternshipForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="58" column="42" lean-forward="true" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Exports/HonorsExampleExporter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-486">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Exports/InternshipsExampleExporter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="e#31#65#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Repositories/CategoryRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="61" column="1" lean-forward="true" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/ExportExampleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Imports/InternshipsImport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#31#49#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/InternshipController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#76#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/migrations/2020_05_06_100951_add_internships_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="29" column="45" lean-forward="true" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/translations/ru.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="440" lean-forward="true" selection-start-line="440" selection-end-line="440" />
+        <state relative-caret-position="439">
+          <caret line="436" column="53" lean-forward="true" selection-start-line="436" selection-start-column="53" selection-end-line="436" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/single/InternshipInfo.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

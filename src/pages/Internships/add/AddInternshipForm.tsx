@@ -39,13 +39,15 @@ const InternshipsAddForm: React.FC<IInternshipsAddFormProps> = ({handleSubmit, e
 							name="user"
 							placeholder={t('internships.add.user')}
 							url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
+							validate={[required]}
 						/>
 
 						<Field
 							component={DataListElement}
 							name="category"
 							placeholder={t('internships.add.category')}
-							url={`${process.env.REACT_APP_SERVER_URL}/search/internCategories`}
+							url={`${process.env.REACT_APP_SERVER_URL}/search/categories`}
+							validate={[required]}
 						/>
 
 						<Field
