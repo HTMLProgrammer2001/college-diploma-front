@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57a409a2-1ea6-4331-ae71-85b96f4252a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/AdminRoutes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AdminRoutes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Sidebar/Links/ViewerUserLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Sidebar/Links/ViewerUserLinks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Internships/add/AddInternshipForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Internships/edit/EditHonorForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Internships/edit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Internships/edit/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/translations/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/translations/ru.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +18,17 @@
     <pharConfigPath>$PROJECT_DIR$/server/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/translations/ru.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="470">
+              <caret line="440" lean-forward="true" selection-start-line="440" selection-end-line="440" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -27,7 +40,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Next</find>
       <find>NEXT</find>
       <find>departments</find>
       <find>DEPARTMENTS</find>
@@ -38,7 +50,6 @@
       <find>Rank</find>
       <find>rank</find>
       <find>RanksAdd</find>
-      <find>Add</find>
       <find>COMMISSIONS</find>
       <find>COMMISSION</find>
       <find>commissions</find>
@@ -52,17 +63,17 @@
       <find>cog</find>
       <find>honors</find>
       <find>Publication</find>
-      <find>add</find>
       <find>department</find>
       <find>HONOR</find>
-      <find>Honor</find>
       <find>honor</find>
+      <find>Add</find>
+      <find>add</find>
+      <find>Honor</find>
+      <find>edit</find>
     </findStrings>
     <replaceStrings>
-      <replace>Rank</replace>
       <replace>Publications</replace>
       <replace>PUBLICATION</replace>
-      <replace>Edit</replace>
       <replace>Publication</replace>
       <replace>publication</replace>
       <replace>PublicationsImport</replace>
@@ -83,12 +94,14 @@
       <replace>Rebuke</replace>
       <replace>educations</replace>
       <replace>EDUCATION</replace>
-      <replace>edit</replace>
       <replace>Education</replace>
       <replace>education</replace>
       <replace>INTERNSHIP</replace>
-      <replace>Internship</replace>
       <replace>internship</replace>
+      <replace>Edit</replace>
+      <replace>edit</replace>
+      <replace>Internship</replace>
+      <replace>add</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -97,9 +110,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pages/Educations/single/EducationInfo.tsx" />
-        <option value="$PROJECT_DIR$/server/app/Http/Requests/Education/AllEducationRequest.php" />
-        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsFilterForm.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Educations/all/EducationsFilterForm.tsx" />
         <option value="$PROJECT_DIR$/server/app/Http/Requests/Education/AddEducationRequest.php" />
         <option value="$PROJECT_DIR$/src/pages/Educations/add/AddEducationForm.tsx" />
@@ -142,12 +152,15 @@
         <option value="$PROJECT_DIR$/src/pages/Internships/all/InternshipsTable.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Internships/all/InternshipsFilterForm.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Internships/all/index.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Internships/add/index.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Internships/add/AddInternshipForm.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Internships/single/index.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Internships/single/InternshipInfo.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Internships/import/ImportInternshipsForm.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Internships/import/index.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/Internships/add/EditInternshipForm.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/Internships/add/index.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/Internships/edit/index.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/Internships/add/AddInternshipForm.tsx" />
+        <option value="$PROJECT_DIR$/src/translations/ru.json" />
       </list>
     </option>
   </component>
@@ -328,7 +341,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="Internships" type="462c0819:PsiDirectoryNode" />
-              <item name="import" type="462c0819:PsiDirectoryNode" />
+              <item name="single" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="translations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -341,7 +360,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/server/app/User.php" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/Internships/add" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -352,19 +371,19 @@
     <property name="ts.external.directory.path" value="D:\myWork\React\trackteacher\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\myWork\React\trackteacher\src\pages" />
-      <recent name="D:\myWork\React\trackteacher\src\utils\api\models" />
-      <recent name="D:\myWork\React\trackteacher\src\redux" />
-      <recent name="D:\myWork\React\trackteacher\server\app\Http\Requests" />
-      <recent name="D:\myWork\React\trackteacher\server" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\myWork\React\trackteacher\server\app\Http\Resources\" />
       <recent name="D:\myWork\React\trackteacher\server\app\Http\Resources\Departments" />
       <recent name="D:\myWork\React\trackteacher\src\redux\profile\internships" />
       <recent name="D:\myWork\React\trackteacher\src\redux\profile\internships\thunks" />
       <recent name="D:\myWork\React\trackteacher\src\pages\ErrorPages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myWork\React\trackteacher\src\pages\Internships\add" />
+      <recent name="D:\myWork\React\trackteacher\src\pages\Internships\edit" />
+      <recent name="D:\myWork\React\trackteacher\src\pages" />
+      <recent name="D:\myWork\React\trackteacher\src\utils\api\models" />
+      <recent name="D:\myWork\React\trackteacher\src\redux" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -381,12 +400,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.23996972" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.24375473" />
       <window_info id="Structure" order="3" sideWeight="0.5019531" side_tool="true" weight="0.30885693" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.22393163" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.051282052" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003785" side_tool="true" weight="0.5435898" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
@@ -439,57 +459,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Education/EditEducationRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/EducationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-          <folding>
-            <element signature="e#41#93#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Repositories/EducationRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="78" column="88" selection-start-line="78" selection-start-column="88" selection-end-line="78" selection-end-column="88" />
-          <folding>
-            <element signature="e#37#78#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/database/migrations/2020_04_30_152850_create_educations_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/database/migrations/2020_11_07_193928_education_add_specialty.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Educations/add/AddEducationForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="56" column="32" selection-start-line="47" selection-start-column="24" selection-end-line="56" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/bootstrap/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-616">
@@ -796,20 +765,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Internships/all/InternshipItem.tsx">
+    <entry file="file://$PROJECT_DIR$/src/pages/Honors/edit/EditHonorForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+        <state relative-caret-position="-518">
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Internships/all/InternshipsTable.tsx">
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/edit/EditHonorForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="160" column="17" lean-forward="true" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
+        <state relative-caret-position="-2031">
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/add/EditInternshipForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="122" column="2" lean-forward="true" selection-start-line="122" selection-start-column="2" selection-end-line="122" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/all/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -818,58 +805,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Internships/all/InternshipsFilterForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="57" column="14" lean-forward="true" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
+        <state relative-caret-position="-181">
+          <caret line="96" column="65" selection-start-line="96" selection-start-column="50" selection-end-line="96" selection-end-column="65" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Internships/all/index.tsx">
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/all/InternshipsTable.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+        <state relative-caret-position="-1765">
+          <caret line="91" column="53" selection-start-line="91" selection-start-column="48" selection-end-line="91" selection-end-column="53" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Internships/add/index.tsx">
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/all/InternshipItem.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="961">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Internships/add/AddInternshipForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1200">
+          <caret line="60" column="61" lean-forward="true" selection-start-line="60" selection-start-column="61" selection-end-line="60" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Internships/single/InternshipInfo.tsx">
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/add/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-984">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Internships/single/index.tsx">
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/edit/EditInternshipForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="323">
+          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -878,7 +859,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Internships/import/ImportInternshipsForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
+        <state relative-caret-position="809">
           <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -888,11 +869,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Internships/import/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
+        <state relative-caret-position="411">
           <caret line="66" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/edit/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="68" column="43" lean-forward="true" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/single/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-853">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Internships/single/InternshipInfo.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-37">
+          <caret line="40" column="48" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/translations/ru.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="440" lean-forward="true" selection-start-line="440" selection-end-line="440" />
         </state>
       </provider>
     </entry>

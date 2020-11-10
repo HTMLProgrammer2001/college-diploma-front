@@ -27,9 +27,9 @@ const InternshipsAddForm: React.FC<IInternshipsAddFormProps> = ({handleSubmit, e
 
 		{
 			error &&
-				<div>{error}</div>
+			<div>{error}</div>
 		}
-		
+
 		<div className="d-md-flex w-100">
 			<Translation>
 				{t => (

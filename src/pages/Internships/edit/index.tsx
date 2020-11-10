@@ -6,51 +6,52 @@ import {isSubmitting, submit} from 'redux-form';
 import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 import BackButton from '../../../common/BackButton';
 import ErrorElement from '../../../common/ErrorElement';
 import Loader from '../../../common/Loader/Loader';
+import EditInternshipForm, {IInternshipsEditData} from './EditInternshipForm';
+
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
-import {selectEditHonorState} from '../../../redux/honors/edit/selectors';
-import thunkEditHonorLoad from '../../../redux/honors/edit/thunks/thunkEditHonorLoad';
-import thunkEditHonor from '../../../redux/honors/edit/thunks/thunkEditHonor';
-import EditHonorForm, {IHonorsEditData} from './EditHonorForm';
+import {selectEditInternshipState} from '../../../redux/internships/edit/selectors';
+import thunkEditInternshipLoad from '../../../redux/internships/edit/thunks/thunkEditInternshipLoad';
+import thunkEditInternship from '../../../redux/internships/edit/thunks/thunkEditInternship';
 
 
 const mapStateToProps = (state: RootState) => ({
-	editState: selectEditHonorState(state),
-	submitting: isSubmitting('honorsEditForm')(state)
+	editState: selectEditInternshipState(state),
+	submitting: isSubmitting('internshipsEditForm')(state)
 });
 
 const connected = connect(mapStateToProps, {
-	loadHonor: thunkEditHonorLoad,
+	loadInternship: thunkEditInternshipLoad,
 	send: submit,
-	editHonor: thunkEditHonor
+	editInternship: thunkEditInternship
 });
 
-type IEditHonorPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
-const EditHonorPage: React.FC<IEditHonorPageProps> = ({editState, loadHonor, ...props}) => {
+type IEditInternshipPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
+const EditInternshipPage: React.FC<IEditInternshipPageProps> = ({editState, loadInternship, ...props}) => {
 	const {t} = useTranslation();
 
 	useEffect(() => {
-		loadHonor(+props.match.params.id);
-		document.title = t('honors.edit.pageTitle');
+		loadInternship(+props.match.params.id);
+		document.title = t('internships.edit.pageTitle');
 	}, []);
 
 	const clickHandler = () => {
-		props.send('honorsEditForm');
+		props.send('internshipsEditForm');
 	};
 
-	const submitHandler = (vals: IHonorsEditData) => {
-		props.editHonor(+props.match.params.id, vals);
+	const submitHandler = (vals: IInternshipsEditData) => {
+		props.editInternship(+props.match.params.id, vals);
 	};
 
-	if(!editState.honor && !editState.isLoading)
+	if(!editState.internship && !editState.isLoading)
 		return null;
 
 	return (
 		<>
-			<div className="title">{t('honors.edit.pageTitle')}</div>
+			<div className="title">{t('internships.edit.pageTitle')}</div>
 
 			<Card className="mr-5">
 				<Card.Body>
@@ -66,7 +67,7 @@ const EditHonorPage: React.FC<IEditHonorPageProps> = ({editState, loadHonor, ...
 
 					{
 						!editState.isLoading && !editState.error &&
-							<EditHonorForm onSubmit={submitHandler}/>
+							<EditInternshipForm onSubmit={submitHandler}/>
 					}
 				</Card.Body>
 
@@ -96,4 +97,4 @@ const EditHonorPage: React.FC<IEditHonorPageProps> = ({editState, loadHonor, ...
 	);
 };
 
-export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditHonorPage));
+export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditInternshipPage));
