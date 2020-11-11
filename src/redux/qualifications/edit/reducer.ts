@@ -40,3 +40,4 @@ const editQualificationReducer = (state = initialState, action: IEditQualificati
 };
 
 export default editQualificationReducer;
+
