@@ -17,12 +17,13 @@ import honors from './honors/';
 import rebukes from './rebukes/';
 import educations from './educations/';
 import internships from './internships/';
+import qualifications from './qualifications/';
 
 
 //create reducer
 const rootReducer = combineReducers({
 	app, me, logout, profile, departments, commissions, ranks, publications, categories,
-	honors, rebukes, educations, internships,
+	honors, rebukes, educations, internships, qualifications,
 	form: formReducer
 });
 
