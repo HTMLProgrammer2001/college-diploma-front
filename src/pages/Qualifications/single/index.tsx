@@ -8,22 +8,22 @@ import {connect, ConnectedProps} from 'react-redux';
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
 import Loader from '../../../common/Loader/Loader';
-import InternshipInfo from './InternshipInfo';
+import QualificationInfo from './QualificationInfo';
 import ErrorElement from '../../../common/ErrorElement';
 
-import {selectInternshipSingleState} from '../../../redux/internships/single/selectors';
-import thunkSingleInternship from '../../../redux/internships/single/thunks';
+import {selectQualificationSingleState} from '../../../redux/qualifications/single/selectors';
+import thunkSingleQualification from '../../../redux/qualifications/single/thunks';
 
 
 const mapStateToProps = (state: RootState) => ({
-	...selectInternshipSingleState(state)
+	...selectQualificationSingleState(state)
 });
 
-const connected = connect(mapStateToProps, {load: thunkSingleInternship});
+const connected = connect(mapStateToProps, {load: thunkSingleQualification});
 
-type ISingleInternshipPageProps = RouteComponentProps<{id: string}> & ConnectedProps<typeof connected>;
-const SingleInternshipPage: React.FC<ISingleInternshipPageProps> = (props) => {
-	const {match, isLoading, error, internship, load} = props;
+type ISingleQualificationPageProps = RouteComponentProps<{id: string}> & ConnectedProps<typeof connected>;
+const SingleQualificationPage: React.FC<ISingleQualificationPageProps> = (props) => {
+	const {match, isLoading, error, qualification, load} = props;
 	const {t} = useTranslation();
 
 	useEffect(() => {
@@ -33,7 +33,7 @@ const SingleInternshipPage: React.FC<ISingleInternshipPageProps> = (props) => {
 	return (
 		<>
 			<div className="title">
-				{t('internships.single.pageTitle')}
+				{t('qualifications.single.pageTitle')}
 			</div>
 
 			<Card className="mr-5">
@@ -42,8 +42,8 @@ const SingleInternshipPage: React.FC<ISingleInternshipPageProps> = (props) => {
 					{!isLoading && error && <ErrorElement error={error}/>}
 
 					{
-						!isLoading && !error && internship &&
-							<InternshipInfo internship={internship}/>
+						!isLoading && !error && qualification &&
+							<QualificationInfo qualification={qualification}/>
 					}
 				</Card.Body>
 
@@ -51,7 +51,7 @@ const SingleInternshipPage: React.FC<ISingleInternshipPageProps> = (props) => {
 					<Row className="justify-content-between p-2">
 						<BackButton/>
 
-						<Link to={`/internships/${match.params.id}/edit`}>
+						<Link to={`/qualifications/${match.params.id}/edit`}>
 							<Button variant="warning">
 								{t('common.edit')}
 							</Button>
@@ -63,4 +63,4 @@ const SingleInternshipPage: React.FC<ISingleInternshipPageProps> = (props) => {
 	);
 };
 
-export default connected(SingleInternshipPage);
+export default connected(SingleQualificationPage);

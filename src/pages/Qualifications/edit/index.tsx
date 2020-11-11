@@ -5,53 +5,53 @@ import {RouteComponentProps} from 'react-router-dom';
 import {isSubmitting, submit} from 'redux-form';
 import {useTranslation} from 'react-i18next';
 
-import {RootState} from '../../../redux';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
 import BackButton from '../../../common/BackButton';
 import ErrorElement from '../../../common/ErrorElement';
 import Loader from '../../../common/Loader/Loader';
-import EditInternshipForm, {IInternshipsEditData} from './EditInternshipForm';
+import EditQualificationForm, {IQualificationsEditData} from './EditQualificationForm';
 
+import {RootState} from '../../../redux';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {selectEditInternshipState} from '../../../redux/internships/edit/selectors';
-import thunkEditInternshipLoad from '../../../redux/internships/edit/thunks/thunkEditInternshipLoad';
-import thunkEditInternship from '../../../redux/internships/edit/thunks/thunkEditInternship';
+import {selectEditQualificationState} from '../../../redux/qualifications/edit/selectors';
+import thunkEditQualificationLoad from '../../../redux/qualifications/edit/thunks/thunkEditQualificationLoad';
+import thunkEditQualification from '../../../redux/qualifications/edit/thunks/thunkEditQualification';
 
 
 const mapStateToProps = (state: RootState) => ({
-	editState: selectEditInternshipState(state),
-	submitting: isSubmitting('internshipsEditForm')(state)
+	editState: selectEditQualificationState(state),
+	submitting: isSubmitting('qualificationsEditForm')(state)
 });
 
 const connected = connect(mapStateToProps, {
-	loadInternship: thunkEditInternshipLoad,
+	loadQualification: thunkEditQualificationLoad,
 	send: submit,
-	editInternship: thunkEditInternship
+	editQualification: thunkEditQualification
 });
 
-type IEditInternshipPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
-const EditInternshipPage: React.FC<IEditInternshipPageProps> = ({editState, loadInternship, ...props}) => {
+type IEditQualificationPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
+const EditQualificationPage: React.FC<IEditQualificationPageProps> = ({editState, loadQualification, ...props}) => {
 	const {t} = useTranslation();
 
 	useEffect(() => {
-		loadInternship(+props.match.params.id);
-		document.title = t('internships.edit.pageTitle');
+		loadQualification(+props.match.params.id);
+		document.title = t('qualifications.edit.pageTitle');
 	}, []);
 
 	const clickHandler = () => {
-		props.send('internshipsEditForm');
+		props.send('qualificationsEditForm');
 	};
 
-	const submitHandler = (vals: IInternshipsEditData) => {
-		props.editInternship(+props.match.params.id, vals);
+	const submitHandler = (vals: IQualificationsEditData) => {
+		props.editQualification(+props.match.params.id, vals);
 	};
 
-	if(!editState.internship && !editState.isLoading)
+	if(!editState.qualification && !editState.isLoading)
 		return null;
 
 	return (
 		<>
-			<div className="title">{t('internships.edit.pageTitle')}</div>
+			<div className="title">{t('qualifications.edit.pageTitle')}</div>
 
 			<Card className="mr-5">
 				<Card.Body>
@@ -67,7 +67,7 @@ const EditInternshipPage: React.FC<IEditInternshipPageProps> = ({editState, load
 
 					{
 						!editState.isLoading && !editState.error &&
-							<EditInternshipForm onSubmit={submitHandler}/>
+							<EditQualificationForm onSubmit={submitHandler}/>
 					}
 				</Card.Body>
 
@@ -97,4 +97,4 @@ const EditInternshipPage: React.FC<IEditInternshipPageProps> = ({editState, load
 	);
 };
 
-export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditInternshipPage));
+export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditQualificationPage));
