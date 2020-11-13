@@ -26,7 +26,7 @@ const DateElement: React.FC<IDateElementProps> = ({meta, input, name, label, cla
 
 		{
 			meta.touched && meta.error &&
-				<FormControl.Feedback style={{display: 'block'}}>
+				<FormControl.Feedback style={{display: 'block'}} type="invalid">
 					{meta.error}
 				</FormControl.Feedback>
 		}

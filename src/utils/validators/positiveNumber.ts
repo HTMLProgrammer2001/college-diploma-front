@@ -1,9 +1,9 @@
 const positiveNumber = (str: string) => {
-	if(str == null)
+	if(str === null)
 		return null;
 
 	let numb = +str;
-	return numb && numb >= 0 ? null : 'Введите положительное число';
+	return isFinite(numb) && numb >= 0 ? null : 'Введите положительное число';
 };
 
 export default positiveNumber;

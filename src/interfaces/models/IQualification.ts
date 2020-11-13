@@ -5,5 +5,6 @@ export type IQualification = {
 	id: number,
 	name: string,
 	date: string,
+	description?: string,
 	user: IUserShort
 };

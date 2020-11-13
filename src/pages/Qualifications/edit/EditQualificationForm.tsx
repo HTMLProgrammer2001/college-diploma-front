@@ -5,14 +5,13 @@ import {useSelector} from 'react-redux';
 
 import {IQualification} from '../../../interfaces/models/IQualification';
 import {RootState} from '../../../redux';
-import InputElement from '../../../common/formElements/InputElement';
+
 import DateElement from '../../../common/formElements/DateElement';
 import DataListElement from '../../../common/formElements/DataListElement';
+import SelectElement from '../../../common/formElements/SelectElement';
 
 import required from '../../../utils/validators/required';
-import positiveNumber from '../../../utils/validators/positiveNumber';
 import {selectEditQualification} from '../../../redux/qualifications/edit/selectors';
-import SelectElement from '../../../common/formElements/SelectElement';
 
 
 export type IQualificationsEditData = {
@@ -45,7 +44,7 @@ const QualificationsEditForm: React.FC<IQualificationsEditFormProps> = ({handleS
 							<Field
 								component={DataListElement}
 								name="user"
-								placeholder={t('qualifications.add.user')}
+								placeholder={t('qualifications.edit.user')}
 								url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
 								validate={[required]}
 							/>
@@ -53,7 +52,7 @@ const QualificationsEditForm: React.FC<IQualificationsEditFormProps> = ({handleS
 							<Field
 								component={SelectElement}
 								name="name"
-								placeholder={t('qualifications.add.name')}
+								placeholder={t('qualifications.edit.name')}
 								validate={[required]}
 							>
 								<option value={0}>{t('qualifications.categories.0')}</option>
@@ -71,14 +70,14 @@ const QualificationsEditForm: React.FC<IQualificationsEditFormProps> = ({handleS
 							<Field
 								component={DateElement}
 								name="date"
-								label={t('qualifications.add.date')}
+								label={t('qualifications.edit.date')}
 								validate={[required]}
 							/>
 
 							<Field
 								component="textarea"
 								name="description"
-								label={t('qualifications.add.description')}
+								label={t('qualifications.edit.description')}
 								className="form-control"
 							/>
 						</div>

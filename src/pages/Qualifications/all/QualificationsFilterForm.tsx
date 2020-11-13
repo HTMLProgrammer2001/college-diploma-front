@@ -3,7 +3,6 @@ import {reduxForm, InjectedFormProps, Field} from 'redux-form';
 import {Translation} from 'react-i18next';
 import {Button, Row} from 'react-bootstrap';
 
-import InputElement from '../../../common/formElements/InputElement';
 import DataListElement from '../../../common/formElements/DataListElement';
 import DateElement from '../../../common/formElements/DateElement';
 import SelectElement from '../../../common/formElements/SelectElement';

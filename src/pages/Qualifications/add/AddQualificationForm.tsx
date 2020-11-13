@@ -2,17 +2,16 @@ import React from 'react';
 import {reduxForm, InjectedFormProps, Field} from 'redux-form';
 import {Translation} from 'react-i18next';
 
-import InputElement from '../../../common/formElements/InputElement';
 import required from '../../../utils/validators/required';
+import positiveNumber from '../../../utils/validators/positiveNumber';
 import DateElement from '../../../common/formElements/DateElement';
 import DataListElement from '../../../common/formElements/DataListElement';
-import positiveNumber from '../../../utils/validators/positiveNumber';
 import SelectElement from '../../../common/formElements/SelectElement';
 
 
 export type IQualificationsAddData = {
 	user: number,
-	name: string,
+	name: number,
 	date: string,
 	description?: string
 };
@@ -42,8 +41,9 @@ const QualificationsAddForm: React.FC<IQualificationsAddFormProps> = ({handleSub
 							component={SelectElement}
 							name="name"
 							placeholder={t('qualifications.add.name')}
-							validate={[required]}
+							validate={[required, positiveNumber]}
 						>
+							<option value={-1} selected>--{t('common.notSetted')}--</option>
 							<option value={0}>{t('qualifications.categories.0')}</option>
 							<option value={1}>{t('qualifications.categories.1')}</option>
 							<option value={2}>{t('qualifications.categories.2')}</option>

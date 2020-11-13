@@ -25,6 +25,10 @@ const QualificationInfo: React.FC<IQualificationInfoProps> = ({qualification}) =
 		<Trans i18nKey="qualifications.single.info.date">
 			<div>Date: {{date: qualification.date}}</div>
 		</Trans>
+
+		<Trans i18nKey="qualifications.single.info.description">
+			<div>Description: {{description: qualification.description}}</div>
+		</Trans>
 	</div>
 );
 

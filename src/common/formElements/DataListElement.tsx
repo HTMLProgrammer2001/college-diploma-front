@@ -103,9 +103,9 @@ const DataListElement: React.FC<IDataListElementProps> = (props) => {
 			/>
 
 			{
-				error &&
+				props.meta.touched && (error || props.meta.error) &&
 				<FormControl.Feedback type="invalid" style={{display: 'block'}}>
-					{props.meta.touched && error}
+					{error || props.meta.error}
 				</FormControl.Feedback>
 			}
 		</FormGroup>

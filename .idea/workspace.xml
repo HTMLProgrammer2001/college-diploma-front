@@ -3,11 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="57a409a2-1ea6-4331-ae71-85b96f4252a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Qualifications/edit/EditInternshipForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Qualifications/edit/EditQualificationForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Qualifications/edit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Qualifications/edit/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Qualifications/single/InternshipInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Qualifications/single/QualificationInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Qualifications/single/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Qualifications/single/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/qualifications/edit/selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/qualifications/edit/selectors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Exports/QualificationsExampleExporter.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Exports/QualificationsExampleExporter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Http/Controllers/QualificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Controllers/QualificationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Http/Requests/Qualifications/AddQualificationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Requests/Qualifications/AddQualificationRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Http/Requests/Qualifications/AllQualificationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Requests/Qualifications/AllQualificationRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Http/Requests/Qualifications/EditQualificationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Requests/Qualifications/EditQualificationRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Repositories/QualificationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Repositories/QualificationRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/Footer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Footer/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/formElements/DataListElement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/formElements/DataListElement.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/formElements/DateElement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/formElements/DateElement.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/models/IQualification.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/models/IQualification.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Qualifications/add/AddQualificationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Qualifications/add/AddQualificationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Qualifications/all/QualificationsFilterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Qualifications/all/QualificationsFilterForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Qualifications/edit/EditQualificationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Qualifications/edit/EditQualificationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Qualifications/single/QualificationInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Qualifications/single/QualificationInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/translations/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/translations/ru.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/validators/positiveNumber.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/positiveNumber.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,15 +30,36 @@
     <pharConfigPath>$PROJECT_DIR$/server/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/edit/index.tsx">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/QualificationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="99" column="78" lean-forward="true" selection-start-line="99" selection-start-column="78" selection-end-line="99" selection-end-column="78" />
+            <state relative-caret-position="336">
+              <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#40#76#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/ExportExampleController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+              <folding>
+                <element signature="e#40#78#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/app/Exports/QualificationsExampleExporter.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="52" column="51" lean-forward="true" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -57,14 +89,12 @@
       <find>PUBLICATION</find>
       <find>Commission</find>
       <find>Publications</find>
-      <find>publication</find>
       <find>cog</find>
       <find>honors</find>
       <find>Publication</find>
       <find>department</find>
       <find>HONOR</find>
       <find>Add</find>
-      <find>add</find>
       <find>Honor</find>
       <find>edit</find>
       <find>honor</find>
@@ -74,6 +104,8 @@
       <find>internships</find>
       <find>internship</find>
       <find>Internship</find>
+      <find>publication</find>
+      <find>add</find>
     </findStrings>
     <replaceStrings>
       <replace>Import</replace>
@@ -97,40 +129,23 @@
       <replace>education</replace>
       <replace>INTERNSHIP</replace>
       <replace>Edit</replace>
-      <replace>edit</replace>
       <replace>Internship</replace>
       <replace>add</replace>
       <replace>internship</replace>
       <replace>QUALIFICATIONS</replace>
       <replace>QUALIFICATION</replace>
       <replace>qualifications</replace>
-      <replace>qualification</replace>
       <replace>Qualification</replace>
+      <replace>qualification</replace>
+      <replace>edit</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/server" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/translations/ru.json" />
-        <option value="$PROJECT_DIR$/server/app/Http/Controllers/SearchController.php" />
-        <option value="$PROJECT_DIR$/src/pages/Internships/add/AddInternshipForm.tsx" />
-        <option value="$PROJECT_DIR$/server/app/Repositories/InternshipRepository.php" />
-        <option value="$PROJECT_DIR$/src/pages/Internships/edit/EditInternshipForm.tsx" />
-        <option value="$PROJECT_DIR$/server/app/Repositories/CategoryRepository.php" />
-        <option value="$PROJECT_DIR$/server/app/Exports/InternshipsExampleExporter.php" />
-        <option value="$PROJECT_DIR$/server/app/Http/Controllers/InternshipController.php" />
-        <option value="$PROJECT_DIR$/server/database/migrations/2020_05_06_100951_add_internships_table.php" />
-        <option value="$PROJECT_DIR$/src/pages/Internships/single/InternshipInfo.tsx" />
-        <option value="$PROJECT_DIR$/src/utils/api/models/qualificationsApi.ts" />
-        <option value="$PROJECT_DIR$/src/redux/qualifications/add/thunks.ts" />
-        <option value="$PROJECT_DIR$/src/redux/qualifications/all/types.ts" />
-        <option value="$PROJECT_DIR$/src/redux/qualifications/all/actions.ts" />
-        <option value="$PROJECT_DIR$/src/redux/qualifications/all/reducer.ts" />
-        <option value="$PROJECT_DIR$/src/redux/qualifications/all/selectors.ts" />
-        <option value="$PROJECT_DIR$/src/redux/qualifications/index.ts" />
         <option value="$PROJECT_DIR$/src/redux/index.ts" />
         <option value="$PROJECT_DIR$/src/redux/qualifications/all/thunks.ts" />
         <option value="$PROJECT_DIR$/src/redux/qualifications/delete/types.ts" />
@@ -155,16 +170,33 @@
         <option value="$PROJECT_DIR$/src/pages/Qualifications/add/index.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Qualifications/all/QualificationItem.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Qualifications/all/QualificationsTable.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Qualifications/all/QualificationsFilterForm.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Qualifications/add/AddQualificationForm.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Qualifications/all/index.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Qualifications/import/ImportQualificationsForm.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Qualifications/import/index.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Qualifications/single/index.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Qualifications/single/QualificationInfo.tsx" />
         <option value="$PROJECT_DIR$/src/redux/qualifications/edit/selectors.ts" />
-        <option value="$PROJECT_DIR$/src/pages/Qualifications/edit/EditQualificationForm.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Qualifications/edit/index.tsx" />
+        <option value="$PROJECT_DIR$/server/app/Http/Resources/Qualifications/QualificationsGroupResource.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Resources/Qualifications/QualificationResource.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Controllers/ExportExampleController.php" />
+        <option value="$PROJECT_DIR$/server/routes/api.php" />
+        <option value="$PROJECT_DIR$/src/interfaces/models/IQualification.ts" />
+        <option value="$PROJECT_DIR$/src/pages/Qualifications/single/QualificationInfo.tsx" />
+        <option value="$PROJECT_DIR$/src/common/Footer/index.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/Qualifications/edit/EditQualificationForm.tsx" />
+        <option value="$PROJECT_DIR$/src/translations/ru.json" />
+        <option value="$PROJECT_DIR$/src/pages/Qualifications/add/AddQualificationForm.tsx" />
+        <option value="$PROJECT_DIR$/src/common/formElements/DateElement.tsx" />
+        <option value="$PROJECT_DIR$/src/common/formElements/DataListElement.tsx" />
+        <option value="$PROJECT_DIR$/src/utils/validators/positiveNumber.ts" />
+        <option value="$PROJECT_DIR$/src/pages/Qualifications/all/QualificationsFilterForm.tsx" />
+        <option value="$PROJECT_DIR$/server/app/Http/Requests/Qualifications/AllQualificationRequest.php" />
+        <option value="$PROJECT_DIR$/server/app/Repositories/QualificationRepository.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Requests/Qualifications/AddQualificationRequest.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Requests/Qualifications/EditQualificationRequest.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Controllers/QualificationController.php" />
+        <option value="$PROJECT_DIR$/server/app/Exports/QualificationsExampleExporter.php" />
       </list>
     </option>
   </component>
@@ -300,7 +332,7 @@
       <path value="$PROJECT_DIR$/server/vendor/league/flysystem-aws-s3-v3" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -314,6 +346,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -324,13 +357,25 @@
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Exports" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
@@ -357,7 +402,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -375,19 +419,19 @@
     <property name="ts.external.directory.path" value="D:\myWork\React\trackteacher\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\myWork\React\trackteacher\server\app\Http\Resources\" />
-      <recent name="D:\myWork\React\trackteacher\server\app\Http\Resources\Departments" />
-      <recent name="D:\myWork\React\trackteacher\src\redux\profile\internships" />
-      <recent name="D:\myWork\React\trackteacher\src\redux\profile\internships\thunks" />
-      <recent name="D:\myWork\React\trackteacher\src\pages\ErrorPages" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\myWork\React\trackteacher\src\pages" />
       <recent name="D:\myWork\React\trackteacher\src\redux" />
       <recent name="D:\myWork\React\trackteacher\src\utils\api\models" />
       <recent name="D:\myWork\React\trackteacher\src\pages\Internships\add" />
       <recent name="D:\myWork\React\trackteacher\src\pages\Internships\edit" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\myWork\React\trackteacher\server\app\Http\Resources\" />
+      <recent name="D:\myWork\React\trackteacher\server\app\Http\Resources\Departments" />
+      <recent name="D:\myWork\React\trackteacher\src\redux\profile\internships" />
+      <recent name="D:\myWork\React\trackteacher\src\redux\profile\internships\thunks" />
+      <recent name="D:\myWork\React\trackteacher\src\pages\ErrorPages" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -408,9 +452,9 @@
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.24753974" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.25132474" />
       <window_info id="Structure" order="3" sideWeight="0.5019531" side_tool="true" weight="0.30885693" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.25299147" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.23931624" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003785" side_tool="true" weight="0.5435898" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
@@ -463,182 +507,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/app/Exports/InternshipsExampleExporter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="e#31#65#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Repositories/CategoryRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="61" column="1" lean-forward="true" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/ExportExampleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Imports/InternshipsImport.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#31#49#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/InternshipController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
-          <folding>
-            <element signature="e#40#76#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/database/migrations/2020_05_06_100951_add_internships_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="29" column="45" lean-forward="true" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Internships/single/InternshipInfo.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/translations/ru.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="437" column="13" lean-forward="true" selection-start-line="437" selection-start-column="13" selection-end-line="437" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/api/models/internshipsApi.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/api/models/qualificationsApi.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/qualifications/add/thunks.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="33" column="37" lean-forward="true" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/qualifications/all/reducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="e#0#169#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/qualifications/all/actions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/qualifications/all/types.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/qualifications/all/selectors.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="81" selection-start-line="4" selection-start-column="81" selection-end-line="4" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/qualifications/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#67#99#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/qualifications/all/thunks.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-            <element signature="e#227#257#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/qualifications/delete/types.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/qualifications/delete/actions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#114#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/qualifications/delete/selectors.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -787,27 +655,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/index.tsx">
+    <entry file="file://$PROJECT_DIR$/.env.production">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+        <state>
+          <caret column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/qualifications/edit/selectors.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/PublicationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="86" column="5" selection-start-line="16" selection-start-column="4" selection-end-line="86" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/QualificationResource.php" />
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/Qualifications/QualificationsGroupResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/Qualifications/QualificationResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#53#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="55" column="60" lean-forward="true" selection-start-line="55" selection-start-column="60" selection-end-line="55" selection-end-column="60" />
+          <folding>
+            <element signature="e#40#95#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+          <folding>
+            <element signature="e#7#44#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interfaces/models/IQualification.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/Footer/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/add/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        <state relative-caret-position="24">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/all/QualificationsTable.tsx">
+    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/all/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="26" column="48" lean-forward="true" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+        <state relative-caret-position="343">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -824,27 +761,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/all/QualificationsFilterForm.tsx">
+    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/all/QualificationsTable.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+        <state relative-caret-position="343">
+          <caret line="139" column="42" lean-forward="true" selection-start-line="139" selection-start-column="42" selection-end-line="139" selection-end-column="42" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env.production">
+    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/edit/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/all/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="85" column="48" lean-forward="true" selection-start-line="85" selection-start-column="48" selection-end-line="85" selection-end-column="48" />
+        <state relative-caret-position="24">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -853,8 +783,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/import/ImportQualificationsForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="343">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -863,8 +793,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/import/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+        <state relative-caret-position="72">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -873,7 +813,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/single/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
+        <state relative-caret-position="343">
           <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -883,48 +823,137 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/single/QualificationInfo.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="343">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/qualifications/edit/selectors.ts">
+    <entry file="file://$PROJECT_DIR$/src/translations/ru.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="120">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/edit/EditQualificationForm.tsx">
+    <entry file="file://$PROJECT_DIR$/src/utils/validators/positiveNumber.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        <state relative-caret-position="216">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/formElements/DataListElement.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#49#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/formElements/DateElement.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Qualifications/AllQualificationRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/all/QualificationsFilterForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Models/Qualification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/add/AddQualificationForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="73" column="26" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="73" selection-end-column="26" />
+        <state relative-caret-position="-1313">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/edit/index.tsx">
+    <entry file="file://$PROJECT_DIR$/server/app/Repositories/QualificationRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="99" column="78" lean-forward="true" selection-start-line="99" selection-start-column="78" selection-end-line="99" selection-end-column="78" />
+        <state relative-caret-position="189">
+          <caret line="89" column="25" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Qualifications/AddQualificationRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/Qualifications/EditQualificationRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/edit/EditQualificationForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1104">
+          <caret line="56" column="29" lean-forward="true" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/QualificationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+          <folding>
+            <element signature="e#40#76#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/ExportExampleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#40#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Exports/QualificationsExampleExporter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="52" column="51" lean-forward="true" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
         </state>
       </provider>
     </entry>
