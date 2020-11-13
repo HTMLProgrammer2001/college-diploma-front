@@ -20,6 +20,7 @@ const Rebukes = lazy(() => import('./pages/Rebukes/'));
 const Educations = lazy(() => import('./pages/Educations/'));
 const Internships = lazy(() => import('./pages/Internships/'));
 const Qualifications = lazy(() => import('./pages/Qualifications/'));
+const Users = lazy(() => import('./pages/Users/'));
 
 
 const AdminRoutes: React.FC<{}> = () => (
@@ -42,6 +43,7 @@ const AdminRoutes: React.FC<{}> = () => (
 					<Route path="/educations" component={Educations}/>
 					<Route path="/internships" component={Internships}/>
 					<Route path="/qualifications" component={Qualifications}/>
+					<Route path="/users" component={Users}/>
 
 					<Route path="/" component={NotFoundPage}/>
 				</Switch>
