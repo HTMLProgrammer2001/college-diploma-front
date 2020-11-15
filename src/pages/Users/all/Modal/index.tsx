@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Modal} from 'react-bootstrap';
-import {useLocation} from 'react-router';
+import {useHistory, useLocation} from 'react-router';
 import {connect, ConnectedProps} from 'react-redux';
 
 import Loader from '../../../../common/Loader/Loader';
@@ -22,14 +22,19 @@ const connected = connect(mapStateToProps, {getUser: thunkModalUser});
 type IUserModalProps = ConnectedProps<typeof connected>;
 const UserModal: React.FC<IUserModalProps> = ({isLoading, error, user, getUser, userName}) => {
 	const [isShow, setShow] = useState(false),
-		router = useLocation();
+		location = useLocation(),
+		history = useHistory(),
+		hideHandler = () => {
+			setShow(false);
+			history.replace({pathname: location.pathname});
+		};
 
 	useEffect(() => {
-		if(router.hash) {
-			getUser(+router.hash.slice(1));
+		if(location.hash) {
+			getUser(+location.hash.slice(1));
 			setShow(true);
 		}
-	}, [router.hash]);
+	}, [location.hash]);
 
 	if(!isShow)
 		return null;
@@ -38,7 +43,7 @@ const UserModal: React.FC<IUserModalProps> = ({isLoading, error, user, getUser, 
 
 	return (
 		<Modal show={isShow} size="lg">
-			<Modal.Header closeButton onHide={() => setShow(false)}>
+			<Modal.Header closeButton onHide={hideHandler}>
 				<h4>{name} | {user?.role && roleCodeToName(user?.role)}</h4>
 			</Modal.Header>
 

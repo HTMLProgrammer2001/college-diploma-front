@@ -3,14 +3,14 @@ import {Link} from 'react-router-dom';
 import {Spinner} from 'react-bootstrap';
 import {useDispatch} from 'react-redux';
 
-import {IUser} from '../../../interfaces/models/IUser';
 import UserCan from '../../../common/UserCan';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
 import {userModalSetName} from '../../../redux/users/modal/actions';
+import {IUserTable} from '../../../interfaces/models/IUserTable';
 
 
 type IUserItemProps = {
-	user: IUser,
+	user: IUserTable,
 	isDeleting: boolean,
 	del: (id: number) => void
 };

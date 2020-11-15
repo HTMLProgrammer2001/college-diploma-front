@@ -5,6 +5,7 @@ import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneral
 
 import objToParams from '../../helpers/objToParams';
 import {IUser} from '../../../interfaces/models/IUser';
+import {IUserTable} from '../../../interfaces/models/IUserTable';
 
 
 const client = axios.create({
@@ -16,10 +17,10 @@ const client = axios.create({
 });
 
 const usersApi = {
-	async getCategories(filters: any = {}, sort: ISort[] = [], page = 1, pageSize = 5) {
+	async getUsers(filters: any = {}, sort: ISort[] = [], page = 1, pageSize = 5) {
 		const sortRules = objToParams(sort, 'sort');
 
-		return await client.get<IGeneralPaginationResponse<IUser>>('/', {
+		return await client.get<IGeneralPaginationResponse<IUserTable>>('/', {
 			params: {...filters, ...sortRules, page, pageSize}
 		});
 	},

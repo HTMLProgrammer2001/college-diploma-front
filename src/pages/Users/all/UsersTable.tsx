@@ -4,7 +4,7 @@ import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
-import {IUser} from '../../../interfaces/models/IUser';
+import {IUserTable} from '../../../interfaces/models/IUserTable';
 
 import SortItem from '../../../common/SortItem';
 import Loader from '../../../common/Loader/Loader';
@@ -12,36 +12,35 @@ import ErrorElement from '../../../common/ErrorElement';
 import UserItem from './UserItem';
 
 import findSortRule from '../../../utils/helpers/findSortRule';
-import {selectAllCommissionsState} from '../../../redux/commissions/all/selectors';
-import {selectDeleteCommissions} from '../../../redux/commissions/delete/selectors';
-import {allCommissionsChangeSort} from '../../../redux/commissions/all/actions';
-import thunkAllCommissions from '../../../redux/commissions/all/thunks';
-import thunkDeleteCommission from '../../../redux/commissions/delete/thunks';
+import {selectAllUsersState} from '../../../redux/users/all/selectors';
+import {selectDeleteCategories} from '../../../redux/categories/delete/selectors';
+import {allUsersChangeSort} from '../../../redux/users/all/actions';
+import thunkAllUsers from '../../../redux/users/all/thunks';
+import thunkDeleteUser from '../../../redux/users/delete/thunks';
 
 
 const mapStateToProps = (state: RootState) => ({
-	...selectAllCommissionsState(state),
-	deleting: selectDeleteCommissions(state),
-	users: [{id: 1, fullName: 'Test name', email: 'cssuperpy@gmail.com', avatar: 'http://localhost:8000/storage//avatars/l7viRhFR76YpfqfvD3f9vZZAUSySNFiRRRPHpPyr.jpeg'}] as IUser[]
+	...selectAllUsersState(state),
+	deleting: selectDeleteCategories(state)
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
 	changeSort(field: string) {
-		dispatch(allCommissionsChangeSort(field));
-		dispatch(thunkAllCommissions(1));
+		dispatch(allUsersChangeSort(field));
+		dispatch(thunkAllUsers(1));
 	},
 	load(page = 1) {
-		dispatch(thunkAllCommissions(page));
+		dispatch(thunkAllUsers(page));
 	},
 	deleteItem(id: number) {
-		dispatch(thunkDeleteCommission(id));
+		dispatch(thunkDeleteUser(id));
 	}
 });
 
 const connected = connect(mapStateToProps, mapDispatchToProps);
 
-type ICommissionsTableProps = ConnectedProps<typeof connected>;
-const UsersTable: React.FC<ICommissionsTableProps> = (props) => {
+type IUsersTableProps = ConnectedProps<typeof connected>;
+const UsersTable: React.FC<IUsersTableProps> = (props) => {
 	useEffect(() => {
 		if (!props.isLoading && !props.users.length)
 			props.load();
@@ -131,7 +130,7 @@ const UsersTable: React.FC<ICommissionsTableProps> = (props) => {
 
 				{
 					!props.isLoading && !props.error &&
-					props.users.map((user: any) => (
+					props.users.map((user: IUserTable) => (
 						<UserItem
 							key={user.id}
 							user={user}

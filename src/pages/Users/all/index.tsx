@@ -12,13 +12,13 @@ import UserCan from '../../../common/UserCan';
 import UserModal from './Modal';
 
 import {RootState} from '../../../redux';
-import {selectAllCommissionsPagination} from '../../../redux/commissions/all/selectors';
-import thunkAllUsers from '../../../redux/commissions/all/thunks';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {selectAllUsersPagination} from '../../../redux/users/all/selectors';
+import thunkAllUsers from '../../../redux/users/all/thunks';
 
 
 const mapStateToProps = (state: RootState) => ({
-	paginator: selectAllCommissionsPagination(state)
+	paginator: selectAllUsersPagination(state)
 });
 
 const connected = connect(mapStateToProps, {changePage: thunkAllUsers});
