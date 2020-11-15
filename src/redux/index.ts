@@ -18,12 +18,13 @@ import rebukes from './rebukes/';
 import educations from './educations/';
 import internships from './internships/';
 import qualifications from './qualifications/';
+import users from './users/';
 
 
 //create reducer
 const rootReducer = combineReducers({
 	app, me, logout, profile, departments, commissions, ranks, publications, categories,
-	honors, rebukes, educations, internships, qualifications,
+	honors, rebukes, educations, internships, qualifications, users,
 	form: formReducer
 });
 

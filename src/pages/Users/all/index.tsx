@@ -4,15 +4,16 @@ import {Link} from 'react-router-dom';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
 
-import {RootState} from '../../../redux';
-
 import BackButton from '../../../common/BackButton';
 import UsersFilterForm from './UsersFilterForm';
 import UsersTable from './UsersTable';
 import Paginator from '../../../common/Paginator';
+import UserCan from '../../../common/UserCan';
+import UserModal from './Modal';
+
+import {RootState} from '../../../redux';
 import {selectAllCommissionsPagination} from '../../../redux/commissions/all/selectors';
 import thunkAllUsers from '../../../redux/commissions/all/thunks';
-import UserCan from '../../../common/UserCan';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 
@@ -82,6 +83,8 @@ const AllDepartmentsPage: React.FC<IAllDepartmentsPageProps> = ({changePage, pag
 						<BackButton/>
 					</Row>
 				</Card.Footer>
+				
+				<UserModal/>
 			</Card>
 		</>
 	);
