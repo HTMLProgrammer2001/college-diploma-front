@@ -68,7 +68,7 @@ const AllDepartmentsPage: React.FC<IAllDepartmentsPageProps> = ({changePage, pag
 					</div>
 
 					<div className="d-flex justify-content-center w-100 mb-3">
-						<UsersFilterForm/>
+						<UsersFilterForm onSubmit={() => changePage(1)}/>
 					</div>
 
 					<UsersTable/>

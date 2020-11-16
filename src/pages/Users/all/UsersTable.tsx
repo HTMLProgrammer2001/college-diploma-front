@@ -134,7 +134,7 @@ const UsersTable: React.FC<IUsersTableProps> = (props) => {
 						<UserItem
 							key={user.id}
 							user={user}
-							isDeleting={props.deleting.findIndex((id) => id == user.id) == -1}
+							isDeleting={props.deleting.findIndex((id: number) => id == user.id) == -1}
 							del={props.deleteItem}
 						/>
 					))
