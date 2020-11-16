@@ -13,15 +13,15 @@ import UserItem from './UserItem';
 
 import findSortRule from '../../../utils/helpers/findSortRule';
 import {selectAllUsersState} from '../../../redux/users/all/selectors';
-import {selectDeleteCategories} from '../../../redux/categories/delete/selectors';
 import {allUsersChangeSort} from '../../../redux/users/all/actions';
+import {selectDeleteUsers} from '../../../redux/users/delete/selectors';
 import thunkAllUsers from '../../../redux/users/all/thunks';
 import thunkDeleteUser from '../../../redux/users/delete/thunks';
 
 
 const mapStateToProps = (state: RootState) => ({
 	...selectAllUsersState(state),
-	deleting: selectDeleteCategories(state)
+	deleting: selectDeleteUsers(state)
 });
 
 const mapDispatchToProps = (dispatch: any) => ({

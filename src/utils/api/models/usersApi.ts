@@ -6,6 +6,7 @@ import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneral
 import objToParams from '../../helpers/objToParams';
 import {IUser} from '../../../interfaces/models/IUser';
 import {IUserTable} from '../../../interfaces/models/IUserTable';
+import {IRebukesImportData} from '../../../pages/Rebukes/import/ImportRebukesForm';
 
 
 const client = axios.create({
@@ -39,6 +40,16 @@ const usersApi = {
 
 	async addUser(vals: any) {
 		return await client.post('/add', vals);
+	},
+
+	async importUsers(vals: any){
+		let formData = new FormData();
+
+		for(let key in vals){
+			formData.append(key, (vals as any)[key]);
+		}
+
+		return await client.post('/import', formData);
 	}
 };
 
