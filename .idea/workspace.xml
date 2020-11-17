@@ -3,21 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="57a409a2-1ea6-4331-ae71-85b96f4252a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Exports/UsersExampleExporter.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Exports/UsersExampleExporter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Helpers/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Helpers/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Http/Controllers/ExportExampleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Controllers/ExportExampleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Exports/Report.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Exports/Report.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Imports/UsersImport.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Imports/UsersImport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Repositories/CommissionRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Repositories/CommissionRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Repositories/DepartmentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Repositories/DepartmentRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Repositories/RankRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Repositories/RankRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Repositories/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Repositories/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Services/PhotoUploader.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Services/PhotoUploader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/all/UsersTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/all/UsersTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/api/models/usersApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api/models/usersApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Http/Requests/User/AddUserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Requests/User/AddUserRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app/Http/Requests/User/AllUserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Requests/User/AllUserRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database/migrations/2020_03_24_180226_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/migrations/2020_03_24_180226_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Publications/add/AddPublicationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/add/AddPublicationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Users/add/AddCommissionForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/add/AddUserForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Users/add/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/add/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Users/all/Modal/UserBody.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/all/Modal/UserBody.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,37 +25,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/app/Imports/UsersImport.php">
+        <entry file="file://$PROJECT_DIR$/src/pages/Users/all/Modal/UserBody.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/app/Repositories/UserRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="80" column="84" selection-start-line="80" selection-start-column="84" selection-end-line="80" selection-end-column="84" />
+            <state relative-caret-position="225">
+              <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/app/Services/PhotoUploader.php">
+        <entry file="file://$PROJECT_DIR$/src/pages/Users/edit/index.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/app/Models/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="138" column="33" selection-start-line="138" selection-start-column="33" selection-end-line="138" selection-end-column="33" />
+            <state relative-caret-position="332">
+              <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,7 +60,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>COMMISSIONS</find>
       <find>COMMISSION</find>
       <find>Departments</find>
       <find>PUBLICATIONS</find>
@@ -101,13 +82,14 @@
       <find>Internship</find>
       <find>publication</find>
       <find>add</find>
-      <find>Commission</find>
       <find>commissions</find>
       <find>Commissions</find>
       <find>Category</find>
       <find>REBUKE</find>
-      <find>rebuke</find>
       <find>Rebuke</find>
+      <find>User</find>
+      <find>Commission</find>
+      <find>rebuke</find>
     </findStrings>
     <replaceStrings>
       <replace>Categories</replace>
@@ -136,27 +118,18 @@
       <replace>qualification</replace>
       <replace>edit</replace>
       <replace>users</replace>
-      <replace>Users</replace>
       <replace>USER</replace>
-      <replace>user</replace>
+      <replace>Users</replace>
       <replace>User</replace>
+      <replace>user</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/server" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/app/Http/Requests/User/AddUserRequest.php" />
-        <option value="$PROJECT_DIR$/server/app/Http/Requests/User/AllUserRequest.php" />
-        <option value="$PROJECT_DIR$/server/app/Http/Requests/User/EditUserRequest.php" />
-        <option value="$PROJECT_DIR$/src/pages/Users/all/Modal/index.tsx" />
-        <option value="$PROJECT_DIR$/src/redux/users/all/actions.ts" />
-        <option value="$PROJECT_DIR$/server/app/Http/Resources/Users/UsersGroupResource.php" />
-        <option value="$PROJECT_DIR$/server/app/Http/Resources/Users/UsersGroupTableResource.php" />
-        <option value="$PROJECT_DIR$/server/app/Http/Resources/Users/UserTableResource.php" />
-        <option value="$PROJECT_DIR$/src/redux/users/delete/types.ts" />
         <option value="$PROJECT_DIR$/src/redux/users/delete/actions.ts" />
         <option value="$PROJECT_DIR$/src/redux/users/delete/reducer.ts" />
         <option value="$PROJECT_DIR$/src/redux/users/delete/selectors.ts" />
@@ -194,11 +167,20 @@
         <option value="$PROJECT_DIR$/src/pages/Users/import/index.tsx" />
         <option value="$PROJECT_DIR$/src/redux/users/import/thunks.ts" />
         <option value="$PROJECT_DIR$/src/pages/Users/import/ImportUsersForm.tsx" />
-        <option value="$PROJECT_DIR$/server/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/server/app/Imports/UsersImport.php" />
-        <option value="$PROJECT_DIR$/server/app/Models/User.php" />
         <option value="$PROJECT_DIR$/server/app/Repositories/UserRepository.php" />
         <option value="$PROJECT_DIR$/server/app/Services/PhotoUploader.php" />
+        <option value="$PROJECT_DIR$/server/app/Exports/Report.php" />
+        <option value="$PROJECT_DIR$/src/pages/Publications/add/AddPublicationForm.tsx" />
+        <option value="$PROJECT_DIR$/src/redux/users/add/thunks.ts" />
+        <option value="$PROJECT_DIR$/src/pages/Users/add/index.tsx" />
+        <option value="$PROJECT_DIR$/server/app/Http/Requests/User/AllUserRequest.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/server/app/Http/Requests/User/AddUserRequest.php" />
+        <option value="$PROJECT_DIR$/src/pages/Users/add/AddUserForm.tsx" />
+        <option value="$PROJECT_DIR$/server/app/Models/User.php" />
+        <option value="$PROJECT_DIR$/server/database/migrations/2020_03_24_180226_create_users_table.php" />
+        <option value="$PROJECT_DIR$/src/pages/Users/all/Modal/UserBody.tsx" />
       </list>
     </option>
   </component>
@@ -358,41 +340,28 @@
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Imports" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="Users" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Repositories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Services" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="Users" type="462c0819:PsiDirectoryNode" />
+              <item name="edit" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -416,19 +385,19 @@
     <property name="ts.external.directory.path" value="D:\myWork\React\trackteacher\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\myWork\React\trackteacher\src\redux\users" />
-      <recent name="D:\myWork\React\trackteacher\src\pages\Users" />
-      <recent name="D:\myWork\React\trackteacher\src\pages\Rebukes" />
-      <recent name="D:\myWork\React\trackteacher\src\utils\api\models" />
-      <recent name="D:\myWork\React\trackteacher\src\pages" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\myWork\React\trackteacher\src\pages\Users\all\Modal" />
       <recent name="D:\myWork\React\trackteacher\server\app\Http\Resources\" />
       <recent name="D:\myWork\React\trackteacher\server\app\Http\Resources\Departments" />
       <recent name="D:\myWork\React\trackteacher\src\redux\profile\internships" />
       <recent name="D:\myWork\React\trackteacher\src\redux\profile\internships\thunks" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myWork\React\trackteacher\src\redux\users" />
+      <recent name="D:\myWork\React\trackteacher\src\pages\Users" />
+      <recent name="D:\myWork\React\trackteacher\src\pages\Rebukes" />
+      <recent name="D:\myWork\React\trackteacher\src\utils\api\models" />
+      <recent name="D:\myWork\React\trackteacher\src\pages" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -449,9 +418,9 @@
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.2626798" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.25965178" />
       <window_info id="Structure" order="3" sideWeight="0.5019531" side_tool="true" weight="0.30885693" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.26495728" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.24615385" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003785" side_tool="true" weight="0.5435898" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
@@ -504,106 +473,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/redux/users/delete/actions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#0#87#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/users/delete/reducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#0#87#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/users/delete/selectors.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/users/delete/thunks.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.github/workflows/deploy.yml" />
-    <entry file="file://$PROJECT_DIR$/src/pages/Users/all/UsersFilterForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Repositories/Rules/HasAssociateRule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Users/all/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="63" column="45" lean-forward="true" selection-start-line="63" selection-start-column="45" selection-end-line="63" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/Categories/SearchCategoryResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/Departments/SearchDepartmentResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/Departments/SearchDepartmentsGroupResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/Commissions/SearchCommissionsGroupResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/Commissions/SearchCommissionResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/Commissions/CommissionsGroupResource.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -611,13 +480,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/CommissionResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="19" column="10" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="19" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/CommissionResource.php" />
     <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/Commissions/CommissionResource.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
@@ -625,13 +488,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/DepartmentResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="19" column="10" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="19" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/DepartmentResource.php" />
     <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/Departments/DepartmentResource.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
@@ -677,13 +534,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/RankResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="19" column="10" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="19" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/RankResource.php" />
     <entry file="file://$PROJECT_DIR$/server/app/Http/Resources/Ranks/RankResource.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
@@ -868,16 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="78" column="10" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
-          <folding>
-            <element signature="e#41#77#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/app/Imports/UsersImport.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -885,24 +726,143 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Models/User.php">
+    <entry file="file://$PROJECT_DIR$/server/app/Services/PhotoUploader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="138" column="33" selection-start-line="138" selection-start-column="33" selection-end-line="138" selection-end-column="33" />
+        <state relative-caret-position="8">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Exports/Report.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="59" column="38" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Publications/add/AddPublicationForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="86" column="14" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="86" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Users/add/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/users/add/thunks.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/User/AllUserRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Users/all/UsersFilterForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding>
+            <element signature="e#41#77#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/app/Repositories/UserRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="80" column="84" selection-start-line="80" selection-start-column="84" selection-end-line="80" selection-end-column="84" />
+        <state relative-caret-position="325">
+          <caret line="95" column="32" lean-forward="true" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/app/Services/PhotoUploader.php">
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/UserActions/EditMeRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="373">
+          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Http/Requests/User/AddUserRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Users/add/AddUserForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="82" column="8" lean-forward="true" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/migrations/2020_04_05_111220_create_users_publication_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/migrations/2020_03_24_180226_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Users/all/Modal/UserBody.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Users/edit/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

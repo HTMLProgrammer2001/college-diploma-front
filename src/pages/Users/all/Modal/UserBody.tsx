@@ -64,12 +64,12 @@ const UserBody: React.FC<IUserBodyProps> = ({user}) => {
 					<tbody>
 					<tr>
 						<th>{t('users.modal.commission')}</th>
-						<th>{user.commission.name}</th>
+						<th>{user.commission?.name}</th>
 					</tr>
 
 					<tr>
 						<th>{t('users.modal.department')}</th>
-						<th>{user.department.name}</th>
+						<th>{user.department?.name}</th>
 					</tr>
 
 					<tr>
@@ -84,7 +84,7 @@ const UserBody: React.FC<IUserBodyProps> = ({user}) => {
 
 					<tr>
 						<th>{t('users.modal.rank')}</th>
-						<th>{user.rank.name}</th>
+						<th>{user.rank?.name}</th>
 					</tr>
 
 					<tr>

@@ -5,39 +5,41 @@ import {submit, isSubmitting} from 'redux-form';
 import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
-import BackButton from '../../../common/BackButton';
-import AddCommissionForm from './AddCommissionForm';
-import thunkAddCommission from '../../../redux/commissions/add/thunks';
-import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
+
+import BackButton from '../../../common/BackButton';
+import AddUserForm from './AddUserForm';
+
+import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
+import thunkAddUser from '../../../redux/users/add/thunks';
 
 
 const mapStateToProps = (state: RootState) => ({
-	submitting: isSubmitting('commissionsAddForm')(state)
+	submitting: isSubmitting('usersAddForm')(state)
 });
 
 const connected = connect(mapStateToProps, {
-	add: thunkAddCommission,
+	add: thunkAddUser,
 	send: submit
 });
 
-type IAddCommissionPageProps = ConnectedProps<typeof connected>;
-const AddCommissionPage: React.FC<IAddCommissionPageProps> = ({add, send, submitting}) => {
+type IAddUserPageProps = ConnectedProps<typeof connected>;
+const AddUserPage: React.FC<IAddUserPageProps> = ({add, send, submitting}) => {
 	const {t} = useTranslation();
 
 	useEffect(() => {
-		document.title = t('commissions.add.pageTitle');
+		document.title = t('users.add.pageTitle');
 	}, []);
 
 	return (
 		<>
 			<div className="title">
-				{t('commissions.add.pageTitle')}
+				{t('users.add.pageTitle')}
 			</div>
 
 			<Card className="mr-5">
 				<Card.Body>
-					<AddCommissionForm onSubmit={add}/>
+					<AddUserForm onSubmit={add}/>
 				</Card.Body>
 
 				<Card.Footer>
@@ -46,7 +48,7 @@ const AddCommissionPage: React.FC<IAddCommissionPageProps> = ({add, send, submit
 
 						<Button
 							variant="success"
-							onClick={() => send('commissionsAddForm')}
+							onClick={() => send('usersAddForm')}
 							disabled={submitting}
 						>
 							{submitting && <Spinner size="sm" animation="border"/>}
@@ -59,4 +61,4 @@ const AddCommissionPage: React.FC<IAddCommissionPageProps> = ({add, send, submit
 	);
 };
 
-export default IsUserRoleMore(Roles.MODERATOR, true)(connected(AddCommissionPage));
+export default IsUserRoleMore(Roles.MODERATOR, true)(connected(AddUserPage));
