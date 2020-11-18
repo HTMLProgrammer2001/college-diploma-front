@@ -7,7 +7,7 @@ import {RootState} from '../../';
 import userActionsApi from '../../../utils/api/userActionsApi';
 import {IProfileEditData} from '../../../pages/ProfileEditPage/EditProfileForm';
 import {meLoadSuccess} from '../../me/actions';
-import prepareProfileEditData from '../../../utils/helpers/prepareEditProfileData';
+import prepareProfileEditData from '../../../utils/helpers/prepareData';
 
 
 export type IMeThunkAction = ThunkAction<{}, RootState, unknown, Action<any>>;

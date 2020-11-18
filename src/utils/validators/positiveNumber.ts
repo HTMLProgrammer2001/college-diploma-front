@@ -1,5 +1,5 @@
 const positiveNumber = (str: string) => {
-	if(str === null)
+	if(str == null)
 		return null;
 
 	let numb = +str;

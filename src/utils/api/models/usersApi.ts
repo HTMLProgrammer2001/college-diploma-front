@@ -6,7 +6,6 @@ import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneral
 import objToParams from '../../helpers/objToParams';
 import {IUser} from '../../../interfaces/models/IUser';
 import {IUserTable} from '../../../interfaces/models/IUserTable';
-import {IRebukesImportData} from '../../../pages/Rebukes/import/ImportRebukesForm';
 
 
 const client = axios.create({

@@ -6,51 +6,53 @@ import {isSubmitting, submit} from 'redux-form';
 import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
+
 import BackButton from '../../../common/BackButton';
-import EditCommissionForm, {ICommissionsEditData} from './EditCommissionForm';
+import EditUserForm, {IUsersEditData} from './EditUserForm';
 import ErrorElement from '../../../common/ErrorElement';
 import Loader from '../../../common/Loader/Loader';
-import {selectEditCommissionState} from '../../../redux/commissions/edit/selectors';
-import thunkEditCommissionLoad from '../../../redux/commissions/edit/thunks/thunkEditCommissionLoad';
-import thunkEditCommission from '../../../redux/commissions/edit/thunks/thunkEditCommission';
+
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {selectEditUserState} from '../../../redux/users/edit/selectors';
+import thunkEditUserLoad from '../../../redux/users/edit/thunks/thunkEditUserLoad';
+import thunkEditUser from '../../../redux/users/edit/thunks/thunkEditUser';
 
 
 const mapStateToProps = (state: RootState) => ({
-	editState: selectEditCommissionState(state),
-	submitting: isSubmitting('commissionsEditForm')(state)
+	editState: selectEditUserState(state),
+	submitting: isSubmitting('usersEditForm')(state)
 });
 
 const connected = connect(mapStateToProps, {
-	loadCommission: thunkEditCommissionLoad,
+	loadUser: thunkEditUserLoad,
 	send: submit,
-	editCommission: thunkEditCommission
+	editUser: thunkEditUser
 });
 
-type IEditCommissionPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
-const EditCommissionPage: React.FC<IEditCommissionPageProps> = ({editState, loadCommission, ...props}) => {
+type IEditUserPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
+const EditUserPage: React.FC<IEditUserPageProps> = ({editState, loadUser, ...props}) => {
 	const {t} = useTranslation();
 
 	useEffect(() => {
-		loadCommission(+props.match.params.id);
-		document.title = t('commissions.edit.pageTitle');
+		loadUser(+props.match.params.id);
+		document.title = t('users.edit.pageTitle');
 	}, []);
 
 	const clickHandler = () => {
-		props.send('commissionsEditForm');
+		props.send('usersEditForm');
 	};
 
-	const submitHandler = (vals: ICommissionsEditData) => {
-		props.editCommission(+props.match.params.id, vals);
+	const submitHandler = (vals: IUsersEditData) => {
+		props.editUser(+props.match.params.id, vals);
 	};
 
-	if(!editState.commission && !editState.isLoading)
+	if(!editState.user && !editState.isLoading)
 		return null;
 
 	return (
 		<>
-			<div className="title">{t('commissions.edit.pageTitle')}</div>
+			<div className="title">{t('users.edit.pageTitle')}</div>
 
 			<Card className="mr-5">
 				<Card.Body>
@@ -66,7 +68,7 @@ const EditCommissionPage: React.FC<IEditCommissionPageProps> = ({editState, load
 
 					{
 						!editState.isLoading && !editState.error &&
-							<EditCommissionForm onSubmit={submitHandler}/>
+							<EditUserForm onSubmit={submitHandler}/>
 					}
 				</Card.Body>
 
@@ -96,4 +98,4 @@ const EditCommissionPage: React.FC<IEditCommissionPageProps> = ({editState, load
 	);
 };
 
-export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditCommissionPage));
+export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditUserPage));
