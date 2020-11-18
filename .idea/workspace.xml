@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57a409a2-1ea6-4331-ae71-85b96f4252a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Http/Requests/User/AddUserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Requests/User/AddUserRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Http/Requests/User/EditUserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Requests/User/EditUserRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Http/Resources/Internships/InternshipResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Resources/Internships/InternshipResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app/Repositories/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Repositories/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database/migrations/2020_03_24_180226_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/migrations/2020_03_24_180226_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/formElements/DateElement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/formElements/DateElement.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/edit/EditCommissionForm.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/edit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/edit/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile/edit/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/edit/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/api/models/usersApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api/models/usersApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/helpers/prepareEditProfileData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers/prepareData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/positiveNumber.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/positiveNumber.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,23 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/app/Http/Controllers/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1064">
-              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-              <folding>
-                <element signature="e#41#77#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/app/Repositories/UserRepository.php">
+        <entry file="file://$PROJECT_DIR$/.github/workflows/deploy.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="111" column="21" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+            <state relative-caret-position="419">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -127,12 +101,11 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/server" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/app/Http/Resources/Ranks/RankResource.php" />
         <option value="$PROJECT_DIR$/server/app/Http/Resources/Ranks/SearchRanksGroupResource.php" />
         <option value="$PROJECT_DIR$/server/app/Http/Resources/Ranks/SearchRankResource.php" />
         <option value="$PROJECT_DIR$/server/app/Http/Controllers/RankController.php" />
@@ -183,6 +156,7 @@
         <option value="$PROJECT_DIR$/src/pages/Users/edit/EditUserForm/index.tsx" />
         <option value="$PROJECT_DIR$/server/database/migrations/2020_03_24_180226_create_users_table.php" />
         <option value="$PROJECT_DIR$/server/app/Repositories/UserRepository.php" />
+        <option value="$PROJECT_DIR$/.github/workflows/deploy.yml" />
       </list>
     </option>
   </component>
@@ -340,39 +314,6 @@
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Repositories" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -427,9 +368,9 @@
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.25435275" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.25435275" />
       <window_info id="Structure" order="3" sideWeight="0.5019531" side_tool="true" weight="0.30885693" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.23589744" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.0974359" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003785" side_tool="true" weight="0.5435898" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
@@ -482,23 +423,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/redux/users/add/thunks.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/users/edit/types.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="55" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/users/edit/actions.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -909,6 +833,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="111" column="21" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.github/workflows/deploy.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
