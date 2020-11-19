@@ -36,7 +36,7 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IRebukesTableProps = ConnectedProps<typeof connected>;
 const EducationsTable: React.FC<IRebukesTableProps> = (props) => {
-	const user = useContext(UserProfileContext);
+	const {user} = useContext(UserProfileContext);
 	const changeSortWrapper = (field: string) => {
 		props.changeSort(user.id, field);
 	};

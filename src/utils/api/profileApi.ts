@@ -44,10 +44,10 @@ const profileApi = {
 		});
 	},
 
-	async getHonors(filters: IProfileHonorsFilterData, sort: ISort[], page = 1, pageSize = 5) {
+	async getHonors({filters, sort, user, pageSize, page}: IGetModelProfile<IProfileHonorsFilterData>) {
 		let sortRules = objToParams(sort, 'sort');
 
-		return await client.get<IGeneralPaginationResponse<IHonor>>('/honors', {
+		return await client.get<IGeneralPaginationResponse<IHonor>>(`/honors/${user}`, {
 			params: {...filters, ...sortRules, page, pageSize}
 		})
 	},

@@ -16,16 +16,16 @@ import profileApi from '../../../utils/api/profileApi';
 export type IProfileHonorsThunkAction =
 	ThunkAction<void, RootState, unknown, IProfileHonorsActions>;
 
-const thunkProfileHonors = (page = 1): IProfileHonorsThunkAction => {
+const thunkProfileHonors = (user: number, page = 1): IProfileHonorsThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, IProfileHonorsActions>, getState) => {
 		dispatch(profileHonorsStart());
 
 		try{
 			const filters: (state: RootState) => any = getFormValues('profileHonorsFilter'),
 				sort = selectProfileHonorsSort(getState()),
-				pagination = selectProfileHonorsPagination(getState());
+				{pageSize} = selectProfileHonorsPagination(getState());
 
-			const resp = await profileApi.getHonors(filters(getState()), sort, page, pagination.pageSize);
+			const resp = await profileApi.getHonors({filters: filters(getState()), user, sort, page, pageSize});
 			dispatch(profileHonorsSuccess(resp.data));
 		}
 		catch (e) {

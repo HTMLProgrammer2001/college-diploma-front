@@ -5,9 +5,8 @@ import {Trans, Translation} from 'react-i18next';
 import roleCodeToName from '../../utils/helpers/RoleCodeToName';
 import UserProfileContext from '../../utils/contexts/UserProfileContext';
 
-
-export const ProfileInfo: React.FC<{}> = () => {
-	const user = useContext(UserProfileContext);
+const ProfileInfo: React.FC<{}> = () => {
+	const {user} = useContext(UserProfileContext);
 
 	return (
 		<Row>

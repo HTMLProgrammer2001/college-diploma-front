@@ -50,7 +50,10 @@ const ProfilePage: React.FC<IProfilePageProps> = (props) => {
 		return <ErrorElement error={userProfile.error}/>;
 
 	return (
-		<UserProfileContext.Provider value={isProfile ? me : userProfile.user}>
+		<UserProfileContext.Provider value={{
+			isProfile,
+			user: isProfile ? me : userProfile.user
+		}}>
 			<div className="title">{t("profile.pageLabel")}</div>
 
 			<Card className="mr-5">
