@@ -7,6 +7,7 @@ import qualifications from './qualifications/reducer';
 import honors from './honors/reducer';
 import rebukes from './rebukes/reducer';
 import educations from './educations/reducer';
+import user from './userInfo/reducer';
 
 
 export default combineReducers({
@@ -15,5 +16,6 @@ export default combineReducers({
 	qualifications,
 	honors,
 	rebukes,
-	educations
+	educations,
+	user
 });

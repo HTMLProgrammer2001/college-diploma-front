@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
@@ -15,6 +15,7 @@ import SortItem from '../../../../common/SortItem';
 import Loader from '../../../../common/Loader/Loader';
 import ErrorElement from '../../../../common/ErrorElement';
 import EducationItem from './EducationItem';
+import UserProfileContext from '../../../../utils/contexts/UserProfileContext';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -22,12 +23,12 @@ const mapStateToProps = (state: RootState) => ({
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
-	changeSort(field: string) {
+	changeSort(userID: number, field: string) {
 		dispatch(profileEducationsChangeSort(field));
 		dispatch(thunkProfileEducations(1));
 	},
-	load(page = 1) {
-		dispatch(thunkProfileEducations(page));
+	load(userID: number, page = 1) {
+		dispatch(thunkProfileEducations(userID, page));
 	}
 });
 
@@ -35,9 +36,14 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IRebukesTableProps = ConnectedProps<typeof connected>;
 const EducationsTable: React.FC<IRebukesTableProps> = (props) => {
+	const user = useContext(UserProfileContext);
+	const changeSortWrapper = (field: string) => {
+		props.changeSort(user.id, field);
+	};
+
 	useEffect(() => {
-		if (!props.isLoading && !props.educations.length)
-			props.load();
+		if (!props.isLoading)
+			props.load(user.id);
 	}, []);
 
 	const {t} = useTranslation();
@@ -52,7 +58,7 @@ const EducationsTable: React.FC<IRebukesTableProps> = (props) => {
 
 						<SortItem
 							state={findSortRule(props.sort, 'ID')?.direction}
-							change={props.changeSort}
+							change={changeSortWrapper}
 							param="ID"
 						/>
 					</th>
@@ -64,7 +70,7 @@ const EducationsTable: React.FC<IRebukesTableProps> = (props) => {
 
 						<SortItem
 							state={findSortRule(props.sort, 'institution')?.direction}
-							change={props.changeSort}
+							change={changeSortWrapper}
 							param="institution"
 						/>
 					</th>
@@ -76,7 +82,7 @@ const EducationsTable: React.FC<IRebukesTableProps> = (props) => {
 
 						<SortItem
 							state={findSortRule(props.sort, 'graduateYear')?.direction}
-							change={props.changeSort}
+							change={changeSortWrapper}
 							param="graduateYear"
 						/>
 					</th>
@@ -88,7 +94,7 @@ const EducationsTable: React.FC<IRebukesTableProps> = (props) => {
 
 						<SortItem
 							state={findSortRule(props.sort, 'qualification')?.direction}
-							change={props.changeSort}
+							change={changeSortWrapper}
 							param="qualification"
 						/>
 					</th>

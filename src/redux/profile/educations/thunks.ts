@@ -16,7 +16,7 @@ import {selectProfileEducationsPagination, selectProfileEducationsSort} from './
 export type IProfileEducationsThunkAction =
 	ThunkAction<void, RootState, unknown, IProfileEducationsActions>;
 
-const thunkProfileEducations = (page: number = 1): IProfileEducationsThunkAction => {
+const thunkProfileEducations = (userID: number, page = 1): IProfileEducationsThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, IProfileEducationsActions>, getState) => {
 		dispatch(profileEducationsStart());
 
@@ -25,7 +25,11 @@ const thunkProfileEducations = (page: number = 1): IProfileEducationsThunkAction
 				sort = selectProfileEducationsSort(getState()),
 				pagination = selectProfileEducationsPagination(getState());
 
-			const resp = await profileApi.getEducations(filters(getState()), sort, page, pagination.pageSize);
+			const resp = await profileApi.getEducations({
+				filters: filters(getState()), user: userID, sort, page,
+				pageSize: pagination.pageSize
+			});
+
 			dispatch(profileEducationsSuccess(resp.data));
 		}
 		catch (e) {

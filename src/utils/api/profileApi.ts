@@ -12,10 +12,11 @@ import {IProfileRebukesFilterData} from '../../pages/ProfilePage/ProfileTabs/Reb
 import {IRebuke} from '../../interfaces/models/IRebuke';
 import {IProfileQualificationsFilterData} from '../../pages/ProfilePage/ProfileTabs/QualificationsTab/QualificationsFilterForm';
 import {IProfileInternshipsFilterData} from '../../pages/ProfilePage/ProfileTabs/InternshipsTab/InternshipsFilterForm';
-
-import objToParams from '../helpers/objToParams';
 import {IProfileInternshipsResponse} from '../../interfaces/responses/IProfileInternshipsResponse';
 import {IProfileQualificationsResponse} from '../../interfaces/responses/IProfileQualificationsResponse';
+
+import objToParams from '../helpers/objToParams';
+import {IGetModelProfile} from '../../interfaces/IGetModelProfile';
 
 
 const client = axios.create({
@@ -35,10 +36,10 @@ const profileApi = {
 		});
 	},
 
-	async getEducations(filters: IProfileEducationsFilterData, sort: ISort[], page = 1, pageSize = 5) {
+	async getEducations({filters, sort, page = 1, pageSize = 5, user}: IGetModelProfile<IProfileEducationsFilterData>) {
 		let sortRules = objToParams(sort, 'sort');
 
-		return await client.get<IGeneralPaginationResponse<IEducation>>('/educations', {
+		return await client.get<IGeneralPaginationResponse<IEducation>>(`/educations/${user}`, {
 			params: {...filters, ...sortRules, page, pageSize}
 		});
 	},

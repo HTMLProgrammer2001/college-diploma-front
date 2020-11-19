@@ -30,7 +30,7 @@ const AdminRoutes: React.FC<{}> = () => (
 				<Switch>
 					<Route path="/" exact component={HomePage}/>
 
-					<Route path="/profile" exact component={ProfilePage}/>
+					<Route path="/profile" exact render={() => <ProfilePage isProfile/>}/>
 					<Route path="/profile/edit" exact component={ProfileEditPage}/>
 
 					<Route path="/departments" component={Departments}/>

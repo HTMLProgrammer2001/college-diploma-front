@@ -6,6 +6,7 @@ import AllUsersPage from './all';
 import EditUserPage from './edit';
 import AddUserPage from './add';
 import ImportUserPage from './import';
+import SingleUserPage from './single';
 
 import IsUserRoleMore from '../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../utils/helpers/RoleCodeToName';
@@ -16,6 +17,7 @@ const Users: React.FC<{}> = () => (
 		<Route path="/users" exact component={AllUsersPage}/>
 		<Route path="/users/add" exact component={AddUserPage}/>
 		<Route path="/users/:id/edit" exact component={EditUserPage}/>
+		<Route path="/users/:id" exact component={SingleUserPage}/>
 		<Route path="/users/import" exact component={ImportUserPage}/>
 		<Route path="/" component={NotFoundPage}/>
 	</Switch>
