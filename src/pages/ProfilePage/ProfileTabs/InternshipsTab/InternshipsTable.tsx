@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
@@ -13,6 +13,7 @@ import thunkProfileInternships from '../../../../redux/profile/internships/thunk
 import findSortRule from '../../../../utils/helpers/findSortRule';
 import {profileInternshipsChangeSort} from '../../../../redux/profile/internships/actions';
 import InternshipItem from './InternshipItem';
+import UserProfileContext from '../../../../utils/contexts/UserProfileContext';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -20,12 +21,12 @@ const mapStateToProps = (state: RootState) => ({
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
-	changeSort(field: string) {
+	changeSort(userID: number, field: string) {
 		dispatch(profileInternshipsChangeSort(field));
-		dispatch(thunkProfileInternships(1));
+		dispatch(thunkProfileInternships(userID, 1));
 	},
-	load(page = 1) {
-		dispatch(thunkProfileInternships(page));
+	load(userID: number, page = 1) {
+		dispatch(thunkProfileInternships(userID, page));
 	}
 });
 
@@ -33,12 +34,16 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IInternshipsTableProps = ConnectedProps<typeof connected>;
 const InternshipsTable: React.FC<IInternshipsTableProps> = (props) => {
-	useEffect(() => {
-		if (!props.isLoading && !props.internships.length)
-			props.load();
-	}, []);
+	const {user} = useContext(UserProfileContext),
+		  {t} = useTranslation(),
+		  changeSortWrapper = (field: string) => {
+			  props.changeSort(user.id, field);
+		  };
 
-	const {t} = useTranslation();
+	useEffect(() => {
+		if (!props.isLoading)
+			props.load(+user.id);
+	}, []);
 
 	return (
 		<div className="table-wrapper">
@@ -50,7 +55,7 @@ const InternshipsTable: React.FC<IInternshipsTableProps> = (props) => {
 
 						<SortItem
 							state={findSortRule(props.sort, 'ID')?.direction}
-							change={props.changeSort}
+							change={changeSortWrapper}
 							param="ID"
 						/>
 					</th>
@@ -62,7 +67,7 @@ const InternshipsTable: React.FC<IInternshipsTableProps> = (props) => {
 
 						<SortItem
 							state={findSortRule(props.sort, 'category')?.direction}
-							change={props.changeSort}
+							change={changeSortWrapper}
 							param="category"
 						/>
 					</th>
@@ -74,7 +79,7 @@ const InternshipsTable: React.FC<IInternshipsTableProps> = (props) => {
 
 						<SortItem
 							state={findSortRule(props.sort, 'theme')?.direction}
-							change={props.changeSort}
+							change={changeSortWrapper}
 							param="theme"
 						/>
 					</th>
@@ -86,7 +91,7 @@ const InternshipsTable: React.FC<IInternshipsTableProps> = (props) => {
 
 						<SortItem
 							state={findSortRule(props.sort, 'hours')?.direction}
-							change={props.changeSort}
+							change={changeSortWrapper}
 							param="hours"
 						/>
 					</th>
@@ -98,7 +103,7 @@ const InternshipsTable: React.FC<IInternshipsTableProps> = (props) => {
 
 						<SortItem
 							state={findSortRule(props.sort, 'to')?.direction}
-							change={props.changeSort}
+							change={changeSortWrapper}
 							param="to"
 						/>
 					</th>

@@ -15,16 +15,16 @@ import {selectProfileInternshipsPagination, selectProfileInternshipsSort} from '
 export type IProfileInternshipsThunkAction =
 	ThunkAction<void, RootState, unknown, IProfileInternshipsActions>;
 
-const thunkProfileInternships = (page: number = 1): IProfileInternshipsThunkAction => {
+const thunkProfileInternships = (user: number, page: number = 1): IProfileInternshipsThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, IProfileInternshipsActions>, getState) => {
 		dispatch(profileInternshipsStart());
 
 		try{
 			const filters: (state: RootState) => any = getFormValues('profileInternshipsFilter'),
 				sort = selectProfileInternshipsSort(getState()),
-				pagination = selectProfileInternshipsPagination(getState());
+				{pageSize} = selectProfileInternshipsPagination(getState());
 
-			const resp = await profileApi.getInternships(filters(getState()), sort, page, pagination.pageSize);
+			const resp = await profileApi.getInternships({filters: filters(getState()), sort, page, pageSize, user});
 			dispatch(profileInternshipsSuccess(resp.data));
 			dispatch(profileInternshipsHours(resp.data.hours));
 		}

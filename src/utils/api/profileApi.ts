@@ -68,10 +68,10 @@ const profileApi = {
 		})
 	},
 
-	async getInternships(filters: IProfileInternshipsFilterData, sort: ISort[], page = 1, pageSize = 5) {
+	async getInternships({filters, sort, page, pageSize, user}: IGetModelProfile<IProfileInternshipsFilterData>) {
 		let sortRules = objToParams(sort, 'sort');
 
-		return await client.get<IProfileInternshipsResponse>('/internships', {
+		return await client.get<IProfileInternshipsResponse>(`/internships/${user}`, {
 			params: {...filters, ...sortRules, page, pageSize}
 		})
 	}
