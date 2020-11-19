@@ -28,10 +28,11 @@ const client = axios.create({
 });
 
 const profileApi = {
-	async getPublications(filters: IProfilePublicationsFilterData, sort: ISort[], page = 1, pageSize = 5) {
+	async getPublications({filters, sort,
+					page = 1, pageSize = 5, user}: IGetModelProfile<IProfilePublicationsFilterData>) {
 		let sortRules = objToParams(sort, 'sort');
 
-		return await client.get<IGeneralPaginationResponse<IPublication>>('/publications', {
+		return await client.get<IGeneralPaginationResponse<IPublication>>(`/publications/${user}`, {
 			params: {...filters, ...sortRules, page, pageSize}
 		});
 	},
@@ -52,18 +53,19 @@ const profileApi = {
 		})
 	},
 
-	async getRebukes(filters: IProfileRebukesFilterData, sort: ISort[], page = 1, pageSize = 5) {
+	async getRebukes({filters, sort, page = 1, pageSize = 5, user}: IGetModelProfile<IProfileRebukesFilterData>) {
 		let sortRules = objToParams(sort, 'sort');
 
-		return await client.get<IGeneralPaginationResponse<IRebuke>>('/rebukes', {
+		return await client.get<IGeneralPaginationResponse<IRebuke>>(`/rebukes/${user}`, {
 			params: {...filters, ...sortRules, page, pageSize}
 		})
 	},
 
-	async getQualifications(filters: IProfileQualificationsFilterData, sort: ISort[], page = 1, pageSize = 5) {
+	async getQualifications({filters, sort, page = 1, pageSize = 5, user}:
+								IGetModelProfile<IProfileQualificationsFilterData>) {
 		let sortRules = objToParams(sort, 'sort');
 
-		return await client.get<IProfileQualificationsResponse>('/qualifications', {
+		return await client.get<IProfileQualificationsResponse>(`/qualifications/${user}`, {
 			params: {...filters, ...sortRules, page, pageSize}
 		})
 	},

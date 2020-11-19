@@ -17,16 +17,19 @@ import {selectProfileQualificationsPagination, selectProfileQualificationsSort} 
 export type IProfileQualificationsThunkAction =
 	ThunkAction<void, RootState, unknown, IProfileQualificationsActions>;
 
-const thunkProfileQualifications = (page: number = 1): IProfileQualificationsThunkAction => {
+const thunkProfileQualifications = (user: number, page: number = 1): IProfileQualificationsThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, IProfileQualificationsActions>, getState) => {
 		dispatch(profileQualificationsStart());
 
 		try{
 			const filters: (state: RootState) => any = getFormValues('profileQualificationsFilter'),
 				sort = selectProfileQualificationsSort(getState()),
-				pagination = selectProfileQualificationsPagination(getState());
+				{pageSize} = selectProfileQualificationsPagination(getState());
 
-			let resp = await profileApi.getQualifications(filters(getState()), sort, page, pagination.pageSize);
+			let resp = await profileApi.getQualifications({
+				filters: filters(getState()), sort, page, pageSize, user
+			});
+
 			dispatch(profileQualificationsSuccess(resp.data));
 			dispatch(profileQualificationsSetNext(resp.data.nextDate));
 		}

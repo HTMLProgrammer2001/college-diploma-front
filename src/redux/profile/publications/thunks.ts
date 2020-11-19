@@ -15,7 +15,7 @@ import {selectProfilePublicationsPagination, selectProfilePublicationsSort} from
 export type IProfilePublicationsThunkAction =
 	ThunkAction<void, RootState, unknown, IProfilePublicationsActions>;
 
-const thunkProfilePublications = (page: number = 1): IProfilePublicationsThunkAction => {
+const thunkProfilePublications = (user: number, page: number = 1): IProfilePublicationsThunkAction => {
 
 	return async (dispatch: ThunkDispatch<RootState, {}, IProfilePublicationsActions>, getState) => {
 		dispatch(profilePublicationsStart());
@@ -23,9 +23,11 @@ const thunkProfilePublications = (page: number = 1): IProfilePublicationsThunkAc
 		try{
 			const filters: (state: RootState) => any = getFormValues('profilePublicationsFilter'),
 				sort = selectProfilePublicationsSort(getState()),
-				pagination = selectProfilePublicationsPagination(getState());
+				{pageSize} = selectProfilePublicationsPagination(getState());
 
-			let resp = await profileApi.getPublications(filters(getState()), sort, page, pagination.pageSize);
+			let resp = await profileApi.getPublications({
+				filters: filters(getState()), sort, page, pageSize, user
+			});
 			dispatch(profilePublicationsSuccess(resp.data));
 		}
 		catch (e) {

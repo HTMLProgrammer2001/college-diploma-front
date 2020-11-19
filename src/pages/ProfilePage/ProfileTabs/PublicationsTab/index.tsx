@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Button, Container} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {Link} from 'react-router-dom';
@@ -10,6 +10,7 @@ import {RootState} from '../../../../redux';
 import {selectProfilePublicationsPagination} from '../../../../redux/profile/publications/selectors';
 import thunkProfilePublications from '../../../../redux/profile/publications/thunks';
 import {useTranslation} from 'react-i18next';
+import UserProfileContext from '../../../../utils/contexts/UserProfileContext';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -21,16 +22,20 @@ const connected = connect(mapStateToProps, {
 });
 
 const PublicationsTab: React.FC<ConnectedProps<typeof connected>> = ({paginator, changePage}) => {
-	const {t} = useTranslation();
+	const {t} = useTranslation(),
+		{user} = useContext(UserProfileContext),
+		changePageWrapper = (page: number) => {
+			changePage(user.id, page);
+		};
 
 	return (
 		<div className="mt-5">
 			<Container>
-				<PublicationsFilterForm onSubmit={() => changePage(1)}/>
+				<PublicationsFilterForm onSubmit={() => changePageWrapper(1)}/>
 				<PublicationsTable/>
 
 				<div className="d-flex my-3 justify-content-end">
-					<Paginator {...paginator} setCur={changePage}/>
+					<Paginator {...paginator} setCur={changePageWrapper}/>
 				</div>
 
 				<Link to="/publications/import">
@@ -41,6 +46,6 @@ const PublicationsTab: React.FC<ConnectedProps<typeof connected>> = ({paginator,
 			</Container>
 		</div>
 	);
-}
+};
 
 export default connected(PublicationsTab);

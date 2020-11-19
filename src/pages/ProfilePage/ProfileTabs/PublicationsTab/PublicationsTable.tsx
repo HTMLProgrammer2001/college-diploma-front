@@ -1,7 +1,6 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
-import {Link} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../../redux';
@@ -15,6 +14,7 @@ import SortItem from '../../../../common/SortItem';
 import Loader from '../../../../common/Loader/Loader';
 import ErrorElement from '../../../../common/ErrorElement';
 import PublicationItem from './PublicationItem';
+import UserProfileContext from '../../../../utils/contexts/UserProfileContext';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -22,12 +22,12 @@ const mapStateToProps = (state: RootState) => ({
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
-	load(page: number = 1) {
-		dispatch(thunkProfilePublications(page));
+	load(userID: number, page: number = 1) {
+		dispatch(thunkProfilePublications(userID, page));
 	},
-	changeSort(field: string) {
+	changeSort(userID: number, field: string) {
 		dispatch(profilePublicationsChangeSort(field));
-		dispatch(thunkProfilePublications());
+		dispatch(thunkProfilePublications(userID));
 	}
 });
 
@@ -35,12 +35,16 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IPublicationsTableProps = ConnectedProps<typeof connected>;
 const PublicationsTable: React.FC<IPublicationsTableProps> = (props) => {
-	useEffect(() => {
-		if (!props.isLoading && !props.publications.length)
-			props.load();
-	}, []);
+	const {user} = useContext(UserProfileContext),
+		  {t} = useTranslation(),
+		  changeSortWrapper = (field: string) => {
+			  props.changeSort(user.id, field);
+		  };
 
-	const {t} = useTranslation();
+	useEffect(() => {
+		if (!props.isLoading)
+			props.load(user.id);
+	}, []);
 
 	return (
 		<div className="table-wrapper">
@@ -52,7 +56,7 @@ const PublicationsTable: React.FC<IPublicationsTableProps> = (props) => {
 
 						<SortItem
 							state={findSortRule(props.sort, 'ID')?.direction}
-							change={props.changeSort}
+							change={changeSortWrapper}
 							param="ID"
 						/>
 					</th>
@@ -64,7 +68,7 @@ const PublicationsTable: React.FC<IPublicationsTableProps> = (props) => {
 
 						<SortItem
 							state={findSortRule(props.sort, 'title')?.direction}
-							change={props.changeSort}
+							change={changeSortWrapper}
 							param="title"
 						/>
 					</th>
@@ -80,7 +84,7 @@ const PublicationsTable: React.FC<IPublicationsTableProps> = (props) => {
 
 						<SortItem
 							state={findSortRule(props.sort, 'date')?.direction}
-							change={props.changeSort}
+							change={changeSortWrapper}
 							param="date"
 						/>
 					</th>

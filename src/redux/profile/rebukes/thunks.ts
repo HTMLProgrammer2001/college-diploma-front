@@ -16,16 +16,16 @@ import profileApi from '../../../utils/api/profileApi';
 export type IProfileRebukesThunkAction =
 	ThunkAction<void, RootState, unknown, IProfileRebukesActions>;
 
-const thunkProfileRebukes = (page = 1): IProfileRebukesThunkAction => {
+const thunkProfileRebukes = (user: number, page = 1): IProfileRebukesThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, IProfileRebukesActions>, getState) => {
 		dispatch(profileRebukesStart());
 
 		try{
 			const filters: (state: RootState) => any = getFormValues('profileRebukesFilter'),
 				sort = selectProfileRebukesSort(getState()),
-				pagination = selectProfileRebukesPagination(getState());
+				{pageSize} = selectProfileRebukesPagination(getState());
 
-			const resp = await profileApi.getRebukes(filters(getState()), sort, page, pagination.pageSize);
+			const resp = await profileApi.getRebukes({filters: filters(getState()), sort, page, pageSize, user});
 			dispatch(profileRebukesSuccess(resp.data));
 		}
 		catch (e) {

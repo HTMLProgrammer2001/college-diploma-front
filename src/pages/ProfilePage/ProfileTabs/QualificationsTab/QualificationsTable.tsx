@@ -1,7 +1,6 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
-import {Link} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../../redux';
@@ -15,6 +14,7 @@ import Loader from '../../../../common/Loader/Loader';
 import ErrorElement from '../../../../common/ErrorElement';
 import findSortRule from '../../../../utils/helpers/findSortRule';
 import QualificationItem from './QualificationItem';
+import UserProfileContext from '../../../../utils/contexts/UserProfileContext';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -22,12 +22,12 @@ const mapStateToProps = (state: RootState) => ({
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
-	changeSort(field: string) {
+	changeSort(userID: number, field: string) {
 		dispatch(profileQualificationsChangeSort(field));
-		dispatch(thunkProfileQualifications(1));
+		dispatch(thunkProfileQualifications(userID, 1));
 	},
-	load(page = 1) {
-		dispatch(thunkProfileQualifications(page));
+	load(userID: number, page = 1) {
+		dispatch(thunkProfileQualifications(userID, page));
 	}
 });
 
@@ -35,12 +35,16 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IQualificationsTableProps = ConnectedProps<typeof connected>;
 const QualificationsTable: React.FC<IQualificationsTableProps> = (props) => {
-	useEffect(() => {
-		if (!props.isLoading && !props.qualifications.length)
-			props.load();
-	}, []);
+	const {t} = useTranslation(),
+		{user} = useContext(UserProfileContext),
+		changeSortWrapper = (field: string) => {
+			props.changeSort(user.id, field)
+		};
 
-	const {t} = useTranslation();
+	useEffect(() => {
+		if (!props.isLoading)
+			props.load(user.id);
+	}, []);
 
 	return (
 		<div className="table-wrapper">
@@ -52,7 +56,7 @@ const QualificationsTable: React.FC<IQualificationsTableProps> = (props) => {
 
 						<SortItem
 							state={findSortRule(props.sort, 'ID')?.direction}
-							change={props.changeSort}
+							change={changeSortWrapper}
 							param="ID"
 						/>
 					</th>
@@ -64,7 +68,7 @@ const QualificationsTable: React.FC<IQualificationsTableProps> = (props) => {
 
 						<SortItem
 							state={findSortRule(props.sort, 'category')?.direction}
-							change={props.changeSort}
+							change={changeSortWrapper}
 							param="category"
 						/>
 					</th>
@@ -76,7 +80,7 @@ const QualificationsTable: React.FC<IQualificationsTableProps> = (props) => {
 
 						<SortItem
 							state={findSortRule(props.sort, 'date')?.direction}
-							change={props.changeSort}
+							change={changeSortWrapper}
 							param="date"
 						/>
 					</th>
