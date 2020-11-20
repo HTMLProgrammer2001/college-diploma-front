@@ -2,9 +2,10 @@ import React from 'react';
 import {WrappedFieldProps} from 'redux-form';
 import DatePicker, {ReactDatePickerProps} from 'react-datepicker';
 import {FormGroup, FormLabel, FormControl} from 'react-bootstrap';
+import moment from 'moment';
 
 
-const CustomInput: React.FC<any> = ({onChange, placeholder, value, isSecure, id, onClick}) => (
+const CustomInput: React.FC<any> = ({onChange, placeholder, value, id, onClick}) => (
 	<input
 		className="form-control w-100"
 		value={value}
@@ -19,7 +20,7 @@ const CustomInput: React.FC<any> = ({onChange, placeholder, value, isSecure, id,
 type IDateElementProps = WrappedFieldProps &
 	HTMLInputElement & {label: string} & ReactDatePickerProps;
 
-const DateElement: React.FC<IDateElementProps> = ({meta, input, name, label, className}) => (
+const DateElement: React.FC<IDateElementProps> = ({meta, input, name, label}) => (
 	<FormGroup>
 		{
 			label &&
@@ -28,7 +29,7 @@ const DateElement: React.FC<IDateElementProps> = ({meta, input, name, label, cla
 
 		<DatePicker
 			customInput={<CustomInput/>}
-			selected={input.value}
+			selected={input.value ? moment(input.value).toDate() : null}
 			wrapperClassName="w-100"
 			dateFormat="dd.MM.yyyy"
 			showMonthDropdown={true}

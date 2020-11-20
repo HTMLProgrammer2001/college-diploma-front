@@ -30,7 +30,7 @@ const InternshipsEditForm: React.FC<IInternshipsEditFormProps> = ({handleSubmit,
 	const internship = useSelector<RootState, IInternship>(selectEditInternship);
 
 	useEffect(() => {
-		initialize({...internship, from: null, to: null} as any);
+		initialize({...internship} as any);
 	}, [internship]);
 
 	return (
@@ -50,6 +50,7 @@ const InternshipsEditForm: React.FC<IInternshipsEditFormProps> = ({handleSubmit,
 								name="user"
 								placeholder={t('internships.edit.user')}
 								url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
+								defVal={{id: internship.user.id, title: internship.user.fullName}}
 							/>
 
 							<Field
@@ -57,6 +58,7 @@ const InternshipsEditForm: React.FC<IInternshipsEditFormProps> = ({handleSubmit,
 								name="category"
 								placeholder={t('internships.edit.category')}
 								url={`${process.env.REACT_APP_SERVER_URL}/search/categories`}
+								defVal={{id: internship.category.id, title: internship.category.name}}
 							/>
 
 							<Field

@@ -36,10 +36,7 @@ type IOwnProps = ConnectedProps<typeof connected>;
 type IProfileEditFormProps = InjectedFormProps<IProfileEditData, IOwnProps> & IOwnProps;
 const ProfileEditForm: React.FC<IProfileEditFormProps> = ({handleSubmit, user, initialize}) => {
 	useEffect(() => {
-		initialize({
-			email: user.email,
-			phone: user.phone
-		});
+		initialize({email: user.email, phone: user.phone, birthday: user.birthday, address: user.address});
 	}, []);
 
 	return (

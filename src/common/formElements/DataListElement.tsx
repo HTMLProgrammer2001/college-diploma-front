@@ -14,7 +14,8 @@ type IDataListOwnProps = {
 	placeholder?: string,
 	size?: number,
 	multiple?: boolean,
-	isFilter?: boolean
+	isFilter?: boolean,
+	defVal?: IOption | IOption[]
 };
 
 type IOption = {
@@ -24,12 +25,26 @@ type IOption = {
 
 type IDataListElementProps = WrappedFieldProps & IDataListOwnProps;
 const DataListElement: React.FC<IDataListElementProps> = (props) => {
-	const {id, placeholder, url, size = 5, multiple, isFilter, input: {onChange, name, value}} = props;
+	//func for ts
+	const isMultiple = (multiple: boolean, val: IOption | IOption[]): val is IOption[] => {
+		return !!multiple;
+	};
+
+	const {id, placeholder, url, size = 5, multiple, isFilter, defVal, input: {onChange, name, value}} = props;
 
 	//hooks
 	const [query, setQuery] = useState(null);
 	const [selected, setSelected] = useState<IOption[]>([]);
 	const {request, error, isLoading, data: reqData} = useHttp<IGeneralPaginationResponse<IOption>>();
+
+	//onload hook
+	useEffect(() => {
+		if(defVal) {
+			//change value in redux state
+			const data = isMultiple(multiple, defVal) ? defVal.map((item) => item.id) : defVal.id;
+			onChange(data as any, null);
+		}
+	}, []);
 
 	//hook query changes
 	useEffect(() => {
@@ -93,6 +108,7 @@ const DataListElement: React.FC<IDataListElementProps> = (props) => {
 				isInvalid={!!error}
 				onChange={onSelect}
 				selected={selected}
+				defaultInputValue={isMultiple(multiple, defVal) ? '' : defVal?.title}
 				multiple={multiple}
 
 				renderMenuItemChildren={(option: IOption) => (

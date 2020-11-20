@@ -129,3 +129,4 @@ const QualificationsTable: React.FC<IQualificationsTableProps> = (props) => {
 };
 
 export default connected(QualificationsTable);
+

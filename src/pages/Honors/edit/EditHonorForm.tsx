@@ -31,7 +31,7 @@ const HonorsEditForm: React.FC<IHonorsEditFormProps> = (props) => {
 	const {handleSubmit, error, initialize, honor} = props;
 	
 	useEffect(() => {
-		initialize({...honor, datePresentation: null} as any);
+		initialize({...honor} as any);
 	}, []);
 	
 	return (
@@ -80,6 +80,7 @@ const HonorsEditForm: React.FC<IHonorsEditFormProps> = (props) => {
 								name="user"
 								placeholder={t('honors.edit.user')}
 								url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
+								defVal={{id: honor.user.id, title: honor.user.fullName}}
 							/>
 						</div>
 					)}

@@ -53,6 +53,7 @@ const EducationsEditForm: React.FC<IEducationsEditFormProps> = (props) => {
 								name="user"
 								placeholder={t('educations.edit.user')}
 								url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
+								defVal={{id: education.user.id, title: education.user.fullName}}
 							/>
 
 							<Field

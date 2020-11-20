@@ -8,9 +8,11 @@ import SelectElement from '../../../../common/formElements/SelectElement';
 
 import required from '../../../../utils/validators/required';
 import positiveNumber from '../../../../utils/validators/positiveNumber';
+import {IUser} from '../../../../interfaces/models/IUser';
 
 
-const ProfessionalTab: React.FC<{}> = () => (
+type IProfessionalTabProps = {user: IUser}
+const ProfessionalTab: React.FC<IProfessionalTabProps> = ({user}) => (
 	<div>
 		<div className="mt-3 d-flex flex-column flex-md-row">
 			<Translation>
@@ -22,6 +24,7 @@ const ProfessionalTab: React.FC<{}> = () => (
 							placeholder={t('users.edit.department')}
 							validate={[required]}
 							url={`${process.env.REACT_APP_SERVER_URL}/search/departments`}
+							defVal={{id: user.department.id, title: user.department.name}}
 						/>
 
 						<Field
@@ -30,6 +33,7 @@ const ProfessionalTab: React.FC<{}> = () => (
 							placeholder={t('users.edit.commission')}
 							validate={[required]}
 							url={`${process.env.REACT_APP_SERVER_URL}/search/commissions`}
+							defVal={{id: user.commission.id, title: user.commission.name}}
 						/>
 
 						<Field
@@ -37,6 +41,7 @@ const ProfessionalTab: React.FC<{}> = () => (
 							name="rank"
 							placeholder={t('users.edit.rank')}
 							url={`${process.env.REACT_APP_SERVER_URL}/search/ranks`}
+							defVal={user.rank ? {id: user.rank.id, title: user.rank.name} : null}
 						/>
 
 						<Field

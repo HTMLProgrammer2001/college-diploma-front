@@ -4,6 +4,7 @@ export type IPublication = {
 	description: string,
 	date_of_publication: string,
 	authors: string,
+	authorsList?: Array<{id: number, title: string}>
 	publisher?: string,
 	url?: string
 };

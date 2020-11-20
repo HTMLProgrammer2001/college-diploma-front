@@ -34,7 +34,7 @@ const PublicationsEditForm: React.FC<IPublicationsEditFormProps> = (props) => {
 	const {handleSubmit, error, initialize, publication} = props;
 	
 	useEffect(() => {
-		initialize({...publication} as any);
+		initialize({...publication, date: publication.date_of_publication, authors: null} as any);
 	}, []);
 	
 	return (
@@ -90,6 +90,7 @@ const PublicationsEditForm: React.FC<IPublicationsEditFormProps> = (props) => {
 								name="authors"
 								placeholder={t('publications.edit.authors')}
 								url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
+								defVal={publication.authorsList}
 								multiple
 							/>
 

@@ -31,7 +31,7 @@ const RebukesEditForm: React.FC<IRebukesEditFormProps> = (props) => {
 	const {handleSubmit, error, initialize, rebuke} = props;
 	
 	useEffect(() => {
-		initialize({...rebuke, datePresentation: null} as any);
+		initialize({...rebuke} as any);
 	}, []);
 	
 	return (
@@ -80,6 +80,7 @@ const RebukesEditForm: React.FC<IRebukesEditFormProps> = (props) => {
 								name="user"
 								placeholder={t('rebukes.edit.user')}
 								url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
+								defVal={{id: rebuke.user.id, title: rebuke.user.fullName}}
 							/>
 						</div>
 					)}

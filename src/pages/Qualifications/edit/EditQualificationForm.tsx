@@ -26,7 +26,7 @@ const QualificationsEditForm: React.FC<IQualificationsEditFormProps> = ({handleS
 	const qualification = useSelector<RootState, IQualification>(selectEditQualification);
 
 	useEffect(() => {
-		initialize({...qualification, date: null} as any);
+		initialize({...qualification} as any);
 	}, [qualification]);
 
 	return (
@@ -47,6 +47,7 @@ const QualificationsEditForm: React.FC<IQualificationsEditFormProps> = ({handleS
 								placeholder={t('qualifications.edit.user')}
 								url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
 								validate={[required]}
+								defVal={{id: qualification.user.id, title: qualification.user.fullName}}
 							/>
 
 							<Field

@@ -57,7 +57,7 @@ const UsersEditForm: React.FC<IUsersEditFormProps> = ({handleSubmit, user, initi
 				</Tab>
 
 				<Tab eventKey="professional" title={t('users.edit.professional.title')}>
-					<ProfessionalTab/>
+					<ProfessionalTab user={user}/>
 				</Tab>
 			</Tabs>
 		</form>
