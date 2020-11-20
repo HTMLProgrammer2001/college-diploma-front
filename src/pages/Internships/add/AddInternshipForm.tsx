@@ -2,12 +2,17 @@ import React from 'react';
 import {reduxForm, InjectedFormProps, Field} from 'redux-form';
 import {Translation} from 'react-i18next';
 
-import InputElement from '../../../common/formElements/InputElement';
+import date from '../../../utils/validators/date';
 import required from '../../../utils/validators/required';
-import DateElement from '../../../common/formElements/DateElement';
-import DataListElement from '../../../common/formElements/DataListElement';
 import positiveNumber from '../../../utils/validators/positiveNumber';
 
+import InputElement from '../../../common/formElements/InputElement';
+import DateElement from '../../../common/formElements/DateElement';
+import DataListElement from '../../../common/formElements/DataListElement';
+import dateMoreThan from '../../../utils/validators/dateMoreThan';
+
+
+const moreValidator = dateMoreThan('from', true);
 
 export type IInternshipsAddData = {
 	user: number,
@@ -80,14 +85,14 @@ const InternshipsAddForm: React.FC<IInternshipsAddFormProps> = ({handleSubmit, e
 							component={DateElement}
 							name="from"
 							label={t('internships.add.from')}
-							validate={[required]}
+							validate={[required, date]}
 						/>
 
 						<Field
 							component={DateElement}
 							name="to"
 							label={t('internships.add.to')}
-							validate={[required]}
+							validate={[required, date, moreValidator]}
 						/>
 
 						<Field

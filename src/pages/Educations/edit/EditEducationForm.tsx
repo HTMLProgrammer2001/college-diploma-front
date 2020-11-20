@@ -3,12 +3,14 @@ import {reduxForm, InjectedFormProps, Field} from 'redux-form';
 import {Translation} from 'react-i18next';
 import {connect, ConnectedProps} from 'react-redux';
 
-import InputElement from '../../../common/formElements/InputElement';
-import required from '../../../utils/validators/required';
-import DataListElement from '../../../common/formElements/DataListElement';
 import {RootState} from '../../../redux';
+import required from '../../../utils/validators/required';
 import {selectEditEducation} from '../../../redux/educations/edit/selectors';
 import positiveNumber from '../../../utils/validators/positiveNumber';
+import year from '../../../utils/validators/year';
+
+import InputElement from '../../../common/formElements/InputElement';
+import DataListElement from '../../../common/formElements/DataListElement';
 import SelectElement from '../../../common/formElements/SelectElement';
 
 
@@ -54,6 +56,7 @@ const EducationsEditForm: React.FC<IEducationsEditFormProps> = (props) => {
 								placeholder={t('educations.edit.user')}
 								url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
 								defVal={{id: education.user.id, title: education.user.fullName}}
+								validate={[required]}
 							/>
 
 							<Field
@@ -69,6 +72,7 @@ const EducationsEditForm: React.FC<IEducationsEditFormProps> = (props) => {
 								name="qualification"
 								label={t("educations.all.qualification")}
 								onlyInvalid
+								validate={[required]}
 							>
 								<option value={0}>{t('profile.tabs.educations.qualList.1')}</option>
 								<option value={1}>{t('profile.tabs.educations.qualList.2')}</option>
@@ -85,7 +89,7 @@ const EducationsEditForm: React.FC<IEducationsEditFormProps> = (props) => {
 								component={InputElement}
 								name="graduateYear"
 								label={t('educations.edit.graduateYear')}
-								validate={[required, positiveNumber]}
+								validate={[required, positiveNumber, year]}
 							/>
 
 							<Field

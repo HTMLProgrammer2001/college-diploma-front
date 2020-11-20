@@ -9,7 +9,13 @@ import FileElement from '../../../../common/formElements/FileElement';
 import required from '../../../../utils/validators/required';
 import email from '../../../../utils/validators/email';
 import phone from '../../../../utils/validators/phone';
+import date from '../../../../utils/validators/date';
+import lengthIn from '../../../../utils/validators/lengthIn';
+import sameAs from '../../../../utils/validators/sameAs';
 
+
+const passwordLength = lengthIn(8, 32),
+	confirmValidator = sameAs('password');
 
 const PersonalTab: React.FC<{}> = () => (
 	<div>
@@ -37,6 +43,7 @@ const PersonalTab: React.FC<{}> = () => (
 							component={DateElement}
 							name="birthday"
 							label={t('users.edit.birthday')}
+							validate={[date]}
 						/>
 
 						<Field
@@ -57,6 +64,7 @@ const PersonalTab: React.FC<{}> = () => (
 							type="password"
 							name="password"
 							label={t('users.edit.password')}
+							validate={[passwordLength]}
 						/>
 
 						<Field
@@ -64,6 +72,7 @@ const PersonalTab: React.FC<{}> = () => (
 							type="password"
 							name="password_confirmation"
 							label={t('users.edit.confirm')}
+							validate={[passwordLength, confirmValidator]}
 						/>
 
 						<Field

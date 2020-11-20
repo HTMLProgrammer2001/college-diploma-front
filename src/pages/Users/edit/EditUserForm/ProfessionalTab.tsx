@@ -9,6 +9,7 @@ import SelectElement from '../../../../common/formElements/SelectElement';
 import required from '../../../../utils/validators/required';
 import positiveNumber from '../../../../utils/validators/positiveNumber';
 import {IUser} from '../../../../interfaces/models/IUser';
+import year from '../../../../utils/validators/year';
 
 
 type IProfessionalTabProps = {user: IUser}
@@ -61,7 +62,7 @@ const ProfessionalTab: React.FC<IProfessionalTabProps> = ({user}) => (
 							type="number"
 							name="hiring_year"
 							label={t('users.edit.year')}
-							validate={[positiveNumber]}
+							validate={[positiveNumber, year]}
 						/>
 
 						<Field
@@ -103,7 +104,7 @@ const ProfessionalTab: React.FC<IProfessionalTabProps> = ({user}) => (
 							type="number"
 							name="academic_status_year"
 							label={t('users.edit.academicYear')}
-							validate={[positiveNumber]}
+							validate={[positiveNumber, year]}
 						/>
 
 						<Field
@@ -121,7 +122,7 @@ const ProfessionalTab: React.FC<IProfessionalTabProps> = ({user}) => (
 							type="number"
 							name="scientific_degree_year"
 							label={t('users.edit.academicYear')}
-							validate={[positiveNumber]}
+							validate={[positiveNumber, year]}
 						/>
 					</div>
 				)}

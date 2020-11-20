@@ -7,6 +7,7 @@ import InputElement from '../../../../common/formElements/InputElement';
 import SelectElement from '../../../../common/formElements/SelectElement';
 
 import positiveNumber from '../../../../utils/validators/positiveNumber';
+import year from '../../../../utils/validators/year';
 
 
 export type IProfileEducationsFilterData = {
@@ -54,7 +55,7 @@ const EducationsFilterForm: React.FC<IEducationsFilterProps> = ({handleSubmit}) 
 						label={t('profile.tabs.educations.graduateYear')}
 						defaultValue={new Date().getFullYear()}
 						className="ml-1"
-						validate={[positiveNumber]}
+						validate={[positiveNumber, year]}
 					/>
 				</Row>
 			)}

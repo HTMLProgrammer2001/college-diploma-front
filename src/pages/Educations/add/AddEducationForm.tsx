@@ -3,10 +3,12 @@ import {reduxForm, InjectedFormProps, Field} from 'redux-form';
 import {Translation} from 'react-i18next';
 
 import InputElement from '../../../common/formElements/InputElement';
-import required from '../../../utils/validators/required';
 import DataListElement from '../../../common/formElements/DataListElement';
-import positiveNumber from '../../../utils/validators/positiveNumber';
 import SelectElement from '../../../common/formElements/SelectElement';
+
+import required from '../../../utils/validators/required';
+import year from '../../../utils/validators/year';
+import positiveNumber from '../../../utils/validators/positiveNumber';
 
 
 export type IEducationsAddData = {
@@ -35,6 +37,7 @@ const EducationsAddForm: React.FC<IEducationsAddFormProps> = ({handleSubmit, err
 							name="user"
 							placeholder={t('educations.add.user')}
 							url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
+							validate={[required]}
 						/>
 
 						<Field
@@ -50,8 +53,10 @@ const EducationsAddForm: React.FC<IEducationsAddFormProps> = ({handleSubmit, err
 							name="qualification"
 							label={t("educations.all.qualification")}
 							onlyInvalid
+							validate={[required]}
+							defaultValue={0}
 						>
-							<option value={0} selected>{t('profile.tabs.educations.qualList.1')}</option>
+							<option value={0}>{t('profile.tabs.educations.qualList.1')}</option>
 							<option value={1}>{t('profile.tabs.educations.qualList.2')}</option>
 							<option value={2}>{t('profile.tabs.educations.qualList.3')}</option>
 						</Field>
@@ -66,7 +71,7 @@ const EducationsAddForm: React.FC<IEducationsAddFormProps> = ({handleSubmit, err
 							component={InputElement}
 							name="graduateYear"
 							label={t('educations.add.graduateYear')}
-							validate={[required, positiveNumber]}
+							validate={[required, positiveNumber, year]}
 						/>
 
 						<Field

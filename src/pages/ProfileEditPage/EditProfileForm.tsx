@@ -6,12 +6,15 @@ import {Translation} from 'react-i18next';
 import InputElement from '../../common/formElements/InputElement';
 import DateElement from '../../common/formElements/DateElement';
 import FileElement from '../../common/formElements/FileElement';
+
 import {RootState} from '../../redux';
 import {selectMeInfo} from '../../redux/me/selectors';
 import required from '../../utils/validators/required';
 import email from '../../utils/validators/email';
 import lengthIn from '../../utils/validators/lengthIn';
 import phone from '../../utils/validators/phone';
+import sameAs from '../../utils/validators/sameAs';
+import date from '../../utils/validators/date';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -21,6 +24,7 @@ const mapStateToProps = (state: RootState) => ({
 const connected = connect(mapStateToProps);
 
 const minMaxPassword = lengthIn(8, 32);
+const sameConfirm = sameAs('password');
 
 export type IProfileEditData = {
 	email: string,
@@ -69,7 +73,7 @@ const ProfileEditForm: React.FC<IProfileEditFormProps> = ({handleSubmit, user, i
 								name="confirm_password"
 								label={t('profileEdit.confirmPassword')}
 								component={InputElement}
-								validate={[minMaxPassword]}
+								validate={[sameConfirm]}
 							/>
 						</div>
 
@@ -96,6 +100,7 @@ const ProfileEditForm: React.FC<IProfileEditFormProps> = ({handleSubmit, user, i
 								label={t('profileEdit.birthday')}
 								defaultValue={user.birthday}
 								component={DateElement}
+								validate={[date]}
 							/>
 						</div>
 					</div>

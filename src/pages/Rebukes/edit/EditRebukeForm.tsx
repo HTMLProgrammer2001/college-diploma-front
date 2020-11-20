@@ -4,11 +4,13 @@ import {Translation} from 'react-i18next';
 import {connect, ConnectedProps} from 'react-redux';
 
 import InputElement from '../../../common/formElements/InputElement';
-import required from '../../../utils/validators/required';
 import DateElement from '../../../common/formElements/DateElement';
 import DataListElement from '../../../common/formElements/DataListElement';
+
 import {RootState} from '../../../redux';
 import {selectEditRebuke} from '../../../redux/rebukes/edit/selectors';
+import required from '../../../utils/validators/required';
+import date from '../../../utils/validators/date';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -73,6 +75,7 @@ const RebukesEditForm: React.FC<IRebukesEditFormProps> = (props) => {
 								name="datePresentation"
 								className="mb-2"
 								label={t('rebukes.edit.date')}
+								validate={[date]}
 							/>
 
 							<Field
@@ -81,6 +84,7 @@ const RebukesEditForm: React.FC<IRebukesEditFormProps> = (props) => {
 								placeholder={t('rebukes.edit.user')}
 								url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
 								defVal={{id: rebuke.user.id, title: rebuke.user.fullName}}
+								validate={[required]}
 							/>
 						</div>
 					)}

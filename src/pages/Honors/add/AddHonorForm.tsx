@@ -2,8 +2,10 @@ import React from 'react';
 import {reduxForm, InjectedFormProps, Field} from 'redux-form';
 import {Translation} from 'react-i18next';
 
-import InputElement from '../../../common/formElements/InputElement';
 import required from '../../../utils/validators/required';
+import date from '../../../utils/validators/date';
+
+import InputElement from '../../../common/formElements/InputElement';
 import DateElement from '../../../common/formElements/DateElement';
 import DataListElement from '../../../common/formElements/DataListElement';
 
@@ -54,6 +56,7 @@ const HonorsAddForm: React.FC<IHonorsAddFormProps> = ({handleSubmit, error}) => 
 							component={DateElement}
 							name="datePresentation"
 							label={t('honors.add.date')}
+							validate={[required, date]}
 						/>
 
 						<Field
@@ -61,6 +64,7 @@ const HonorsAddForm: React.FC<IHonorsAddFormProps> = ({handleSubmit, error}) => 
 							name="user"
 							placeholder={t('honors.add.user')}
 							url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
+							validate={[required]}
 						/>
 					</div>
 				)}

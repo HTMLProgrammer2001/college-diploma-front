@@ -3,11 +3,12 @@ import {reduxForm, InjectedFormProps, Field} from 'redux-form';
 import {Card, Button, Spinner, Col, Alert} from 'react-bootstrap';
 import {useTranslation} from 'react-i18next';
 
-import InputElement from '../../common/formElements/InputElement';
 import styles from './styles.module.scss';
 import required from '../../utils/validators/required';
 import email from '../../utils/validators/email';
 import lengthIn from '../../utils/validators/lengthIn';
+
+import InputElement from '../../common/formElements/InputElement';
 
 
 export type ILoginFormData = {

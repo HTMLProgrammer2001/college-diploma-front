@@ -12,6 +12,7 @@ import SelectElement from '../../../common/formElements/SelectElement';
 
 import required from '../../../utils/validators/required';
 import {selectEditQualification} from '../../../redux/qualifications/edit/selectors';
+import date from '../../../utils/validators/date';
 
 
 export type IQualificationsEditData = {
@@ -72,7 +73,7 @@ const QualificationsEditForm: React.FC<IQualificationsEditFormProps> = ({handleS
 								component={DateElement}
 								name="date"
 								label={t('qualifications.edit.date')}
-								validate={[required]}
+								validate={[required, date]}
 							/>
 
 							<Field

@@ -3,9 +3,12 @@ import {reduxForm, InjectedFormProps, Field} from 'redux-form';
 import {Translation} from 'react-i18next';
 
 import InputElement from '../../../common/formElements/InputElement';
-import required from '../../../utils/validators/required';
 import DateElement from '../../../common/formElements/DateElement';
 import DataListElement from '../../../common/formElements/DataListElement';
+
+import url from '../../../utils/validators/url';
+import required from '../../../utils/validators/required';
+import date from '../../../utils/validators/date';
 
 
 export type IPublicationsAddData = {
@@ -52,6 +55,7 @@ const PublicationsAddForm: React.FC<IPublicationsAddFormProps> = ({handleSubmit,
 							type="text"
 							name="url"
 							label={t('publications.add.url')}
+							validate={[url]}
 						/>
 					</div>
 				)}
@@ -65,6 +69,7 @@ const PublicationsAddForm: React.FC<IPublicationsAddFormProps> = ({handleSubmit,
 							name="date"
 							className="mb-2"
 							label={t('publications.add.date')}
+							validate={[date]}
 						/>
 
 						<Field
@@ -73,6 +78,7 @@ const PublicationsAddForm: React.FC<IPublicationsAddFormProps> = ({handleSubmit,
 							placeholder={t('publications.add.authors')}
 							url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
 							multiple
+							validate={[required]}
 						/>
 
 						<Field

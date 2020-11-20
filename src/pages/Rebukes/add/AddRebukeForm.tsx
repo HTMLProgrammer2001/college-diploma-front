@@ -3,9 +3,11 @@ import {reduxForm, InjectedFormProps, Field} from 'redux-form';
 import {Translation} from 'react-i18next';
 
 import InputElement from '../../../common/formElements/InputElement';
-import required from '../../../utils/validators/required';
 import DateElement from '../../../common/formElements/DateElement';
 import DataListElement from '../../../common/formElements/DataListElement';
+
+import required from '../../../utils/validators/required';
+import date from '../../../utils/validators/date';
 
 
 export type IRebukesAddData = {
@@ -54,6 +56,7 @@ const RebukesAddForm: React.FC<IRebukesAddFormProps> = ({handleSubmit, error}) =
 							component={DateElement}
 							name="datePresentation"
 							label={t('rebukes.add.date')}
+							validate={[date]}
 						/>
 
 						<Field
@@ -61,6 +64,7 @@ const RebukesAddForm: React.FC<IRebukesAddFormProps> = ({handleSubmit, error}) =
 							name="user"
 							placeholder={t('rebukes.add.user')}
 							url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
+							validate={[required]}
 						/>
 					</div>
 				)}

@@ -8,7 +8,13 @@ import DateElement from '../../../../common/formElements/DateElement';
 import DataListElement from '../../../../common/formElements/DataListElement';
 
 import positiveNumber from '../../../../utils/validators/positiveNumber';
+import dateMoreThan from '../../../../utils/validators/dateMoreThan';
+import moreThan from '../../../../utils/validators/moreThan';
+import date from '../../../../utils/validators/date';
 
+
+const moreDateValidator = dateMoreThan('filterFrom'),
+	moreValidator = moreThan('filterLessHours');
 
 export type IProfileInternshipsFilterData = {
 	filterFrom: string,
@@ -52,12 +58,14 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit}
 						component={DateElement}
 						name="filterFrom"
 						label={t('common.from')}
+						validate={[date]}
 					/>
 
 					<Field
 						component={DateElement}
 						name="filterTo"
 						label={t('common.to')}
+						validate={[date, moreDateValidator]}
 					/>
 				</Row>
 			)}
@@ -73,7 +81,7 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit}
 						min={0}
 						label={t('profile.tabs.internships.hoursMore')}
 						className="mr-1"
-						validate={[positiveNumber]}
+						validate={[positiveNumber, moreValidator]}
 					/>
 
 					<Field

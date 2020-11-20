@@ -4,10 +4,14 @@ import {Translation} from 'react-i18next';
 
 import InputElement from '../../../common/formElements/InputElement';
 import DataListElement from '../../../common/formElements/DataListElement';
+
 import required from '../../../utils/validators/required';
 import email from '../../../utils/validators/email';
 import lengthIn from '../../../utils/validators/lengthIn';
+import sameAs from '../../../utils/validators/sameAs';
 
+
+const confirmValidator = sameAs('password');
 
 export type IUsersAddData = {
 	fullName: string,
@@ -54,6 +58,7 @@ const UsersAddForm: React.FC<IUsersAddFormProps> = ({handleSubmit, error}) => (
 							name="commission"
 							placeholder={t('users.add.commission')}
 							url={`${process.env.REACT_APP_SERVER_URL}/search/commissions`}
+							validate={[required]}
 						/>
 					</div>
 				)}
@@ -67,6 +72,7 @@ const UsersAddForm: React.FC<IUsersAddFormProps> = ({handleSubmit, error}) => (
 							name="department"
 							placeholder={t('users.add.department')}
 							url={`${process.env.REACT_APP_SERVER_URL}/search/departments`}
+							validate={[required]}
 						/>
 
 						<Field
@@ -82,7 +88,7 @@ const UsersAddForm: React.FC<IUsersAddFormProps> = ({handleSubmit, error}) => (
 							type="password"
 							name="password_confirmation"
 							label={t('users.add.confirm')}
-							validate={[required, lengthValidator]}
+							validate={[required, lengthValidator, confirmValidator]}
 						/>
 					</div>
 				)}

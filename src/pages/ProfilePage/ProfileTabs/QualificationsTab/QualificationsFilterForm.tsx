@@ -6,6 +6,11 @@ import {Translation} from 'react-i18next';
 import DateElement from '../../../../common/formElements/DateElement';
 import SelectElement from '../../../../common/formElements/SelectElement';
 
+import dateMoreThan from '../../../../utils/validators/dateMoreThan';
+import date from '../../../../utils/validators/date';
+
+
+const dateMoreValidator = dateMoreThan('filterFrom', false);
 
 export type IProfileQualificationsFilterData = {
 	filterCategory: number,
@@ -41,12 +46,14 @@ const QualificationsFilterForm: React.FC<IQualificationsFilterProps> = ({handleS
 						component={DateElement}
 						name="filterFrom"
 						label={t('common.from')}
+						validate={[date]}
 					/>
 
 					<Field
 						component={DateElement}
 						name="filterTo"
 						label={t('common.to')}
+						validate={[date, dateMoreValidator]}
 					/>
 				</Row>
 			)}

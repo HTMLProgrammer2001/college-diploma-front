@@ -6,6 +6,11 @@ import {Translation} from 'react-i18next';
 import InputElement from '../../../../common/formElements/InputElement';
 import DateElement from '../../../../common/formElements/DateElement';
 
+import dateMoreThan from '../../../../utils/validators/dateMoreThan';
+import date from '../../../../utils/validators/date';
+
+
+const moreValidator = dateMoreThan('filterFrom', false);
 
 export type IProfileHonorsFilterData = {
 	filterFrom: string,
@@ -36,12 +41,14 @@ const HonorsFilterForm: React.FC<IHonorsFilterProps> = ({handleSubmit}) => (
 						component={DateElement}
 						name="filterFrom"
 						label={t("common.from")}
+						validate={[date]}
 					/>
 
 					<Field
 						component={DateElement}
 						name="filterTo"
 						label={t("common.to")}
+						validate={[date, moreValidator]}
 					/>
 				</Row>
 			)}

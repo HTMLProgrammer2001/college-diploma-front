@@ -3,12 +3,14 @@ import {reduxForm, InjectedFormProps, Field} from 'redux-form';
 import {Translation} from 'react-i18next';
 import {connect, ConnectedProps} from 'react-redux';
 
-import InputElement from '../../../common/formElements/InputElement';
-import required from '../../../utils/validators/required';
-import DateElement from '../../../common/formElements/DateElement';
-import DataListElement from '../../../common/formElements/DataListElement';
 import {RootState} from '../../../redux';
 import {selectEditHonor} from '../../../redux/honors/edit/selectors';
+import required from '../../../utils/validators/required';
+import date from '../../../utils/validators/date';
+
+import InputElement from '../../../common/formElements/InputElement';
+import DateElement from '../../../common/formElements/DateElement';
+import DataListElement from '../../../common/formElements/DataListElement';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -73,6 +75,7 @@ const HonorsEditForm: React.FC<IHonorsEditFormProps> = (props) => {
 								name="datePresentation"
 								className="mb-2"
 								label={t('honors.edit.date')}
+								validate={[required, date]}
 							/>
 
 							<Field
@@ -81,6 +84,7 @@ const HonorsEditForm: React.FC<IHonorsEditFormProps> = (props) => {
 								placeholder={t('honors.edit.user')}
 								url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
 								defVal={{id: honor.user.id, title: honor.user.fullName}}
+								validate={[required]}
 							/>
 						</div>
 					)}

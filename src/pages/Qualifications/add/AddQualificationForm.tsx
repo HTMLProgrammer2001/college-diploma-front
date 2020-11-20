@@ -2,11 +2,13 @@ import React from 'react';
 import {reduxForm, InjectedFormProps, Field} from 'redux-form';
 import {Translation} from 'react-i18next';
 
-import required from '../../../utils/validators/required';
-import positiveNumber from '../../../utils/validators/positiveNumber';
 import DateElement from '../../../common/formElements/DateElement';
 import DataListElement from '../../../common/formElements/DataListElement';
 import SelectElement from '../../../common/formElements/SelectElement';
+
+import required from '../../../utils/validators/required';
+import positiveNumber from '../../../utils/validators/positiveNumber';
+import date from '../../../utils/validators/date';
 
 
 export type IQualificationsAddData = {
@@ -60,7 +62,7 @@ const QualificationsAddForm: React.FC<IQualificationsAddFormProps> = ({handleSub
 							component={DateElement}
 							name="date"
 							label={t('qualifications.add.date')}
-							validate={[required]}
+							validate={[required, date]}
 						/>
 
 						<Field

@@ -4,11 +4,14 @@ import {Translation} from 'react-i18next';
 import {connect, ConnectedProps} from 'react-redux';
 
 import InputElement from '../../../common/formElements/InputElement';
-import required from '../../../utils/validators/required';
 import DateElement from '../../../common/formElements/DateElement';
 import DataListElement from '../../../common/formElements/DataListElement';
+
 import {RootState} from '../../../redux';
 import {selectEditPublication} from '../../../redux/publications/edit/selectors';
+import required from '../../../utils/validators/required';
+import url from '../../../utils/validators/url';
+import date from '../../../utils/validators/date';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -70,6 +73,7 @@ const PublicationsEditForm: React.FC<IPublicationsEditFormProps> = (props) => {
 								type="text"
 								name="url"
 								label={t('publications.edit.url')}
+								validate={[url]}
 							/>
 						</div>
 					)}
@@ -83,6 +87,7 @@ const PublicationsEditForm: React.FC<IPublicationsEditFormProps> = (props) => {
 								name="date"
 								className="mb-2"
 								label={t('publications.edit.date')}
+								validate={[date]}
 							/>
 
 							<Field
@@ -92,6 +97,7 @@ const PublicationsEditForm: React.FC<IPublicationsEditFormProps> = (props) => {
 								url={`${process.env.REACT_APP_SERVER_URL}/search/users`}
 								defVal={publication.authorsList}
 								multiple
+								validate={[required]}
 							/>
 
 							<Field
