@@ -7,6 +7,7 @@ import {IDeleteRankActions} from './reducer';
 import {deleteRankError, deleteRankStart, deleteRankSuccess} from './actions';
 import {allRanksDelete} from '../all/actions';
 import ranksApi from '../../../utils/api/models/ranksApi';
+import i18next from 'i18next';
 
 
 type IActions = IDeleteRankActions | ReturnType<typeof allRanksDelete>;
@@ -21,11 +22,11 @@ const thunkDeleteRank = (id: number): IRankEditThunkAction => {
 
 			dispatch(deleteRankSuccess(id));
 			dispatch(allRanksDelete(id));
-			toast.success(`Должность с id ${id} удалено`);
+			toast.success(i18next.t('messages.ranks.delete', {id}));
 		}
 		catch (e) {
 			dispatch(deleteRankError(id, e.response?.data.message || e.message));
-			toast.error(`Ошибка: ${e.response?.data.message || e.message}`);
+			toast.error(e.response?.data.message || e.message);
 		}
 	};
 };

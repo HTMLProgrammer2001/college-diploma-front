@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {reset, startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../';
 import publicationsApi from '../../../utils/api/models/publicationsApi';
@@ -19,7 +20,7 @@ const thunkImportPublication = (vals: IPublicationsImportData): IImportPublicati
 			dispatch(stopSubmit('importPublicationsForm'));
 			dispatch(reset('importPublicationsForm'));
 
-			toast.success('Публикации импортированы');
+			toast.success(i18next.t('messages.publications.import'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('importPublicationsForm', {

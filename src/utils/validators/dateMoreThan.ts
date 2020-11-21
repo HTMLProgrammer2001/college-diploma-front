@@ -1,4 +1,5 @@
 import moment from 'moment';
+import i18next from 'i18next';
 
 
 const dateMoreThan = (field: string, equal = true) => {
@@ -17,7 +18,7 @@ const dateMoreThan = (field: string, equal = true) => {
 		if(dateValue > dateAnotherVal || (equal && dateValue == dateAnotherVal))
 			return null;
 		else
-			return `Поле должно быть больше ${equal ? 'или равно' : ''} ${field}`;
+			return i18next.t('validators.dateMore', {field, context: 'equal'});
 	}
 };
 

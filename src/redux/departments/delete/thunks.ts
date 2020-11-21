@@ -3,6 +3,7 @@ import {toast} from 'react-toastify';
 
 import {RootState} from '../../index';
 import {IDeleteDepartmentActions} from './reducer';
+import i18next from 'i18next';
 
 import departmentsApi from '../../../utils/api/models/departmentsApi';
 import {deleteDepartmentError, deleteDepartmentStart, deleteDepartmentSuccess} from './actions';
@@ -21,7 +22,7 @@ const thunkDeleteDepartment = (id: number): IDepartmentEditThunkAction => {
 
 			dispatch(deleteDepartmentSuccess(id));
 			dispatch(allDepartmentsDelete(id));
-			toast.success(`Отделение с id ${id} удалено`);
+			toast.success(i18next.t('messages.departments.delete', {id}));
 		}
 		catch (e) {
 			dispatch(deleteDepartmentError(id, e.response?.data.message || e.message));

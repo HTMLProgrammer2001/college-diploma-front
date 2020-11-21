@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {reset, startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../index';
 import educationsApi from '../../../utils/api/models/educationsApi';
@@ -18,7 +19,7 @@ const thunkAddEducation = (vals: any): IAddEducationThunkAction => {
 			dispatch(stopSubmit('educationsAddForm'));
 			dispatch(reset('educationsAddForm'));
 
-			toast.success('Образование добавлено');
+			toast.success(i18next.t('messages.educations.add'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('educationsAddForm', {

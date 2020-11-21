@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {reset, startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18n from 'i18next';
 
 import {RootState} from '../../index';
 import categoriesApi from '../../../utils/api/models/categoriesApi';
@@ -18,7 +19,7 @@ const thunkAddCategory = (vals: any): IAddCategoryThunkAction => {
 			dispatch(stopSubmit('categoriesAddForm'));
 			dispatch(reset('categoriesAddForm'));
 
-			toast.success('Категория стажировок создана');
+			toast.success(i18n.t('messages.categories.add'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('categoriesAddForm', {

@@ -1,6 +1,7 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {reset, startSubmit, stopSubmit} from 'redux-form';
+import i18next from 'i18next';
 
 import {RootState} from '../../index';
 import departmentsApi from '../../../utils/api/models/departmentsApi';
@@ -19,7 +20,7 @@ const thunkAddDepartment = (vals: IDepartmentsAddData): IAddDepartmentThunkActio
 			dispatch(stopSubmit('departmentsAddForm'));
 			dispatch(reset('departmentsAddForm'));
 
-			toast.success('Отделение создано');
+			toast.success(i18next.t('messages.departments.add'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('departmentsAddForm', {

@@ -1,5 +1,6 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../';
 import {IProfileUserActions} from './reducer';
@@ -25,7 +26,7 @@ const thunkProfileUser = (id: number): IProfileUserThunkAction => {
 		}
 		catch (e) {
 			dispatch(profileUserError(e.message));
-			toast.error('Ошибка загрузки профиля пользователя');
+			toast.error(i18next.t('messages.userInfoError'));
 		}
 	};
 };

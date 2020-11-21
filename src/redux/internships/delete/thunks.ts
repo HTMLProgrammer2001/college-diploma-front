@@ -1,5 +1,6 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../index';
 import {IDeleteInternshipActions} from './reducer';
@@ -21,11 +22,11 @@ const thunkDeleteInternship = (id: number): IInternshipEditThunkAction => {
 
 			dispatch(deleteInternshipSuccess(id));
 			dispatch(allInternshipsDelete(id));
-			toast.success(`Стажировка с id ${id} удалена`);
+			toast.success(i18next.t('messages.internships.delete', {id}));
 		}
 		catch (e) {
 			dispatch(deleteInternshipError(id, e.response?.data.message || e.message));
-			toast.error(`Ошибка: ${e.response?.data.message || e.message}`);
+			toast.error(e.response?.data.message || e.message);
 		}
 	};
 };

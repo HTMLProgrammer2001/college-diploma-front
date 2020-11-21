@@ -1,5 +1,6 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../index';
 import {IDeletePublicationActions} from './reducer';
@@ -21,7 +22,7 @@ const thunkDeletePublication = (id: number): IPublicationEditThunkAction => {
 
 			dispatch(deletePublicationSuccess(id));
 			dispatch(allPublicationsDelete(id));
-			toast.success(`Публикации с id ${id} удалено`);
+			toast.success(i18next.t('messages.publications.delete', {id}));
 		}
 		catch (e) {
 			dispatch(deletePublicationError(id, e.response?.data.message || e.message));

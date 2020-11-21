@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../../index';
 import internshipsApi from '../../../../utils/api/models/internshipsApi';
@@ -17,7 +18,7 @@ const thunkEditInternship = (id: number, vals: any): IInternshipEditThunkAction 
 			await internshipsApi.editInternship(id, vals);
 
 			dispatch(stopSubmit('internshipsEditForm'));
-			toast.success('Стажировка отредактирована');
+			toast.success(i18next.t('messages.internships.edit'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('internshipsEditForm', {

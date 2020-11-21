@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {reset, startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../index';
 import usersApi from '../../../utils/api/models/usersApi';
@@ -18,7 +19,7 @@ const thunkAddUser = (vals: any): IAddUserThunkAction => {
 			dispatch(stopSubmit('usersAddForm'));
 			dispatch(reset('usersAddForm'));
 
-			toast.success('Пользователь добавлен');
+			toast.success(i18next.t('messages.users.add'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('usersAddForm', {

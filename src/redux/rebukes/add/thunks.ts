@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {reset, startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../index';
 import rebukesApi from '../../../utils/api/models/rebukesApi';
@@ -18,7 +19,7 @@ const thunkAddRebuke = (vals: any): IAddRebukeThunkAction => {
 			dispatch(stopSubmit('rebukesAddForm'));
 			dispatch(reset('rebukesAddForm'));
 
-			toast.success('Выговор добавлен');
+			toast.success(i18next.t('messages.rebukes.add'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('rebukesAddForm', {

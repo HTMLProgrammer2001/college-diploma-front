@@ -1,11 +1,12 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {startSubmit, stopSubmit} from 'redux-form';
+import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../../index';
 import {IDepartmentsEditData} from '../../../../pages/Departments/edit/EditDepartmentForm';
 import departmentsApi from '../../../../utils/api/models/departmentsApi';
-import {toast} from 'react-toastify';
 
 
 export type IDepartmentEditThunkAction = ThunkAction<void, RootState, unknown, Action<any>>;
@@ -18,7 +19,7 @@ const thunkEditDepartment = (id: number, vals: IDepartmentsEditData): IDepartmen
 			await departmentsApi.editDepartment(id, vals);
 
 			dispatch(stopSubmit('departmentsEditForm'));
-			toast.success('Отделение отредактировано');
+			toast.success(i18next.t('messages.departments.edit'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('departmentsEditForm', {

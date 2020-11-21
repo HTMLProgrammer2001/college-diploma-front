@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../../index';
 import qualificationsApi from '../../../../utils/api/models/qualificationsApi';
@@ -17,7 +18,7 @@ const thunkEditQualification = (id: number, vals: any): IQualificationEditThunkA
 			await qualificationsApi.editQualification(id, vals);
 
 			dispatch(stopSubmit('qualificationsEditForm'));
-			toast.success('Повышение квалификации отредактировано');
+			toast.success(i18next.t('messages.qualifications.edit'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('qualificationsEditForm', {

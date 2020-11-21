@@ -52,11 +52,11 @@ const UsersEditForm: React.FC<IUsersEditFormProps> = ({handleSubmit, user, initi
 	return (
 		<form onSubmit={handleSubmit}>
 			<Tabs defaultActiveKey="personal" id="userEdit">
-				<Tab eventKey="personal" title={t('users.edit.personal.title')}>
+				<Tab eventKey="personal" title={t('users.edit.personal')}>
 					<PersonalTab/>
 				</Tab>
 
-				<Tab eventKey="professional" title={t('users.edit.professional.title')}>
+				<Tab eventKey="professional" title={t('users.edit.professional')}>
 					<ProfessionalTab user={user}/>
 				</Tab>
 			</Tabs>

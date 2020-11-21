@@ -1,5 +1,6 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../index';
 import {IDeleteRebukeActions} from './reducer';
@@ -21,7 +22,7 @@ const thunkDeleteRebuke = (id: number): IRebukeEditThunkAction => {
 
 			dispatch(deleteRebukeSuccess(id));
 			dispatch(allRebukesDelete(id));
-			toast.success(`Выговор с id ${id} удален`);
+			toast.success(i18next.t('messages.rebukes.delete', {id}));
 		}
 		catch (e) {
 			dispatch(deleteRebukeError(id, e.response?.data.message || e.message));

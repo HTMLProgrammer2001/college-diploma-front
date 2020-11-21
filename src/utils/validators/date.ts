@@ -1,4 +1,5 @@
 import moment from 'moment';
+import i18next from 'i18next';
 
 
 const date = (value: string) => {
@@ -10,7 +11,7 @@ const date = (value: string) => {
 		return null;
 	}
 	catch (e) {
-		return 'Поле должно быть валидной датой';
+		return i18next.t('validators.date');
 	}
 };
 

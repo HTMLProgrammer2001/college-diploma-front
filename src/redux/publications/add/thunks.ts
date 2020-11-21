@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {reset, startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../index';
 import publicationsApi from '../../../utils/api/models/publicationsApi';
@@ -18,7 +19,7 @@ const thunkAddPublication = (vals: any): IAddPublicationThunkAction => {
 			dispatch(stopSubmit('publicationsAddForm'));
 			dispatch(reset('publicationsAddForm'));
 
-			toast.success('Публикация добавлена');
+			toast.success(i18next.t('messages.publications.add'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('publicationsAddForm', {

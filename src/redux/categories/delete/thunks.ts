@@ -1,5 +1,6 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../index';
 import {IDeleteCategoryActions} from './reducer';
@@ -21,11 +22,11 @@ const thunkDeleteCategory = (id: number): ICategoryEditThunkAction => {
 
 			dispatch(deleteCategorySuccess(id));
 			dispatch(allCategoriesDelete(id));
-			toast.success(`Категория стажировок с id ${id} удалена`);
+			toast.success(i18next.t('messages.categories.delete', {id}));
 		}
 		catch (e) {
 			dispatch(deleteCategoryError(id, e.response?.data.message || e.message));
-			toast.error(`Ошибка: ${e.response?.data.message || e.message}`);
+			toast.error(e.response?.data.message || e.message);
 		}
 	};
 };

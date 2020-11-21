@@ -5,6 +5,7 @@ import {toast} from 'react-toastify';
 
 import {RootState} from '../../../index';
 import publicationsApi from '../../../../utils/api/models/publicationsApi';
+import i18next from 'i18next';
 
 
 export type IPublicationEditThunkAction = ThunkAction<void, RootState, unknown, Action<any>>;
@@ -17,7 +18,7 @@ const thunkEditPublication = (id: number, vals: any): IPublicationEditThunkActio
 			await publicationsApi.editPublication(id, vals);
 
 			dispatch(stopSubmit('publicationsEditForm'));
-			toast.success('Публикация отредактирована');
+			toast.success(i18next.t('messages.publications.edit'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('publicationsEditForm', {

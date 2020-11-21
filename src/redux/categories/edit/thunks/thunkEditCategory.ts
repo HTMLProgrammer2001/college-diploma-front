@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../../index';
 import {ICategoriesEditData} from '../../../../pages/Categories/edit/EditCategoryForm';
@@ -18,7 +19,7 @@ const thunkEditCategory = (id: number, vals: ICategoriesEditData): ICategoryEdit
 			await categoriesApi.editCategory(id, vals);
 
 			dispatch(stopSubmit('categoriesEditForm'));
-			toast.success('Категория стажировки отредактирована');
+			toast.success(i18next.t('messages.categories.edit'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('categoriesEditForm', {

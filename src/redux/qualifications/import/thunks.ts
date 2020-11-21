@@ -5,6 +5,7 @@ import {toast} from 'react-toastify';
 
 import {RootState} from '../../';
 import qualificationsApi from '../../../utils/api/models/qualificationsApi';
+import i18next from 'i18next';
 
 
 export type IImportQualificationThunkAction = ThunkAction<void, RootState, unknown, Action<any>>;
@@ -18,7 +19,7 @@ const thunkImportQualification = (vals: any): IImportQualificationThunkAction =>
 			dispatch(stopSubmit('qualificationsImportForm'));
 			dispatch(reset('qualificationsImportForm'));
 
-			toast.success('Повышения квалификаций импортированы');
+			toast.success(i18next.t('messages.qualifications.import'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('qualificationsImportForm', {

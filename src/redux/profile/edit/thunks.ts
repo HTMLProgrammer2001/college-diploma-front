@@ -8,6 +8,7 @@ import userActionsApi from '../../../utils/api/userActionsApi';
 import {IProfileEditData} from '../../../pages/ProfileEditPage/EditProfileForm';
 import {meLoadSuccess} from '../../me/actions';
 import prepareProfileEditData from '../../../utils/helpers/prepareData';
+import i18next from 'i18next';
 
 
 export type IMeThunkAction = ThunkAction<{}, RootState, unknown, Action<any>>;
@@ -22,7 +23,7 @@ const thunkProfileEdit = (vals: IProfileEditData): IMeThunkAction => {
 			dispatch(meLoadSuccess(resp.data.newUser));
 			dispatch(stopSubmit('editProfileForm'));
 
-			toast.success('Профиль отредактирован');
+			toast.success(i18next.t('messages.profileEdit'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('editProfileForm', {

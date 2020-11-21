@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {reset, startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../index';
 import {ICommissionsAddData} from '../../../pages/Commissions/add/AddCommissionForm';
@@ -19,7 +20,7 @@ const thunkAddCommission = (vals: ICommissionsAddData): IAddCommissionThunkActio
 			dispatch(stopSubmit('commissionsAddForm'));
 			dispatch(reset('commissionsAddForm'));
 
-			toast.success('Коммисия создана');
+			toast.success(i18next.t('messages.commissions.add'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('commissionsAddForm', {

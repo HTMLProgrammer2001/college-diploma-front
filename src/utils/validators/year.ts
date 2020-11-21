@@ -1,3 +1,5 @@
+import i18next from 'i18next';
+
 const year = (value: string) => {
 	if(value == null)
 		return null;
@@ -8,7 +10,7 @@ const year = (value: string) => {
 	if(!isFinite(intVal))
 		return 'Поле должно быть числом';
 
-	return curYear - intVal <= 100 ? null : 'Поле должно быть валидным годом';
+	return curYear - intVal <= 100 ? null : i18next.t('validators.year');
 };
 
 export default year;

@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../../index';
 import ranksApi from '../../../../utils/api/models/ranksApi';
@@ -17,7 +18,7 @@ const thunkEditRank = (id: number, vals: any): IRankEditThunkAction => {
 			await ranksApi.editRank(id, vals);
 
 			dispatch(stopSubmit('ranksEditForm'));
-			toast.success('Должность отредактирована');
+			toast.success(i18next.t('messages.ranks.edit'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('ranksEditForm', {

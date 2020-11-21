@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../../index';
 import rebukesApi from '../../../../utils/api/models/rebukesApi';
@@ -17,7 +18,7 @@ const thunkEditRebuke = (id: number, vals: any): IRebukeEditThunkAction => {
 			await rebukesApi.editRebuke(id, vals);
 
 			dispatch(stopSubmit('rebukesEditForm'));
-			toast.success('Выговор отредактирован');
+			toast.success(i18next.t('messages.rebukes.edit'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('rebukesEditForm', {

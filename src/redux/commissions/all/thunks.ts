@@ -1,4 +1,5 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
+import {getFormValues} from 'redux-form';
 
 import {RootState} from '../../';
 import {IAllCommissionsActions} from './reducer';
@@ -8,7 +9,6 @@ import {
 	allCommissionsStart,
 	allCommissionsSuccess
 } from './actions';
-import {getFormValues} from 'redux-form';
 import {selectAllCommissionsPagination, selectAllCommissionsSort} from './selectors';
 import commissionsApi from '../../../utils/api/models/commissionsApi';
 

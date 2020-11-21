@@ -7,13 +7,14 @@ const LanguageSelect: React.FC<{}> = () => {
 
 	const handler = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		i18n.changeLanguage(e.target.value);
+		localStorage.setItem('lng', e.target.value);
 	};
 
 	return (
 		<select onChange={handler} value={i18n.language} className="custom-select">
 			<option value="en">English</option>
 			<option value="ru">Русский</option>
-			<option value="ua">Українська</option>
+			<option value="uk">Українська</option>
 		</select>
 	);
 };

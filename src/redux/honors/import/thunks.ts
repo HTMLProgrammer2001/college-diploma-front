@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {reset, startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../';
 import honorsApi from '../../../utils/api/models/honorsApi';
@@ -18,7 +19,7 @@ const thunkImportHonor = (vals: any): IImportHonorThunkAction => {
 			dispatch(stopSubmit('honorsImportForm'));
 			dispatch(reset('honorsImportForm'));
 
-			toast.success('Награды импортированы');
+			toast.success(i18next.t('messages.honors.import'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('honorsImportForm', {

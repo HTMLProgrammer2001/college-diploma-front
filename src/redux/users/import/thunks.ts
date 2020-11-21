@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {reset, startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../';
 import usersApi from '../../../utils/api/models/usersApi';
@@ -11,8 +12,6 @@ export type IImportUserThunkAction = ThunkAction<void, RootState, unknown, Actio
 
 const thunkImportUser = (vals: any): IImportUserThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, Action<any>>) => {
-		console.log('In thunk');
-
 		dispatch(startSubmit('usersImportForm'));
 
 		try{
@@ -20,7 +19,7 @@ const thunkImportUser = (vals: any): IImportUserThunkAction => {
 			dispatch(stopSubmit('usersImportForm'));
 			dispatch(reset('usersImportForm'));
 
-			toast.success('Пользователи импортированы');
+			toast.success(i18next.t('messages.users.import'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('usersImportForm', {

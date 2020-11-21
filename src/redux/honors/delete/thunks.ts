@@ -1,5 +1,6 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../index';
 import {IDeleteHonorActions} from './reducer';
@@ -21,7 +22,7 @@ const thunkDeleteHonor = (id: number): IHonorEditThunkAction => {
 
 			dispatch(deleteHonorSuccess(id));
 			dispatch(allHonorsDelete(id));
-			toast.success(`Награда с id ${id} удалена`);
+			toast.success(i18next.t('messages.honors.delete', {id}));
 		}
 		catch (e) {
 			dispatch(deleteHonorError(id, e.response?.data.message || e.message));

@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {reset, startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../index';
 import ranksApi from '../../../utils/api/models/ranksApi';
@@ -18,7 +19,7 @@ const thunkAddRank = (vals: any): IAddRankThunkAction => {
 			dispatch(stopSubmit('ranksAddForm'));
 			dispatch(reset('ranksAddForm'));
 
-			toast.success('Должность добавлена');
+			toast.success(i18next.t('messages.ranks.add'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('ranksAddForm', {

@@ -121,7 +121,7 @@ const ProfessionalTab: React.FC<IProfessionalTabProps> = ({user}) => (
 							component={InputElement}
 							type="number"
 							name="scientific_degree_year"
-							label={t('users.edit.academicYear')}
+							label={t('users.edit.scientificDegreeYear')}
 							validate={[positiveNumber, year]}
 						/>
 					</div>

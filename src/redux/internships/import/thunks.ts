@@ -2,6 +2,8 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {reset, startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
+
 
 import {RootState} from '../../';
 import internshipsApi from '../../../utils/api/models/internshipsApi';
@@ -18,7 +20,7 @@ const thunkImportInternship = (vals: any): IImportInternshipThunkAction => {
 			dispatch(stopSubmit('internshipsImportForm'));
 			dispatch(reset('internshipsImportForm'));
 
-			toast.success('Стажировки импортированы');
+			toast.success(i18next.t('messages.internships.import'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('internshipsImportForm', {

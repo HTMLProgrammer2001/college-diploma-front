@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../../index';
 import educationsApi from '../../../../utils/api/models/educationsApi';
@@ -17,7 +18,7 @@ const thunkEditEducation = (id: number, vals: any): IEducationEditThunkAction =>
 			await educationsApi.editEducation(id, vals);
 
 			dispatch(stopSubmit('educationsEditForm'));
-			toast.success('Образование отредактировано');
+			toast.success(i18next.t('messages.educations.edit'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('educationsEditForm', {

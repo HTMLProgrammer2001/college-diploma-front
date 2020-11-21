@@ -1,5 +1,6 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../index';
 import {IDeleteQualificationActions} from './reducer';
@@ -21,7 +22,7 @@ const thunkDeleteQualification = (id: number): IQualificationEditThunkAction => 
 
 			dispatch(deleteQualificationSuccess(id));
 			dispatch(allQualificationsDelete(id));
-			toast.success(`Повышение квалификации с id ${id} удалено`);
+			toast.success(i18next.t('messages.qualifications.delete', {id}));
 		}
 		catch (e) {
 			dispatch(deleteQualificationError(id, e.response?.data.message || e.message));

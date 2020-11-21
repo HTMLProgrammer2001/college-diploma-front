@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../../index';
 import honorsApi from '../../../../utils/api/models/honorsApi';
@@ -17,7 +18,7 @@ const thunkEditHonor = (id: number, vals: any): IHonorEditThunkAction => {
 			await honorsApi.editHonor(id, vals);
 
 			dispatch(stopSubmit('honorsEditForm'));
-			toast.success('Награда отредактирована');
+			toast.success(i18next.t('messages.honors.edit'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('honorsEditForm', {

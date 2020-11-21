@@ -51,7 +51,7 @@ const UsersFilterForm: React.FC<IUsersFilterFormProps> = ({handleSubmit}) => (
 						name="filterDepartment"
 						id="filterDepartment"
 						className="w-100"
-						placeholder={t('rebukes.all.filterDepartment')}
+						placeholder={t('users.all.filterDepartment')}
 						url={`${process.env.REACT_APP_SERVER_URL}/search/departments`}
 					/>
 
@@ -60,7 +60,7 @@ const UsersFilterForm: React.FC<IUsersFilterFormProps> = ({handleSubmit}) => (
 						name="filterCommission"
 						id="filterCommission"
 						className="w-100"
-						placeholder={t('rebukes.all.filterCommission')}
+						placeholder={t('users.all.filterCommission')}
 						url={`${process.env.REACT_APP_SERVER_URL}/search/commissions`}
 					/>
 				</Row>
@@ -75,7 +75,7 @@ const UsersFilterForm: React.FC<IUsersFilterFormProps> = ({handleSubmit}) => (
 						name="filterRank"
 						id="filterRank"
 						className="w-100"
-						placeholder={t('rebukes.all.filterRank')}
+						placeholder={t('users.all.filterRank')}
 						url={`${process.env.REACT_APP_SERVER_URL}/search/ranks`}
 					/>
 
@@ -83,7 +83,7 @@ const UsersFilterForm: React.FC<IUsersFilterFormProps> = ({handleSubmit}) => (
 						component={SelectElement}
 						name="filterTitle"
 						className="w-100"
-						label={t('rebukes.all.filterTitle')}
+						label={t('users.all.filterTitle')}
 					>
 						<option value={-1} selected>{t('common.all')}</option>
 					</Field>

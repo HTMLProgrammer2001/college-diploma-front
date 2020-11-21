@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {reset, startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../';
 import rebukesApi from '../../../utils/api/models/rebukesApi';
@@ -18,7 +19,7 @@ const thunkImportRebuke = (vals: any): IImportRebukeThunkAction => {
 			dispatch(stopSubmit('rebukesImportForm'));
 			dispatch(reset('rebukesImportForm'));
 
-			toast.success('Выговоры импортированы');
+			toast.success(i18next.t('messages.rebukes.import'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('rebukesImportForm', {

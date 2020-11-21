@@ -2,6 +2,7 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Action} from 'redux';
 import {startSubmit, stopSubmit} from 'redux-form';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../../index';
 import {ICommissionsEditData} from '../../../../pages/Commissions/edit/EditCommissionForm';
@@ -18,7 +19,7 @@ const thunkEditCommission = (id: number, vals: ICommissionsEditData): ICommissio
 			await commissionsApi.editCommission(id, vals);
 
 			dispatch(stopSubmit('commissionsEditForm'));
-			toast.success('Комиссия отредактирована');
+			toast.success(i18next.t('messages.commissions.edit'));
 		}
 		catch (e) {
 			dispatch(stopSubmit('commissionsEditForm', {

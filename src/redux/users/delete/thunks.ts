@@ -1,5 +1,6 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {toast} from 'react-toastify';
+import i18next from 'i18next';
 
 import {RootState} from '../../index';
 import {IDeleteUserActions} from './reducer';
@@ -21,7 +22,7 @@ const thunkDeleteUser = (id: number): IUserEditThunkAction => {
 
 			dispatch(deleteUserSuccess(id));
 			dispatch(allUsersDelete(id));
-			toast.success(`Пользователь с id ${id} удален`);
+			toast.success(i18next.t('messages.users.delete', {id}));
 		}
 		catch (e) {
 			dispatch(deleteUserError(id, e.response?.data.message || e.message));

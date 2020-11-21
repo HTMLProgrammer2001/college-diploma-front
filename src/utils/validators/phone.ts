@@ -1,8 +1,10 @@
+import i18next from 'i18next';
+
 const phone = (str: string) => {
 	if(str == null)
 		return null;
 
-	return new RegExp('(\\+38)?0\\d{9}').test(str) ? null : 'Введите корректный телефон';
+	return new RegExp('(\\+38)?0\\d{9}').test(str) ? null : i18next.t('validators.phone');
 };
 
 export default phone;
