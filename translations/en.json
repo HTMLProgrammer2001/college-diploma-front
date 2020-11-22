@@ -1,0 +1,26 @@
+{
+	"common": {
+		"edit": "Edit",
+		"import": "Import",
+		"export": "Export",
+		"avatar": "Avatar",
+		"notSetted": "Not set",
+		"search": "Search",
+		"actions": "Actions",
+		"noItems": "No {{what}} suitable for your filter",
+		"from": "From",
+		"to": "To",
+		"all": "All",
+		"save": "Save",
+		"add": "Add",
+		"downloadExample": "Download example",
+		"importFile": "Choose file for import",
+		"install": "+ Download",
+		"roles": {
+			"admin": "Admin",
+			"moderator": "Moderator",
+			"viewer": "Viewer",
+			"user": "User"
+		}
+	}
+}
