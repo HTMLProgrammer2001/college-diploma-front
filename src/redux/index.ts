@@ -2,6 +2,8 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {reducer as formReducer} from 'redux-form';
 import {composeWithDevTools} from 'redux-devtools-extension';
+import {connectRouter, routerMiddleware} from 'connected-react-router';
+import {createHashHistory} from 'history';
 
 //reducers
 import me from './me/reducer';
@@ -21,15 +23,19 @@ import qualifications from './qualifications/';
 import users from './users/';
 
 
+//create react-router-redux middleware
+export const myHistory = createHashHistory(),
+	routeMdl = routerMiddleware(myHistory);
+
 //create reducer
 const rootReducer = combineReducers({
 	app, me, logout, profile, departments, commissions, ranks, publications, categories,
 	honors, rebukes, educations, internships, qualifications, users,
-	form: formReducer
+	form: formReducer, router: connectRouter(myHistory)
 });
 
 //create store
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk, routeMdl)));
 export default store;
 
 export type RootState = ReturnType<typeof rootReducer>;

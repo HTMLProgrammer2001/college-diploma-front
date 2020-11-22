@@ -15,6 +15,8 @@ import thunkProfileHonors from '../../../../redux/profile/honors/thunks';
 import findSortRule from '../../../../utils/helpers/findSortRule';
 import HonorItem from './HonorItem';
 import UserProfileContext from '../../../../utils/contexts/UserProfileContext';
+import {useLocation} from 'react-router';
+import * as queryString from 'querystring';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -36,14 +38,19 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 type IHonorsTableProps = ConnectedProps<typeof connected>;
 const HonorsTable: React.FC<IHonorsTableProps> = (props) => {
 	const {user} = useContext(UserProfileContext),
+		location = useLocation(),
 		{t} = useTranslation(),
 		changeSortWrapper = (field: string) => {
 			props.changeSort(user.id, field);
 		};
 
 	useEffect(() => {
+		//parse QP
+		const q = queryString.parse(location.search.slice(1));
+
 		if (!props.isLoading)
-			props.load(user.id);
+			//load honors for current user with page in QP
+			props.load(user.id, q.page ? +q.page : 1);
 	}, []);
 
 	return (

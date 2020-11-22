@@ -1,5 +1,6 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {getFormValues} from 'redux-form';
+import {replace} from 'connected-react-router';
 
 import {RootState} from '../../index';
 import {IProfileInternshipsActions} from './reducer';
@@ -10,6 +11,7 @@ import {
 } from './actions';
 import profileApi from '../../../utils/api/profileApi';
 import {selectProfileInternshipsPagination, selectProfileInternshipsSort} from './selectors';
+import getNewUrl from '../../../utils/helpers/getNewUrl';
 
 
 export type IProfileInternshipsThunkAction =
@@ -17,18 +19,27 @@ export type IProfileInternshipsThunkAction =
 
 const thunkProfileInternships = (user: number, page: number = 1): IProfileInternshipsThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, IProfileInternshipsActions>, getState) => {
+		//start load internships
 		dispatch(profileInternshipsStart());
 
 		try{
-			const filters: (state: RootState) => any = getFormValues('profileInternshipsFilter'),
+			//get data for query
+			const filtersFunc: (state: RootState) => any = getFormValues('profileInternshipsFilter'),
+				filters = filtersFunc(getState()),
 				sort = selectProfileInternshipsSort(getState()),
 				{pageSize} = selectProfileInternshipsPagination(getState());
 
-			const resp = await profileApi.getInternships({filters: filters(getState()), sort, page, pageSize, user});
+			//change URL
+			let newValues = Object.assign(filters, page && page != 1 ? {page} : {});
+			dispatch(replace(getNewUrl(getState().router.location, newValues)));
+
+			//get data and set to store
+			const resp = await profileApi.getInternships({filters, sort, page, pageSize, user});
 			dispatch(profileInternshipsSuccess(resp.data));
 			dispatch(profileInternshipsHours(resp.data.hours));
 		}
 		catch (e) {
+			//show error
 			dispatch(profileInternshipsError(e.message));
 		}
 	};

@@ -4,71 +4,21 @@
     <list default="true" id="57a409a2-1ea6-4331-ae71-85b96f4252a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/translations/translations/en.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/translations/translations/ru.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/translations/translations/ua.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app/Http/Resources/PublicationResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Resources/PublicationResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/LanguageSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/LanguageSelect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Sidebar/Links/ModeratorUserLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Sidebar/Links/ModeratorUserLinks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Sidebar/Links/ViewerUserLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Sidebar/Links/ViewerUserLinks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/all/UsersFilterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/all/UsersFilterForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/edit/EditUserForm/ProfessionalTab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/edit/EditUserForm/ProfessionalTab.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/edit/EditUserForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/edit/EditUserForm/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/app/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/app/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/categories/add/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/categories/add/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/categories/delete/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/categories/delete/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/categories/edit/thunks/thunkEditCategory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/categories/edit/thunks/thunkEditCategory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/commissions/add/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/commissions/add/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/commissions/all/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/commissions/all/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/commissions/delete/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/commissions/delete/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/commissions/edit/thunks/thunkEditCommission.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/commissions/edit/thunks/thunkEditCommission.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/departments/add/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/departments/add/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/departments/delete/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/departments/delete/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/departments/edit/thunks/thunkEditDepartment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/departments/edit/thunks/thunkEditDepartment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/educations/add/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/educations/add/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/educations/delete/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/educations/delete/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/educations/edit/thunks/thunkEditEducation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/educations/edit/thunks/thunkEditEducation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/honors/add/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/honors/add/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/honors/delete/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/honors/delete/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/honors/edit/thunks/thunkEditHonor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/honors/edit/thunks/thunkEditHonor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/honors/import/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/honors/import/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/internships/add/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/internships/add/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/internships/delete/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/internships/delete/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/internships/edit/thunks/thunkEditInternship.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/internships/edit/thunks/thunkEditInternship.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/internships/import/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/internships/import/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile/edit/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/edit/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile/userInfo/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/userInfo/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/publications/add/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/publications/add/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/publications/delete/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/publications/delete/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/publications/edit/thunks/thunkEditPublication.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/publications/edit/thunks/thunkEditPublication.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/publications/import/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/publications/import/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/qualifications/add/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/qualifications/add/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/qualifications/delete/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/qualifications/delete/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/qualifications/edit/thunks/thunkEditQualification.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/qualifications/edit/thunks/thunkEditQualification.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/qualifications/import/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/qualifications/import/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/ranks/add/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ranks/add/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/ranks/delete/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ranks/delete/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/ranks/edit/thunks/thunkEditRank.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/ranks/edit/thunks/thunkEditRank.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/rebukes/add/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/rebukes/add/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/rebukes/delete/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/rebukes/delete/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/rebukes/edit/thunks/thunkEditRebuke.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/rebukes/edit/thunks/thunkEditRebuke.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/rebukes/import/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/rebukes/import/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users/add/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users/add/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users/delete/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users/delete/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users/edit/thunks/thunkEditUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users/edit/thunks/thunkEditUser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users/import/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users/import/thunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/translate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/translate.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/date.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/date.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/dateMoreThan.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/dateMoreThan.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/email.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/email.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/lengthIn.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/lengthIn.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsFilterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsFilterForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/HonorsTab/HonorsFilterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/HonorsTab/HonorsFilterForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/HonorsTab/HonorsTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/HonorsTab/HonorsTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/InternshipsTab/InternshipsFilterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/InternshipsTab/InternshipsFilterForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/InternshipsTab/InternshipsTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/InternshipsTab/InternshipsTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile/educations/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/educations/thunks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile/honors/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/honors/thunks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile/internships/thunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile/internships/thunks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/api/profileApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api/profileApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/helpers/objToParams.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers/objToParams.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/validators/moreThan.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/moreThan.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/phone.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/phone.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/positiveNumber.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/positiveNumber.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/required.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/required.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/sameAs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/sameAs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/url.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/url.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/validators/year.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/year.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -83,14 +33,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/common/LanguageSelect.tsx">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/validators/moreThan.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="216">
+              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/InternshipsTab/InternshipsFilterForm.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -177,20 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/redux/honors/add/thunks.ts" />
-        <option value="$PROJECT_DIR$/src/redux/honors/delete/thunks.ts" />
-        <option value="$PROJECT_DIR$/src/redux/honors/edit/thunks/thunkEditHonor.ts" />
-        <option value="$PROJECT_DIR$/src/redux/honors/import/thunks.ts" />
-        <option value="$PROJECT_DIR$/src/redux/internships/add/thunks.ts" />
-        <option value="$PROJECT_DIR$/src/redux/internships/delete/thunks.ts" />
-        <option value="$PROJECT_DIR$/src/redux/internships/edit/thunks/thunkEditInternship.ts" />
-        <option value="$PROJECT_DIR$/src/redux/internships/import/thunks.ts" />
-        <option value="$PROJECT_DIR$/src/redux/profile/edit/thunks.ts" />
-        <option value="$PROJECT_DIR$/src/redux/profile/userInfo/thunks.ts" />
-        <option value="$PROJECT_DIR$/src/redux/publications/add/thunks.ts" />
-        <option value="$PROJECT_DIR$/src/redux/publications/delete/thunks.ts" />
-        <option value="$PROJECT_DIR$/src/redux/publications/edit/thunks/thunkEditPublication.ts" />
-        <option value="$PROJECT_DIR$/src/redux/publications/import/thunks.ts" />
         <option value="$PROJECT_DIR$/src/redux/qualifications/add/thunks.ts" />
         <option value="$PROJECT_DIR$/src/redux/qualifications/delete/thunks.ts" />
         <option value="$PROJECT_DIR$/src/redux/qualifications/edit/thunks/thunkEditQualification.ts" />
@@ -212,22 +154,36 @@
         <option value="$PROJECT_DIR$/src/utils/validators/email.ts" />
         <option value="$PROJECT_DIR$/src/utils/validators/lengthIn.ts" />
         <option value="$PROJECT_DIR$/src/utils/validators/dateMoreThan.ts" />
-        <option value="$PROJECT_DIR$/src/utils/validators/moreThan.ts" />
         <option value="$PROJECT_DIR$/src/utils/validators/phone.ts" />
         <option value="$PROJECT_DIR$/src/utils/validators/positiveNumber.ts" />
         <option value="$PROJECT_DIR$/src/utils/validators/required.ts" />
         <option value="$PROJECT_DIR$/src/utils/validators/sameAs.ts" />
         <option value="$PROJECT_DIR$/src/utils/validators/url.ts" />
-        <option value="$PROJECT_DIR$/src/utils/validators/year.ts" />
         <option value="$PROJECT_DIR$/src/pages/Users/all/UsersFilterForm.tsx" />
         <option value="$PROJECT_DIR$/src/translations/ru.json" />
         <option value="$PROJECT_DIR$/public/translations/en.json" />
-        <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/src/AdminLayout.tsx" />
         <option value="$PROJECT_DIR$/src/common/Sidebar/Links/ModeratorUserLinks.tsx" />
         <option value="$PROJECT_DIR$/src/common/Sidebar/Links/ViewerUserLinks.tsx" />
         <option value="$PROJECT_DIR$/src/translate.ts" />
         <option value="$PROJECT_DIR$/src/common/LanguageSelect.tsx" />
+        <option value="$PROJECT_DIR$/src/utils/helpers/objToParams.ts" />
+        <option value="$PROJECT_DIR$/src/utils/api/profileApi.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/App.tsx" />
+        <option value="$PROJECT_DIR$/src/redux/index.ts" />
+        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsTable.tsx" />
+        <option value="$PROJECT_DIR$/src/redux/profile/educations/thunks.ts" />
+        <option value="$PROJECT_DIR$/src/utils/validators/year.ts" />
+        <option value="$PROJECT_DIR$/src/redux/profile/honors/thunks.ts" />
+        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/HonorsTab/HonorsTable.tsx" />
+        <option value="$PROJECT_DIR$/src/utils/helpers/getNewUrl.ts" />
+        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/HonorsTab/HonorsFilterForm.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsFilterForm.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/InternshipsTab/InternshipsTable.tsx" />
+        <option value="$PROJECT_DIR$/src/redux/profile/internships/thunks.ts" />
+        <option value="$PROJECT_DIR$/src/utils/validators/moreThan.ts" />
+        <option value="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/InternshipsTab/InternshipsFilterForm.tsx" />
       </list>
     </option>
   </component>
@@ -394,7 +350,37 @@
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="ProfilePage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="ProfilePage" type="462c0819:PsiDirectoryNode" />
+              <item name="ProfileTabs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="ProfilePage" type="462c0819:PsiDirectoryNode" />
+              <item name="ProfileTabs" type="462c0819:PsiDirectoryNode" />
+              <item name="InternshipsTab" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -450,9 +436,9 @@
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.27100682" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.28009084" />
       <window_info id="Structure" order="3" sideWeight="0.5019531" side_tool="true" weight="0.30885693" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.17948718" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.23931624" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003785" side_tool="true" weight="0.5435898" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
@@ -505,205 +491,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pages/Users/all/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1967">
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Users/all/UserItem.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Users/all/UsersTable.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3287">
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Users/all/Modal/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1151">
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Users/all/Modal/UserBody.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="90" column="54" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Users/import/ImportUsersForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-671">
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Users/import/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-480">
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Users/single/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Users/edit/EditUserForm/PersonalTab.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="92" column="51" selection-start-line="92" selection-start-column="45" selection-end-line="92" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Users/edit/EditUserForm/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="54" column="70" selection-start-line="54" selection-start-column="70" selection-end-line="54" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Users/edit/EditUserForm/ProfessionalTab.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="123" column="69" selection-start-line="123" selection-start-column="69" selection-end-line="123" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/contexts/MenuContext.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-82" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/contexts/UserProfileContext.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/HOC/IsAuthenticated.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-720">
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/HOC/IsUserRoleMore.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-466">
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/hooks/useHttp.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-781">
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/validators/date.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/validators/email.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="95" lean-forward="true" selection-start-line="6" selection-start-column="95" selection-end-line="6" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/validators/lengthIn.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/validators/dateMoreThan.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="20" column="75" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/validators/moreThan.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/validators/phone.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="90" lean-forward="true" selection-start-line="6" selection-start-column="90" selection-end-line="6" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/validators/positiveNumber.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="7" column="81" lean-forward="true" selection-start-line="7" selection-start-column="81" selection-end-line="7" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/validators/required.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -725,13 +512,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/validators/year.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="73" lean-forward="true" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/helpers/changeSortHandler.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -747,11 +527,6 @@
     <entry file="file://$PROJECT_DIR$/src/utils/helpers/findSortRule.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/helpers/objToParams.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-232" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/helpers/prepareData.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -766,13 +541,7 @@
     <entry file="file://$PROJECT_DIR$/src/pages/ErrorPages/NotFoundPage/index.tsx">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/translations/translations/ru.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="636" column="9" lean-forward="true" selection-start-line="636" selection-start-column="9" selection-end-line="636" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/translations/translations/ru.json" />
     <entry file="file://$PROJECT_DIR$/.github/workflows/deploy.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -786,35 +555,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/translations/en.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/Sidebar/Links/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-240">
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-384">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -873,30 +619,263 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/LanguageSelect.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/translate.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="696">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/translations/ru.json">
+    <entry file="file://$PROJECT_DIR$/src/setupTests.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="24" column="6" selection-start-line="1" selection-start-column="4" selection-end-line="24" selection-end-column="6" />
+        <state relative-caret-position="120">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/LanguageSelect.tsx">
+    <entry file="file://$PROJECT_DIR$/public/translations/en.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        <state relative-caret-position="226">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/translations/ru.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="639" lean-forward="true" selection-start-line="639" selection-end-line="639" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/api/profileApi.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-624">
+          <caret line="4" column="122" selection-start-line="4" selection-start-column="122" selection-end-line="4" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-240">
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/react-router-redux/index.d.ts" />
+    <entry file="file://$PROJECT_DIR$/src/redux/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/profile/educations/reducer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="61" column="11" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/node/querystring.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsTable.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/validators/year.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/validators/positiveNumber.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/profile/educations/thunks.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="34" column="80" lean-forward="true" selection-start-line="33" selection-start-column="12" selection-end-line="34" selection-end-column="80" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/HonorsTab/HonorsTable.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="55" column="12" lean-forward="true" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/helpers/objToParams.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="119" column="10" selection-start-line="119" selection-start-column="10" selection-end-line="119" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="41" column="2" lean-forward="true" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/helpers/getNewUrl.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/HonorsTab/HonorsFilterForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationsFilterForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1848">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/InternshipsTab/InternshipsTable.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/profile/internships/thunks.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/profile/honors/thunks.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="34" column="80" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="34" selection-end-column="80" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/validators/moreThan.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/InternshipsTab/InternshipsFilterForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>

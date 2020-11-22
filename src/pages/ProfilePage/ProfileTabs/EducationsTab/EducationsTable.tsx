@@ -2,6 +2,7 @@ import React, {useContext, useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
+import qs from 'querystring';
 
 import {RootState} from '../../../../redux';
 import {IEducation} from '../../../../interfaces/models/IEducation';
@@ -16,6 +17,7 @@ import Loader from '../../../../common/Loader/Loader';
 import ErrorElement from '../../../../common/ErrorElement';
 import EducationItem from './EducationItem';
 import UserProfileContext from '../../../../utils/contexts/UserProfileContext';
+import {useLocation} from 'react-router';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -36,14 +38,18 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IRebukesTableProps = ConnectedProps<typeof connected>;
 const EducationsTable: React.FC<IRebukesTableProps> = (props) => {
-	const {user} = useContext(UserProfileContext);
-	const changeSortWrapper = (field: string) => {
-		props.changeSort(user.id, field);
-	};
+	const {user} = useContext(UserProfileContext),
+		  location = useLocation(),
+		  changeSortWrapper = (field: string) => {
+			  props.changeSort(user.id, field);
+		  };
 
 	useEffect(() => {
+		//load educations for user with cur page
+		const q = qs.parse(location.search.slice(1));
+
 		if (!props.isLoading)
-			props.load(user.id);
+			props.load(user.id, q.page ? +q.page : 1);
 	}, []);
 
 	const {t} = useTranslation();

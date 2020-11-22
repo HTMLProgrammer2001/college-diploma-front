@@ -2,6 +2,8 @@ import React, {useContext, useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
+import {useLocation} from 'react-router';
+import qs from 'querystring';
 
 import {RootState} from '../../../../redux';
 import {IInternship} from '../../../../interfaces/models/IInternship';
@@ -35,14 +37,19 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 type IInternshipsTableProps = ConnectedProps<typeof connected>;
 const InternshipsTable: React.FC<IInternshipsTableProps> = (props) => {
 	const {user} = useContext(UserProfileContext),
+		  location = useLocation(),
 		  {t} = useTranslation(),
 		  changeSortWrapper = (field: string) => {
 			  props.changeSort(user.id, field);
 		  };
 
 	useEffect(() => {
+		//parse QP
+		const q = qs.parse(location.search.slice(1));
+
+		//load internships
 		if (!props.isLoading)
-			props.load(+user.id);
+			props.load(+user.id, q.page ? +q.page : 1);
 	}, []);
 
 	return (

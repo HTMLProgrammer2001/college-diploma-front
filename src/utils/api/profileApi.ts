@@ -3,7 +3,6 @@ import axios from 'axios';
 import {IGeneralPaginationResponse} from '../../interfaces/responses/IGeneralPaginationResponse';
 import {IPublication} from '../../interfaces/models/IPublication';
 import {IProfilePublicationsFilterData} from '../../pages/ProfilePage/ProfileTabs/PublicationsTab/PublicationsFilterForm';
-import {ISort} from '../../interfaces/ISort';
 import {IEducation} from '../../interfaces/models/IEducation';
 import {IProfileEducationsFilterData} from '../../pages/ProfilePage/ProfileTabs/EducationsTab/EducationsFilterForm';
 import {IProfileHonorsFilterData} from '../../pages/ProfilePage/ProfileTabs/HonorsTab/HonorsFilterForm';
