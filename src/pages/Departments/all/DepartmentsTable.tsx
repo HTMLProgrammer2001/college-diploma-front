@@ -2,6 +2,8 @@ import React, {useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
+import qs from 'querystring';
+import {useLocation} from 'react-router';
 
 import {RootState} from '../../../redux';
 import {IDepartment} from '../../../interfaces/models/IDepartment';
@@ -40,12 +42,16 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IDepartmentsTableProps = ConnectedProps<typeof connected>;
 const DepartmentsTable: React.FC<IDepartmentsTableProps> = (props) => {
-	useEffect(() => {
-		if (!props.isLoading && !props.departments.length)
-			props.load();
-	}, []);
+	const {t} = useTranslation(),
+		location = useLocation();
 
-	const {t} = useTranslation();
+	useEffect(() => {
+		//load with page in QP
+		const q = qs.parse(location.search.slice(1));
+
+		if (!props.isLoading && !props.departments.length)
+			props.load(q.page ? +q.page : 1);
+	}, []);
 
 	return (
 		<div className="table-wrapper">

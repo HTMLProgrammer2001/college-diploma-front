@@ -31,7 +31,7 @@ const thunkProfileRebukes = (user: number, page = 1): IProfileRebukesThunkAction
 				{pageSize} = selectProfileRebukesPagination(getState());
 
 			//change URL
-			let newValues = Object.assign(filters, page && page != 1 ? {page} : {});
+			let newValues = Object.assign(filters, {page});
 			dispatch(replace(getNewUrl(getState().router.location, newValues)));
 
 			//send data to store

@@ -31,7 +31,7 @@ const thunkProfileEducations = (userID: number, page = 1): IProfileEducationsThu
 				pagination = selectProfileEducationsPagination(getState());
 
 			//change URL
-			let newValues = Object.assign(filters, page && page != 1 ? {page} : {});
+			let newValues = Object.assign(filters, {page});
 			dispatch(replace(getNewUrl(getState().router.location, newValues)));
 
 			//get educations

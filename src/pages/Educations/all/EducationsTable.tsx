@@ -2,6 +2,8 @@ import React, {useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
+import {useLocation} from 'react-router';
+import qs from 'querystring';
 
 import {RootState} from '../../../redux';
 
@@ -40,12 +42,16 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IHonorsTableProps = ConnectedProps<typeof connected>;
 const EducationsTable: React.FC<IHonorsTableProps> = (props) => {
-	useEffect(() => {
-		if (!props.isLoading && !props.educations.length)
-			props.load();
-	}, []);
+	const {t} = useTranslation(),
+		location = useLocation();
 
-	const {t} = useTranslation();
+	useEffect(() => {
+		//parse page from QP and load educations
+		const q = qs.parse(location.search.slice(1));
+
+		if (!props.isLoading && !props.educations.length)
+			props.load(q.page ? +q.page : 1);
+	}, []);
 
 	return (
 		<div className="table-wrapper">

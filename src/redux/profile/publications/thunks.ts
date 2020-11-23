@@ -31,7 +31,7 @@ const thunkProfilePublications = (user: number, page: number = 1): IProfilePubli
 				{pageSize} = selectProfilePublicationsPagination(getState());
 
 			//change URL
-			let newValues = Object.assign(filters, page && page != 1 ? {page} : {});
+			let newValues = Object.assign(filters, {page});
 			dispatch(replace(getNewUrl(getState().router.location, newValues)));
 
 			//set data to store
