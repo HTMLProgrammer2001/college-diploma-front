@@ -1,5 +1,6 @@
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {getFormValues} from 'redux-form';
+import {replace} from 'connected-react-router';
 
 import {RootState} from '../../';
 import {IProfileRebukesActions} from './reducer';
@@ -11,6 +12,7 @@ import {
 } from './actions';
 import {selectProfileRebukesPagination, selectProfileRebukesSort} from './selectors';
 import profileApi from '../../../utils/api/profileApi';
+import getNewUrl from '../../../utils/helpers/getNewUrl';
 
 
 export type IProfileRebukesThunkAction =
@@ -18,17 +20,26 @@ export type IProfileRebukesThunkAction =
 
 const thunkProfileRebukes = (user: number, page = 1): IProfileRebukesThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, IProfileRebukesActions>, getState) => {
+		//start loading rebukes
 		dispatch(profileRebukesStart());
 
 		try{
-			const filters: (state: RootState) => any = getFormValues('profileRebukesFilter'),
+			//get data for query
+			const filtersFunc: (state: RootState) => any = getFormValues('profileRebukesFilter'),
+				filters = filtersFunc(getState()),
 				sort = selectProfileRebukesSort(getState()),
 				{pageSize} = selectProfileRebukesPagination(getState());
 
-			const resp = await profileApi.getRebukes({filters: filters(getState()), sort, page, pageSize, user});
+			//change URL
+			let newValues = Object.assign(filters, page && page != 1 ? {page} : {});
+			dispatch(replace(getNewUrl(getState().router.location, newValues)));
+
+			//send data to store
+			const resp = await profileApi.getRebukes({filters, sort, page, pageSize, user});
 			dispatch(profileRebukesSuccess(resp.data));
 		}
 		catch (e) {
+			//show error
 			dispatch(profileRebukesError(e.message));
 		}
 	};

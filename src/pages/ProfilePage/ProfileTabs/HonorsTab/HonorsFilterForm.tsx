@@ -28,7 +28,7 @@ const HonorsFilterForm: React.FC<IHonorsFilterProps> = ({handleSubmit, initializ
 		//set current QP as default value of form
 		const q = queryString.parse(location.search.slice(1));
 		initialize(q);
-	}, [location.search]);
+	}, []);
 
 	return (
 		<form onSubmit={handleSubmit} className="w-100 center flex-column my-3">

@@ -1,7 +1,7 @@
 import i18next from 'i18next';
 
 const positiveNumber = (str: string) => {
-	if(str == null)
+	if(str == null || str == '')
 		return null;
 
 	let numb = +str;

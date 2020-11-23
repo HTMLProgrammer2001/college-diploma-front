@@ -4,7 +4,7 @@ import i18next from 'i18next';
 
 const dateMoreThan = (field: string, equal = true) => {
 	return (value: string, allValues: any) => {
-		if(value == null)
+		if(value == null || value == '')
 			return null;
 
 		const anotherVal = allValues[field];

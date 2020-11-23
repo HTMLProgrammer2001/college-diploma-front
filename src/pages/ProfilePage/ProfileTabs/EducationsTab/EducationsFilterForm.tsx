@@ -26,7 +26,7 @@ const EducationsFilterForm: React.FC<IEducationsFilterProps> = ({handleSubmit, i
 		//parse query params and set as default values
 		const q = qs.parse(location.search.slice(1));
 		initialize(q);
-	}, [location.search]);
+	}, []);
 
 	return (
 		<form onSubmit={handleSubmit} className="w-100 center flex-column my-3">

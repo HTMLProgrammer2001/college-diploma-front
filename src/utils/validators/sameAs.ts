@@ -2,7 +2,7 @@ import i18next from 'i18next';
 
 const sameAs = (field: string) => {
 	return (value: string, allValues: any) => {
-		if(value == null)
+		if(value == null || value == '')
 			return null;
 
 		return allValues[field] == value ? null : i18next.t('validators.sameAs', {field});

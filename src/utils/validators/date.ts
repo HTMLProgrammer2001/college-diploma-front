@@ -3,7 +3,7 @@ import i18next from 'i18next';
 
 
 const date = (value: string) => {
-	if(value == null)
+	if(value == null || value == '')
 		return null;
 
 	try{

@@ -35,7 +35,7 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit,
 		//parse QP to form values
 		const q = qs.parse(location.search.slice(1));
 		initialize(q);
-	}, [location.search]);
+	}, []);
 
 	return (
 		<form onSubmit={handleSubmit} className="w-100 center flex-column my-3">
@@ -122,3 +122,4 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit,
 export default reduxForm<IProfileInternshipsFilterData>({
 	form: 'profileInternshipsFilter'
 })(InternshipsFilterForm);
+

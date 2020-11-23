@@ -1,7 +1,9 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
+import {useLocation} from 'react-router';
+import qs from 'querystring';
 
 import {RootState} from '../../../../redux';
 import {IRebuke} from '../../../../interfaces/models/IRebuke';
@@ -14,6 +16,7 @@ import {profileRebukesChangeSort} from '../../../../redux/profile/rebukes/action
 import thunkProfileRebukes from '../../../../redux/profile/rebukes/thunks';
 import findSortRule from '../../../../utils/helpers/findSortRule';
 import RebukeItem from './RebukeItem';
+import UserProfileContext from '../../../../utils/contexts/UserProfileContext';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -25,8 +28,8 @@ const mapDispatchToProps = (dispatch: any) => ({
 		dispatch(profileRebukesChangeSort(field));
 		dispatch(thunkProfileRebukes(1));
 	},
-	load(page = 1) {
-		dispatch(thunkProfileRebukes(page));
+	load(userID: number, page = 1) {
+		dispatch(thunkProfileRebukes(userID, page));
 	}
 });
 
@@ -34,12 +37,17 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IRebukesTableProps = ConnectedProps<typeof connected>;
 const RebukesTable: React.FC<IRebukesTableProps> = (props) => {
-	useEffect(() => {
-		if (!props.isLoading && !props.rebukes.length)
-			props.load();
-	}, []);
+	const {t} = useTranslation(),
+		{user} = useContext(UserProfileContext),
+		location = useLocation();
 
-	const {t} = useTranslation();
+	useEffect(() => {
+		//parse QP
+		const q = qs.parse(location.search.slice(1));
+
+		if (!props.isLoading)
+			props.load(user.id, q.page ? +q.page : 1);
+	}, []);
 
 	return (
 		<div className="table-wrapper">

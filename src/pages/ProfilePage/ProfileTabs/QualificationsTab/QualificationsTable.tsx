@@ -2,6 +2,8 @@ import React, {useContext, useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
+import {useLocation} from 'react-router';
+import qs from 'querystring';
 
 import {RootState} from '../../../../redux';
 import {IQualification} from '../../../../interfaces/models/IQualification';
@@ -36,14 +38,18 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 type IQualificationsTableProps = ConnectedProps<typeof connected>;
 const QualificationsTable: React.FC<IQualificationsTableProps> = (props) => {
 	const {t} = useTranslation(),
+		location = useLocation(),
 		{user} = useContext(UserProfileContext),
 		changeSortWrapper = (field: string) => {
 			props.changeSort(user.id, field)
 		};
 
 	useEffect(() => {
+		//parse QP
+		const q = qs.parse(location.search.slice(1));
+
 		if (!props.isLoading)
-			props.load(user.id);
+			props.load(user.id, q.page ? +q.page : 1);
 	}, []);
 
 	return (
