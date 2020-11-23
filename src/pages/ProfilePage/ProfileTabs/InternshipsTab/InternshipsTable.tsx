@@ -49,7 +49,7 @@ const InternshipsTable: React.FC<IInternshipsTableProps> = (props) => {
 
 		//load internships
 		if (!props.isLoading)
-			props.load(+user.id, q.page ? +q.page : 1);
+			props.load(+user.id, q.page && location.hash == '#internships' ? +q.page : 1);
 	}, []);
 
 	return (

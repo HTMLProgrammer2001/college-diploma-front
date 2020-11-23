@@ -25,6 +25,10 @@ const HonorsFilterForm: React.FC<IHonorsFilterProps> = ({handleSubmit, initializ
 	const location = useLocation();
 
 	useEffect(() => {
+		//we initialize not this tab
+		if(location.hash != '#honors')
+			return;
+
 		//set current QP as default value of form
 		const q = queryString.parse(location.search.slice(1));
 		initialize(q);

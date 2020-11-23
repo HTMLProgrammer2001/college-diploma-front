@@ -25,6 +25,10 @@ const RebukesFilterForm: React.FC<IRebukesFilterProps> = ({handleSubmit, initial
 	const location = useLocation();
 
 	useEffect(() => {
+		//we initialize not this tab
+		if(location.hash != '#rebukes')
+			return;
+
 		//parse QP and initialize form values
 		const q = qs.parse(location.search.slice(1));
 		initialize(q);

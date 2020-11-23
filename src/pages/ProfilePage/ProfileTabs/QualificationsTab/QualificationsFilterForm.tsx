@@ -25,6 +25,10 @@ const QualificationsFilterForm: React.FC<IQualificationsFilterProps> = ({handleS
 	const location = useLocation();
 
 	useEffect(() => {
+		//we initialize not this tab
+		if(location.hash != '#qualifications')
+			return;
+
 		//parse QP and set as default values
 		const q = qs.parse(location.search.slice(1));
 		initialize(q);

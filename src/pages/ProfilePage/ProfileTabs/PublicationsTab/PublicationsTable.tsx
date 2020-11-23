@@ -50,7 +50,7 @@ const PublicationsTable: React.FC<IPublicationsTableProps> = (props) => {
 
 		//load publications
 		if (!props.isLoading)
-			props.load(user.id, q.page ? +q.page : 1);
+			props.load(user.id, q.page && location.hash == '#publications' || !location.hash ? +q.page : 1);
 	}, []);
 
 	return (

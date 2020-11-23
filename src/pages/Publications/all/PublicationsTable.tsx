@@ -2,6 +2,8 @@ import React, {useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
+import {useLocation} from 'react-router';
+import qs from 'querystring';
 
 import {RootState} from '../../../redux';
 import {IPublication} from '../../../interfaces/models/IPublication';
@@ -40,9 +42,14 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type ICommissionsTableProps = ConnectedProps<typeof connected>;
 const PublicationsTable: React.FC<ICommissionsTableProps> = (props) => {
+	const location = useLocation();
+
 	useEffect(() => {
+		//parse page from QP and load publications
+		const q = qs.parse(location.search.slice(1));
+
 		if (!props.isLoading && !props.publications.length)
-			props.load();
+			props.load(q.page ? +q.page : 1);
 	}, []);
 
 	const {t} = useTranslation();

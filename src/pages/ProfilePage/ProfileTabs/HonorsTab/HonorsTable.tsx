@@ -50,7 +50,7 @@ const HonorsTable: React.FC<IHonorsTableProps> = (props) => {
 
 		if (!props.isLoading)
 			//load honors for current user with page in QP
-			props.load(user.id, q.page ? +q.page : 1);
+			props.load(user.id, q.page && location.hash == '#honors' ? +q.page : 1);
 	}, []);
 
 	return (

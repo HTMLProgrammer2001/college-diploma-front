@@ -23,6 +23,10 @@ const EducationsFilterForm: React.FC<IEducationsFilterProps> = ({handleSubmit, i
 	const location = useLocation();
 
 	useEffect(() => {
+		//we initialize not this tab
+		if(location.hash != '#educations')
+			return;
+
 		//parse query params and set as default values
 		const q = qs.parse(location.search.slice(1));
 		initialize(q);

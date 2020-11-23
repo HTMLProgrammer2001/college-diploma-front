@@ -49,7 +49,7 @@ const EducationsTable: React.FC<IRebukesTableProps> = (props) => {
 		const q = qs.parse(location.search.slice(1));
 
 		if (!props.isLoading)
-			props.load(user.id, q.page ? +q.page : 1);
+			props.load(user.id, q.page && location.hash == '#educations' ? +q.page : 1);
 	}, []);
 
 	const {t} = useTranslation();

@@ -30,7 +30,7 @@ const thunkProfileInternships = (user: number, page: number = 1): IProfileIntern
 				{pageSize} = selectProfileInternshipsPagination(getState());
 
 			//change URL
-			let newValues = Object.assign(filters, {page});
+			let newValues = Object.assign(filters  || {}, {page});
 			dispatch(replace(getNewUrl(getState().router.location, newValues)));
 
 			//get data and set to store

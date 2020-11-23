@@ -1,4 +1,5 @@
 import queryString from "querystring";
+import moment from 'moment';
 import {Location, LocationDescriptorObject} from 'history';
 
 
@@ -10,12 +11,16 @@ const getNewUrl = (location: Location, newValues: {[key: string]: any}): Locatio
 
 	//filter object
 	for(let key in newValues){
-		if(newValues[key])
-			filteredValues[key] = newValues[key];
+		if(newValues[key]) {
+			if(newValues[key] instanceof Date)
+				filteredValues[key] = moment(newValues[key]).format('MM.DD.YYYY');
+			else
+				filteredValues[key] = newValues[key];
+		}
 	}
 
 	//merge new values with QP
-	let str = queryString.encode({...parsedQ, ...newValues});
+	let str = queryString.encode({...parsedQ, ...filteredValues});
 
 	//return new url object
 	return {

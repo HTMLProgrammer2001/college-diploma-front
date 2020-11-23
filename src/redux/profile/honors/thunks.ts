@@ -31,7 +31,7 @@ const thunkProfileHonors = (user: number, page = 1): IProfileHonorsThunkAction =
 				{pageSize} = selectProfileHonorsPagination(getState());
 			
 			//change URL
-			let newValues = Object.assign(filters, {page});
+			let newValues = Object.assign(filters  || {}, {page});
 			dispatch(replace(getNewUrl(getState().router.location, newValues)));
 
 			//set new honors

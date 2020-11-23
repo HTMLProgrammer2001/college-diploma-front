@@ -46,7 +46,7 @@ const RebukesTable: React.FC<IRebukesTableProps> = (props) => {
 		const q = qs.parse(location.search.slice(1));
 
 		if (!props.isLoading)
-			props.load(user.id, q.page ? +q.page : 1);
+			props.load(user.id, q.page && location.hash == '#rebukes' ? +q.page : 1);
 	}, []);
 
 	return (
