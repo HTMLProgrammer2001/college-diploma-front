@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles.module.scss"],"names":[],"mappings":"AAAA,uBACI,gBAAiB,CACjB,UAAW,CACX,WAAY,CACf,oBAGG,YAAa","file":"20.8bd7dc6b.chunk.css","sourcesContent":[".spinner{\n    margin-right: 5px;\n    width: 1rem;\n    height: 1rem;\n}\n\n.h100{\n    height: 100vh;\n}\n"]}
