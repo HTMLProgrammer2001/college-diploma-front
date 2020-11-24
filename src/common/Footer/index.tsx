@@ -1,17 +1,15 @@
 import React from 'react';
 import {Trans} from 'react-i18next';
-import {Button} from 'react-bootstrap';
 
 import LanguageSelect from '../LanguageSelect';
+import DownloadButton from '../DownloadButton';
 
 
 const Footer: React.FC<{}> = () => (
 	<footer className="p-3 border-top bg-white">
 		<div className="d-flex justify-content-between my-3">
 			<div>
-				<Button variant="primary">
-					<Trans i18nKey="common.install"/>
-				</Button>
+				<DownloadButton/>
 			</div>
 
 			<div className="mr-5 w-25">
