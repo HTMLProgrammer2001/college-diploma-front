@@ -2,20 +2,23 @@ import React, {useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
+import {useLocation} from 'react-router';
+import qs from 'querystring';
 
 import {RootState} from '../../../redux';
+import {IRebuke} from '../../../interfaces/models/IRebuke';
 
 import SortItem from '../../../common/SortItem';
 import Loader from '../../../common/Loader/Loader';
 import ErrorElement from '../../../common/ErrorElement';
+import RebukeItem from './RebukeItem';
+
 import findSortRule from '../../../utils/helpers/findSortRule';
 import {selectAllRebukesState} from '../../../redux/rebukes/all/selectors';
 import {selectDeleteRebukes} from '../../../redux/rebukes/delete/selectors';
 import {allRebukesChangeSort} from '../../../redux/rebukes/all/actions';
 import thunkAllRebukes from '../../../redux/rebukes/all/thunks';
 import thunkDeleteRebuke from '../../../redux/rebukes/delete/thunks';
-import {IRebuke} from '../../../interfaces/models/IRebuke';
-import RebukeItem from './RebukeItem';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -40,12 +43,16 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IRebukesTableProps = ConnectedProps<typeof connected>;
 const RebukesTable: React.FC<IRebukesTableProps> = (props) => {
-	useEffect(() => {
-		if (!props.isLoading && !props.rebukes.length)
-			props.load();
-	}, []);
+	const {t} = useTranslation(),
+		location = useLocation();
 
-	const {t} = useTranslation();
+	useEffect(() => {
+		//get page from QP
+		const q = qs.parse(location.search.slice(1));
+
+		if (!props.isLoading && !props.rebukes.length)
+			props.load(q.page ? +q.page : 1);
+	}, []);
 
 	return (
 		<div className="table-wrapper">

@@ -9,12 +9,20 @@ const getNewUrl = (location: Location, newValues: {[key: string]: any}): Locatio
 	let parsedQ: any = queryString.parse(location.search.slice(1)),
 		filteredValues: {[key: string]: any} = {};
 
+	//filter cur QP
+	for(let key of Object.keys(parsedQ)){
+		if(newValues.hasOwnProperty(key))
+			delete parsedQ[key];
+	}
+
 	//filter object
 	for(let key in newValues){
 		if(newValues[key]) {
+			//if it's date than transform it to string
 			if(newValues[key] instanceof Date)
 				filteredValues[key] = moment(newValues[key]).format('MM.DD.YYYY');
 			else
+				//just set it
 				filteredValues[key] = newValues[key];
 		}
 	}

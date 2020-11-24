@@ -2,7 +2,7 @@
 	"name": "trackteacher",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://htmlprogrammer2001.github.io/trackTeacherFront",
+	"homepage": "http://trackteacher.ru",
 	"dependencies": {
 		"axios": "^0.20.0",
 		"bootstrap": "^4.5.3",

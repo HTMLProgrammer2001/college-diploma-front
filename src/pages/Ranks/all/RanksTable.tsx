@@ -2,21 +2,23 @@ import React, {useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
+import {useLocation} from 'react-router';
+import qs from 'querystring';
 
 import {RootState} from '../../../redux';
-import {ICommission} from '../../../interfaces/models/ICommission';
+import {IRank} from '../../../interfaces/models/IRank';
 
 import SortItem from '../../../common/SortItem';
 import Loader from '../../../common/Loader/Loader';
 import ErrorElement from '../../../common/ErrorElement';
 import findSortRule from '../../../utils/helpers/findSortRule';
 import RankItem from './RankItem';
+
 import {selectAllRanksState} from '../../../redux/ranks/all/selectors';
 import {selectDeleteRanks} from '../../../redux/ranks/delete/selectors';
 import {allRanksChangeSort} from '../../../redux/ranks/all/actions';
 import thunkAllRanks from '../../../redux/ranks/all/thunks';
 import thunkDeleteRank from '../../../redux/ranks/delete/thunks';
-import {IRank} from '../../../interfaces/models/IRank';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -41,12 +43,17 @@ const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type ICommissionsTableProps = ConnectedProps<typeof connected>;
 const RanksTable: React.FC<ICommissionsTableProps> = (props) => {
-	useEffect(() => {
-		if (!props.isLoading && !props.ranks.length)
-			props.load();
-	}, []);
+	const {t} = useTranslation(),
+		location = useLocation();
 
-	const {t} = useTranslation();
+	useEffect(() => {
+		//get page from QP
+		const q = qs.parse(location.search.slice(1));
+
+		//load ranks
+		if (!props.isLoading && !props.ranks.length)
+			props.load(q.page ? +q.page : 1);
+	}, []);
 
 	return (
 		<div className="table-wrapper">
