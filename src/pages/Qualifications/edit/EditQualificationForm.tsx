@@ -27,7 +27,7 @@ const QualificationsEditForm: React.FC<IQualificationsEditFormProps> = ({handleS
 	const qualification = useSelector<RootState, IQualification>(selectEditQualification);
 
 	useEffect(() => {
-		initialize({...qualification} as any);
+		initialize({...qualification, user: qualification.user.id} as any);
 	}, [qualification]);
 
 	return (

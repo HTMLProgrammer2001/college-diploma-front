@@ -33,7 +33,7 @@ const HonorsEditForm: React.FC<IHonorsEditFormProps> = (props) => {
 	const {handleSubmit, error, initialize, honor} = props;
 	
 	useEffect(() => {
-		initialize({...honor} as any);
+		initialize({...honor, user: honor.user.id} as any);
 	}, []);
 	
 	return (

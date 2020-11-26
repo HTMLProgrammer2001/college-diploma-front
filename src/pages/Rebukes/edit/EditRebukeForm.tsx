@@ -33,7 +33,7 @@ const RebukesEditForm: React.FC<IRebukesEditFormProps> = (props) => {
 	const {handleSubmit, error, initialize, rebuke} = props;
 	
 	useEffect(() => {
-		initialize({...rebuke} as any);
+		initialize({...rebuke, user: rebuke.user.id} as any);
 	}, []);
 	
 	return (

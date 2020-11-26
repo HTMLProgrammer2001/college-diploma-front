@@ -52,6 +52,7 @@ const App = () => {
 									<Route path="/" component={NotFoundPage}/>
 								</Switch>
 							</Suspense>
+							)}/>
 						</ConnectedRouter>
 					</I18nextProvider>
 				</DownloadContext.Provider>

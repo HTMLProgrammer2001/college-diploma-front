@@ -35,7 +35,7 @@ const EducationsEditForm: React.FC<IEducationsEditFormProps> = (props) => {
 	const {handleSubmit, error, initialize, education} = props;
 	
 	useEffect(() => {
-		initialize({...education, graduateYear: education.graduate_year} as any);
+		initialize({...education, graduateYear: education.graduate_year, user: education.user.id} as any);
 	}, []);
 	
 	return (

@@ -91,6 +91,26 @@ const UserBody: React.FC<IUserBodyProps> = ({user}) => {
 						<th>{t('users.modal.experience')}</th>
 						<th>{user.experience}</th>
 					</tr>
+
+					<tr>
+						<th>{t('users.modal.academicStatus')}</th>
+						<th>{user.academicStatus}</th>
+					</tr>
+
+					<tr>
+						<th>{t('users.modal.academicStatusYear')}</th>
+						<th>{user.academicStatusYear}</th>
+					</tr>
+
+					<tr>
+						<th>{t('users.modal.scientificDegree')}</th>
+						<th>{user.scientificDegree}</th>
+					</tr>
+
+					<tr>
+						<th>{t('users.modal.scientificDegreeYear')}</th>
+						<th>{user.scientificDegreeYear}</th>
+					</tr>
 					</tbody>
 				</Table>
 			</Tab>

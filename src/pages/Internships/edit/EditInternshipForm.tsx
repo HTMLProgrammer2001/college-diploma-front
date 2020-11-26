@@ -36,7 +36,7 @@ const InternshipsEditForm: React.FC<IInternshipsEditFormProps> = ({handleSubmit,
 	const internship = useSelector<RootState, IInternship>(selectEditInternship);
 
 	useEffect(() => {
-		initialize({...internship} as any);
+		initialize({...internship, user: internship.user.id, category: internship.category.id} as any);
 	}, [internship]);
 
 	return (

@@ -44,7 +44,17 @@ type IOwnProps = ConnectedProps<typeof connected>;
 type IUsersEditFormProps = InjectedFormProps<IUsersEditData, IOwnProps> & IOwnProps;
 const UsersEditForm: React.FC<IUsersEditFormProps> = ({handleSubmit, user, initialize}) => {
 	useEffect(() => {
-		initialize({...user, avatar: null} as any);
+		initialize({
+			...user,
+			avatar: null,
+			commission: user.commission.id,
+			department: user.department.id,
+			pedagogical_title: user.pedagogicalTitle,
+			academic_status: user.academicStatus,
+			scientific_degree: user.scientificDegree,
+			academic_status_year: user.academicStatusYear,
+			scientific_degree_year: user.scientificDegreeYear
+		} as any);
 	}, []);
 
 	const {t} = useTranslation();
