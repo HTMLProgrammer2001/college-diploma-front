@@ -1,19 +1,15 @@
-import axios from 'axios';
-
 import {ISort} from '../../../interfaces/ISort';
 import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
 
-import objToParams from '../../helpers/objToParams';
 import {IUser} from '../../../interfaces/models/IUser';
 import {IUserTable} from '../../../interfaces/models/IUserTable';
 
+import objToParams from '../../helpers/objToParams';
+import createApi from '../createApi';
 
-const client = axios.create({
-	baseURL: `${process.env.REACT_APP_SERVER_URL}/users`,
-	headers: {
-		'Access-Control-Allow-Origin': '*',
-		Authorization: `Bearer ${localStorage.getItem('token')}`
-	}
+
+const client = createApi({
+	baseURL: '/users'
 });
 
 const usersApi = {

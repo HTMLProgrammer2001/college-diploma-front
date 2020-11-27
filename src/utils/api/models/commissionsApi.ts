@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 import {ISort} from '../../../interfaces/ISort';
 import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
 import {ICommission} from '../../../interfaces/models/ICommission';
@@ -7,14 +5,11 @@ import {ICommissionsAddData} from '../../../pages/Commissions/add/AddCommissionF
 import {ICommissionsEditData} from '../../../pages/Commissions/edit/EditCommissionForm';
 
 import objToParams from '../../helpers/objToParams';
+import createApi from '../createApi';
 
 
-const client = axios.create({
-	baseURL: `${process.env.REACT_APP_SERVER_URL}/commissions`,
-	headers: {
-		'Access-Control-Allow-Origin': '*',
-		Authorization: `Bearer ${localStorage.getItem('token')}`
-	}
+const client = createApi({
+	baseURL: '/commissions'
 });
 
 const commissionsApi = {

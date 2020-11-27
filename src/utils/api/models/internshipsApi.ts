@@ -1,18 +1,13 @@
-import axios from 'axios';
-
 import {ISort} from '../../../interfaces/ISort';
 import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
 import {IInternship} from '../../../interfaces/models/IInternship';
 
 import objToParams from '../../helpers/objToParams';
+import createApi from '../createApi';
 
 
-const client = axios.create({
-	baseURL: `${process.env.REACT_APP_SERVER_URL}/internships`,
-	headers: {
-		'Access-Control-Allow-Origin': '*',
-		Authorization: `Bearer ${localStorage.getItem('token')}`
-	}
+const client = createApi({
+	baseURL: '/internships'
 });
 
 const internshipsApi = {

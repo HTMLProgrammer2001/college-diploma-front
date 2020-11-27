@@ -1,21 +1,17 @@
-import axios from 'axios';
-
 import {ISort} from '../../../interfaces/ISort';
 import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
 
-import objToParams from '../../helpers/objToParams';
 import {IHonor} from '../../../interfaces/models/IHonor';
 import {IHonorsAddData} from '../../../pages/Honors/add/AddHonorForm';
 import {IHonorsImportData} from '../../../pages/Honors/import/ImportHonorsForm';
 import {IHonorsEditData} from '../../../pages/Honors/edit/EditHonorForm';
 
+import objToParams from '../../helpers/objToParams';
+import createApi from '../createApi';
 
-const client = axios.create({
-	baseURL: `${process.env.REACT_APP_SERVER_URL}/honors`,
-	headers: {
-		'Access-Control-Allow-Origin': '*',
-		Authorization: `Bearer ${localStorage.getItem('token')}`
-	}
+
+const client = createApi({
+	baseURL: '/honors'
 });
 
 const honorsApi = {

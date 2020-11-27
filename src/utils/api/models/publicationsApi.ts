@@ -1,20 +1,16 @@
-import axios from 'axios';
-
 import {ISort} from '../../../interfaces/ISort';
 import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
 import {IPublication} from '../../../interfaces/models/IPublication';
 
-import objToParams from '../../helpers/objToParams';
 import {IPublicationsAddData} from '../../../pages/Publications/add/AddPublicationForm';
 import {IPublicationsImportData} from '../../../pages/Publications/import/ImportPublicationsForm';
 
+import objToParams from '../../helpers/objToParams';
+import createApi from '../createApi';
 
-const client = axios.create({
-	baseURL: `${process.env.REACT_APP_SERVER_URL}/publications`,
-	headers: {
-		'Access-Control-Allow-Origin': '*',
-		Authorization: `Bearer ${localStorage.getItem('token')}`
-	}
+
+const client = createApi({
+	baseURL: '/publications'
 });
 
 const publicationsApi = {

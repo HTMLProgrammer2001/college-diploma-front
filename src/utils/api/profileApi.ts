@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 import {IGeneralPaginationResponse} from '../../interfaces/responses/IGeneralPaginationResponse';
 import {IPublication} from '../../interfaces/models/IPublication';
 import {IProfilePublicationsFilterData} from '../../pages/ProfilePage/ProfileTabs/PublicationsTab/PublicationsFilterForm';
@@ -16,14 +14,11 @@ import {IProfileQualificationsResponse} from '../../interfaces/responses/IProfil
 
 import objToParams from '../helpers/objToParams';
 import {IGetModelProfile} from '../../interfaces/IGetModelProfile';
+import createApi from './createApi';
 
 
-const client = axios.create({
-	baseURL: `${process.env.REACT_APP_SERVER_URL}/profile`,
-	headers: {
-		'Access-Control-Allow-Origin': '*',
-		Authorization: `Bearer ${localStorage.getItem('token')}`
-	}
+const client = createApi({
+	baseURL: '/profile'
 });
 
 const profileApi = {

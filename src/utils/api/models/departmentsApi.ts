@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 import {ISort} from '../../../interfaces/ISort';
 import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
 import {IDepartment} from '../../../interfaces/models/IDepartment';
@@ -7,14 +5,11 @@ import {IDepartmentsEditData} from '../../../pages/Departments/edit/EditDepartme
 import {IDepartmentsAddData} from '../../../pages/Departments/add/AddDepartmentForm';
 
 import objToParams from '../../helpers/objToParams';
+import createApi from '../createApi';
 
 
-const client = axios.create({
-	baseURL: `${process.env.REACT_APP_SERVER_URL}/departments`,
-	headers: {
-		'Access-Control-Allow-Origin': '*',
-		Authorization: `Bearer ${localStorage.getItem('token')}`
-	}
+const client = createApi({
+	baseURL: '/departments'
 });
 
 const departmentsApi = {

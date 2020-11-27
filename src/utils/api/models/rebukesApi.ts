@@ -1,21 +1,17 @@
-import axios from 'axios';
-
 import {ISort} from '../../../interfaces/ISort';
 import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
 
-import objToParams from '../../helpers/objToParams';
 import {IRebuke} from '../../../interfaces/models/IRebuke';
 import {IRebukesEditData} from '../../../pages/Rebukes/edit/EditRebukeForm';
 import {IRebukesAddData} from '../../../pages/Rebukes/add/AddRebukeForm';
 import {IRebukesImportData} from '../../../pages/Rebukes/import/ImportRebukesForm';
 
+import objToParams from '../../helpers/objToParams';
+import createApi from '../createApi';
 
-const client = axios.create({
-	baseURL: `${process.env.REACT_APP_SERVER_URL}/rebukes`,
-	headers: {
-		'Access-Control-Allow-Origin': '*',
-		Authorization: `Bearer ${localStorage.getItem('token')}`
-	}
+
+const client = createApi({
+	baseURL: '/rebukes'
 });
 
 const rebukesApi = {
