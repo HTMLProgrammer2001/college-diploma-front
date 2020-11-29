@@ -3,7 +3,7 @@ import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneral
 import {ICategory} from '../../../interfaces/models/ICategory';
 import {ICategoriesEditData} from '../../../pages/Categories/edit/EditCategoryForm';
 
-import createApi from '../createApi';
+import createApi from '../../helpers/createApi';
 import objToParams from '../../helpers/objToParams';
 
 

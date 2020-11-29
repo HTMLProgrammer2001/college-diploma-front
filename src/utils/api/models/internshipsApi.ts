@@ -1,9 +1,11 @@
 import {ISort} from '../../../interfaces/ISort';
 import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
 import {IInternship} from '../../../interfaces/models/IInternship';
+import {IExample} from '../../../interfaces/IExample';
 
 import objToParams from '../../helpers/objToParams';
-import createApi from '../createApi';
+import createApi from '../../helpers/createApi';
+import download from '../../helpers/download';
 
 
 const client = createApi({
@@ -43,6 +45,10 @@ const internshipsApi = {
 		}
 
 		return await client.post('/import', formData);
+	},
+
+	downloadExample(): IExample{
+		return download(`${process.env.REACT_APP_SERVER_URL}/examples/internships`);
 	}
 };
 

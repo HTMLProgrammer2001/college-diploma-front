@@ -3,7 +3,7 @@ import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneral
 import {IEducation} from '../../../interfaces/models/IEducation';
 
 import objToParams from '../../helpers/objToParams';
-import createApi from '../createApi';
+import createApi from '../../helpers/createApi';
 
 
 const client = createApi({

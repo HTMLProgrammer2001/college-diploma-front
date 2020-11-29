@@ -1,12 +1,14 @@
 import {ISort} from '../../../interfaces/ISort';
 import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
 import {IPublication} from '../../../interfaces/models/IPublication';
+import {IExample} from '../../../interfaces/IExample';
 
 import {IPublicationsAddData} from '../../../pages/Publications/add/AddPublicationForm';
 import {IPublicationsImportData} from '../../../pages/Publications/import/ImportPublicationsForm';
 
 import objToParams from '../../helpers/objToParams';
-import createApi from '../createApi';
+import createApi from '../../helpers/createApi';
+import download from '../../helpers/download';
 
 
 const client = createApi({
@@ -46,6 +48,10 @@ const publicationsApi = {
 		}
 
 		return await client.post('/import', formData);
+	},
+
+	downloadExample(): IExample{
+		return download(`${process.env.REACT_APP_SERVER_URL}/examples/publications`);
 	}
 };
 

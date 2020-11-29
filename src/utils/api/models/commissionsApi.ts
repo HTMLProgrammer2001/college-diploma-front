@@ -5,7 +5,7 @@ import {ICommissionsAddData} from '../../../pages/Commissions/add/AddCommissionF
 import {ICommissionsEditData} from '../../../pages/Commissions/edit/EditCommissionForm';
 
 import objToParams from '../../helpers/objToParams';
-import createApi from '../createApi';
+import createApi from '../../helpers/createApi';
 
 
 const client = createApi({

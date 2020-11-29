@@ -1,5 +1,6 @@
 import {ISort} from '../../../interfaces/ISort';
 import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
+import {IExample} from '../../../interfaces/IExample';
 
 import {IHonor} from '../../../interfaces/models/IHonor';
 import {IHonorsAddData} from '../../../pages/Honors/add/AddHonorForm';
@@ -7,7 +8,8 @@ import {IHonorsImportData} from '../../../pages/Honors/import/ImportHonorsForm';
 import {IHonorsEditData} from '../../../pages/Honors/edit/EditHonorForm';
 
 import objToParams from '../../helpers/objToParams';
-import createApi from '../createApi';
+import createApi from '../../helpers/createApi';
+import download from '../../helpers/download';
 
 
 const client = createApi({
@@ -47,6 +49,10 @@ const honorsApi = {
 		}
 
 		return await client.post('/import', formData);
+	},
+
+	downloadExample(): IExample{
+		return download(`${process.env.REACT_APP_SERVER_URL}/examples/honors`);
 	}
 };
 

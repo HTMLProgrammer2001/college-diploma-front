@@ -14,7 +14,7 @@ import {IProfileQualificationsResponse} from '../../interfaces/responses/IProfil
 
 import objToParams from '../helpers/objToParams';
 import {IGetModelProfile} from '../../interfaces/IGetModelProfile';
-import createApi from './createApi';
+import createApi from '../helpers/createApi';
 
 
 const client = createApi({

@@ -5,7 +5,7 @@ import {ILoginResponse} from '../../interfaces/responses/ILoginResponse';
 import {IMeResponse} from '../../interfaces/responses/IMeResponse';
 import {IProfileEditResponse} from '../../interfaces/responses/IProfileEditResponse';
 
-import createApi from './createApi';
+import createApi from '../helpers/createApi';
 
 
 const client = createApi({});

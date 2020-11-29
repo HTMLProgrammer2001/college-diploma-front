@@ -10,6 +10,7 @@ import UsersTable from './UsersTable';
 import Paginator from '../../../common/Paginator';
 import UserCan from '../../../common/UserCan';
 import UserModal from './Modal';
+import ReportButton from './ReportButton';
 
 import {RootState} from '../../../redux';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
@@ -58,11 +59,7 @@ const AllDepartmentsPage: React.FC<IAllDepartmentsPageProps> = ({changePage, pag
 									</Button>
 								</Link>
 
-								<a href={`${process.env.REACT_APP_SERVER_URL}/report`} target="_blank">
-									<Button variant="primary">
-										{t('common.export')}
-									</Button>
-								</a>
+								<ReportButton/>
 							</UserCan>
 						</div>
 					</div>

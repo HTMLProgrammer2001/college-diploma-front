@@ -9,6 +9,8 @@ import BackButton from '../../../common/BackButton';
 
 import thunkImportQualification from '../../../redux/qualifications/import/thunks';
 import ImportQualificationsForm from './ImportQualificationsForm';
+import ExampleButton from '../../../common/ExampleButton';
+import qualificationsApi from '../../../utils/api/models/qualificationsApi';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -34,12 +36,7 @@ const ImportQualificationsPage: React.FC<IImportQualificationsPageProps> = (prop
 			<Card className="mr-5">
 				<Card.Body className="d-flex flex-column align-items-center">
 					<ImportQualificationsForm onSubmit={importQualifications}/>
-
-					<a
-						href={`${process.env.REACT_APP_SERVER_URL}/examples/qualifications`}
-						target="_blank"
-						className="mt-3"
-					>{t('common.downloadExample')}</a>
+					<ExampleButton load={qualificationsApi.downloadExample} fileName="qualifications.xlsx"/>
 				</Card.Body>
 
 				<Card.Footer>

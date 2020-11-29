@@ -8,6 +8,8 @@ import BackButton from '../../../common/BackButton';
 import ImportRebukesForm from './ImportRebukesForm';
 import {RootState} from '../../../redux';
 import thunkImportRebuke from '../../../redux/rebukes/import/thunks';
+import ExampleButton from '../../../common/ExampleButton';
+import rebukesApi from '../../../utils/api/models/rebukesApi';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -33,12 +35,7 @@ const ImportRebukesPage: React.FC<IImportRebukesPageProps> = (props) => {
 			<Card className="mr-5">
 				<Card.Body className="d-flex flex-column align-items-center">
 					<ImportRebukesForm onSubmit={importRebukes}/>
-
-					<a
-						href={`${process.env.REACT_APP_SERVER_URL}/examples/rebukes`}
-						target="_blank"
-						className="mt-3"
-					>{t('common.downloadExample')}</a>
+					<ExampleButton load={rebukesApi.downloadExample} fileName="rebukes.xlsx"/>
 				</Card.Body>
 
 				<Card.Footer>

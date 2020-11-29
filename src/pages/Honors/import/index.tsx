@@ -8,6 +8,8 @@ import BackButton from '../../../common/BackButton';
 import ImportHonorsForm from './ImportHonorsForm';
 import {RootState} from '../../../redux';
 import thunkImportHonor from '../../../redux/honors/import/thunks';
+import ExampleButton from '../../../common/ExampleButton';
+import honorsApi from '../../../utils/api/models/honorsApi';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -33,12 +35,7 @@ const ImportHonorsPage: React.FC<IImportHonorsPageProps> = (props) => {
 			<Card className="mr-5">
 				<Card.Body className="d-flex flex-column align-items-center">
 					<ImportHonorsForm onSubmit={importHonors}/>
-
-					<a
-						href={`${process.env.REACT_APP_SERVER_URL}/examples/honors`}
-						target="_blank"
-						className="mt-3"
-					>{t('common.downloadExample')}</a>
+					<ExampleButton load={honorsApi.downloadExample} fileName="honors.xlsx"/>
 				</Card.Body>
 
 				<Card.Footer>

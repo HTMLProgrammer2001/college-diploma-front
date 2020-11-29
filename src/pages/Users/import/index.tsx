@@ -8,6 +8,8 @@ import BackButton from '../../../common/BackButton';
 import ImportUsersForm from './ImportUsersForm';
 import {RootState} from '../../../redux';
 import thunkImportUser from '../../../redux/users/import/thunks';
+import ExampleButton from '../../../common/ExampleButton';
+import usersApi from '../../../utils/api/models/usersApi';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -33,12 +35,7 @@ const ImportUsersPage: React.FC<IImportUsersPageProps> = (props) => {
 			<Card className="mr-5">
 				<Card.Body className="d-flex flex-column align-items-center">
 					<ImportUsersForm onSubmit={importUsers}/>
-
-					<a
-						href={`${process.env.REACT_APP_SERVER_URL}/examples/users`}
-						target="_blank"
-						className="mt-3"
-					>{t('common.downloadExample')}</a>
+					<ExampleButton load={usersApi.downloadExample} fileName="users.xlsx"/>
 				</Card.Body>
 
 				<Card.Footer>
@@ -63,3 +60,4 @@ const ImportUsersPage: React.FC<IImportUsersPageProps> = (props) => {
 };
 
 export default connected(ImportUsersPage);
+

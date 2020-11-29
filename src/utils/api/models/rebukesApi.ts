@@ -1,5 +1,6 @@
 import {ISort} from '../../../interfaces/ISort';
 import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
+import {IExample} from '../../../interfaces/IExample';
 
 import {IRebuke} from '../../../interfaces/models/IRebuke';
 import {IRebukesEditData} from '../../../pages/Rebukes/edit/EditRebukeForm';
@@ -7,7 +8,8 @@ import {IRebukesAddData} from '../../../pages/Rebukes/add/AddRebukeForm';
 import {IRebukesImportData} from '../../../pages/Rebukes/import/ImportRebukesForm';
 
 import objToParams from '../../helpers/objToParams';
-import createApi from '../createApi';
+import createApi from '../../helpers/createApi';
+import download from '../../helpers/download';
 
 
 const client = createApi({
@@ -47,6 +49,10 @@ const rebukesApi = {
 		}
 
 		return await client.post('/import', formData);
+	},
+
+	downloadExample(): IExample{
+		return download(`${process.env.REACT_APP_SERVER_URL}/examples/rebukes`);
 	}
 };
 

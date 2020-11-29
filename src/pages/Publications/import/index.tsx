@@ -8,6 +8,8 @@ import BackButton from '../../../common/BackButton';
 import ImportPublicationsForm from './ImportPublicationsForm';
 import {RootState} from '../../../redux';
 import thunkImportPublication from '../../../redux/publications/import/thunks';
+import ExampleButton from '../../../common/ExampleButton';
+import publicationsApi from '../../../utils/api/models/publicationsApi';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -33,12 +35,7 @@ const ImportPublicationsPage: React.FC<IImportPublicationsPageProps> = (props) =
 			<Card className="mr-5">
 				<Card.Body className="d-flex flex-column align-items-center">
 					<ImportPublicationsForm onSubmit={importPublications}/>
-
-					<a
-						href={`${process.env.REACT_APP_SERVER_URL}/examples/publications`}
-						target="_blank"
-						className="mt-3"
-					>{t('common.downloadExample')}</a>
+					<ExampleButton load={publicationsApi.downloadExample} fileName="publications.xlsx"/>
 				</Card.Body>
 
 				<Card.Footer>

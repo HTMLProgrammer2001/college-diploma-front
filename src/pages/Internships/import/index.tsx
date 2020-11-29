@@ -9,6 +9,8 @@ import BackButton from '../../../common/BackButton';
 import ImportInternshipsForm from './ImportInternshipsForm';
 
 import thunkImportInternship from '../../../redux/internships/import/thunks';
+import ExampleButton from '../../../common/ExampleButton';
+import internshipsApi from '../../../utils/api/models/internshipsApi';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -34,12 +36,7 @@ const ImportInternshipsPage: React.FC<IImportInternshipsPageProps> = (props) => 
 			<Card className="mr-5">
 				<Card.Body className="d-flex flex-column align-items-center">
 					<ImportInternshipsForm onSubmit={importInternships}/>
-
-					<a
-						href={`${process.env.REACT_APP_SERVER_URL}/examples/internships`}
-						target="_blank"
-						className="mt-3"
-					>{t('common.downloadExample')}</a>
+					<ExampleButton load={internshipsApi.downloadExample} fileName="internships.xlsx"/>
 				</Card.Body>
 
 				<Card.Footer>

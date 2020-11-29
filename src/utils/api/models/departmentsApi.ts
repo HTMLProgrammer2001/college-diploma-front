@@ -5,7 +5,7 @@ import {IDepartmentsEditData} from '../../../pages/Departments/edit/EditDepartme
 import {IDepartmentsAddData} from '../../../pages/Departments/add/AddDepartmentForm';
 
 import objToParams from '../../helpers/objToParams';
-import createApi from '../createApi';
+import createApi from '../../helpers/createApi';
 
 
 const client = createApi({

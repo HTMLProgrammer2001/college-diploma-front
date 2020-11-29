@@ -1,9 +1,11 @@
 import {ISort} from '../../../interfaces/ISort';
 import {IGeneralPaginationResponse} from '../../../interfaces/responses/IGeneralPaginationResponse';
 import {IQualification} from '../../../interfaces/models/IQualification';
+import {IExample} from '../../../interfaces/IExample';
 
 import objToParams from '../../helpers/objToParams';
-import createApi from '../createApi';
+import createApi from '../../helpers/createApi';
+import download from '../../helpers/download';
 
 
 const client = createApi({
@@ -43,6 +45,10 @@ const qualificationsApi = {
 		}
 
 		return await client.post('/import', formData);
+	},
+
+	downloadExample(): IExample{
+		return download(`${process.env.REACT_APP_SERVER_URL}/examples/qualifications`);
 	}
 };
 

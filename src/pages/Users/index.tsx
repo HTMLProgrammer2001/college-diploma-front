@@ -16,9 +16,9 @@ const Users: React.FC<{}> = () => (
 	<Switch>
 		<Route path="/users" exact component={AllUsersPage}/>
 		<Route path="/users/add" exact component={AddUserPage}/>
+		<Route path="/users/import" exact component={ImportUserPage}/>
 		<Route path="/users/:id/edit" exact component={EditUserPage}/>
 		<Route path="/users/:id" exact component={SingleUserPage}/>
-		<Route path="/users/import" exact component={ImportUserPage}/>
 		<Route path="/" component={NotFoundPage}/>
 	</Switch>
 );
