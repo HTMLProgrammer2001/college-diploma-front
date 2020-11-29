@@ -1,5 +1,7 @@
 {
 	"common": {
+		"generate": "Generating...",
+		"stop": "Cancel download",
 		"edit": "Edit",
 		"import": "Import",
 		"export": "Export",
