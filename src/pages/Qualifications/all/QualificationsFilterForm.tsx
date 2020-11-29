@@ -46,10 +46,10 @@ const QualificationsFilterForm: React.FC<IQualificationsFilterFormProps> = ({han
 							name="filterName"
 							label={t('qualifications.all.filterName')}
 						>
-							<option value={0}>{t('qualifications.categories.0')}</option>
-							<option value={1}>{t('qualifications.categories.1')}</option>
-							<option value={2}>{t('qualifications.categories.2')}</option>
-							<option value={3}>{t('qualifications.categories.3')}</option>
+							<option value={0}>{t('common.categories.0')}</option>
+							<option value={1}>{t('common.categories.1')}</option>
+							<option value={2}>{t('common.categories.2')}</option>
+							<option value={3}>{t('common.categories.3')}</option>
 						</Field>
 					</Row>
 				)}

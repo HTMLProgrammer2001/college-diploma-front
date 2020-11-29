@@ -4,10 +4,10 @@
 		"import": "Import",
 		"export": "Export",
 		"avatar": "Avatar",
-		"notSetted": "Not set",
+		"notSetted": "No value",
 		"search": "Search",
 		"actions": "Actions",
-		"noItems": "No {{what}} suitable for your filter",
+		"noItems": "No {{what}} suitable for this filter",
 		"from": "From",
 		"to": "To",
 		"all": "All",
@@ -16,11 +16,618 @@
 		"downloadExample": "Download example",
 		"importFile": "Choose file for import",
 		"install": "+ Download",
+		"notExists": "Not exists",
 		"roles": {
 			"admin": "Admin",
 			"moderator": "Moderator",
 			"viewer": "Viewer",
 			"user": "User"
+		},
+		"pedTitles": {
+			"methodist": "Teacher methodist",
+			"higher": "Senior lecture"
+		},
+		"academicStatus": {
+			"candidate": "Candidate PhD",
+			"doctor": "PhD"
+		},
+		"scientific": {
+			"docent": "Docent",
+			"searcher": "Senior researcher",
+			"professor": "Professor"
+		},
+		"categories": [
+			"Specialist", 
+			"Specialist of the 2nd category", 
+			"Specialist of the 1st category", 
+			"Specialist of the highest category"
+		],
+		"qualList": ["Junior specialist", "Bachelor", "Master"]
+	},
+
+	"messages": {
+		"categories": {
+			"add": "Internship category created",
+			"delete": "Internship category with id {{id}} deleted",
+			"edit": "Internship category edited"
+		},
+		"commissions": {
+			"add": "Commission created",
+			"delete": "Commission with id {{id}} deleted",
+			"edit": "Commission edited"
+		},
+		"departments": {
+			"add": "Department created",
+			"delete": "Department with id {{id}} deleted",
+			"edit": "Department edited"
+		},
+		"educations": {
+			"add": "Education created",
+			"delete": "Education with id {{id}} deleted",
+			"edit": "Education edited"
+		},
+		"honors": {
+			"add": "Honor created",
+			"delete": "Honor with id {{id}} deleted",
+			"edit": "Honor edited",
+			"import": "Honors imported"
+		},
+		"internships": {
+			"add": "Internship created",
+			"delete": "Internship with id {{id}} deleted",
+			"edit": "Internship edited",
+			"import": "Internships imported"
+		},
+		"profileEdit": "Profile edited",
+		"userInfoError": "Error in profile loading",
+		"publications": {
+			"add": "Publication added",
+			"delete": "Publication with id {{id}} deleted",
+			"edit": "Publication edited",
+			"import": "Publications imported"
+		},
+		"qualifications": {
+			"add": "Upgrade created",
+			"delete": "Upgrade with id {{id}} deleted",
+			"edit": "Upgrade edited",
+			"import": "Upgrades imported"
+		},
+		"ranks": {
+			"add": "Rank created",
+			"delete": "Rank with id {{id}} deleted",
+			"edit": "Rank edited"
+		},
+		"rebukes": {
+			"add": "Rebuke created",
+			"delete": "Rebuke with id {{id}} deleted",
+			"edit": "Rebuke edited",
+			"import": "Rebukes imported"
+		},
+		"users": {
+			"add": "User created",
+			"delete": "User with id {{id}} deleted",
+			"edit": "User edited",
+			"import": "Users imported"
+		}
+	},
+
+	"validators": {
+		"date": "Field must be valid date",
+		"dateMore": "Field must be more than {{field}}",
+		"dateMore_equal": "Field must be more or equal to {{field}}",
+		"email": "Field must be email",
+		"lengthIn": "Field must be",
+		"lengthIn_from": "$t(validators.lengthIn) from {{min}}",
+		"lengthIn_to": "$t(validators.lengthIn) to {{max}}",
+		"lengthIn_from_to": "$t(validators.lengthIn) from {{min}} to {{max}}",
+		"phone": "Field must be valid phone number",
+		"positive": "Field must be positive number",
+		"required": "Field is required",
+		"sameAs": "Field must be equal to {{field}}",
+		"url": "Field must be valid URL",
+		"year": "Field must be valid year"
+	},
+
+	"layout": {
+		"footer": {
+			"copyright": "Copyright © <1>{{year}}</1> by <0>Yuri Prisyazhnyy.</1>",
+			"rights": "All rights reserved"
+		},
+		"header": {
+			"profile": "Profile",
+			"exit": "Exit"
+		},
+		"sidebar": {
+			"menu": "Navigation menu",
+			"admin": "Admin panel",
+			"profile": "Profile",
+			"departments": "Department",
+			"commissions": "Commission",
+			"ranks": "Rank",
+			"publications": "Publications",
+			"categories": "Internship categories",
+			"honors": "Honors",
+			"rebukes": "Rebukes",
+			"educations": "Educations",
+			"internships": "Internships",
+			"qualifications": "Upgrades",
+			"users": "Users"
+		}
+	},
+
+	"home": {
+		"hello": "Hi, it's admin panel"
+	},
+
+	"login": {
+		"authorization": "Log in",
+		"password": "Password",
+		"enter": "Enter"
+	},
+	"profile": {
+		"pageLabel": "User profile",
+		"pageTitle": "Profile",
+		"info": {
+			"fullName": "<0>Name: <1>{{fullName}}</1></0>",
+			"birthday": "<0>Birthday: <1>{{birthday}}</1></0>",
+			"email": "<0>Email: <1>{{email}}</1></0>",
+			"address": "<0>Address: <1>{{address}}</1></0>",
+			"role": "<0>Role: <1>{{role}}</1></0>",
+			"department": "<0>Department: <1>{{department}}</1></0>",
+			"commission": "<0>Commission: <1>{{commission}}</1></0>",
+			"rank": "<0>Rank: <1>{{rank}}</1></0>",
+			"pedagogicalTitle": "<0>Pedagogical title: <1>{{pedTitle}}</1></0>",
+			"experience": "<0>Experience: <1>{{experience}}</1></0>"
+		},
+		"tabs": {
+			"publications": {
+				"title": "Publications",
+				"publicationName": "Publication name",
+				"authors": "Authors",
+				"publicationDate": "Publication date"
+			},
+			"internships": {
+				"title": "Internships",
+				"hoursFromLast": "Hours from last upgrade: {{hours}}",
+				"category": "Category",
+				"theme": "Theme",
+				"hoursMore": "Hours more than",
+				"hoursLess": "Hours less than",
+				"hoursCount": "Hours",
+				"endDate": "End date"
+			},
+			"qualifications": {
+				"title": "Upgrades",
+				"nextDate": "Next upgrade: {{nextDate}}",
+				"category": "Category",
+				"date": "Date"
+			},
+			"honors": {
+				"title": "Honors",
+				"honorName": "Honor name",
+				"presDate": "Presentation date",
+				"honorType": "Honor type"
+			},
+			"rebukes": {
+				"title": "Rebukes",
+				"rebukeName": "Rebuke name",
+				"date": "Date"
+			},
+			"educations": {
+				"title": "Educations",
+				"qualification": "Qualification",
+				"institutionName": "Institution",
+				"graduateYear": "Graduate year"
+			}
+		}
+	},
+
+	"profileEdit": {
+		"pageTitle": "Profile edit",
+		"password": "New password",
+		"confirmPassword": "Confirm password",
+		"phone": "Phone",
+		"address": "Address",
+		"birthday": "Birthday",
+		"avatar": "Drag or choose avatar"
+	},
+
+	"commissions": {
+		"name": "Commissions",
+		"all": {
+			"pageTitle": "Commissions",
+			"filterName": "Name",
+			"name": "Name",
+			"noForm": "commissions"
+		},
+		"add": {
+			"pageTitle": "Add commission",
+			"name": "Commission name"
+		},
+		"edit": {
+			"pageTitle": "Edit commission",
+			"name": "Commission name"
+		}
+	},
+
+	"departments": {
+		"name": "Departments",
+		"all": {
+			"pageTitle": "Departments",
+			"filterName": "Department name",
+			"name": "Name",
+			"noForm": "departments"
+		},
+		"add": {
+			"pageTitle": "Add department",
+			"name": "Name"
+		},
+		"edit": {
+			"pageTitle": "Edit department",
+			"name": "Department name"
+		}
+	},
+
+	"ranks": {
+		"name": "Ranks",
+		"all": {
+			"pageTitle": "Ranks",
+			"filterName": "Name",
+			"name": "Name",
+			"noForm": "ranks"
+		},
+		"add": {
+			"pageTitle": "Add rank",
+			"name": "Rank name"
+		},
+		"edit": {
+			"pageTitle": "Edit rank",
+			"name": "Rank name"
+		}
+	},
+
+	"publications": {
+		"name": "Publications name",
+		"all": {
+			"pageTitle": "Publications",
+			"filterName": "publication title",
+			"name": "Publication title",
+			"authors": "Authors",
+			"date": "Date of publication",
+			"filterFrom": "From",
+			"filterTo": "To",
+			"filterUser": "Author",
+			"noForm": "Publications"
+		},
+		"add": {
+			"pageTitle": "Add publication",
+			"name": "Publication title",
+			"date": "Date of publication",
+			"publisher": "Publisher",
+			"authors": "Authors",
+			"anotherAuthors": "Another author",
+			"url": "URL"
+		},
+		"edit": {
+			"pageTitle": "Edit publication",
+			"name": "Publication title",
+			"date": "Date of publication",
+			"publisher": "Publisher",
+			"authors": "Authors",
+			"anotherAuthors": "Another authors",
+			"url": "URL"
+		},
+		"single": {
+			"pageTitle": "Publication page",
+			"info": {
+				"id": "<0>ID: <1>{{id}}</1></0>",
+				"title": "<0>Title: <1>{{title}}</1></0>",
+				"authors": "<0>Authors: <1>{{authors}}</1></0>",
+				"date": "<0>Publication date: <1>{{authors}}</1></0>",
+				"publisher": "<0>Publisher: <1>{{publisher}}</1></0>",
+				"url": "<0>URL: <2><1>{{url}}</1></2></0>",
+				"description": "<0>Description: <1>{{description}}</1></0>"
+			}
+		},
+		"import": {"pageTitle": "Publications import"}
+	},
+
+	"categories": {
+		"name": "Internship categories",
+		"all": {
+			"pageTitle": "Internship categories",
+			"filterName": "internship category name",
+			"name": "Name",
+			"noForm": "Internship categories"
+		},
+		"add": {
+			"pageTitle": "Add category",
+			"name": "Category name"
+		},
+		"edit": {
+			"pageTitle": "Edit category",
+			"name": "Category name"
+		}
+	},
+
+	"honors": {
+		"name": "Honors",
+		"all": {
+			"pageTitle": "Honors",
+			"noForm": "honors",
+			"filterUser": "User",
+			"filterName": "Title",
+			"filterTo": "From",
+			"filterFrom": "To",
+			"user": "User",
+			"title": "Title",
+			"date": "Presentation date"
+		},
+		"add": {
+			"pageTitle": "Add honor",
+			"title": "Title",
+			"order": "Order",
+			"date": "Presentation date",
+			"user": "User"
+		},
+		"edit": {
+			"pageTitle": "Edit honor",
+			"title": "Title",
+			"order": "Order",
+			"date": "Presentation date",
+			"user": "User"
+		},
+		"single": {
+			"pageTitle": "Honor page",
+			"info": {"id": "<0>ID: <1>{{id}}</1></0>"}
+		},
+		"import": {"pageTitle": "Honor import"}
+	},
+
+	"rebukes": {
+		"name": "Rebukes",
+		"all": {
+			"pageTitle": "Rebukes",
+			"noForm": "rebukes",
+			"filterUser": "User",
+			"filterName": "Title",
+			"filterTo": "From",
+			"filterFrom": "To",
+			"user": "User",
+			"title": "Title",
+			"date": "Presentation date"
+		},
+		"add": {
+			"pageTitle": "Add rebuke",
+			"title": "Title",
+			"order": "Order",
+			"date": "Presentation date",
+			"user": "User"
+		},
+		"edit": {
+			"pageTitle": "Edit rebuke",
+			"title": "Title",
+			"order": "Order",
+			"date": "Presentation date",
+			"user": "User"
+		},
+		"single": {
+			"pageTitle": "Rebuke page",
+			"info": {"id": "<0>ID: <1>{{id}}</1></0>"}
+		},
+		"import": {"pageTitle": "Rebukes import"}
+	},
+
+	"educations": {
+		"name": "Educations",
+		"all": {
+			"pageTitle": "Educations",
+			"noForm": "educations",
+			"filterUser": "User",
+			"filterInstitution": "Institution",
+			"filterQualification": "Qualification",
+			"filterGraduateFrom": "Graduate from",
+			"filterGraduateTo": "Graduate to",
+			"filterSpecialty": "Specialty",
+			"user": "User",
+			"graduateYear": "Graduate year",
+			"institution": "Institution",
+			"qualification": "Qualification"
+		},
+		"add": {
+			"pageTitle": "Add education",
+			"institution": "Institution",
+			"qualification": "Qualification",
+			"graduateYear": "Graduate year",
+			"specialty": "Specialty",
+			"user": "User"
+		},
+		"edit": {
+			"pageTitle": "Edit educations",
+			"institution": "Institution",
+			"qualification": "Qualification",
+			"graduateYear": "Graduate year",
+			"specialty": "Specialty",
+			"user": "User"
+		},
+		"single": {
+			"pageTitle": "Education page",
+			"info": {
+				"id": "<0>ID: <1>{{id}}</1></0>",
+				"institution": "<0>Institution: <1>{{institution}}</1></0>",
+				"user": "<0>User: <1>{{user}}</1></0>",
+				"qualification": "<0>Qualification: <1>{{qualification}}</1></0>",
+				"specialty": "<0>Specialty: <1>{{specialty}}</1></0>",
+				"graduateYear": "<0>Graduate year: <1>{{graduateYear}}</1></0>"
+			}
+		}
+	},
+
+	"internships": {
+		"name": "Internships",
+		"all": {
+			"pageTitle": "Internships",
+			"noForm": "internships",
+			"filterUser": "User",
+			"filterCategory": "Category",
+			"filterTheme": "Internship theme",
+			"filterFrom": "From",
+			"filterTo": "To",
+			"filterHoursMore": "Hours more than",
+			"filterHoursLess": "Hours less than",
+			"user": "User",
+			"category": "Category",
+			"title": "Theme",
+			"hours": "Hours",
+			"to": "To"
+		},
+		"add": {
+			"pageTitle": "Add internship",
+			"code": "Code",
+			"place": "Place",
+			"title": "Theme",
+			"category": "Category",
+			"user": "User",
+			"from": "From",
+			"to": "To",
+			"hours": "Hours",
+			"credits": "Credits"
+		},
+		"edit": {
+			"pageTitle": "Edit internship",
+			"code": "Code",
+			"place": "Place",
+			"title": "Theme",
+			"category": "Category",
+			"user": "User",
+			"from": "From",
+			"to": "To",
+			"hours": "Hours",
+			"credits": "Credits"
+		},
+		"import": {"pageTitle": "Internships import"},
+		"single": {
+			"pageTitle": "Internship page",
+			"info": {
+				"id": "<0>ID: <1>{{id}}</1></0>",
+				"user": "<0>User: <1>{{user}}</1></0>",
+				"title": "<0>Theme: <1>{{title}}</1></0>",
+				"category": "<0>Category: <1>{{category}}</1></0>",
+				"place": "<0>Place: <1>{{place}}</1></0>",
+				"from": "<0>From: <1>{{from}}</1></0>",
+				"to": "<0>To: <1>{{to}}</1></0>",
+				"hours": "<0>Hours: <1>{{hours}}</1></0>",
+				"credits": "<0>Credits: <1>{{credits}}</1></0>",
+				"code": "<0>Code: <1>{{code}}</1></0>"
+			}
+		}
+	},
+
+	"qualifications": {
+		"name": "Upgrades",
+		"all": {
+			"pageTitle": "Upgrades",
+			"noForm": "upgrades",
+			"filterUser": "User",
+			"filterName": "Category",
+			"filterFrom": "From",
+			"filterTo": "To",
+			"user": "User",
+			"name": "Category",
+			"date": "Date"
+		},
+		"add": {
+			"pageTitle": "Add upgrade",
+			"user": "User",
+			"name": "Category",
+			"date": "Date",
+			"description": "Description"
+		},
+		"edit": {
+			"pageTitle": "Edit upgrade",
+			"user": "User",
+			"date": "Date",
+			"name": "Category",
+			"description": "Description"
+		},
+		"import": {"pageTitle": "Upgrades import"},
+		"single": {
+			"pageTitle": "Upgrade page",
+			"info": {
+				"id": "<0>ID: <1>{{id}}</1></0>",
+				"user": "<0>User: <1>{{user}}</1></0>",
+				"name": "<0>Category: <1>{{name}}</1></0>",
+				"date": "<0>Date: <1>{{date}}</1></0>",
+				"description": "<0>Description: <1>{{description}}</1></0>"
+			}
+		}
+	},
+
+	"users": {
+		"name": "Users",
+		"add": {
+			"pageTitle": "Add user",
+			"fullName": "Full name",
+			"email": "Email",
+			"commission": "Commission",
+			"department": "Department",
+			"password": "Password",
+			"confirm": "Confirm password"
+		},
+		"all": {
+			"pageTitle": "Users",
+			"filterName": "Name",
+			"filterEmail": "Email",
+			"filterCommission": "Commission",
+			"filterDepartment": "Department",
+			"filterRank": "Rank",
+			"filterTitle": "Pedagogical title",
+			"filterCategory": "Category",
+			"name": "Full name",
+			"email": "Email",
+			"avatar": "Avatar",
+			"noForm": "users"
+		},
+		"modal": {
+			"personal": "Personal",
+			"fieldName": "Field",
+			"fieldValue": "Value",
+			"fullName": "Full name",
+			"email": "Email",
+			"address": "Address",
+			"birthday": "Birthday",
+			"phone": "Phone",
+			"professional": "Professional",
+			"commission": "Commission",
+			"department": "Department",
+			"category": "Category",
+			"pedagogicalTitle": "Pedagogical title",
+			"rank": "Rank",
+			"experience": "Experience"
+		},
+		"edit": {
+			"pageTitle": "Edit user",
+			"personal": "Personal",
+			"professional": "Professional",
+			"fullName": "Full name",
+			"email": "Email",
+			"birthday": "Birthday",
+			"phone": "Phone",
+			"password": "Password",
+			"confirm": "Confirm password",
+			"address": "Address",
+			"avatar": "Choose avatar",
+			"department": "Department",
+			"commission": "Commission",
+			"rank": "Rank",
+			"role": "Role",
+			"year": "Year of hiring",
+			"pedagogical": "Pedagogical title",
+			"experience": "Experience",
+			"academic": "Academic title",
+			"academicYear": "Year of establishment of the academic title",
+			"scientificDegree": "Scientific degree",
+			"scientificDegreeYear": "Year of establishment of the scientific degree"
 		}
 	}
 }

@@ -45,10 +45,10 @@ const QualificationsFilterForm: React.FC<IQualificationsFilterProps> = ({handleS
 							label={t('profile.tabs.qualifications.category')}
 						>
 							<option value={-1}>{t('common.all')}</option>
-							<option value={0}>{t('profile.tabs.qualifications.categories.0')}</option>
-							<option value={1}>{t('profile.tabs.qualifications.categories.1')}</option>
-							<option value={2}>{t('profile.tabs.qualifications.categories.2')}</option>
-							<option value={3}>{t('profile.tabs.qualifications.categories.3')}</option>
+							<option value={0}>{t('common.categories.0')}</option>
+							<option value={1}>{t('common.categories.1')}</option>
+							<option value={2}>{t('common.categories.2')}</option>
+							<option value={3}>{t('common.categories.3')}</option>
 						</Field>
 					</Row>
 				)}

@@ -43,10 +43,10 @@ const EducationsFilterForm: React.FC<IEducationsFilterProps> = ({handleSubmit, i
 							label={t('profile.tabs.educations.qualification')}
 							onlyInvalid
 						>
-							<option selected value={-1}>{t('profile.tabs.educations.qualList.0')}</option>
-							<option value={0}>{t('profile.tabs.educations.qualList.1')}</option>
-							<option value={1}>{t('profile.tabs.educations.qualList.2')}</option>
-							<option value={2}>{t('profile.tabs.educations.qualList.3')}</option>
+							<option selected value={-1}>{t('common.all')}</option>
+							<option value={0}>{t('common.qualList.0')}</option>
+							<option value={1}>{t('common.qualList.1')}</option>
+							<option value={2}>{t('common.qualList.2')}</option>
 						</Field>
 					</Row>
 				)}
