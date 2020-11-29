@@ -1,3 +1,630 @@
 {
+	"common": {
+		"edit": "Редагувати",
+		"import": "Імпорт",
+		"export": "Експорт",
+		"avatar": "Аватар",
+		"notSetted": "Не встановлено",
+		"search": "Пошук",
+		"actions": "Дії",
+		"noItems": "Немає {{what}} які підходять на цей фільтр",
+		"from": "З",
+		"to": "До",
+		"all": "Всі",
+		"save": "Зберегти",
+		"add": "Додати",
+		"downloadExample": "Завантажити зразок",
+		"importFile": "Оберіть файл для імпорту",
+		"install": "+ Встановити",
+		"notExists": "Такого немає",
+		"roles": {
+			"admin": "Адмін",
+			"moderator": "Модератор",
+			"viewer": "Переглядач",
+			"user": "Користувач"
+		},
+		"pedTitles": {
+			"methodist": "Викладач методист",
+			"higher": "Старший викладач"
+		},
+		"academicStatus": {
+			"candidate": "Кандидат наук",
+			"doctor": "Доктор наук"
+		},
+		"scientific": {
+			"docent": "Доцент",
+			"searcher": "Старший досліджувач",
+			"professor": "Професор"
+		},
+		"categories": ["Спеціаліст", "Спеціаліст 2 категорії", "Спеціаліст 1 категорії", "Спеціаліст вищої категорії"],
+		"qualList": ["Молодший спеціаліст", "Бакалавр", "Магістр"]
+	},
 
+	"messages": {
+		"categories": {
+			"add": "Категорія стажувань створена",
+			"delete": "Категорія стажувань з id {{id}} видалена",
+			"edit": "Категорія стажування відредагована"
+		},
+		"commissions": {
+			"add": "Комісія створена",
+			"delete": "Комісія з id {{id}} видалена",
+			"edit": "Комісія відредагована"
+		},
+		"departments": {
+			"add": "Відділення створено",
+			"delete": "Відділення з id {{id}} видалено",
+			"edit": "Відділення відредаговано"
+		},
+		"educations": {
+			"add": "Освіта створена",
+			"delete": "Освіта з id {{id}} видалено",
+			"edit": "Освіта відредагована"
+		},
+		"honors": {
+			"add": "Нагорода створена",
+			"delete": "Нагорода з id {{id}} видалена",
+			"edit": "Нагорода відредагована",
+			"import": "Нагороди імпортовані"
+		},
+		"internships": {
+			"add": "Стажування створена",
+			"delete": "Стажування з id {{id}} видалена",
+			"edit": "Стажування відредагована",
+			"import": "Стажування імпортовані"
+		},
+		"profileEdit": "Профіль відредаговано",
+		"userInfoError": "Помилка завантаження профіля користувача",
+		"publications": {
+			"add": "Публікація створена",
+			"delete": "Публікація с id {{id}} видалена",
+			"edit": "Публікація відредагована",
+			"import": "Публікації імпортовано"
+		},
+		"qualifications": {
+			"add": "Підвищення кваліфікації створено",
+			"delete": "Підвищення кваліфікації с id {{id}} видалено",
+			"edit": "Підвищення кваліфікації відредаговано",
+			"import": "Підвищення кваліфікації імпортовані"
+		},
+		"ranks": {
+			"add": "Посада створена",
+			"delete": "Посада з id {{id}} видалена",
+			"edit": "Посада відредагована"
+		},
+		"rebukes": {
+			"add": "Догана створена",
+			"delete": "Догана з id {{id}} видалена",
+			"edit": "Догана відредагована",
+			"import": "Догани імпортовані"
+		},
+		"users": {
+			"add": "Користувач створений",
+			"delete": "Користувач з id {{id}} видалений",
+			"edit": "Користувач відредагований",
+			"import": "Користувачі імпортовані"
+		}
+	},
+
+	"validators": {
+		"date": "Поле має бути валідною датою",
+		"dateMore": "Поле має бути більше {{field}}",
+		"dateMore_equal": "Поле має бути більше або рівне {{field}}",
+		"email": "Поле має бути email",
+		"lengthIn": "Поле має мати значення",
+		"lengthIn_from": "$t(validators.lengthIn) від {{min}}",
+		"lengthIn_to": "$t(validators.lengthIn) до {{max}}",
+		"lengthIn_from_to": "$t(validators.lengthIn) від {{min}} до {{max}}",
+		"phone": "Поле має бути телефоном",
+		"positive": "Поле має бути додатнє число",
+		"required": "Поле обов'язкове для заповнення",
+		"sameAs": "Поле повинно співпадати з {{field}}",
+		"url": "Поле має бути url",
+		"year": "Поле має бути валідним роком"
+	},
+
+	"layout": {
+		"footer": {
+			"copyright": "Copyright © <1>{{year}}</1> by <0>Yuri Prisyazhnyy.</1>",
+			"rights": "Всі права захищені"
+		},
+		"header": {
+			"profile": "Профіль",
+			"exit": "Вийти"
+		},
+		"sidebar": {
+			"menu": "Навігаційне меню",
+			"admin": "Адмін панель",
+			"profile": "Профіль",
+			"departments": "Відділ",
+			"commissions": "Комісії",
+			"ranks": "Посади",
+			"publications": "Публікації",
+			"categories": "Категорії стажувань",
+			"honors": "Нагороди",
+			"rebukes": "Посада",
+			"educations": "Освіта",
+			"internships": "Стажування",
+			"qualifications": "Підвищення категорії",
+			"users": "Користувачі"
+		}
+	},
+
+	"home": {
+		"hello": "Привіт, це адмінка"
+	},
+
+	"login": {
+		"authorization": "Авторизація",
+		"password": "Пароль",
+		"enter": "Ввійти"
+	},
+	"profile": {
+		"pageLabel": "Профіль користувача",
+		"pageTitle": "Профіль",
+		"info": {
+			"fullName": "<0>Ім'я: <1>{{fullName}}</1></0>",
+			"birthday": "<0>День народження: <1>{{birthday}}</1></0>",
+			"email": "<0>Email: <1>{{email}}</1></0>",
+			"address": "<0>Адреса: <1>{{address}}</1></0>",
+			"role": "<0>Роль: <1>{{role}}</1></0>",
+			"department": "<0>Відділ: <1>{{department}}</1></0>",
+			"commission": "<0>Комісія: <1>{{commission}}</1></0>",
+			"rank": "<0>Посада: <1>{{rank}}</1></0>",
+			"pedagogicalTitle": "<0>Педагогічне звання: <1>{{pedTitle}}</1></0>",
+			"experience": "<0>Досвід: <1>{{experience}}</1></0>"
+		},
+		"tabs": {
+			"publications": {
+				"title": "Публікації",
+				"publicationName": "Назва публікації",
+				"authors": "Автори",
+				"publicationDate": "Дата публікації"
+			},
+			"internships": {
+				"title": "Стажування",
+				"hoursFromLast": "Годин з останнього підвищення кваліфікації: {{hours}}",
+				"category": "Категорія",
+				"theme": "Тема",
+				"hoursMore": "Кількість годин більше",
+				"hoursLess": "Кількість годин менше",
+				"hoursCount": "Кількість годин",
+				"endDate": "Дата закінчення"
+			},
+			"qualifications": {
+				"title": "Підвищення кваліфікації",
+				"nextDate": "Термін наступної кваліфікації: {{nextDate}}",
+				"category": "Категорія",
+				"date": "Дата"
+			},
+			"honors": {
+				"title": "Нагороди",
+				"honorName": "Назва нагороди",
+				"presDate": "Дата видачі",
+				"honorType": "Тип нагороди"
+			},
+			"rebukes": {
+				"title": "Догани",
+				"rebukeName": "Назва догани",
+				"date": "Дата"
+			},
+			"educations": {
+				"title": "Освіта",
+				"qualification": "Кваліфікація",
+				"institutionName": "Навчальний заклад",
+				"graduateYear": "Рік випуску"
+			}
+		}
+	},
+
+	"profileEdit": {
+		"pageTitle": "Редагування профілю",
+		"password": "Новий пароль",
+		"confirmPassword": "Повторіть пароль",
+		"phone": "Телефон",
+		"address": "Адреса",
+		"birthday": "Дата народження",
+		"avatar": "Перетягніть або оберіть аватар"
+	},
+
+	"commissions": {
+		"name": "Циклові комісії",
+		"all": {
+			"pageTitle": "Циклові комісії",
+			"filterName": "Пошук по назві комісії",
+			"name": "Назва",
+			"noForm": "циклові комісії"
+		},
+		"add": {
+			"pageTitle": "Додати циклову комісію",
+			"name": "Назва циклової комісії"
+		},
+		"edit": {
+			"pageTitle": "Редагувати циклову комісію",
+			"name": "Назва циклової комісії"
+		}
+	},
+
+	"departments": {
+		"name": "Відділення",
+		"all": {
+			"pageTitle": "Відділення",
+			"filterName": "Пошук по назві відділення",
+			"name": "Назва",
+			"noForm": "відділень"
+		},
+		"add": {
+			"pageTitle": "Додати відділ",
+			"name": "Назва відділу"
+		},
+		"edit": {
+			"pageTitle": "Редагувати відділ",
+			"name": "Назва відділу"
+		}
+	},
+
+	"ranks": {
+		"name": "Посади",
+		"all": {
+			"pageTitle": "Посади",
+			"filterName": "Пошук по назві посади",
+			"name": "Назва",
+			"noForm": "посад"
+		},
+		"add": {
+			"pageTitle": "Додати посаду",
+			"name": "Назва посади"
+		},
+		"edit": {
+			"pageTitle": "Редагувати посаду",
+			"name": "Назва посади"
+		}
+	},
+
+	"publications": {
+		"name": "Публікації",
+		"all": {
+			"pageTitle": "Публікації",
+			"filterName": "Пошук по назві",
+			"name": "Назва публікації",
+			"authors": "Автори",
+			"date": "Дата публікації",
+			"filterFrom": "З",
+			"filterTo": "До",
+			"filterUser": "Пошук по автору",
+			"noForm": "публікацій"
+		},
+		"add": {
+			"pageTitle": "Додати публікацію",
+			"name": "Назва публікації",
+			"date": "Дата публікації",
+			"publisher": "Видавець",
+			"authors": "Автори",
+			"anotherAuthors": "Інші автори",
+			"url": "URL"
+		},
+		"edit": {
+			"pageTitle": "Редагувати публікацію",
+			"name": "Назва публикації",
+			"date": "Дата публікації",
+			"publisher": "Видавець",
+			"authors": "Автори",
+			"anotherAuthors": "Інші автори",
+			"url": "URL"
+		},
+		"single": {
+			"pageTitle": "Сторінка публікацій",
+			"info": {
+				"id": "<0>ID: <1>{{id}}</1></0>",
+				"title": "<0>Назва: <1>{{title}}</1></0>",
+				"authors": "<0>Автори: <1>{{authors}}</1></0>",
+				"date": "<0>Дата публікації: <1>{{authors}}</1></0>",
+				"publisher": "<0>Видавець: <1>{{publisher}}</1></0>",
+				"url": "<0>URL: <2><1>{{url}}</1></2></0>",
+				"description": "<0>Опис: <1>{{description}}</1></0>"
+			}
+		},
+		"import": {"pageTitle": "Імпорт публікацій"}
+	},
+
+	"categories": {
+		"name": "Категорії стажувань",
+		"all": {
+			"pageTitle": "Категорії стажувань",
+			"filterName": "Пошук по назві стажування",
+			"name": "Назва",
+			"noForm": "категорії стажувань"
+		},
+		"add": {
+			"pageTitle": "Добавіть категорію",
+			"name": "Назва категорії"
+		},
+		"edit": {
+			"pageTitle": "Редагувати категорію",
+			"name": "Назва категорії"
+		}
+	},
+
+	"honors": {
+		"name": "Нагороди",
+		"all": {
+			"pageTitle": "Нагороди",
+			"noForm": "нагороди",
+			"filterUser": "Пошук по користувачу",
+			"filterName": "Пошук по назві",
+			"filterTo": "З",
+			"filterFrom": "До",
+			"user": "Користувач",
+			"title": "Назва",
+			"date": "Дата вручення"
+		},
+		"add": {
+			"pageTitle": "Додати нагороду",
+			"title": "Назва",
+			"order": "Номер",
+			"date": "Дата вручення",
+			"user": "Користувач"
+		},
+		"edit": {
+			"pageTitle": "Редагувати нагороду",
+			"title": "Назва",
+			"order": "Номер",
+			"date": "Дата вручення",
+			"user": "Користувач"
+		},
+		"single": {
+			"pageTitle": "Сторінка нагороди",
+			"info": {"id": "<0>ID: <1>{{id}}</1></0>"}
+		},
+		"import": {"pageTitle": "Імпорт нагород"}
+	},
+
+	"rebukes": {
+		"name": "Догани",
+		"all": {
+			"pageTitle": "Догани",
+			"noForm": "догани",
+			"filterUser": "Пошук по користувачу",
+			"filterName": "Пошук по назві",
+			"filterTo": "З",
+			"filterFrom": "До",
+			"user": "Користувач",
+			"title": "Назва",
+			"date": "Дата вручення"
+		},
+		"add": {
+			"pageTitle": "Додати догану",
+			"title": "Назва",
+			"order": "Номер",
+			"date": "Дата вручення",
+			"user": "Користувач"
+		},
+		"edit": {
+			"pageTitle": "Редагувати догану",
+			"title": "Назва",
+			"order": "Номер",
+			"date": "Дата вручення",
+			"user": "Користувач"
+		},
+		"single": {
+			"pageTitle": "Сторінка догани",
+			"info": {"id": "<0>ID: <1>{{id}}</1></0>"}
+		},
+		"import": {
+			"pageTitle": "Імпорт доган"
+		}
+	},
+
+	"educations": {
+		"name": "Освіти",
+		"all": {
+			"pageTitle": "Освіти",
+			"noForm": "освіти",
+			"filterUser": "Пошук по користувачу",
+			"filterInstitution": "Пошук по закладу",
+			"filterQualification": "Пошук по кваліфікації",
+			"filterGraduateFrom": "Випуск з",
+			"filterGraduateTo": "Випуск до",
+			"filterSpecialty": "Спеціальність",
+			"user": "Користувач",
+			"graduateYear": "Год випуску",
+			"institution": "Заклад",
+			"qualification": "Кваліфікація"
+		},
+		"add": {
+			"pageTitle": "Додати освіту",
+			"institution": "Заклад освіти",
+			"qualification": "Кваліфікація",
+			"graduateYear": "Випуск",
+			"specialty": "Спеціальність",
+			"user": "Користувач"
+		},
+		"edit": {
+			"pageTitle": "Редагувати освіту",
+			"institution": "Заклад освіти",
+			"qualification": "Кваліфікація",
+			"graduateYear": "Випуск",
+			"specialty": "Спеціальність",
+			"user": "Користувач"
+		},
+		"single": {
+			"pageTitle": "Сторінка освіти",
+			"info": {
+				"id": "<0>ID: <1>{{id}}</1></0>",
+				"institution": "<0>Навчальний заклад: <1>{{institution}}</1></0>",
+				"user": "<0>Користувач: <1>{{user}}</1></0>",
+				"qualification": "<0>Кваліфікація: <1>{{qualification}}</1></0>",
+				"specialty": "<0>Спеціальність: <1>{{specialty}}</1></0>",
+				"graduateYear": "<0>Рік випуску: <1>{{graduateYear}}</1></0>"
+			}
+		}
+	},
+
+	"internships": {
+		"name": "Стажування",
+		"all": {
+			"pageTitle": "Стажування",
+			"noForm": "стажування",
+			"filterUser": "Пошук по користувачу",
+			"filterCategory": "Пошук по категорії",
+			"filterTheme": "Поиск по темі стажування",
+			"filterFrom": "З",
+			"filterTo": "До",
+			"filterHoursMore": "Годин більше ніж",
+			"filterHoursLess": "Годин менше ніж",
+			"user": "Користувач",
+			"category": "Категорія",
+			"title": "Тема",
+			"hours": "Годин",
+			"to": "Дата закінчення"
+		},
+		"add": {
+			"pageTitle": "Додати стажування",
+			"code": "Код",
+			"place": "Місце",
+			"title": "Тема",
+			"category": "Категорія",
+			"user": "Користувач",
+			"from": "З",
+			"to": "До",
+			"hours": "Години",
+			"credits": "Кредити"
+		},
+		"edit": {
+			"pageTitle": "Редагувати стажування",
+			"code": "Код",
+			"place": "Місце",
+			"title": "Тема",
+			"category": "Категорія",
+			"user": "Користувач",
+			"from": "З",
+			"to": "До",
+			"hours": "Години",
+			"credits": "Кредити"
+		},
+		"import": {"pageTitle": "Імпорт стажувань"},
+		"single": {
+			"pageTitle": "Сторінка стажування",
+			"info": {
+				"id": "<0>ID: <1>{{id}}</1></0>",
+				"user": "<0>Користувач: <1>{{user}}</1></0>",
+				"title": "<0>Тема стажування: <1>{{title}}</1></0>",
+				"category": "<0>Категорія: <1>{{category}}</1></0>",
+				"place": "<0>Місце стажування: <1>{{place}}</1></0>",
+				"from": "<0>З: <1>{{from}}</1></0>",
+				"to": "<0>До: <1>{{to}}</1></0>",
+				"hours": "<0>Години: <1>{{hours}}</1></0>",
+				"credits": "<0>Кредити: <1>{{credits}}</1></0>",
+				"code": "<0>Код: <1>{{code}}</1></0>"
+			}
+		}
+	},
+
+	"qualifications": {
+		"name": "Підвищення категорій",
+		"all": {
+			"pageTitle": "Підвищення категорій",
+			"noForm": "підвищень",
+			"filterUser": "Пошук по користувачу",
+			"filterName": "Пошук по категорії",
+			"filterFrom": "З",
+			"filterTo": "До",
+			"user": "Користувач",
+			"name": "Категорія",
+			"date": "Дата"
+		},
+		"add": {
+			"pageTitle": "Додати підвищення",
+			"user": "Користувач",
+			"name": "Категорія",
+			"date": "Дата підвищення",
+			"description": "Опис"
+		},
+		"edit": {
+			"pageTitle": "Редагувати підвищення",
+			"user": "Користувач",
+			"date": "Дата",
+			"name": "Категорія",
+			"description": "Опис"
+		},
+		"import": {"pageTitle": "Імпорт підвищень категорій"},
+		"single": {
+			"pageTitle": "Сторінка підвищення категорії",
+			"info": {
+				"id": "<0>ID: <1>{{id}}</1></0>",
+				"user": "<0>Користувач: <1>{{user}}</1></0>",
+				"name": "<0>Категорія: <1>{{name}}</1></0>",
+				"date": "<0>Дата: <1>{{date}}</1></0>",
+				"description": "<0>Опис: <1>{{description}}</1></0>"
+			}
+		}
+	},
+
+	"users": {
+		"name": "Користувачі",
+		"add": {
+			"pageTitle": "Добавить пользователя",
+			"fullName": "ФИО",
+			"email": "Email",
+			"commission": "Комісія",
+			"department": "Відділення",
+			"password": "Пароль",
+			"confirm": "Повторите пароль"
+		},
+		"all": {
+			"pageTitle": "Користувачі",
+			"filterName": "Пошук по імені",
+			"filterEmail": "Пошук по email",
+			"filterCommission": "Пошук по комісії",
+			"filterDepartment": "Пошук по відділенню",
+			"filterRank": "Пошук по посаді",
+			"filterTitle": "Пошук по пед званню",
+			"filterCategory": "Пошук по категорії",
+			"name": "Ім'я",
+			"email": "Email",
+			"avatar": "Аватар",
+			"noForm": "користувачів"
+		},
+		"modal": {
+			"personal": "Особиста",
+			"fieldName": "Поле",
+			"fieldValue": "Значення",
+			"fullName": "ФІО",
+			"email": "Email",
+			"address": "Адреса",
+			"birthday": "День народження",
+			"phone": "Телефон",
+			"professional": "Професійна",
+			"commission": "Комісія",
+			"department": "Відділення",
+			"category": "Категорія",
+			"pedagogicalTitle": "Педагогічне звання",
+			"rank": "Посада",
+			"experience": "Досвіт"
+		},
+		"edit": {
+			"pageTitle": "Редагування користувача",
+			"personal": "Особиста",
+			"professional": "Професійна",
+			"fullName": "ФІО",
+			"email": "Email",
+			"birthday": "День народження",
+			"phone": "Телефон",
+			"password": "Пароль",
+			"confirm": "Підтвердження паролю",
+			"address": "Адреса",
+			"avatar": "Оберіть аватар",
+			"department": "Відділення",
+			"commission": "Комісія",
+			"rank": "Посада",
+			"role": "Роль",
+			"year": "Рік прийняття на роботу",
+			"pedagogical": "Педагогічне звання",
+			"experience": "Досвід",
+			"academic": "Академічне звання",
+			"academicYear": "Рік встановлення академ звання",
+			"scientificDegree": "Наукова ступінь",
+			"scientificDegreeYear": "Рік встановлення наукової ступені"
+		}
+	}
 }
