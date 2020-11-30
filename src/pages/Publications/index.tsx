@@ -8,9 +8,6 @@ import AddPublicationPage from './add';
 import SinglePublicationPage from './single';
 import ImportPublicationPage from './import';
 
-import IsUserRoleMore from '../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../utils/helpers/RoleCodeToName';
-
 
 const Publications: React.FC<{}> = () => (
 	<Switch>
@@ -23,4 +20,4 @@ const Publications: React.FC<{}> = () => (
 	</Switch>
 );
 
-export default IsUserRoleMore(Roles.VIEWER, true)(Publications);
+export default Publications;

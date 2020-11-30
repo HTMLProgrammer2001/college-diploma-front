@@ -14,6 +14,7 @@ import UserCan from '../../../common/UserCan';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
 import {selectAllPublicationsPagination} from '../../../redux/publications/all/selectors';
 import thunkAllPublications from '../../../redux/publications/all/thunks';
+import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -81,4 +82,4 @@ const AllPublicationsPage: React.FC<IAllPublicationsPageProps> = ({changePage, p
 	);
 };
 
-export default connected(AllPublicationsPage);
+export default IsUserRoleMore(Roles.VIEWER, true)(connected(AllPublicationsPage));

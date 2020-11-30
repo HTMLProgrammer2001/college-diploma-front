@@ -8,9 +8,6 @@ import AddInternshipPage from './add';
 import SingleInternshipPage from './single';
 import ImportInternshipPage from './import';
 
-import IsUserRoleMore from '../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../utils/helpers/RoleCodeToName';
-
 
 const Internships: React.FC<{}> = () => (
 	<Switch>
@@ -23,4 +20,4 @@ const Internships: React.FC<{}> = () => (
 	</Switch>
 );
 
-export default IsUserRoleMore(Roles.VIEWER, true)(Internships);
+export default Internships;

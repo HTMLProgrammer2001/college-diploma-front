@@ -4,6 +4,7 @@ import {connect, ConnectedProps} from 'react-redux';
 import {RouteComponentProps} from 'react-router-dom';
 import {isSubmitting, submit} from 'redux-form';
 import {useTranslation} from 'react-i18next';
+import {compose} from 'redux';
 
 import {RootState} from '../../../redux';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
@@ -97,4 +98,7 @@ const EditInternshipPage: React.FC<IEditInternshipPageProps> = ({editState, load
 	);
 };
 
-export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditInternshipPage));
+export default compose<React.FC<IEditInternshipPageProps>>(
+	IsUserRoleMore(Roles.MODERATOR, true),
+	connected
+)(EditInternshipPage);

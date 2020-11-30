@@ -3,6 +3,7 @@ import {Button, Card, Row} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
+import {compose} from 'redux';
 
 import {RootState} from '../../../redux';
 
@@ -10,11 +11,12 @@ import BackButton from '../../../common/BackButton';
 import Paginator from '../../../common/Paginator';
 import InternshipsFilterForm from './InternshipsFilterForm';
 import InternshipsTable from './InternshipsTable';
-
 import UserCan from '../../../common/UserCan';
+
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
 import {selectAllInternshipsPagination} from '../../../redux/internships/all/selectors';
 import thunkAllInternships from '../../../redux/internships/all/thunks';
+import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -82,4 +84,7 @@ const AllInternshipsPage: React.FC<IAllInternshipsPageProps> = ({changePage, pag
 	);
 };
 
-export default connected(AllInternshipsPage);
+export default compose<React.FC<IAllInternshipsPageProps>>(
+	IsUserRoleMore(Roles.VIEWER, true),
+	connected
+)(AllInternshipsPage);

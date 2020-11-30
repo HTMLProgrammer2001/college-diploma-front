@@ -1,22 +1,14 @@
-import React, {lazy, useState, Suspense} from 'react';
-import {Switch, Route} from 'react-router-dom';
+import React, {useState} from 'react';
 import {Provider} from 'react-redux';
 import {ToastContainer} from 'react-toastify';
 import {I18nextProvider} from 'react-i18next';
-import {ConnectedRouter} from 'connected-react-router';
 
-import store, {myHistory} from './redux/';
+import store from './redux/';
 import i18n from './translate';
 
 import MenuContext, {IMenuContextData} from './utils/contexts/MenuContext';
-import NotFoundPage from './pages/ErrorPages/NotFoundPage';
-import Loader from './common/Loader/Loader';
-import AdminRoutes from './AdminRoutes';
 import DownloadContext, {IDownloadContextData} from './utils/contexts/DownloadContext';
-
-
-//pages
-const LoginPage = lazy(() => import('./pages/LoginPage'));
+import MainRouter from './MainRouter';
 
 
 const App = () => {
@@ -44,16 +36,7 @@ const App = () => {
 			<MenuContext.Provider value={menuContextData}>
 				<DownloadContext.Provider value={downloadContextData}>
 					<I18nextProvider i18n={i18n}>
-						<ConnectedRouter history={myHistory}>
-							<Suspense fallback={<Loader/>}>
-								<Switch>
-									<Route path="/login" exact component={LoginPage}/>
-									<Route path="/" component={AdminRoutes}/>
-									<Route path="/" component={NotFoundPage}/>
-								</Switch>
-							</Suspense>
-							)}/>
-						</ConnectedRouter>
+						<MainRouter/>
 					</I18nextProvider>
 				</DownloadContext.Provider>
 			</MenuContext.Provider>

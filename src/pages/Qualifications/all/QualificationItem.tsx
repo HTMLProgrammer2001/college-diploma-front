@@ -5,6 +5,7 @@ import {Spinner} from 'react-bootstrap';
 import {Roles} from '../../../utils/helpers/RoleCodeToName';
 import UserCan from '../../../common/UserCan';
 import {IQualification} from '../../../interfaces/models/IQualification';
+import categoriesCodeToName from '../../../utils/helpers/categoriesCodeToName';
 
 
 type IQualificationItemProps = {
@@ -17,7 +18,7 @@ const QualificationItem: React.FC<IQualificationItemProps> = ({qualification, is
 	<tr>
 		<th>{qualification.id}</th>
 		<th>{qualification.user.fullName}</th>
-		<th>{qualification.name}</th>
+		<th>{categoriesCodeToName(qualification.name)}</th>
 		<th>{qualification.date}</th>
 		<th>
 			<UserCan role={Roles.VIEWER}>
@@ -45,3 +46,4 @@ const QualificationItem: React.FC<IQualificationItemProps> = ({qualification, is
 );
 
 export default QualificationItem;
+

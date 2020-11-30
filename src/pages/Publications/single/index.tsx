@@ -12,6 +12,7 @@ import Loader from '../../../common/Loader/Loader';
 import PublicationInfo from './PublicationInfo';
 import thunkSinglePublication from '../../../redux/publications/single/thunks';
 import ErrorElement from '../../../common/ErrorElement';
+import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 
 
 const mapStateToProps = (state: RootState) => ({
