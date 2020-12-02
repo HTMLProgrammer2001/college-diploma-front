@@ -60,7 +60,7 @@ const AddRebukePage: React.FC<IAddRebukePageProps> = ({add, send, submitting}) =
 	);
 };
 
-export default compose(
+export default compose<React.FC<IAddRebukePageProps>>(
 	IsUserRoleMore(Roles.MODERATOR, true),
 	connected
 )(AddRebukePage);

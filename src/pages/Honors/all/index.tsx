@@ -83,7 +83,7 @@ const AllHonorsPage: React.FC<IAllHonorsPageProps> = ({changePage, paginator}) =
 	);
 };
 
-export default compose(
+export default compose<React.FC<IAllHonorsPageProps>>(
 	IsUserRoleMore(Roles.VIEWER, true),
 	connected
 )(AllHonorsPage);

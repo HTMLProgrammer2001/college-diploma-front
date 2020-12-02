@@ -97,7 +97,7 @@ const EditHonorPage: React.FC<IEditHonorPageProps> = ({editState, loadHonor, ...
 	);
 };
 
-export default compose(
+export default compose<React.FC<IEditHonorPageProps>>(
 	IsUserRoleMore(Roles.MODERATOR, true),
 	connected
 )(EditHonorPage);

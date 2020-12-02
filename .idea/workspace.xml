@@ -2,85 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57a409a2-1ea6-4331-ae71-85b96f4252a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/helpers/converters/qualificationToName.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Header/UserDropdown/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Header/UserDropdown/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Sidebar/Links/AdminUserLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Sidebar/Links/AdminUserLinks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Sidebar/Links/ModeratorUserLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Sidebar/Links/ModeratorUserLinks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Sidebar/Links/ViewerUserLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Sidebar/Links/ViewerUserLinks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Categories/add/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Categories/add/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Categories/all/CategoryItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Categories/all/CategoryItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Categories/all/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Categories/all/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Categories/edit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Categories/edit/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Categories/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Categories/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Commissions/add/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Commissions/add/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Commissions/all/CommissionItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Commissions/all/CommissionItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Commissions/all/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Commissions/all/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Commissions/edit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Commissions/edit/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Commissions/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Commissions/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Departments/add/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Departments/add/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Departments/all/DepartmentItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Departments/all/DepartmentItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Departments/all/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Departments/all/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Departments/edit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Departments/edit/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Departments/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Departments/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Educations/add/AddEducationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Educations/add/AddEducationForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Educations/add/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Educations/add/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Educations/all/EducationItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Educations/all/EducationItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Educations/all/EducationsFilterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Educations/all/EducationsFilterForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Educations/all/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Educations/all/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Educations/edit/EditEducationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Educations/edit/EditEducationForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Educations/edit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Educations/edit/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Educations/single/EducationInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Educations/single/EducationInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Educations/single/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Educations/single/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Honors/add/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Honors/add/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Honors/all/HonorItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Honors/all/HonorItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Honors/all/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Honors/all/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Honors/edit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Honors/edit/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Honors/import/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Honors/import/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Honors/single/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Honors/single/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Internships/add/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Internships/add/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Internships/all/InternshipItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Internships/all/InternshipItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Internships/all/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Internships/all/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Internships/edit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Internships/edit/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Internships/import/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Internships/import/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Internships/single/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Internships/single/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/EducationsTab/EducationItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/QualificationsTab/QualificationItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ProfileTabs/QualificationsTab/QualificationItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Publications/add/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/add/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Publications/all/PublicationItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/all/PublicationItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Publications/all/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/all/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Publications/edit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/edit/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Publications/single/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Publications/single/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Qualifications/add/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Qualifications/add/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Qualifications/all/QualificationItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Qualifications/all/QualificationItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Qualifications/all/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Qualifications/all/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Qualifications/edit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Qualifications/edit/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Qualifications/import/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Qualifications/import/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Qualifications/single/QualificationInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Qualifications/single/QualificationInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Qualifications/single/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Qualifications/single/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Ranks/add/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Ranks/add/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Ranks/all/RankItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Ranks/all/RankItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Ranks/all/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Ranks/all/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Ranks/edit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Ranks/edit/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Ranks/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Ranks/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Rebukes/add/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Rebukes/add/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Rebukes/all/RebukeItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Rebukes/all/RebukeItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Rebukes/all/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Rebukes/all/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Rebukes/edit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Rebukes/edit/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Rebukes/import/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Rebukes/import/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Rebukes/single/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Rebukes/single/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/add/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/add/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/all/Modal/UserBody.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/all/Modal/UserBody.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/all/Modal/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/all/Modal/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/all/UserItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/all/UserItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/all/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/all/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/edit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/edit/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/helpers/RoleCodeToName.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers/converters/RoleCodeToName.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/helpers/categoriesCodeToName.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers/converters/categoriesCodeToName.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/helpers/qualificationToName.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,12 +17,12 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/Users/all/Modal/UserBody.tsx">
+        <entry file="file://$PROJECT_DIR$/src/pages/Users/add/index.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="81" column="25" lean-forward="true" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
+            <state relative-caret-position="35">
+              <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,7 +40,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Users</find>
       <find>me</find>
       <find>rebukes</find>
       <find>Rank</find>
@@ -147,9 +69,9 @@
       <find>honor</find>
       <find>Honor</find>
       <find>Rep</find>
+      <find>Publication</find>
     </findStrings>
     <replaceStrings>
-      <replace>Edit</replace>
       <replace>add</replace>
       <replace>internship</replace>
       <replace>QUALIFICATIONS</replace>
@@ -179,6 +101,7 @@
       <replace>education</replace>
       <replace>Internship</replace>
       <replace>Service</replace>
+      <replace>Honor</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -187,14 +110,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pages/Qualifications/import/index.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Qualifications/all/index.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Qualifications/single/QualificationInfo.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Honors/index.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Honors/add/index.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Honors/all/index.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Honors/edit/index.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Honors/import/index.tsx" />
         <option value="$PROJECT_DIR$/server/app/Policies/HonorPolicy.php" />
         <option value="$PROJECT_DIR$/src/pages/Rebukes/index.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Rebukes/add/index.tsx" />
@@ -238,6 +156,11 @@
         <option value="$PROJECT_DIR$/src/utils/helpers/converters/scientificToName.ts" />
         <option value="$PROJECT_DIR$/src/utils/helpers/converters/academicToName.ts" />
         <option value="$PROJECT_DIR$/src/pages/Users/all/Modal/UserBody.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/Honors/all/index.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/Honors/add/index.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/Honors/edit/index.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/Honors/import/index.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/Qualifications/import/index.tsx" />
       </list>
     </option>
   </component>
@@ -397,52 +320,6 @@
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="translations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="Users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="Users" type="462c0819:PsiDirectoryNode" />
-              <item name="all" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="Users" type="462c0819:PsiDirectoryNode" />
-              <item name="all" type="462c0819:PsiDirectoryNode" />
-              <item name="Modal" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -494,13 +371,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.29674488" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.29674488" />
       <window_info id="Structure" order="3" sideWeight="0.5019531" side_tool="true" weight="0.30885693" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.2786325" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.46837607" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003785" side_tool="true" weight="0.5435898" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
@@ -553,73 +429,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/all/QualificationItem.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="19" column="15" lean-forward="true" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/single/QualificationInfo.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="25" column="57" lean-forward="true" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Honors/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Honors/add/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Honors/all/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Honors/edit/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Honors/import/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Rebukes/import/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -758,16 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Honors/single/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Educations/single/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
@@ -788,16 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/single/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Rebukes/single/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -807,8 +596,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="133" column="28" selection-start-line="133" selection-start-column="28" selection-end-line="133" selection-end-column="28" />
+        <state relative-caret-position="298">
+          <caret line="117" column="3" lean-forward="true" selection-start-line="117" selection-start-column="3" selection-end-line="117" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -992,6 +781,96 @@
           <caret line="81" column="25" lean-forward="true" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Honors/add/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="62" column="50" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Honors/all/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Honors/edit/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="101" column="13" lean-forward="true" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Honors/import/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="64" column="54" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Honors/single/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/add/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="63" column="21" lean-forward="true" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/import/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/single/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Users/add/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

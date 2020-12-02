@@ -97,7 +97,7 @@ const EditRebukePage: React.FC<IEditRebukePageProps> = ({editState, loadRebuke, 
 	);
 };
 
-export default compose(
+export default compose<React.FC<IEditRebukePageProps>>(
 	IsUserRoleMore(Roles.MODERATOR, true),
 	connected
 )(EditRebukePage);

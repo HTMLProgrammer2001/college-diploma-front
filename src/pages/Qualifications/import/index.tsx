@@ -63,7 +63,7 @@ const ImportQualificationsPage: React.FC<IImportQualificationsPageProps> = (prop
 	);
 };
 
-export default compose(
+export default compose<React.FC<IImportQualificationsPageProps>>(
 	IsUserRoleMore(Roles.MODERATOR, true),
 	connected
 )(ImportQualificationsPage);

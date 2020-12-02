@@ -24,8 +24,8 @@ const mapStateToProps = (state: RootState) => ({
 
 const connected = connect(mapStateToProps, {changePage: thunkAllRebukes});
 
-type IAllHonorsPageProps = ConnectedProps<typeof connected>;
-const AllHonorsPage: React.FC<IAllHonorsPageProps> = ({changePage, paginator}) => {
+type IAllRebukesPageProps = ConnectedProps<typeof connected>;
+const AllRebukesPage: React.FC<IAllRebukesPageProps> = ({changePage, paginator}) => {
 	const {t} = useTranslation();
 
 	useEffect(() => {
@@ -83,7 +83,7 @@ const AllHonorsPage: React.FC<IAllHonorsPageProps> = ({changePage, paginator}) =
 	);
 };
 
-export default compose(
+export default compose<React.FC<IAllRebukesPageProps>>(
 	IsUserRoleMore(Roles.VIEWER, true),
 	connected
-)(AllHonorsPage);
+)(AllRebukesPage);

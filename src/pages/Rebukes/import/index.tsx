@@ -62,7 +62,7 @@ const ImportRebukesPage: React.FC<IImportRebukesPageProps> = (props) => {
 	);
 };
 
-export default compose(
+export default compose<React.FC<IImportRebukesPageProps>>(
 	IsUserRoleMore(Roles.MODERATOR, true),
 	connected
 )(ImportRebukesPage);

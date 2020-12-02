@@ -22,8 +22,8 @@ const connected = connect(mapStateToProps, {
 	send: submit
 });
 
-type IAddPublicationPageProps = ConnectedProps<typeof connected>;
-const AddPublicationPage: React.FC<IAddPublicationPageProps> = ({add, send, submitting}) => {
+type IAddHonorPageProps = ConnectedProps<typeof connected>;
+const AddHonorPage: React.FC<IAddHonorPageProps> = ({add, send, submitting}) => {
 	const {t} = useTranslation();
 
 	useEffect(() => {
@@ -60,7 +60,7 @@ const AddPublicationPage: React.FC<IAddPublicationPageProps> = ({add, send, subm
 	);
 };
 
-export default compose(
+export default compose<React.FC<IAddHonorPageProps>>(
 	IsUserRoleMore(Roles.MODERATOR, true),
 	connected
-)(AddPublicationPage);
+)(AddHonorPage);

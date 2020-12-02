@@ -62,7 +62,7 @@ const ImportHonorsPage: React.FC<IImportHonorsPageProps> = (props) => {
 	);
 };
 
-export default compose(
+export default compose<React.FC<IImportHonorsPageProps>>(
 	IsUserRoleMore(Roles.MODERATOR, true),
 	connected
 )(ImportHonorsPage);
