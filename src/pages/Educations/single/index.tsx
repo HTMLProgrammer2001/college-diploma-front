@@ -6,12 +6,15 @@ import {Link} from 'react-router-dom';
 import {connect, ConnectedProps} from 'react-redux';
 
 import BackButton from '../../../common/BackButton';
-import {RootState} from '../../../redux';
 import Loader from '../../../common/Loader/Loader';
 import ErrorElement from '../../../common/ErrorElement';
 import EducationInfo from './EducationInfo';
+import UserCan from '../../../common/UserCan';
+
+import {RootState} from '../../../redux';
 import thunkSingleEducation from '../../../redux/educations/single/thunks';
 import {selectEducationSingleState} from '../../../redux/educations/single/selectors';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -50,11 +53,13 @@ const SingleEducationPage: React.FC<ISingleEducationPageProps> = (props) => {
 					<Row className="justify-content-between p-2">
 						<BackButton/>
 
-						<Link to={`/educations/${match.params.id}/edit`}>
-							<Button variant="warning">
-								{t('common.edit')}
-							</Button>
-						</Link>
+						<UserCan role={Roles.MODERATOR}>
+							<Link to={`/educations/${match.params.id}/edit`}>
+								<Button variant="warning">
+									{t('common.edit')}
+								</Button>
+							</Link>
+						</UserCan>
 					</Row>
 				</Card.Footer>
 			</Card>

@@ -3,6 +3,7 @@ import {Button, Card, Row, Spinner} from 'react-bootstrap';
 import {ConnectedProps, connect} from 'react-redux';
 import {submit, isSubmitting} from 'redux-form';
 import {useTranslation} from 'react-i18next';
+import {compose} from 'redux';
 
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
@@ -59,4 +60,7 @@ const AddPublicationPage: React.FC<IAddPublicationPageProps> = ({add, send, subm
 	);
 };
 
-export default IsUserRoleMore(Roles.MODERATOR, true)(connected(AddPublicationPage));
+export default compose(
+	IsUserRoleMore(Roles.MODERATOR, true),
+	connected
+)(AddPublicationPage);

@@ -6,13 +6,15 @@ import {Link} from 'react-router-dom';
 import {connect, ConnectedProps} from 'react-redux';
 
 import BackButton from '../../../common/BackButton';
-import {RootState} from '../../../redux';
-import {selectPublicationSingleState} from '../../../redux/publications/single/selectors';
 import Loader from '../../../common/Loader/Loader';
 import PublicationInfo from './PublicationInfo';
-import thunkSinglePublication from '../../../redux/publications/single/thunks';
 import ErrorElement from '../../../common/ErrorElement';
-import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
+
+import {RootState} from '../../../redux';
+import {selectPublicationSingleState} from '../../../redux/publications/single/selectors';
+import thunkSinglePublication from '../../../redux/publications/single/thunks';
+import UserCan from '../../../common/UserCan';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -51,11 +53,13 @@ const SinglePublicationPage: React.FC<ISinglePublicationPageProps> = (props) => 
 					<Row className="justify-content-between p-2">
 						<BackButton/>
 
-						<Link to={`/publications/${match.params.id}/edit`}>
-							<Button variant="warning">
-								{t('common.edit')}
-							</Button>
-						</Link>
+						<UserCan role={Roles.MODERATOR}>
+							<Link to={`/publications/${match.params.id}/edit`}>
+								<Button variant="warning">
+									{t('common.edit')}
+								</Button>
+							</Link>
+						</UserCan>
 					</Row>
 				</Card.Footer>
 			</Card>

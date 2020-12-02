@@ -3,6 +3,7 @@ import {Button, Card, Row, Spinner} from 'react-bootstrap';
 import {useTranslation} from 'react-i18next';
 import {connect, ConnectedProps} from 'react-redux';
 import {isSubmitting, submit} from 'redux-form';
+import {compose} from 'redux';
 
 import BackButton from '../../../common/BackButton';
 import ImportRebukesForm from './ImportRebukesForm';
@@ -10,6 +11,8 @@ import {RootState} from '../../../redux';
 import thunkImportRebuke from '../../../redux/rebukes/import/thunks';
 import ExampleButton from '../../../common/ExampleButton';
 import rebukesApi from '../../../utils/api/models/rebukesApi';
+import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -59,4 +62,7 @@ const ImportRebukesPage: React.FC<IImportRebukesPageProps> = (props) => {
 	);
 };
 
-export default connected(ImportRebukesPage);
+export default compose(
+	IsUserRoleMore(Roles.MODERATOR, true),
+	connected
+)(ImportRebukesPage);

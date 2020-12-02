@@ -6,12 +6,15 @@ import {Link} from 'react-router-dom';
 import {connect, ConnectedProps} from 'react-redux';
 
 import BackButton from '../../../common/BackButton';
-import {RootState} from '../../../redux';
 import Loader from '../../../common/Loader/Loader';
 import RebukeInfo from './RebukeInfo';
 import ErrorElement from '../../../common/ErrorElement';
+
+import {RootState} from '../../../redux';
 import {selectRebukeSingleState} from '../../../redux/rebukes/single/selectors';
 import thunkSingleRebuke from '../../../redux/rebukes/single/thunks';
+import UserCan from '../../../common/UserCan';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -50,11 +53,13 @@ const SingleRebukePage: React.FC<ISingleRebukePageProps> = (props) => {
 					<Row className="justify-content-between p-2">
 						<BackButton/>
 
-						<Link to={`/rebukes/${match.params.id}/edit`}>
-							<Button variant="warning">
-								{t('common.edit')}
-							</Button>
-						</Link>
+						<UserCan role={Roles.MODERATOR}>
+							<Link to={`/rebukes/${match.params.id}/edit`}>
+								<Button variant="warning">
+									{t('common.edit')}
+								</Button>
+							</Link>
+						</UserCan>
 					</Row>
 				</Card.Footer>
 			</Card>

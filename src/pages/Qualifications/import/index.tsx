@@ -3,6 +3,7 @@ import {Button, Card, Row, Spinner} from 'react-bootstrap';
 import {useTranslation} from 'react-i18next';
 import {connect, ConnectedProps} from 'react-redux';
 import {isSubmitting, submit} from 'redux-form';
+import {compose} from 'redux';
 
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
@@ -11,6 +12,8 @@ import thunkImportQualification from '../../../redux/qualifications/import/thunk
 import ImportQualificationsForm from './ImportQualificationsForm';
 import ExampleButton from '../../../common/ExampleButton';
 import qualificationsApi from '../../../utils/api/models/qualificationsApi';
+import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -60,4 +63,7 @@ const ImportQualificationsPage: React.FC<IImportQualificationsPageProps> = (prop
 	);
 };
 
-export default connected(ImportQualificationsPage);
+export default compose(
+	IsUserRoleMore(Roles.MODERATOR, true),
+	connected
+)(ImportQualificationsPage);

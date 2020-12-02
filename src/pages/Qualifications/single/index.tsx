@@ -5,14 +5,16 @@ import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
 import {connect, ConnectedProps} from 'react-redux';
 
-import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
 import Loader from '../../../common/Loader/Loader';
 import QualificationInfo from './QualificationInfo';
 import ErrorElement from '../../../common/ErrorElement';
+import UserCan from '../../../common/UserCan';
 
+import {RootState} from '../../../redux';
 import {selectQualificationSingleState} from '../../../redux/qualifications/single/selectors';
 import thunkSingleQualification from '../../../redux/qualifications/single/thunks';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -51,11 +53,13 @@ const SingleQualificationPage: React.FC<ISingleQualificationPageProps> = (props)
 					<Row className="justify-content-between p-2">
 						<BackButton/>
 
-						<Link to={`/qualifications/${match.params.id}/edit`}>
-							<Button variant="warning">
-								{t('common.edit')}
-							</Button>
-						</Link>
+						<UserCan role={Roles.MODERATOR}>
+							<Link to={`/qualifications/${match.params.id}/edit`}>
+								<Button variant="warning">
+									{t('common.edit')}
+								</Button>
+							</Link>
+						</UserCan>
 					</Row>
 				</Card.Footer>
 			</Card>

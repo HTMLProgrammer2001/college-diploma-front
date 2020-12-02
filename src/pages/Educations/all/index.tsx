@@ -3,6 +3,7 @@ import {Button, Card, Row} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
+import {compose} from 'redux';
 
 import {RootState} from '../../../redux';
 
@@ -14,6 +15,7 @@ import {selectAllEducationsPagination} from '../../../redux/educations/all/selec
 import thunkAllEducations from '../../../redux/educations/all/thunks';
 import EducationsFilterForm from './EducationsFilterForm';
 import EducationsTable from './EducationsTable';
+import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -73,4 +75,7 @@ const AllEducationsPage: React.FC<IAllEducationsPageProps> = ({changePage, pagin
 	);
 };
 
-export default connected(AllEducationsPage);
+export default compose<React.FC<IAllEducationsPageProps>>(
+	IsUserRoleMore(Roles.VIEWER, true),
+	connected
+)(AllEducationsPage);

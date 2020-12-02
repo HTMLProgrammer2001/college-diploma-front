@@ -6,12 +6,15 @@ import {Link} from 'react-router-dom';
 import {connect, ConnectedProps} from 'react-redux';
 
 import BackButton from '../../../common/BackButton';
-import {RootState} from '../../../redux';
 import Loader from '../../../common/Loader/Loader';
 import HonorInfo from './HonorInfo';
 import ErrorElement from '../../../common/ErrorElement';
+import UserCan from '../../../common/UserCan';
+
+import {RootState} from '../../../redux';
 import {selectHonorSingleState} from '../../../redux/honors/single/selectors';
 import thunkSingleHonor from '../../../redux/honors/single/thunks';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -20,7 +23,7 @@ const mapStateToProps = (state: RootState) => ({
 
 const connected = connect(mapStateToProps, {load: thunkSingleHonor});
 
-type ISingleHonorPageProps = RouteComponentProps<{id: string}> & ConnectedProps<typeof connected>;
+type ISingleHonorPageProps = RouteComponentProps<{ id: string }> & ConnectedProps<typeof connected>;
 const SingleHonorPage: React.FC<ISingleHonorPageProps> = (props) => {
 	const {match, isLoading, error, honor, load} = props;
 	const {t} = useTranslation();
@@ -42,7 +45,7 @@ const SingleHonorPage: React.FC<ISingleHonorPageProps> = (props) => {
 
 					{
 						!isLoading && !error && honor &&
-							<HonorInfo honor={honor}/>
+						<HonorInfo honor={honor}/>
 					}
 				</Card.Body>
 
@@ -50,11 +53,13 @@ const SingleHonorPage: React.FC<ISingleHonorPageProps> = (props) => {
 					<Row className="justify-content-between p-2">
 						<BackButton/>
 
-						<Link to={`/honors/${match.params.id}/edit`}>
-							<Button variant="warning">
-								{t('common.edit')}
-							</Button>
-						</Link>
+						<UserCan role={Roles.MODERATOR}>
+							<Link to={`/honors/${match.params.id}/edit`}>
+								<Button variant="warning">
+									{t('common.edit')}
+								</Button>
+							</Link>
+						</UserCan>
 					</Row>
 				</Card.Footer>
 			</Card>

@@ -8,9 +8,9 @@ export enum Qualifications{
 }
 
 let qualifications: any = {
-	[Qualifications.JUNIOR]: 'profile.tabs.educations.qualList.0',
-	[Qualifications.BAKALAVR]: 'profile.tabs.educations.qualList.1',
-	[Qualifications.MAGISTR]: 'profile.tabs.educations.qualList.2'
+	[Qualifications.JUNIOR]: 'common.qualList.0',
+	[Qualifications.BAKALAVR]: 'common.qualList.1',
+	[Qualifications.MAGISTR]: 'common.qualList.2'
 };
 
 const qualificationToName = (id: number): string => {

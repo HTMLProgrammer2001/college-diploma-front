@@ -5,14 +5,16 @@ import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
 import {connect, ConnectedProps} from 'react-redux';
 
-import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
 import Loader from '../../../common/Loader/Loader';
 import InternshipInfo from './InternshipInfo';
 import ErrorElement from '../../../common/ErrorElement';
+import UserCan from '../../../common/UserCan';
 
+import {RootState} from '../../../redux';
 import {selectInternshipSingleState} from '../../../redux/internships/single/selectors';
 import thunkSingleInternship from '../../../redux/internships/single/thunks';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -51,11 +53,13 @@ const SingleInternshipPage: React.FC<ISingleInternshipPageProps> = (props) => {
 					<Row className="justify-content-between p-2">
 						<BackButton/>
 
-						<Link to={`/internships/${match.params.id}/edit`}>
-							<Button variant="warning">
-								{t('common.edit')}
-							</Button>
-						</Link>
+						<UserCan role={Roles.MODERATOR}>
+							<Link to={`/internships/${match.params.id}/edit`}>
+								<Button variant="warning">
+									{t('common.edit')}
+								</Button>
+							</Link>
+						</UserCan>
 					</Row>
 				</Card.Footer>
 			</Card>

@@ -8,9 +8,6 @@ import AddRebukePage from './add';
 import SingleRebukePage from './single';
 import ImportRebukePage from './import';
 
-import IsUserRoleMore from '../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../utils/helpers/RoleCodeToName';
-
 
 const Rebukes: React.FC<{}> = () => (
 	<Switch>
@@ -23,4 +20,4 @@ const Rebukes: React.FC<{}> = () => (
 	</Switch>
 );
 
-export default IsUserRoleMore(Roles.VIEWER, true)(Rebukes);
+export default Rebukes;

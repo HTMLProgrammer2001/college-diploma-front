@@ -8,9 +8,6 @@ import AddQualificationPage from './add';
 import SingleQualificationPage from './single';
 import ImportQualificationPage from './import';
 
-import IsUserRoleMore from '../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../utils/helpers/RoleCodeToName';
-
 
 const Qualifications: React.FC<{}> = () => (
 	<Switch>
@@ -23,4 +20,4 @@ const Qualifications: React.FC<{}> = () => (
 	</Switch>
 );
 
-export default IsUserRoleMore(Roles.VIEWER, true)(Qualifications);
+export default Qualifications;

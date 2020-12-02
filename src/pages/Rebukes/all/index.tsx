@@ -3,6 +3,7 @@ import {Button, Card, Row} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
+import {compose} from 'redux';
 
 import {RootState} from '../../../redux';
 
@@ -14,6 +15,7 @@ import {selectAllRebukesPagination} from '../../../redux/rebukes/all/selectors';
 import thunkAllRebukes from '../../../redux/rebukes/all/thunks';
 import RebukesFilterForm from './RebukesFilterForm';
 import RebukesTable from './RebukesTable';
+import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -81,4 +83,7 @@ const AllHonorsPage: React.FC<IAllHonorsPageProps> = ({changePage, paginator}) =
 	);
 };
 
-export default connected(AllHonorsPage);
+export default compose(
+	IsUserRoleMore(Roles.VIEWER, true),
+	connected
+)(AllHonorsPage);

@@ -8,9 +8,6 @@ import AddHonorPage from './add';
 import SingleHonorPage from './single';
 import ImportHonorPage from './import';
 
-import IsUserRoleMore from '../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../utils/helpers/RoleCodeToName';
-
 
 const Honors: React.FC<{}> = () => (
 	<Switch>
@@ -23,4 +20,4 @@ const Honors: React.FC<{}> = () => (
 	</Switch>
 );
 
-export default IsUserRoleMore(Roles.VIEWER, true)(Honors);
+export default Honors;

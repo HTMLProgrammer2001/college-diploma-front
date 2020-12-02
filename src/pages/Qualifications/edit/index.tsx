@@ -4,6 +4,7 @@ import {connect, ConnectedProps} from 'react-redux';
 import {RouteComponentProps} from 'react-router-dom';
 import {isSubmitting, submit} from 'redux-form';
 import {useTranslation} from 'react-i18next';
+import {compose} from 'redux';
 
 import BackButton from '../../../common/BackButton';
 import ErrorElement from '../../../common/ErrorElement';
@@ -97,4 +98,7 @@ const EditQualificationPage: React.FC<IEditQualificationPageProps> = ({editState
 	);
 };
 
-export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditQualificationPage));
+export default compose<React.FC<IEditQualificationPageProps>>(
+	IsUserRoleMore(Roles.MODERATOR, true),
+	connected
+)(EditQualificationPage);

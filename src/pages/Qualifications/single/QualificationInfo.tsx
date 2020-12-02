@@ -2,6 +2,7 @@ import React from 'react';
 import {Trans} from 'react-i18next';
 
 import {IQualification} from '../../../interfaces/models/IQualification';
+import categoriesCodeToName from '../../../utils/helpers/categoriesCodeToName';
 
 
 type IQualificationInfoProps = {
@@ -19,7 +20,7 @@ const QualificationInfo: React.FC<IQualificationInfoProps> = ({qualification}) =
 		</Trans>
 
 		<Trans i18nKey="qualifications.single.info.name">
-			<div>Name: {{name: qualification.name}}</div>
+			<div>Name: {{name: categoriesCodeToName(qualification.name)}}</div>
 		</Trans>
 
 		<Trans i18nKey="qualifications.single.info.date">

@@ -4,6 +4,7 @@ import {connect, ConnectedProps} from 'react-redux';
 import {RouteComponentProps} from 'react-router-dom';
 import {isSubmitting, submit} from 'redux-form';
 import {useTranslation} from 'react-i18next';
+import {compose} from 'redux';
 
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
@@ -96,4 +97,7 @@ const EditHonorPage: React.FC<IEditHonorPageProps> = ({editState, loadHonor, ...
 	);
 };
 
-export default IsUserRoleMore(Roles.MODERATOR, true)(connected(EditHonorPage));
+export default compose(
+	IsUserRoleMore(Roles.MODERATOR, true),
+	connected
+)(EditHonorPage);

@@ -5,7 +5,7 @@ export type IEducation = {
 	id: number,
 	institution: string,
 	graduate_year: number,
-	qualification: string,
+	qualification: number,
 	user: IUserShort,
 	specialty: string
 };

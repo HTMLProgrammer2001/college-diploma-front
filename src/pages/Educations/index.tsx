@@ -7,9 +7,6 @@ import EditEducationPage from './edit';
 import AddEducationPage from './add';
 import SingleEducationPage from './single';
 
-import IsUserRoleMore from '../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../utils/helpers/RoleCodeToName';
-
 
 const Educations: React.FC<{}> = () => (
 	<Switch>
@@ -21,4 +18,4 @@ const Educations: React.FC<{}> = () => (
 	</Switch>
 );
 
-export default IsUserRoleMore(Roles.VIEWER, true)(Educations);
+export default Educations;

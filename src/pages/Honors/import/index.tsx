@@ -3,6 +3,7 @@ import {Button, Card, Row, Spinner} from 'react-bootstrap';
 import {useTranslation} from 'react-i18next';
 import {connect, ConnectedProps} from 'react-redux';
 import {isSubmitting, submit} from 'redux-form';
+import {compose} from 'redux';
 
 import BackButton from '../../../common/BackButton';
 import ImportHonorsForm from './ImportHonorsForm';
@@ -10,6 +11,8 @@ import {RootState} from '../../../redux';
 import thunkImportHonor from '../../../redux/honors/import/thunks';
 import ExampleButton from '../../../common/ExampleButton';
 import honorsApi from '../../../utils/api/models/honorsApi';
+import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
+import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -59,4 +62,7 @@ const ImportHonorsPage: React.FC<IImportHonorsPageProps> = (props) => {
 	);
 };
 
-export default connected(ImportHonorsPage);
+export default compose(
+	IsUserRoleMore(Roles.MODERATOR, true),
+	connected
+)(ImportHonorsPage);

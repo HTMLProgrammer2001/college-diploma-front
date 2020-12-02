@@ -3,6 +3,7 @@ import {Button, Card, Row} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
+import {compose} from 'redux';
 
 import {RootState} from '../../../redux';
 
@@ -16,6 +17,7 @@ import {Roles} from '../../../utils/helpers/RoleCodeToName';
 
 import {selectAllQualificationsPagination} from '../../../redux/qualifications/all/selectors';
 import thunkAllQualifications from '../../../redux/qualifications/all/thunks';
+import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -83,4 +85,7 @@ const AllQualificationsPage: React.FC<IAllQualificationsPageProps> = ({changePag
 	);
 };
 
-export default connected(AllQualificationsPage);
+export default compose<React.FC<IAllQualificationsPageProps>>(
+	IsUserRoleMore(Roles.VIEWER, true),
+	connected
+)(AllQualificationsPage);
