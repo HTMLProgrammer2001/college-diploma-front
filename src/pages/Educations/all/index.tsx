@@ -10,7 +10,7 @@ import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
 import Paginator from '../../../common/Paginator';
 import UserCan from '../../../common/UserCan';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import {selectAllEducationsPagination} from '../../../redux/educations/all/selectors';
 import thunkAllEducations from '../../../redux/educations/all/thunks';
 import EducationsFilterForm from './EducationsFilterForm';

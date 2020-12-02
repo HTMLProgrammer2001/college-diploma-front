@@ -10,7 +10,7 @@ import BackButton from '../../../common/BackButton';
 import AddInternshipForm from './AddInternshipForm';
 
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import thunkAddInternship from '../../../redux/internships/add/thunks';
 
 

@@ -12,7 +12,7 @@ import thunkImportHonor from '../../../redux/honors/import/thunks';
 import ExampleButton from '../../../common/ExampleButton';
 import honorsApi from '../../../utils/api/models/honorsApi';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({

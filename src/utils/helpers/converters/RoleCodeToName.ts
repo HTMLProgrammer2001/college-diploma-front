@@ -1,4 +1,4 @@
-import i18next from 'i18next';
+import codeConverter from './codeConverter';
 
 
 export enum Roles{
@@ -15,9 +15,4 @@ let roles: any = {
 	[Roles.USER]: 'common.roles.user'
 };
 
-const roleCodeToName = (code: number): string => {
-	let strCode = code.toString();
-	return roles[strCode] ? i18next.t(roles[strCode]) : i18next.t('common.roles.noRole');
-};
-
-export default roleCodeToName;
+export default codeConverter(roles);

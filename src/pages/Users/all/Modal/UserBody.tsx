@@ -3,6 +3,10 @@ import {Tab, Tabs, Table} from 'react-bootstrap';
 import {useTranslation} from 'react-i18next';
 
 import {IUser} from '../../../../interfaces/models/IUser';
+import pageConvert from '../../../../utils/helpers/converters/pageConvert';
+import pedagogicalToName from '../../../../utils/helpers/converters/pedagogicalToName';
+import academicToName from '../../../../utils/helpers/converters/academicToName';
+import scientificToName from '../../../../utils/helpers/converters/scientificToName';
 
 
 type IUserBodyProps = {
@@ -36,17 +40,17 @@ const UserBody: React.FC<IUserBodyProps> = ({user}) => {
 
 						<tr>
 							<th>{t('users.modal.address')}</th>
-							<th>{user.address}</th>
+							<th>{user.address || t('common.notSetted')}</th>
 						</tr>
 
 						<tr>
 							<th>{t('users.modal.birthday')}</th>
-							<th>{user.birthday}</th>
+							<th>{user.birthday || t('common.notSetted')}</th>
 						</tr>
 
 						<tr>
 							<th>{t('users.modal.phone')}</th>
-							<th>{user.phone}</th>
+							<th>{user.phone || t('common.notSetted')}</th>
 						</tr>
 					</tbody>
 				</Table>
@@ -64,52 +68,52 @@ const UserBody: React.FC<IUserBodyProps> = ({user}) => {
 					<tbody>
 					<tr>
 						<th>{t('users.modal.commission')}</th>
-						<th>{user.commission?.name}</th>
+						<th>{user.commission?.name || t('common.notSetted')}</th>
 					</tr>
 
 					<tr>
 						<th>{t('users.modal.department')}</th>
-						<th>{user.department?.name}</th>
+						<th>{user.department?.name || t('common.notSetted')}</th>
 					</tr>
 
 					<tr>
 						<th>{t('users.modal.category')}</th>
-						<th>{user.category}</th>
+						<th>{user.category || t('common.notSetted')}</th>
 					</tr>
 
 					<tr>
 						<th>{t('users.modal.pedagogicalTitle')}</th>
-						<th>{user.pedagogicalTitle}</th>
+						<th>{pageConvert(user.pedagogicalTitle, pedagogicalToName)}</th>
 					</tr>
 
 					<tr>
 						<th>{t('users.modal.rank')}</th>
-						<th>{user.rank?.name}</th>
+						<th>{user.rank?.name || t('common.notSetted')}</th>
 					</tr>
 
 					<tr>
 						<th>{t('users.modal.experience')}</th>
-						<th>{user.experience}</th>
+						<th>{user.experience || t('common.notSetted')}</th>
 					</tr>
 
 					<tr>
 						<th>{t('users.modal.academicStatus')}</th>
-						<th>{user.academicStatus}</th>
+						<th>{pageConvert(user.academicStatus, academicToName)}</th>
 					</tr>
 
 					<tr>
 						<th>{t('users.modal.academicStatusYear')}</th>
-						<th>{user.academicStatusYear}</th>
+						<th>{user.academicStatusYear || t('common.notSetted')}</th>
 					</tr>
 
 					<tr>
 						<th>{t('users.modal.scientificDegree')}</th>
-						<th>{user.scientificDegree}</th>
+						<th>{pageConvert(user.scientificDegree, scientificToName)}</th>
 					</tr>
 
 					<tr>
 						<th>{t('users.modal.scientificDegreeYear')}</th>
-						<th>{user.scientificDegreeYear}</th>
+						<th>{user.scientificDegreeYear || t('common.notSetted')}</th>
 					</tr>
 					</tbody>
 				</Table>

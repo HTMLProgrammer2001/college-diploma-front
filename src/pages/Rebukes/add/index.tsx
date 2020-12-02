@@ -8,7 +8,7 @@ import {compose} from 'redux';
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import thunkAddRebuke from '../../../redux/rebukes/add/thunks';
 import AddRebukeForm from './AddRebukeForm';
 

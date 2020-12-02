@@ -2,10 +2,10 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {Spinner} from 'react-bootstrap';
 
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import UserCan from '../../../common/UserCan';
 import {IQualification} from '../../../interfaces/models/IQualification';
-import categoriesCodeToName from '../../../utils/helpers/categoriesCodeToName';
+import categoriesCodeToName from '../../../utils/helpers/converters/categoriesCodeToName';
 
 
 type IQualificationItemProps = {

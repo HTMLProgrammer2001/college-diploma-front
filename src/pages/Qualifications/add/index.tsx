@@ -10,7 +10,7 @@ import BackButton from '../../../common/BackButton';
 import AddQualificationForm from './AddQualificationForm';
 
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import thunkAddQualification from '../../../redux/qualifications/add/thunks';
 
 

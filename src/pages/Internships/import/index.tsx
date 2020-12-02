@@ -13,7 +13,7 @@ import thunkImportInternship from '../../../redux/internships/import/thunks';
 import ExampleButton from '../../../common/ExampleButton';
 import internshipsApi from '../../../utils/api/models/internshipsApi';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({

@@ -14,7 +14,7 @@ import {RootState} from '../../../redux';
 import {selectRebukeSingleState} from '../../../redux/rebukes/single/selectors';
 import thunkSingleRebuke from '../../../redux/rebukes/single/thunks';
 import UserCan from '../../../common/UserCan';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({

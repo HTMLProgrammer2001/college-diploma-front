@@ -14,7 +14,7 @@ import {selectEditCommissionState} from '../../../redux/commissions/edit/selecto
 import thunkEditCommissionLoad from '../../../redux/commissions/edit/thunks/thunkEditCommissionLoad';
 import thunkEditCommission from '../../../redux/commissions/edit/thunks/thunkEditCommission';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({

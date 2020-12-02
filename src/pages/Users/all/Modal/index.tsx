@@ -10,7 +10,7 @@ import UserBody from './UserBody';
 import {RootState} from '../../../../redux';
 import {selectUserModalState} from '../../../../redux/users/modal/selectors';
 import thunkModalUser from '../../../../redux/users/modal/thunks';
-import roleCodeToName from '../../../../utils/helpers/RoleCodeToName';
+import roleCodeToName from '../../../../utils/helpers/converters/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({

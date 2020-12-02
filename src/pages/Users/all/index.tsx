@@ -13,7 +13,7 @@ import UserModal from './Modal';
 import ReportButton from './ReportButton';
 
 import {RootState} from '../../../redux';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import {selectAllUsersPagination} from '../../../redux/users/all/selectors';
 import thunkAllUsers from '../../../redux/users/all/thunks';
 

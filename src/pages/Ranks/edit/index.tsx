@@ -10,7 +10,7 @@ import BackButton from '../../../common/BackButton';
 import ErrorElement from '../../../common/ErrorElement';
 import Loader from '../../../common/Loader/Loader';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import {selectEditRankState} from '../../../redux/ranks/edit/selectors';
 import thunkEditRankLoad from '../../../redux/ranks/edit/thunks/thunkEditRankLoad';
 import thunkEditRank from '../../../redux/ranks/edit/thunks/thunkEditRank';

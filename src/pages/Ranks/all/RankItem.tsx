@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {Spinner} from 'react-bootstrap';
 
 import {IRank} from '../../../interfaces/models/IRank';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import UserCan from '../../../common/UserCan';
 
 

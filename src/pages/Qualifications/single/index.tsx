@@ -14,7 +14,7 @@ import UserCan from '../../../common/UserCan';
 import {RootState} from '../../../redux';
 import {selectQualificationSingleState} from '../../../redux/qualifications/single/selectors';
 import thunkSingleQualification from '../../../redux/qualifications/single/thunks';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({

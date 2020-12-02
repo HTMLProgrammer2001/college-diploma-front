@@ -2,7 +2,7 @@ import React from 'react';
 import {Trans} from 'react-i18next';
 
 import {IQualification} from '../../../interfaces/models/IQualification';
-import categoriesCodeToName from '../../../utils/helpers/categoriesCodeToName';
+import categoriesCodeToName from '../../../utils/helpers/converters/categoriesCodeToName';
 
 
 type IQualificationInfoProps = {

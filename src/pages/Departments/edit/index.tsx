@@ -14,7 +14,7 @@ import ErrorElement from '../../../common/ErrorElement';
 import Loader from '../../../common/Loader/Loader';
 import thunkEditDepartment from '../../../redux/departments/edit/thunks/thunkEditDepartment';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({

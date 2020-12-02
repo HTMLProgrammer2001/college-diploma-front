@@ -11,7 +11,7 @@ import BackButton from '../../../common/BackButton';
 import ErrorElement from '../../../common/ErrorElement';
 import Loader from '../../../common/Loader/Loader';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import {selectEditHonorState} from '../../../redux/honors/edit/selectors';
 import thunkEditHonorLoad from '../../../redux/honors/edit/thunks/thunkEditHonorLoad';
 import thunkEditHonor from '../../../redux/honors/edit/thunks/thunkEditHonor';

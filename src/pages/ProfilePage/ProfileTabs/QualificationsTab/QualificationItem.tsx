@@ -2,7 +2,7 @@ import React from 'react';
 
 import {IQualification} from '../../../../interfaces/models/IQualification';
 import {Link} from 'react-router-dom';
-import categoriesCodeToName from '../../../../utils/helpers/categoriesCodeToName';
+import categoriesCodeToName from '../../../../utils/helpers/converters/categoriesCodeToName';
 
 
 type IQualificationItemProps = {

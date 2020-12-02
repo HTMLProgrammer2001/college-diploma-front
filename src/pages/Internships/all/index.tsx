@@ -13,7 +13,7 @@ import InternshipsFilterForm from './InternshipsFilterForm';
 import InternshipsTable from './InternshipsTable';
 import UserCan from '../../../common/UserCan';
 
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import {selectAllInternshipsPagination} from '../../../redux/internships/all/selectors';
 import thunkAllInternships from '../../../redux/internships/all/thunks';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';

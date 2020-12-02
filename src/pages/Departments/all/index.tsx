@@ -13,7 +13,7 @@ import Paginator from '../../../common/Paginator';
 import thunkAllDepartments from '../../../redux/departments/all/thunks';
 import {selectAllDepartmentsPagination} from '../../../redux/departments/all/selectors';
 import UserCan from '../../../common/UserCan';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({

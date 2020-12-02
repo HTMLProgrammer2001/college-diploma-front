@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
 
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import styles from '../styles.module.scss';
 
 

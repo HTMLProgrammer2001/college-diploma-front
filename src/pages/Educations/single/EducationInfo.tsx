@@ -2,7 +2,7 @@ import React from 'react';
 import {Trans, useTranslation} from 'react-i18next';
 
 import {IEducation} from '../../../interfaces/models/IEducation';
-import qualificationToName from '../../../utils/helpers/qualificationToName';
+import qualificationToName from '../../../utils/helpers/converters/qualificationToName';
 
 
 type IEducationInfoProps = {

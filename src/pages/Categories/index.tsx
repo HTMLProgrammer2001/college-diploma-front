@@ -7,7 +7,7 @@ import EditCategoryPage from './edit';
 import AddCategoryPage from './add';
 
 import IsUserRoleMore from '../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../utils/helpers/converters/RoleCodeToName';
 
 
 const Categories: React.FC<{}> = () => (

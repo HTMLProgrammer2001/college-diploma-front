@@ -7,7 +7,7 @@ import EditRankPage from './edit';
 import AddRankPage from './add';
 
 import IsUserRoleMore from '../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../utils/helpers/converters/RoleCodeToName';
 
 
 const Ranks: React.FC<{}> = () => (

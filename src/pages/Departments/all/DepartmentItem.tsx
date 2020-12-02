@@ -4,7 +4,7 @@ import {Spinner} from 'react-bootstrap';
 
 import {IDepartment} from '../../../interfaces/models/IDepartment';
 import UserCan from '../../../common/UserCan';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 
 
 type IDepartmentItemProps = {

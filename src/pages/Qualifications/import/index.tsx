@@ -13,7 +13,7 @@ import ImportQualificationsForm from './ImportQualificationsForm';
 import ExampleButton from '../../../common/ExampleButton';
 import qualificationsApi from '../../../utils/api/models/qualificationsApi';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({

@@ -7,7 +7,7 @@ import EditDepartmentPage from './edit';
 import AddDepartmentPage from './add';
 
 import IsUserRoleMore from '../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../utils/helpers/converters/RoleCodeToName';
 
 
 const Departments: React.FC<{}> = () => (

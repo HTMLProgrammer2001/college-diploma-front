@@ -13,7 +13,7 @@ import QualificationsFilterForm from './QualificationsFilterForm';
 import QualificationsTable from './QualificationsTable';
 
 import UserCan from '../../../common/UserCan';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 
 import {selectAllQualificationsPagination} from '../../../redux/qualifications/all/selectors';
 import thunkAllQualifications from '../../../redux/qualifications/all/thunks';

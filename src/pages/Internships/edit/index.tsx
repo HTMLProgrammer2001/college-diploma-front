@@ -7,7 +7,7 @@ import {useTranslation} from 'react-i18next';
 import {compose} from 'redux';
 
 import {RootState} from '../../../redux';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import BackButton from '../../../common/BackButton';
 import ErrorElement from '../../../common/ErrorElement';
 import Loader from '../../../common/Loader/Loader';

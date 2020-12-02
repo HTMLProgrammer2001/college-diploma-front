@@ -6,7 +6,7 @@ import {isSubmitting, submit} from 'redux-form';
 import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 
 import BackButton from '../../../common/BackButton';
 import EditUserForm, {IUsersEditData} from './EditUserForm';

@@ -4,7 +4,7 @@ import {Spinner} from 'react-bootstrap';
 
 import {ICommission} from '../../../interfaces/models/ICommission';
 import UserCan from '../../../common/UserCan';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 
 
 type ICommissionItemProps = {

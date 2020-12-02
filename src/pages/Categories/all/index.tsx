@@ -9,7 +9,7 @@ import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
 import Paginator from '../../../common/Paginator';
 import UserCan from '../../../common/UserCan';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import thunkAllCategories from '../../../redux/categories/all/thunks';
 import {selectAllCategoriesPagination} from '../../../redux/categories/all/selectors';
 import CategoriesFilterForm from './CategoriesFilterForm';

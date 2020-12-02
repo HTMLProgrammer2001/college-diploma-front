@@ -11,7 +11,7 @@ import PublicationsFilterForm from './PublicationsFilterForm';
 import PublicationsTable from './PublicationsTable';
 import Paginator from '../../../common/Paginator';
 import UserCan from '../../../common/UserCan';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import {selectAllPublicationsPagination} from '../../../redux/publications/all/selectors';
 import thunkAllPublications from '../../../redux/publications/all/thunks';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';

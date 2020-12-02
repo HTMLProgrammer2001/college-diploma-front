@@ -9,7 +9,7 @@ import ImportUserPage from './import';
 import SingleUserPage from './single';
 
 import IsUserRoleMore from '../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../utils/helpers/converters/RoleCodeToName';
 
 
 const Users: React.FC<{}> = () => (

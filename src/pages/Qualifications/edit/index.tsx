@@ -12,7 +12,7 @@ import Loader from '../../../common/Loader/Loader';
 import EditQualificationForm, {IQualificationsEditData} from './EditQualificationForm';
 
 import {RootState} from '../../../redux';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {selectEditQualificationState} from '../../../redux/qualifications/edit/selectors';
 import thunkEditQualificationLoad from '../../../redux/qualifications/edit/thunks/thunkEditQualificationLoad';

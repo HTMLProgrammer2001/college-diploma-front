@@ -11,7 +11,7 @@ import BackButton from '../../../common/BackButton';
 import ErrorElement from '../../../common/ErrorElement';
 import Loader from '../../../common/Loader/Loader';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import {selectEditEducationState} from '../../../redux/educations/edit/selectors';
 import thunkEditEducationLoad from '../../../redux/educations/edit/thunks/thunkEditEducationLoad';
 import thunkEditEducation from '../../../redux/educations/edit/thunks/thunkEditEducation';

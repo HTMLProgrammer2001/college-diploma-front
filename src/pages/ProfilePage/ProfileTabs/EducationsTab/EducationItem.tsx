@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import {IEducation} from '../../../../interfaces/models/IEducation';
-import qualificationToName from '../../../../utils/helpers/qualificationToName';
+import qualificationToName from '../../../../utils/helpers/converters/qualificationToName';
 
 
 type IEducationItemProps = {

@@ -14,7 +14,7 @@ import UserCan from '../../../common/UserCan';
 import {RootState} from '../../../redux';
 import {selectHonorSingleState} from '../../../redux/honors/single/selectors';
 import thunkSingleHonor from '../../../redux/honors/single/thunks';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({

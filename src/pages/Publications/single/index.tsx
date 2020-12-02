@@ -14,7 +14,7 @@ import {RootState} from '../../../redux';
 import {selectPublicationSingleState} from '../../../redux/publications/single/selectors';
 import thunkSinglePublication from '../../../redux/publications/single/thunks';
 import UserCan from '../../../common/UserCan';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({

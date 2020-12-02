@@ -8,7 +8,7 @@ import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
 import AddCategoryForm from './AddCategoryForm';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import thunkAddCategory from '../../../redux/categories/add/thunks';
 
 

@@ -9,7 +9,7 @@ import styles from './styles.module.scss';
 import {RootState} from '../../../redux';
 import {selectMeInfo} from '../../../redux/me/selectors';
 import thunkLogout from '../../../redux/logout/thunks';
-import roleCodeToName from '../../../utils/helpers/RoleCodeToName';
+import roleCodeToName from '../../../utils/helpers/converters/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({

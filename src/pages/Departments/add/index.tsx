@@ -9,7 +9,7 @@ import BackButton from '../../../common/BackButton';
 import AddDepartmentForm from './AddDepartmentForm';
 import thunkAddDepartment from '../../../redux/departments/add/thunks';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 
 
 const mapStateToProps = (state: RootState) => ({

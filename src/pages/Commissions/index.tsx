@@ -7,7 +7,7 @@ import EditCommissionPage from './edit';
 import AddCommissionPage from './add';
 
 import IsUserRoleMore from '../../utils/HOC/IsUserRoleMore';
-import {Roles} from '../../utils/helpers/RoleCodeToName';
+import {Roles} from '../../utils/helpers/converters/RoleCodeToName';
 
 
 const Commissions: React.FC<{}> = () => (
