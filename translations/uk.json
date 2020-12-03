@@ -127,7 +127,6 @@
 
 	"layout": {
 		"footer": {
-			"copyright": "Copyright © <1>{{year}}</1> by <0>Yuri Prisyazhnyy.</1>",
 			"rights": "Всі права захищені"
 		},
 		"header": {
