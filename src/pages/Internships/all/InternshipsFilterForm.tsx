@@ -34,7 +34,7 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterFormProps> = ({handleSub
 		<form onSubmit={handleSubmit} className="w-100 center flex-column my-3">
 			<Translation>
 				{t => (
-					<Row>
+					<Row className="justify-content-center">
 						<Field
 							component={DataListElement}
 							name="filterUser"
@@ -58,7 +58,7 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterFormProps> = ({handleSub
 
 			<Translation>
 				{t => (
-					<Row>
+					<Row className="justify-content-center">
 						<Field
 							component={InputElement}
 							name="filterTheme"
@@ -71,7 +71,7 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterFormProps> = ({handleSub
 
 			<Translation>
 				{t => (
-					<Row>
+					<Row className="justify-content-center">
 						<Field
 							component={DateElement}
 							name="filterFrom"
@@ -91,7 +91,7 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterFormProps> = ({handleSub
 
 			<Translation>
 				{t => (
-					<Row>
+					<Row className="justify-content-center">
 						<Field
 							component={InputElement}
 							name="filterMoreHours"

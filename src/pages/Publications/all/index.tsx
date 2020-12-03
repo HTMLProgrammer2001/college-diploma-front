@@ -3,6 +3,7 @@ import {Button, Card, Row} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {connect, ConnectedProps} from 'react-redux';
 import {useTranslation} from 'react-i18next';
+import {compose} from 'redux';
 
 import {RootState} from '../../../redux';
 
@@ -11,6 +12,7 @@ import PublicationsFilterForm from './PublicationsFilterForm';
 import PublicationsTable from './PublicationsTable';
 import Paginator from '../../../common/Paginator';
 import UserCan from '../../../common/UserCan';
+
 import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import {selectAllPublicationsPagination} from '../../../redux/publications/all/selectors';
 import thunkAllPublications from '../../../redux/publications/all/thunks';
@@ -82,4 +84,7 @@ const AllPublicationsPage: React.FC<IAllPublicationsPageProps> = ({changePage, p
 	);
 };
 
-export default IsUserRoleMore(Roles.VIEWER, true)(connected(AllPublicationsPage));
+export default compose<React.FC<IAllPublicationsPageProps>>(
+	IsUserRoleMore(Roles.VIEWER, true),
+	connected
+)(AllPublicationsPage);

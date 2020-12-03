@@ -11,7 +11,7 @@ const LanguageSelect: React.FC<{}> = () => {
 	};
 
 	return (
-		<select onChange={handler} value={i18n.language} className="custom-select">
+		<select onChange={handler} value={i18n.language} className="custom-select m-1">
 			<option value="en">English</option>
 			<option value="ru">Русский</option>
 			<option value="uk">Українська</option>

@@ -5,7 +5,7 @@ import {FormControl, FormGroup, FormLabel} from 'react-bootstrap';
 
 type ISelectElementProps = WrappedFieldProps & HTMLSelectElement & {label: string, onlyInValid: boolean};
 const SelectElement: React.FC<ISelectElementProps> = ({onlyInValid = true, ...props}) => (
-	<FormGroup controlId={props.name}>
+	<FormGroup controlId={props.name} className="m-1">
 		{
 			props.label &&
 			<FormLabel column={true}>{props.label}</FormLabel>

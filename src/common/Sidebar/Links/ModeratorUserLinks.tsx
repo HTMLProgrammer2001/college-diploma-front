@@ -13,7 +13,7 @@ const ModeratorUserLinks: React.FC<{}> = () => {
 	return (
 		<>
 			<li className={styles.menu__item}>
-				<i className="fa fa-user"/>
+				<i className="fa fa-suitcase"/>
 
 				<Link to="/ranks">
 					{t('layout.sidebar.ranks')}
@@ -21,7 +21,7 @@ const ModeratorUserLinks: React.FC<{}> = () => {
 			</li>
 
 			<li className={styles.menu__item}>
-				<i className="fa fa-user"/>
+				<i className="fa fa-list"/>
 
 				<Link to="/categories">
 					{t('layout.sidebar.categories')}

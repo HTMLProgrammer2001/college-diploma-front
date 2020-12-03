@@ -18,6 +18,6 @@ const DownloadButton: React.FC<{}> = () => {
 			<Trans i18nKey="common.install"/>
 		</Button>
 	);
-}
+};
 
 export default DownloadButton;

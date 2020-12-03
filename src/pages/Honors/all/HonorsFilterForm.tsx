@@ -32,7 +32,7 @@ const HonorsFilterForm: React.FC<IHonorsFilterFormProps> = ({handleSubmit, initi
 		<form onSubmit={handleSubmit} className="w-100 center flex-column my-3">
 			<Translation>
 				{t => (
-					<Row>
+					<Row className="justify-content-center">
 						<Field
 							component={DataListElement}
 							name="filterUser"
@@ -55,7 +55,7 @@ const HonorsFilterForm: React.FC<IHonorsFilterFormProps> = ({handleSubmit, initi
 
 			<Translation>
 				{t => (
-					<Row>
+					<Row className="justify-content-center">
 						<Field
 							component={DateElement}
 							name="filterFrom"

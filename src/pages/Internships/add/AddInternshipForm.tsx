@@ -38,7 +38,7 @@ const InternshipsAddForm: React.FC<IInternshipsAddFormProps> = ({handleSubmit, e
 		<div className="d-md-flex w-100">
 			<Translation>
 				{t => (
-					<div className="w-100 pr-3">
+					<div className="w-100 pr-md-3">
 						<Field
 							component={DataListElement}
 							name="user"
@@ -80,7 +80,7 @@ const InternshipsAddForm: React.FC<IInternshipsAddFormProps> = ({handleSubmit, e
 
 			<Translation>
 				{t => (
-					<div className="w-100 pl-3">
+					<div className="w-100 pl-md-3">
 						<Field
 							component={DateElement}
 							name="from"

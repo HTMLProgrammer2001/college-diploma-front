@@ -51,7 +51,7 @@ const RebukesFilterForm: React.FC<IRebukesFilterProps> = ({handleSubmit, initial
 
 			<Translation>
 				{t => (
-					<Row md={12}>
+					<Row md={12} className="justify-content-center">
 						<Field
 							component={DateElement}
 							name="filterFrom"

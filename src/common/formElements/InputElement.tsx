@@ -11,7 +11,7 @@ const InputElement: React.FC<IInputElementProps> = ({onlyInValid = true, ...prop
 	// }, []);
 
 	return (
-		<FormGroup controlId={props.name}>
+		<FormGroup controlId={props.name} className="m-1">
 			{
 				props.label &&
 				<FormLabel column={true}>{props.label}</FormLabel>

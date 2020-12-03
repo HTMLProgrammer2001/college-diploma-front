@@ -22,7 +22,7 @@ const DepartmentsAddForm: React.FC<IDepartmentsAddFormProps> = ({handleSubmit, e
 
 		<Translation>
 			{t => (
-				<Col xs={4}>
+				<Col md={4} xs={12}>
 					<Field
 						component={InputElement}
 						type="text"

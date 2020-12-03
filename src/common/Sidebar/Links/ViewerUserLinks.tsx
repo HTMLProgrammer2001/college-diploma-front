@@ -13,7 +13,7 @@ const ViewerUserLinks: React.FC<{}> = () => {
 	return (
 		<>
 			<li className={styles.menu__item}>
-				<i className="fa fa-user"/>
+				<i className="fa fa-users"/>
 
 				<Link to="/departments">
 					{t('layout.sidebar.departments')}
@@ -21,7 +21,7 @@ const ViewerUserLinks: React.FC<{}> = () => {
 			</li>
 
 			<li className={styles.menu__item}>
-				<i className="fa fa-user"/>
+				<i className="fa fa-users"/>
 
 				<Link to="/commissions">
 					{t('layout.sidebar.commissions')}
@@ -29,7 +29,7 @@ const ViewerUserLinks: React.FC<{}> = () => {
 			</li>
 
 			<li className={styles.menu__item}>
-				<i className="fa fa-user"/>
+				<i className="fa fa-book"/>
 
 				<Link to="/publications">
 					{t('layout.sidebar.publications')}
@@ -37,7 +37,7 @@ const ViewerUserLinks: React.FC<{}> = () => {
 			</li>
 
 			<li className={styles.menu__item}>
-				<i className="fa fa-user"/>
+				<i className="fa fa-smile-o"/>
 
 				<Link to="/honors">
 					{t('layout.sidebar.honors')}
@@ -45,7 +45,7 @@ const ViewerUserLinks: React.FC<{}> = () => {
 			</li>
 
 			<li className={styles.menu__item}>
-				<i className="fa fa-user"/>
+				<i className="fa fa-frown-o"/>
 
 				<Link to="/rebukes">
 					{t('layout.sidebar.rebukes')}
@@ -53,7 +53,7 @@ const ViewerUserLinks: React.FC<{}> = () => {
 			</li>
 
 			<li className={styles.menu__item}>
-				<i className="fa fa-user"/>
+				<i className="fa fa-university"/>
 
 				<Link to="/educations">
 					{t('layout.sidebar.educations')}
@@ -61,7 +61,7 @@ const ViewerUserLinks: React.FC<{}> = () => {
 			</li>
 
 			<li className={styles.menu__item}>
-				<i className="fa fa-user"/>
+				<i className="fa fa-hand-grab-o"/>
 
 				<Link to="/internships">
 					{t('layout.sidebar.internships')}
@@ -69,15 +69,15 @@ const ViewerUserLinks: React.FC<{}> = () => {
 			</li>
 
 			<li className={styles.menu__item}>
-				<i className="fa fa-user"/>
+				<i className="fa fa-level-up"/>
 
-				<Link to="/qualifications">
+				<Link to="/qualifications" className="ml-3">
 					{t('layout.sidebar.qualifications')}
 				</Link>
 			</li>
 
 			<li className={styles.menu__item}>
-				<i className="fa fa-user"/>
+				<i className="fa fa-users"/>
 
 				<Link to="/users">
 					{t('layout.sidebar.users')}

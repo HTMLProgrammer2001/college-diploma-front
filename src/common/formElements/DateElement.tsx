@@ -6,8 +6,7 @@ import moment from 'moment';
 
 
 const CustomInput: React.FC<any> = ({onChange, placeholder, value, id, onClick}) => (
-	<input
-		className="form-control w-100"
+	<FormControl
 		value={value}
 		onClick={onClick}
 		onChange={onChange}
@@ -20,7 +19,7 @@ const CustomInput: React.FC<any> = ({onChange, placeholder, value, id, onClick})
 type IDateElementProps = WrappedFieldProps &
 	HTMLInputElement & {label: string} & ReactDatePickerProps;
 
-const DateElement: React.FC<IDateElementProps> = ({meta, input, name, label}) => {
+const DateElement: React.FC<IDateElementProps> = ({meta, input, name, label, className}) => {
 	useEffect(() => {
 		//if it's date then return
 		if(!input.value || input.value instanceof Date)
@@ -31,7 +30,7 @@ const DateElement: React.FC<IDateElementProps> = ({meta, input, name, label}) =>
 	}, [input.value]);
 
 	return (
-		<FormGroup>
+		<FormGroup className="m-1">
 			{
 				label &&
 				<FormLabel column={true}>{label}</FormLabel>

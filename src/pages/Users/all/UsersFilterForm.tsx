@@ -34,7 +34,7 @@ const UsersFilterForm: React.FC<IUsersFilterFormProps> = ({handleSubmit, initial
 		<form onSubmit={handleSubmit} className="center flex-column">
 			<Translation>
 				{t => (
-					<Row>
+					<Row className="justify-content-center">
 						<Field
 							component={InputElement}
 							type="text"
@@ -56,7 +56,7 @@ const UsersFilterForm: React.FC<IUsersFilterFormProps> = ({handleSubmit, initial
 
 			<Translation>
 				{t => (
-					<Row>
+					<Row className="justify-content-center">
 						<Field
 							component={DataListElement}
 							name="filterDepartment"
@@ -80,7 +80,7 @@ const UsersFilterForm: React.FC<IUsersFilterFormProps> = ({handleSubmit, initial
 
 			<Translation>
 				{t => (
-					<Row>
+					<Row className="justify-content-center">
 						<Field
 							component={DataListElement}
 							name="filterRank"
@@ -104,7 +104,7 @@ const UsersFilterForm: React.FC<IUsersFilterFormProps> = ({handleSubmit, initial
 
 			<Translation>
 				{t => (
-					<Row>
+					<Row className="justify-content-center">
 						<Field
 							component={SelectElement}
 							name="filterCategory"

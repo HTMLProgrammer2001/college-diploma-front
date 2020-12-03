@@ -5,6 +5,7 @@ import {Spinner} from 'react-bootstrap';
 import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import UserCan from '../../../common/UserCan';
 import {IEducation} from '../../../interfaces/models/IEducation';
+import qualificationToName from '../../../utils/helpers/converters/qualificationToName';
 
 
 type IEducationItemProps = {
@@ -17,7 +18,7 @@ const EducationItem: React.FC<IEducationItemProps> = ({education, isDeleting, de
 	<tr>
 		<th>{education.id}</th>
 		<th>{education.user.fullName}</th>
-		<th>{education.qualification}</th>
+		<th>{qualificationToName(education.qualification)}</th>
 		<th>{education.graduate_year}</th>
 		<th>
 			<UserCan role={Roles.VIEWER}>

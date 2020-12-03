@@ -56,7 +56,7 @@ const ProfilePage: React.FC<IProfilePageProps> = (props) => {
 		}}>
 			<div className="title">{t("profile.pageLabel")}</div>
 
-			<Card className="mr-5">
+			<Card className="mr-md-5">
 				<Card.Body>
 					<ProfileInfo/>
 					<ProfileTabs/>

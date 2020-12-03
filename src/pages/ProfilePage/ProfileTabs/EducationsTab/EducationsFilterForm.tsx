@@ -54,7 +54,7 @@ const EducationsFilterForm: React.FC<IEducationsFilterProps> = ({handleSubmit, i
 
 			<Translation>
 				{t => (
-					<Row md={12} className="justify-content-sm-center">
+					<Row md={12} className="justify-content-center">
 						<Field
 							component={InputElement}
 							type="text"

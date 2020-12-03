@@ -7,12 +7,12 @@ import DownloadButton from '../DownloadButton';
 
 const Footer: React.FC<{}> = () => (
 	<footer className="p-3 border-top bg-white">
-		<div className="d-flex justify-content-between my-3">
+		<div className="d-flex justify-content-between">
 			<div>
 				<DownloadButton/>
 			</div>
 
-			<div className="mr-5 w-25">
+			<div className="mr-5 col-sm-6 col-md-3">
 				<LanguageSelect/>
 			</div>
 		</div>

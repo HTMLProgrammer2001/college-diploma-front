@@ -45,13 +45,13 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit,
 		<form onSubmit={handleSubmit} className="w-100 center flex-column my-3">
 			<Translation>
 				{t => (
-					<Row md={12}>
+					<Row className="justify-content-center">
 						<Field
 							component={DataListElement}
 							name="filterCategory"
 							id="filterCategory"
 							placeholder={t('profile.tabs.internships.category')}
-							className="mr-1"
+							className="mr-sm-1"
 							url={`${process.env.REACT_APP_SERVER_URL}/search/categories`}
 						/>
 
@@ -60,7 +60,7 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit,
 							name="filterTheme"
 							label={t('profile.tabs.internships.theme')}
 							type="text"
-							className="ml-1"
+							className="ml-sm-1"
 						/>
 					</Row>
 				)}
@@ -68,12 +68,13 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit,
 
 			<Translation>
 				{t => (
-					<Row md={12}>
+					<Row className="justify-content-center">
 						<Field
 							component={DateElement}
 							name="filterFrom"
 							label={t('common.from')}
 							validate={[date]}
+							className="mr-sm-1"
 						/>
 
 						<Field
@@ -81,6 +82,7 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit,
 							name="filterTo"
 							label={t('common.to')}
 							validate={[date, moreDateValidator]}
+							className="ml-sm-1"
 						/>
 					</Row>
 				)}
@@ -88,14 +90,13 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit,
 
 			<Translation>
 				{t => (
-					<Row md={12}>
+					<Row className="justify-content-center">
 						<Field
 							component={InputElement}
 							name="filterMoreHours"
 							type="number"
 							min={0}
 							label={t('profile.tabs.internships.hoursMore')}
-							className="mr-1"
 							validate={[positiveNumber]}
 						/>
 
@@ -105,7 +106,6 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit,
 							type="number"
 							min={0}
 							label={t('profile.tabs.internships.hoursLess')}
-							className="ml-1"
 							validate={[positiveNumber, moreValidator]}
 						/>
 					</Row>
@@ -126,4 +126,3 @@ const InternshipsFilterForm: React.FC<IInternshipsFilterProps> = ({handleSubmit,
 export default reduxForm<IProfileInternshipsFilterData>({
 	form: 'profileInternshipsFilter'
 })(InternshipsFilterForm);
-

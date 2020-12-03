@@ -22,6 +22,7 @@ body{
 .content{
     min-height: calc(100vh - 120px);
     width: 100%;
+    overflow-x: hidden;
 }
 
 #root{
@@ -30,11 +31,15 @@ body{
 }
 
 .wrapper{
-    width: 100%;
+    max-width: calc(100vw - 50px);
 
     position: absolute;
     left: 50px;
     top: 60px;
+
+    @media all and(min-width: 800px){
+        width: 95vw;
+    }
 }
 
 .table-wrapper{
@@ -70,6 +75,10 @@ tbody th{
         flex-direction: column;
 
         & form{
+            margin-top: 1rem;
+        }
+
+        &>*{
             margin-top: 1rem;
         }
     }
@@ -120,5 +129,13 @@ tbody th{
             opacity: 0;
             transition: opacity 300ms;
         }
+    }
+}
+
+.mr-5{
+    margin-right: 0 !important;
+
+    @media all and(min-width: 768px){
+        margin-right: 3rem !important;
     }
 }

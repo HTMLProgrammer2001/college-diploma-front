@@ -31,7 +31,7 @@ const PublicationsFilterForm: React.FC<IPublicationsFilterFormProps> = ({handleS
 		<form onSubmit={handleSubmit} className="w-100 center flex-column my-3">
 			<Translation>
 				{t => (
-					<Row>
+					<Row className="justify-content-center">
 						<Field
 							component={DataListElement}
 							name="filterUser"
@@ -54,7 +54,7 @@ const PublicationsFilterForm: React.FC<IPublicationsFilterFormProps> = ({handleS
 
 			<Translation>
 				{t => (
-					<Row>
+					<Row className="justify-content-center">
 						<Field
 							component={DateElement}
 							name="filterFrom"

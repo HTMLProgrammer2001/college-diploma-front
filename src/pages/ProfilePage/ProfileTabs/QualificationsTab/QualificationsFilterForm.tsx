@@ -56,7 +56,7 @@ const QualificationsFilterForm: React.FC<IQualificationsFilterProps> = ({handleS
 
 			<Translation>
 				{t => (
-					<Row md={12}>
+					<Row md={12} className="justify-content-center">
 						<Field
 							component={DateElement}
 							name="filterFrom"

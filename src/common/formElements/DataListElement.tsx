@@ -86,7 +86,7 @@ const DataListElement: React.FC<IDataListElementProps> = (props) => {
 	};
 
 	return (
-		<FormGroup controlId={id}>
+		<FormGroup controlId={id} className="m-1">
 			{
 				placeholder &&
 					<FormLabel column={true}>{placeholder}</FormLabel>

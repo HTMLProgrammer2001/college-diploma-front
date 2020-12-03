@@ -34,7 +34,7 @@ const EducationsFilterForm: React.FC<IEducationsFilterFormProps> = ({handleSubmi
 		<form onSubmit={handleSubmit} className="w-100 center flex-column my-3">
 			<Translation>
 				{t => (
-					<Row>
+					<Row className="justify-content-center">
 						<Field
 							component={DataListElement}
 							name="filterUser"
@@ -47,6 +47,7 @@ const EducationsFilterForm: React.FC<IEducationsFilterFormProps> = ({handleSubmi
 						<Field
 							component={SelectElement}
 							name="filterQualification"
+							className="w-100"
 							label={t("educations.all.qualification")}
 							onlyInvalid
 						>
@@ -61,7 +62,7 @@ const EducationsFilterForm: React.FC<IEducationsFilterFormProps> = ({handleSubmi
 
 			<Translation>
 				{t => (
-					<Row>
+					<Row className="justify-content-center">
 						<Field
 							component={InputElement}
 							type="text"
@@ -83,7 +84,7 @@ const EducationsFilterForm: React.FC<IEducationsFilterFormProps> = ({handleSubmi
 
 			<Translation>
 				{t => (
-					<Row>
+					<Row className="justify-content-center">
 						<Field
 							component={InputElement}
 							type="number"

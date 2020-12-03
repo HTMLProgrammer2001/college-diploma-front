@@ -41,7 +41,7 @@ const QualificationsEditForm: React.FC<IQualificationsEditFormProps> = ({handleS
 			<div className="d-md-flex w-100">
 				<Translation>
 					{t => (
-						<div className="w-100 pr-3">
+						<div className="w-100 pr-md-3">
 							<Field
 								component={DataListElement}
 								name="user"
@@ -68,7 +68,7 @@ const QualificationsEditForm: React.FC<IQualificationsEditFormProps> = ({handleS
 
 				<Translation>
 					{t => (
-						<div className="w-100 pl-3">
+						<div className="w-100 pl-md-3">
 							<Field
 								component={DateElement}
 								name="date"

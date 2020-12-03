@@ -12,10 +12,10 @@ const ProfileInfo: React.FC<{}> = () => {
 
 	return (
 		<Row>
-			<div className="col-sm-3 mr-3">
+			<div className="col-md-3 col-sm-12 mr-3 center">
 				<Translation>
 					{(t) => (
-						<img src={user.avatar} alt={t("Avatar")} style={{width: '100%'}}/>
+						<img src={user.avatar} alt={t("Avatar")} style={{maxWidth: '100%'}}/>
 					)}
 				</Translation>
 			</div>
