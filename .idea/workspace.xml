@@ -2,34 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57a409a2-1ea6-4331-ae71-85b96f4252a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/helpers/debounce.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/helpers/findSortRule.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/date.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/dateMoreThan.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/email.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/lengthIn.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/moreThan.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/phone.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/positiveNumber.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/required.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/sameAs.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/url.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/year.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/helpers/changeSortHandler.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers/changeSortHandler.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/helpers/createApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers/createApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/helpers/prepareData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/helpers/prepareData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/date.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/date.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/dateMoreThan.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/dateMoreThan.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/lengthIn.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/lengthIn.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/moreThan.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/moreThan.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/phone.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/phone.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,22 +19,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/validators/phone.test.ts">
+        <entry file="file://$PROJECT_DIR$/.github/workflows/test.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" column="39" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="350">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/utils/validators/phone.ts">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+            <state relative-caret-position="288">
+              <caret line="42" column="15" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -149,8 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pages/Publications/all/index.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Publications/edit/EditPublicationForm.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Honors/all/HonorsFilterForm.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Honors/add/AddHonorForm.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Honors/edit/EditHonorForm.tsx" />
@@ -200,6 +171,8 @@
         <option value="$PROJECT_DIR$/src/utils/validators/url.test.ts" />
         <option value="$PROJECT_DIR$/src/utils/validators/sameAs.test.ts" />
         <option value="$PROJECT_DIR$/src/utils/validators/phone.ts" />
+        <option value="$PROJECT_DIR$/.github/workflows/test.yml" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -359,24 +332,6 @@
               <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackteacher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackteacher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="validators" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -427,7 +382,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.Test phone validator.Should return null on valid phones">
+  <component name="RunManager" selected="Jest.Test phone validator">
     <configuration name="Test phone validator" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -496,8 +451,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.Test phone validator.Should return null on valid phones" />
         <item itemvalue="Jest.Test phone validator" />
+        <item itemvalue="Jest.Test phone validator.Should return null on valid phones" />
         <item itemvalue="Jest.Test same as validator" />
         <item itemvalue="Jest.Test url validator" />
         <item itemvalue="Jest.Test year validator" />
@@ -505,9 +460,6 @@
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="Test_positive_number_validator - 2020.12.05 at 00h 04m 25s.xml">
-      <configuration name="Test positive number validator" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="Test_positive_number_validator_Should_return_error_message_on_not_a_number - 2020.12.05 at 00h 04m 57s.xml">
       <configuration name="Test positive number validator.Should return error message on not a number" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
@@ -535,6 +487,9 @@
     <history-entry file="Test_phone_validator_Should_return_null_on_valid_phones - 2020.12.05 at 00h 45m 19s.xml">
       <configuration name="Test phone validator.Should return null on valid phones" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="Test_phone_validator - 2020.12.05 at 00h 49m 13s.xml">
+      <configuration name="Test phone validator" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -542,16 +497,16 @@
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.25813776" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49804688" visible="true" weight="0.25813776" />
       <window_info id="Structure" order="3" sideWeight="0.5019531" side_tool="true" weight="0.30885693" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" weight="0.3897436" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4996215" visible="true" weight="0.051282052" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5003785" side_tool="true" weight="0.5435898" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
       <window_info anchor="bottom" id="TypeScript" order="4" weight="0.32991454" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.41880342" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.36923078" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.36923078" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -609,16 +564,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/all/QualificationsFilterForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Qualifications/edit/EditQualificationForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -991,16 +936,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-960" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.github/workflows/test.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-448" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1018,7 +953,7 @@
     <entry file="file://$PROJECT_DIR$/src/utils/validators/phone.test.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="39" />
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -1029,6 +964,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/app/thunks.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-240">
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.github/workflows/test.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="42" column="15" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
         </state>
       </provider>
     </entry>
