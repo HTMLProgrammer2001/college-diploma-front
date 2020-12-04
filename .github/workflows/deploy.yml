@@ -18,7 +18,7 @@ jobs:
                   CI: ""
               run: |
                 npm install
-                jest
+                npm run ci
 
             - name: Build 🔧 
               env:

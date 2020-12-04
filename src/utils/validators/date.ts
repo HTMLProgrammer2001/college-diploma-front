@@ -6,13 +6,8 @@ const date = (value: string) => {
 	if(value == null || value == '')
 		return null;
 
-	try{
-		const date = moment(value);
-		return null;
-	}
-	catch (e) {
-		return i18next.t('validators.date');
-	}
+	const result = moment(value, 'DD.MM.YYYY', true);
+	return result.isValid() ? null : i18next.t('validators.date');
 };
 
 export default date;

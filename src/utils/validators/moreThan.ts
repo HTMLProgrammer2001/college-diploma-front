@@ -8,7 +8,7 @@ const moreThan = (field: string, equal = true) => {
 		if(+value > +allValues[field] || (equal && +value == +allValues[field]))
 			return null;
 		else
-			return i18next.t('validators.dateMore', {context: 'equal', field});
+			return i18next.t('validators.moreThan', {context: 'equal', field});
 	}
 };
 

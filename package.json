@@ -8,6 +8,7 @@
 		"bootstrap": "^4.5.3",
 		"classnames": "^2.2.6",
 		"connected-react-router": "^6.8.0",
+		"cross-env": "^7.0.3",
 		"dotenv": "^8.2.0",
 		"dotenv-cli": "^4.0.0",
 		"i18next": "^19.8.3",
@@ -37,6 +38,7 @@
 	"scripts": {
 		"start": "dotenv -e .env.development react-scripts start",
 		"build": "dotenv -e .env.production react-scripts build",
+		"ci": "cross-env CI=true & react-scripts test",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"predeploy": "yarn run build",

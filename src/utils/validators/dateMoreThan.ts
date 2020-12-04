@@ -12,10 +12,10 @@ const dateMoreThan = (field: string, equal = true) => {
 		if(!anotherVal)
 			return null;
 
-		let dateValue = moment(value).toDate(),
-			dateAnotherVal = moment(anotherVal).toDate();
+		let dateValue = moment(value, 'DD.MM.YYYY').toDate(),
+			dateAnotherVal = moment(anotherVal, 'DD.MM.YYYY').toDate();
 
-		if(dateValue > dateAnotherVal || (equal && dateValue == dateAnotherVal))
+		if(dateValue > dateAnotherVal || (equal && +dateValue == +dateAnotherVal))
 			return null;
 		else
 			return i18next.t('validators.dateMore', {field, context: 'equal'});
