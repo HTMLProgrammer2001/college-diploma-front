@@ -12,7 +12,7 @@ import {Roles} from '../../utils/helpers/converters/RoleCodeToName';
 
 const Categories: React.FC<{}> = () => (
 	<Switch>
-		<Route path="/categories" exact component={AllCategoriesPage}/>
+		<Route path="/categories" exact render={({location}) => <AllCategoriesPage key={location.pathname}/>}/>
 		<Route path="/categories/add" exact component={AddCategoryPage}/>
 		<Route path="/categories/:id/edit" exact component={EditCategoryPage}/>
 		<Route path="/" component={NotFoundPage}/>

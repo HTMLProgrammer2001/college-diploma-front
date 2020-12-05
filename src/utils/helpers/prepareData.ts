@@ -2,7 +2,14 @@ export default (vals: Object): FormData => {
 	let formData = new FormData();
 
 	for(let key in vals){
-		formData.append(key, (vals as any)[key]);
+		const val = (vals as any)[key];
+
+		if(val) {
+			if (val instanceof Date)
+				formData.append(key, val.toISOString());
+			else
+				formData.append(key, val);
+		}
 	}
 
 	return formData;

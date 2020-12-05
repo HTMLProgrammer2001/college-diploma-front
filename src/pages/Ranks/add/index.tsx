@@ -6,7 +6,7 @@ import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
-import AddRankForm from './AddRankForm';
+import AddRankForm, {IRanksAddData} from './AddRankForm';
 import thunkAddRank from '../../../redux/ranks/add/thunks';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
@@ -16,10 +16,15 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('ranksAddForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	add: thunkAddRank,
-	send: submit
+const mapDispatchToProps = (dispatch: any) => ({
+	add(vals: IRanksAddData){
+		dispatch(thunkAddRank(vals));
+		return;
+	},
+	send: () => dispatch(submit('ranksAddForm'))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IAddRankPageProps = ConnectedProps<typeof connected>;
 const AddRankPage: React.FC<IAddRankPageProps> = ({add, send, submitting}) => {
@@ -46,7 +51,7 @@ const AddRankPage: React.FC<IAddRankPageProps> = ({add, send, submitting}) => {
 
 						<Button
 							variant="success"
-							onClick={() => send('ranksAddForm')}
+							onClick={send}
 							disabled={submitting}
 						>
 							{submitting && <Spinner size="sm" animation="border"/>}

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {WrappedFieldProps} from 'redux-form';
 import DatePicker, {ReactDatePickerProps} from 'react-datepicker';
 import {FormGroup, FormLabel, FormControl} from 'react-bootstrap';
@@ -20,15 +20,6 @@ type IDateElementProps = WrappedFieldProps &
 	HTMLInputElement & {label: string} & ReactDatePickerProps;
 
 const DateElement: React.FC<IDateElementProps> = ({meta, input, name, label, className}) => {
-	useEffect(() => {
-		//if it's date then return
-		if(!input.value || input.value instanceof Date)
-			return;
-
-		//else change to date
-		input.onChange(moment(input.value).toDate() as any, name);
-	}, [input.value]);
-
 	return (
 		<FormGroup className="m-1">
 			{
@@ -43,7 +34,12 @@ const DateElement: React.FC<IDateElementProps> = ({meta, input, name, label, cla
 				dateFormat="dd.MM.yyyy"
 				showMonthDropdown={true}
 				showYearDropdown={true}
-				onChange={(d: any) => input.onChange(d, name)}
+				onChange={(d: Date) => {
+					if(d)
+						d.setTime(d.getTime() + d.getTimezoneOffset()*60*1000);
+
+					input.onChange(d as any, name)
+				}}
 			/>
 
 			{

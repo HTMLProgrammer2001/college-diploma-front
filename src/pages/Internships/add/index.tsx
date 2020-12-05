@@ -7,7 +7,7 @@ import {compose} from 'redux';
 
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
-import AddInternshipForm from './AddInternshipForm';
+import AddInternshipForm, {IInternshipsAddData} from './AddInternshipForm';
 
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
@@ -18,10 +18,15 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('internshipsAddForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	add: thunkAddInternship,
-	send: submit
+const mapDispatchToProps = (dispatch: any) => ({
+	add(vals: IInternshipsAddData){
+		dispatch(thunkAddInternship(vals));
+		return;
+	},
+	send: () => dispatch(submit('internshipsAddForm'))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IAddPublicationPageProps = ConnectedProps<typeof connected>;
 const AddPublicationPage: React.FC<IAddPublicationPageProps> = ({add, send, submitting}) => {
@@ -48,7 +53,7 @@ const AddPublicationPage: React.FC<IAddPublicationPageProps> = ({add, send, subm
 
 						<Button
 							variant="success"
-							onClick={() => send('internshipsAddForm')}
+							onClick={send}
 							disabled={submitting}
 						>
 							{submitting && <Spinner size="sm" animation="border"/>}

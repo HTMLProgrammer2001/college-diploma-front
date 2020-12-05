@@ -22,11 +22,16 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('publicationsEditForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	loadPublication: thunkEditPublicationLoad,
-	send: submit,
-	editPublication: thunkEditPublication
+const mapDispatchToProps = (dispatch: any) => ({
+	editPublication: (id: number, vals: IPublicationsEditData) => {
+		dispatch(thunkEditPublication(id, vals));
+		return;
+	},
+	send: () => dispatch(submit('publicationsEditForm')),
+	loadPublication: (id: number) => dispatch(thunkEditPublicationLoad(id))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IEditPublicationPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
 const EditPublicationPage: React.FC<IEditPublicationPageProps> = ({editState, loadPublication, ...props}) => {
@@ -36,10 +41,6 @@ const EditPublicationPage: React.FC<IEditPublicationPageProps> = ({editState, lo
 		loadPublication(+props.match.params.id);
 		document.title = t('publications.edit.pageTitle');
 	}, []);
-
-	const clickHandler = () => {
-		props.send('publicationsEditForm');
-	};
 
 	const submitHandler = (vals: IPublicationsEditData) => {
 		props.editPublication(+props.match.params.id, vals);
@@ -78,7 +79,7 @@ const EditPublicationPage: React.FC<IEditPublicationPageProps> = ({editState, lo
 							!editState.isLoading && !editState.error &&
 								<Button
 									variant="warning"
-									onClick={clickHandler}
+									onClick={props.send}
 									disabled={props.submitting}
 								>
 									{

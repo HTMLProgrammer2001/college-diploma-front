@@ -6,7 +6,7 @@ import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
-import AddPublicationForm from './AddPublicationForm';
+import AddPublicationForm, {IPublicationsAddData} from './AddPublicationForm';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import thunkAddPublication from '../../../redux/publications/add/thunks';
@@ -16,10 +16,15 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('publicationsAddForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	add: thunkAddPublication,
-	send: submit
+const mapDispatchToProps = (dispatch: any) => ({
+	add(vals: IPublicationsAddData){
+		dispatch(thunkAddPublication(vals));
+		return;
+	},
+	send: () => dispatch(submit('publicationsAddForm'))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IAddPublicationPageProps = ConnectedProps<typeof connected>;
 const AddPublicationPage: React.FC<IAddPublicationPageProps> = ({add, send, submitting}) => {
@@ -46,7 +51,7 @@ const AddPublicationPage: React.FC<IAddPublicationPageProps> = ({add, send, subm
 
 						<Button
 							variant="success"
-							onClick={() => send('publicationsAddForm')}
+							onClick={send}
 							disabled={submitting}
 						>
 							{submitting && <Spinner size="sm" animation="border"/>}

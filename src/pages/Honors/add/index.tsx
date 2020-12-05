@@ -10,17 +10,22 @@ import BackButton from '../../../common/BackButton';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import thunkAddHonor from '../../../redux/honors/add/thunks';
-import AddHonorForm from './AddHonorForm';
+import AddHonorForm, {IHonorsAddData} from './AddHonorForm';
 
 
 const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('honorsAddForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	add: thunkAddHonor,
-	send: submit
+const mapDispatchToProps = (dispatch: any) => ({
+	add(vals: IHonorsAddData){
+		dispatch(thunkAddHonor(vals));
+		return;
+	},
+	send: () => dispatch(submit('honorsAddForm'))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IAddHonorPageProps = ConnectedProps<typeof connected>;
 const AddHonorPage: React.FC<IAddHonorPageProps> = ({add, send, submitting}) => {
@@ -47,7 +52,7 @@ const AddHonorPage: React.FC<IAddHonorPageProps> = ({add, send, submitting}) => 
 
 						<Button
 							variant="success"
-							onClick={() => send('honorsAddForm')}
+							onClick={send}
 							disabled={submitting}
 						>
 							{submitting && <Spinner size="sm" animation="border"/>}

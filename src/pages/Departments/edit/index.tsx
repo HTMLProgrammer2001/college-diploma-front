@@ -9,12 +9,12 @@ import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
 import EditDepartmentForm, {IDepartmentsEditData} from './EditDepartmentForm';
 import {selectEditDepartmentState} from '../../../redux/departments/edit/selectors';
-import thunkEditDepartmentLoad from '../../../redux/departments/edit/thunks/thunkEditDepartmentLoad';
 import ErrorElement from '../../../common/ErrorElement';
 import Loader from '../../../common/Loader/Loader';
-import thunkEditDepartment from '../../../redux/departments/edit/thunks/thunkEditDepartment';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
+import thunkEditDepartment from '../../../redux/departments/edit/thunks/thunkEditDepartment';
+import thunkEditDepartmentLoad from '../../../redux/departments/edit/thunks/thunkEditDepartmentLoad';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -22,11 +22,16 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('departmentsEditForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	loadDepartment: thunkEditDepartmentLoad,
-	send: submit,
-	editDepartment: thunkEditDepartment
+const mapDispatchToProps = (dispatch: any) => ({
+	editDepartment: (id: number, vals: IDepartmentsEditData) => {
+		dispatch(thunkEditDepartment(id, vals));
+		return;
+	},
+	send: () => dispatch(submit('departmentsEditForm')),
+	loadDepartment: (id: number) => dispatch(thunkEditDepartmentLoad(id))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IEditDepartmentPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
 const EditDepartmentPage: React.FC<IEditDepartmentPageProps> = ({editState, loadDepartment, ...props}) => {
@@ -36,10 +41,6 @@ const EditDepartmentPage: React.FC<IEditDepartmentPageProps> = ({editState, load
 		loadDepartment(+props.match.params.id);
 		document.title = t('departments.edit.pageTitle');
 	}, []);
-
-	const clickHandler = () => {
-		props.send('departmentsEditForm');
-	};
 
 	const submitHandler = (vals: IDepartmentsEditData) => {
 		props.editDepartment(+props.match.params.id, vals);
@@ -80,7 +81,7 @@ const EditDepartmentPage: React.FC<IEditDepartmentPageProps> = ({editState, load
 							!editState.isLoading && !editState.error &&
 								<Button
 									variant="warning"
-									onClick={clickHandler}
+									onClick={props.send}
 									disabled={props.submitting}
 								>
 									{

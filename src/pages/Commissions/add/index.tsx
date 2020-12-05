@@ -6,7 +6,7 @@ import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
-import AddCommissionForm from './AddCommissionForm';
+import AddCommissionForm, {ICommissionsAddData} from './AddCommissionForm';
 import thunkAddCommission from '../../../redux/commissions/add/thunks';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
@@ -16,10 +16,15 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('commissionsAddForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	add: thunkAddCommission,
-	send: submit
+const mapDispatchToProps = (dispatch: any) => ({
+	add(vals: ICommissionsAddData){
+		dispatch(thunkAddCommission(vals));
+		return;
+	},
+	send: () => dispatch(submit('commissionsAddForm'))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IAddCommissionPageProps = ConnectedProps<typeof connected>;
 const AddCommissionPage: React.FC<IAddCommissionPageProps> = ({add, send, submitting}) => {
@@ -46,7 +51,7 @@ const AddCommissionPage: React.FC<IAddCommissionPageProps> = ({add, send, submit
 
 						<Button
 							variant="success"
-							onClick={() => send('commissionsAddForm')}
+							onClick={send}
 							disabled={submitting}
 						>
 							{submitting && <Spinner size="sm" animation="border"/>}

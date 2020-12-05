@@ -23,11 +23,16 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('honorsEditForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	loadHonor: thunkEditHonorLoad,
-	send: submit,
-	editHonor: thunkEditHonor
+const mapDispatchToProps = (dispatch: any) => ({
+	editHonor: (id: number, vals: IHonorsEditData) => {
+		dispatch(thunkEditHonor(id, vals));
+		return;
+	},
+	send: () => dispatch(submit('honorsEditForm')),
+	loadHonor: (id: number) => dispatch(thunkEditHonorLoad(id))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IEditHonorPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
 const EditHonorPage: React.FC<IEditHonorPageProps> = ({editState, loadHonor, ...props}) => {
@@ -37,10 +42,6 @@ const EditHonorPage: React.FC<IEditHonorPageProps> = ({editState, loadHonor, ...
 		loadHonor(+props.match.params.id);
 		document.title = t('honors.edit.pageTitle');
 	}, []);
-
-	const clickHandler = () => {
-		props.send('honorsEditForm');
-	};
 
 	const submitHandler = (vals: IHonorsEditData) => {
 		props.editHonor(+props.match.params.id, vals);
@@ -79,7 +80,7 @@ const EditHonorPage: React.FC<IEditHonorPageProps> = ({editState, loadHonor, ...
 							!editState.isLoading && !editState.error &&
 								<Button
 									variant="warning"
-									onClick={clickHandler}
+									onClick={props.send}
 									disabled={props.submitting}
 								>
 									{

@@ -24,11 +24,16 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('qualificationsEditForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	loadQualification: thunkEditQualificationLoad,
-	send: submit,
-	editQualification: thunkEditQualification
+const mapDispatchToProps = (dispatch: any) => ({
+	editQualification: (id: number, vals: IQualificationsEditData) => {
+		dispatch(thunkEditQualification(id, vals));
+		return;
+	},
+	send: () => dispatch(submit('qualificationsEditForm')),
+	loadQualification: (id: number) => dispatch(thunkEditQualificationLoad(id))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IEditQualificationPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
 const EditQualificationPage: React.FC<IEditQualificationPageProps> = ({editState, loadQualification, ...props}) => {
@@ -38,10 +43,6 @@ const EditQualificationPage: React.FC<IEditQualificationPageProps> = ({editState
 		loadQualification(+props.match.params.id);
 		document.title = t('qualifications.edit.pageTitle');
 	}, []);
-
-	const clickHandler = () => {
-		props.send('qualificationsEditForm');
-	};
 
 	const submitHandler = (vals: IQualificationsEditData) => {
 		props.editQualification(+props.match.params.id, vals);
@@ -80,7 +81,7 @@ const EditQualificationPage: React.FC<IEditQualificationPageProps> = ({editState
 							!editState.isLoading && !editState.error &&
 								<Button
 									variant="warning"
-									onClick={clickHandler}
+									onClick={props.send}
 									disabled={props.submitting}
 								>
 									{

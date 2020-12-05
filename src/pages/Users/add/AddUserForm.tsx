@@ -1,5 +1,5 @@
 import React from 'react';
-import {reduxForm, InjectedFormProps, Field} from 'redux-form';
+import {reduxForm, InjectedFormProps, Field, Form} from 'redux-form';
 import {Translation} from 'react-i18next';
 
 import InputElement from '../../../common/formElements/InputElement';
@@ -26,7 +26,7 @@ const lengthValidator = lengthIn(8, 32);
 
 type IUsersAddFormProps = InjectedFormProps<IUsersAddData>;
 const UsersAddForm: React.FC<IUsersAddFormProps> = ({handleSubmit, error}) => (
-	<form onSubmit={handleSubmit}>
+	<Form onSubmit={handleSubmit}>
 
 		{
 			error &&
@@ -94,7 +94,9 @@ const UsersAddForm: React.FC<IUsersAddFormProps> = ({handleSubmit, error}) => (
 				)}
 			</Translation>
 		</div>
-	</form>
+
+		<button hidden/>
+	</Form>
 );
 
 export default reduxForm<IUsersAddData>({

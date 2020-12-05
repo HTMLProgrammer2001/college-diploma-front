@@ -22,11 +22,16 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('ranksEditForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	loadRank: thunkEditRankLoad,
-	send: submit,
-	editRank: thunkEditRank
+const mapDispatchToProps = (dispatch: any) => ({
+	editRank: (id: number, vals: IRanksEditData) => {
+		dispatch(thunkEditRank(id, vals));
+		return;
+	},
+	send: () => dispatch(submit('ranksEditForm')),
+	loadRank: (id: number) => dispatch(thunkEditRankLoad(id))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IEditRankPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
 const EditRankPage: React.FC<IEditRankPageProps> = ({editState, loadRank, ...props}) => {
@@ -36,10 +41,6 @@ const EditRankPage: React.FC<IEditRankPageProps> = ({editState, loadRank, ...pro
 		loadRank(+props.match.params.id);
 		document.title = t('ranks.edit.pageTitle');
 	}, []);
-
-	const clickHandler = () => {
-		props.send('ranksEditForm');
-	};
 
 	const submitHandler = (vals: IRanksEditData) => {
 		props.editRank(+props.match.params.id, vals);
@@ -78,7 +79,7 @@ const EditRankPage: React.FC<IEditRankPageProps> = ({editState, loadRank, ...pro
 							!editState.isLoading && !editState.error &&
 								<Button
 									variant="warning"
-									onClick={clickHandler}
+									onClick={props.send}
 									disabled={props.submitting}
 								>
 									{

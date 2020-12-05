@@ -6,7 +6,7 @@ import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
-import AddDepartmentForm from './AddDepartmentForm';
+import AddDepartmentForm, {IDepartmentsAddData} from './AddDepartmentForm';
 import thunkAddDepartment from '../../../redux/departments/add/thunks';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
@@ -16,10 +16,15 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('departmentsAddForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	add: thunkAddDepartment,
-	send: submit
+const mapDispatchToProps = (dispatch: any) => ({
+	add(vals: IDepartmentsAddData){
+		dispatch(thunkAddDepartment(vals));
+		return;
+	},
+	send: () => dispatch(submit('departmentsAddForm'))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IAddDepartmentPageProps = ConnectedProps<typeof connected>;
 const AddDepartmentPage: React.FC<IAddDepartmentPageProps> = ({add, send, submitting}) => {
@@ -46,7 +51,7 @@ const AddDepartmentPage: React.FC<IAddDepartmentPageProps> = ({add, send, submit
 
 						<Button
 							variant="success"
-							onClick={() => send('departmentsAddForm')}
+							onClick={send}
 							disabled={submitting}
 						>
 							{submitting && <Spinner size="sm" animation="border"/>}

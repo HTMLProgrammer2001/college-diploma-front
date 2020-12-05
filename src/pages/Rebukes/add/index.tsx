@@ -10,17 +10,22 @@ import BackButton from '../../../common/BackButton';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import thunkAddRebuke from '../../../redux/rebukes/add/thunks';
-import AddRebukeForm from './AddRebukeForm';
+import AddRebukeForm, {IRebukesAddData} from './AddRebukeForm';
 
 
 const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('rebukesAddForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	add: thunkAddRebuke,
-	send: submit
+const mapDispatchToProps = (dispatch: any) => ({
+	add(vals: IRebukesAddData){
+		dispatch(thunkAddRebuke(vals));
+		return;
+	},
+	send: () => dispatch(submit('rebukesAddForm'))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IAddRebukePageProps = ConnectedProps<typeof connected>;
 const AddRebukePage: React.FC<IAddRebukePageProps> = ({add, send, submitting}) => {
@@ -47,7 +52,7 @@ const AddRebukePage: React.FC<IAddRebukePageProps> = ({add, send, submitting}) =
 
 						<Button
 							variant="success"
-							onClick={() => send('rebukesAddForm')}
+							onClick={send}
 							disabled={submitting}
 						>
 							{submitting && <Spinner size="sm" animation="border"/>}

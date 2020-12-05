@@ -13,9 +13,9 @@ import Loader from '../../../common/Loader/Loader';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import {selectEditEducationState} from '../../../redux/educations/edit/selectors';
-import thunkEditEducationLoad from '../../../redux/educations/edit/thunks/thunkEditEducationLoad';
-import thunkEditEducation from '../../../redux/educations/edit/thunks/thunkEditEducation';
 import EditEducationForm, {IEducationsEditData} from './EditEducationForm';
+import thunkEditEducation from '../../../redux/educations/edit/thunks/thunkEditEducation';
+import thunkEditEducationLoad from '../../../redux/educations/edit/thunks/thunkEditEducationLoad';
 
 
 const mapStateToProps = (state: RootState) => ({
@@ -23,11 +23,16 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('educationsEditForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	loadEducation: thunkEditEducationLoad,
-	send: submit,
-	editEducation: thunkEditEducation
+const mapDispatchToProps = (dispatch: any) => ({
+	editEducation: (id: number, vals: IEducationsEditData) => {
+		dispatch(thunkEditEducation(id, vals));
+		return;
+	},
+	send: () => dispatch(submit('educationsEditForm')),
+	loadEducation: (id: number) => dispatch(thunkEditEducationLoad(id))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IEditEducationPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
 const EditEducationPage: React.FC<IEditEducationPageProps> = ({editState, loadEducation, ...props}) => {
@@ -37,10 +42,6 @@ const EditEducationPage: React.FC<IEditEducationPageProps> = ({editState, loadEd
 		loadEducation(+props.match.params.id);
 		document.title = t('educations.edit.pageTitle');
 	}, []);
-
-	const clickHandler = () => {
-		props.send('educationsEditForm');
-	};
 
 	const submitHandler = (vals: IEducationsEditData) => {
 		props.editEducation(+props.match.params.id, vals);
@@ -79,7 +80,7 @@ const EditEducationPage: React.FC<IEditEducationPageProps> = ({editState, loadEd
 							!editState.isLoading && !editState.error &&
 								<Button
 									variant="warning"
-									onClick={clickHandler}
+									onClick={props.send}
 									disabled={props.submitting}
 								>
 									{

@@ -6,7 +6,7 @@ import {useTranslation} from 'react-i18next';
 
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
-import AddCategoryForm from './AddCategoryForm';
+import AddCategoryForm, {ICategoriesAddData} from './AddCategoryForm';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import thunkAddCategory from '../../../redux/categories/add/thunks';
@@ -16,10 +16,15 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('categoriesAddForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	add: thunkAddCategory,
-	send: () => submit('categoriesAddForm')
+const mapDispatchToProps = (dispatch: any) => ({
+	add(vals: ICategoriesAddData){
+		dispatch(thunkAddCategory(vals));
+		return;
+	},
+	send: () => dispatch(submit('categoriesAddForm'))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IAddCategoryPageProps = ConnectedProps<typeof connected>;
 const AddCategoryPage: React.FC<IAddCategoryPageProps> = ({add, send, submitting}) => {

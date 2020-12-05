@@ -8,7 +8,7 @@ import {RootState} from '../../../redux';
 import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 
 import BackButton from '../../../common/BackButton';
-import AddUserForm from './AddUserForm';
+import AddUserForm, {IUsersAddData} from './AddUserForm';
 
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import thunkAddUser from '../../../redux/users/add/thunks';
@@ -18,10 +18,15 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('usersAddForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	add: thunkAddUser,
-	send: submit
+const mapDispatchToProps = (dispatch: any) => ({
+	add(vals: IUsersAddData){
+		dispatch(thunkAddUser(vals));
+		return;
+	},
+	send: () => dispatch(submit('usersAddForm'))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IAddUserPageProps = ConnectedProps<typeof connected>;
 const AddUserPage: React.FC<IAddUserPageProps> = ({add, send, submitting}) => {
@@ -48,7 +53,7 @@ const AddUserPage: React.FC<IAddUserPageProps> = ({add, send, submitting}) => {
 
 						<Button
 							variant="success"
-							onClick={() => send('usersAddForm')}
+							onClick={send}
 							disabled={submitting}
 						>
 							{submitting && <Spinner size="sm" animation="border"/>}

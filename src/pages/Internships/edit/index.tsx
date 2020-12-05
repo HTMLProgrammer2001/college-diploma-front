@@ -24,11 +24,16 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('internshipsEditForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	loadInternship: thunkEditInternshipLoad,
-	send: submit,
-	editInternship: thunkEditInternship
+const mapDispatchToProps = (dispatch: any) => ({
+	editInternship: (id: number, vals: IInternshipsEditData) => {
+		dispatch(thunkEditInternship(id, vals));
+		return;
+	},
+	send: () => dispatch(submit('internshipsEditForm')),
+	loadInternship: (id: number) => dispatch(thunkEditInternshipLoad(id))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IEditInternshipPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
 const EditInternshipPage: React.FC<IEditInternshipPageProps> = ({editState, loadInternship, ...props}) => {
@@ -38,10 +43,6 @@ const EditInternshipPage: React.FC<IEditInternshipPageProps> = ({editState, load
 		loadInternship(+props.match.params.id);
 		document.title = t('internships.edit.pageTitle');
 	}, []);
-
-	const clickHandler = () => {
-		props.send('internshipsEditForm');
-	};
 
 	const submitHandler = (vals: IInternshipsEditData) => {
 		props.editInternship(+props.match.params.id, vals);
@@ -80,7 +81,7 @@ const EditInternshipPage: React.FC<IEditInternshipPageProps> = ({editState, load
 							!editState.isLoading && !editState.error &&
 								<Button
 									variant="warning"
-									onClick={clickHandler}
+									onClick={props.send}
 									disabled={props.submitting}
 								>
 									{

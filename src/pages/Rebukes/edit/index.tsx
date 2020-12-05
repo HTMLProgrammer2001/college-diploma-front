@@ -23,11 +23,16 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('rebukesEditForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	loadRebuke: thunkEditRebukeLoad,
-	send: submit,
-	editRebuke: thunkEditRebuke
+const mapDispatchToProps = (dispatch: any) => ({
+	editRebuke: (id: number, vals: IRebukesEditData) => {
+		dispatch(thunkEditRebuke(id, vals));
+		return;
+	},
+	send: () => dispatch(submit('rebukesEditForm')),
+	loadRebuke: (id: number) => dispatch(thunkEditRebukeLoad(id))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IEditRebukePageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
 const EditRebukePage: React.FC<IEditRebukePageProps> = ({editState, loadRebuke, ...props}) => {
@@ -37,10 +42,6 @@ const EditRebukePage: React.FC<IEditRebukePageProps> = ({editState, loadRebuke, 
 		loadRebuke(+props.match.params.id);
 		document.title = t('rebukes.edit.pageTitle');
 	}, []);
-
-	const clickHandler = () => {
-		props.send('rebukesEditForm');
-	};
 
 	const submitHandler = (vals: IRebukesEditData) => {
 		props.editRebuke(+props.match.params.id, vals);
@@ -79,7 +80,7 @@ const EditRebukePage: React.FC<IEditRebukePageProps> = ({editState, loadRebuke, 
 							!editState.isLoading && !editState.error &&
 								<Button
 									variant="warning"
-									onClick={clickHandler}
+									onClick={props.send}
 									disabled={props.submitting}
 								>
 									{

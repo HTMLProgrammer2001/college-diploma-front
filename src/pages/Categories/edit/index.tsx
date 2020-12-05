@@ -22,13 +22,18 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('categoriesEditForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	loadCategory: thunkEditCategoryLoad,
-	send: submit,
-	editCategory: thunkEditCategory
+const mapDispatchToProps = (dispatch: any) => ({
+	editCategory: (id: number, vals: ICategoriesEditData) => {
+		dispatch(thunkEditCategory(id, vals));
+		return;
+	},
+	send: () => dispatch(submit('categoriesEditForm')),
+	loadCategory: (id: number) => dispatch(thunkEditCategoryLoad(id))
 });
 
-type IEditCategoryPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
+const connected = connect(mapStateToProps, mapDispatchToProps);
+
+type IEditCategoryPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{ id?: string }>;
 const EditCategoryPage: React.FC<IEditCategoryPageProps> = ({editState, loadCategory, ...props}) => {
 	const {t} = useTranslation();
 
@@ -38,14 +43,14 @@ const EditCategoryPage: React.FC<IEditCategoryPageProps> = ({editState, loadCate
 	}, []);
 
 	const clickHandler = () => {
-		props.send('categoriesEditForm');
+		props.send();
 	};
 
 	const submitHandler = (vals: ICategoriesEditData) => {
 		props.editCategory(+props.match.params.id, vals);
 	};
 
-	if(!editState.category && !editState.isLoading)
+	if (!editState.category && !editState.isLoading)
 		return null;
 
 	return (
@@ -56,17 +61,17 @@ const EditCategoryPage: React.FC<IEditCategoryPageProps> = ({editState, loadCate
 				<Card.Body>
 					{
 						editState.isLoading &&
-							<Loader/>
+						<Loader/>
 					}
 
 					{
 						!editState.isLoading && editState.error &&
-							<ErrorElement error={editState.error}/>
+						<ErrorElement error={editState.error}/>
 					}
 
 					{
 						!editState.isLoading && !editState.error &&
-							<EditCategoryForm onSubmit={submitHandler}/>
+						<EditCategoryForm onSubmit={submitHandler}/>
 					}
 				</Card.Body>
 
@@ -76,18 +81,18 @@ const EditCategoryPage: React.FC<IEditCategoryPageProps> = ({editState, loadCate
 
 						{
 							!editState.isLoading && !editState.error &&
-								<Button
-									variant="warning"
-									onClick={clickHandler}
-									disabled={props.submitting}
-								>
-									{
-										props.submitting &&
-											<Spinner animation="border" size="sm"/>
-									}
+							<Button
+								variant="warning"
+								onClick={clickHandler}
+								disabled={props.submitting}
+							>
+								{
+									props.submitting &&
+									<Spinner animation="border" size="sm"/>
+								}
 
-									{t('common.edit')}
-								</Button>
+								{t('common.edit')}
+							</Button>
 						}
 					</Row>
 				</Card.Footer>

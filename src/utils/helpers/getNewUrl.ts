@@ -20,7 +20,7 @@ const getNewUrl = (location: Location, newValues: {[key: string]: any}): Locatio
 		if(newValues[key]) {
 			//if it's date than transform it to string
 			if(newValues[key] instanceof Date)
-				filteredValues[key] = moment(newValues[key]).format('MM.DD.YYYY');
+				filteredValues[key] = moment(newValues[key]).format('YYYY-MM-DD');
 			else
 				//just set it
 				filteredValues[key] = newValues[key];

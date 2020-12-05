@@ -7,7 +7,7 @@ import {compose} from 'redux';
 
 import {RootState} from '../../../redux';
 import BackButton from '../../../common/BackButton';
-import AddQualificationForm from './AddQualificationForm';
+import AddQualificationForm, {IQualificationsAddData} from './AddQualificationForm';
 
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
@@ -18,10 +18,15 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('qualificationsAddForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	add: thunkAddQualification,
-	send: submit
+const mapDispatchToProps = (dispatch: any) => ({
+	add(vals: IQualificationsAddData){
+		dispatch(thunkAddQualification(vals));
+		return;
+	},
+	send: () => dispatch(submit('qualificationsAddForm'))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IAddQualificationPageProps = ConnectedProps<typeof connected>;
 const AddQualificationPage: React.FC<IAddQualificationPageProps> = ({add, send, submitting}) => {
@@ -48,7 +53,7 @@ const AddQualificationPage: React.FC<IAddQualificationPageProps> = ({add, send, 
 
 						<Button
 							variant="success"
-							onClick={() => send('qualificationsAddForm')}
+							onClick={send}
 							disabled={submitting}
 						>
 							{submitting && <Spinner size="sm" animation="border"/>}

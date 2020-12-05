@@ -22,11 +22,16 @@ const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('commissionsEditForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	loadCommission: thunkEditCommissionLoad,
-	send: submit,
-	editCommission: thunkEditCommission
+const mapDispatchToProps = (dispatch: any) => ({
+	editCommission: (id: number, vals: ICommissionsEditData) => {
+		dispatch(thunkEditCommission(id, vals));
+		return;
+	},
+	send: () => dispatch(submit('commissionsEditForm')),
+	loadCommission: (id: number) => dispatch(thunkEditCommissionLoad(id))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IEditCommissionPageProps = ConnectedProps<typeof connected> & RouteComponentProps<{id?: string}>;
 const EditCommissionPage: React.FC<IEditCommissionPageProps> = ({editState, loadCommission, ...props}) => {
@@ -36,10 +41,6 @@ const EditCommissionPage: React.FC<IEditCommissionPageProps> = ({editState, load
 		loadCommission(+props.match.params.id);
 		document.title = t('commissions.edit.pageTitle');
 	}, []);
-
-	const clickHandler = () => {
-		props.send('commissionsEditForm');
-	};
 
 	const submitHandler = (vals: ICommissionsEditData) => {
 		props.editCommission(+props.match.params.id, vals);
@@ -78,7 +79,7 @@ const EditCommissionPage: React.FC<IEditCommissionPageProps> = ({editState, load
 							!editState.isLoading && !editState.error &&
 								<Button
 									variant="warning"
-									onClick={clickHandler}
+									onClick={props.send}
 									disabled={props.submitting}
 								>
 									{

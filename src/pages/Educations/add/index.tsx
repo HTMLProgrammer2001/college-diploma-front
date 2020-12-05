@@ -10,17 +10,22 @@ import BackButton from '../../../common/BackButton';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import thunkAddEducation from '../../../redux/educations/add/thunks';
-import AddEducationForm from './AddEducationForm';
+import AddEducationForm, {IEducationsAddData} from './AddEducationForm';
 
 
 const mapStateToProps = (state: RootState) => ({
 	submitting: isSubmitting('educationsAddForm')(state)
 });
 
-const connected = connect(mapStateToProps, {
-	add: thunkAddEducation,
-	send: submit
+const mapDispatchToProps = (dispatch: any) => ({
+	add(vals: IEducationsAddData){
+		dispatch(thunkAddEducation(vals));
+		return;
+	},
+	send: () => dispatch(submit('educationsAddForm'))
 });
+
+const connected = connect(mapStateToProps, mapDispatchToProps);
 
 type IAddEducationPageProps = ConnectedProps<typeof connected>;
 const AddEducationPage: React.FC<IAddEducationPageProps> = ({add, send, submitting}) => {
@@ -47,7 +52,7 @@ const AddEducationPage: React.FC<IAddEducationPageProps> = ({add, send, submitti
 
 						<Button
 							variant="success"
-							onClick={() => send('educationsAddForm')}
+							onClick={send}
 							disabled={submitting}
 						>
 							{submitting && <Spinner size="sm" animation="border"/>}
