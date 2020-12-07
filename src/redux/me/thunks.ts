@@ -10,20 +10,28 @@ export type IMeThunkAction = ThunkAction<Promise<boolean>, RootState, unknown, I
 
 const thunkMe = (): IMeThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, IMeActionTypes>) => {
+		//get token
 		const token = localStorage.getItem('token');
 
+		//if token not exist then user are not authorized
 		if(!token)
 			return;
 
+		//start loading
 		dispatch(meLoadStart());
 
 		try{
+			//make API call
 			const meResponse = await userActionsApi.getMe(token);
+
+			//set current user
 			dispatch(meLoadSuccess(meResponse.data.user));
 
+			//return success result
 			return true;
 		}
 		catch (e) {
+			//set error
 			dispatch(meLoadError(e.message));
 			return false;
 		}

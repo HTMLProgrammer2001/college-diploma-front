@@ -12,16 +12,21 @@ export type ILogoutThunkAction = ThunkAction<Promise<boolean>, RootState, unknow
 
 const thunkLogout = (): ILogoutThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, ILogoutAc>) => {
+		//start logout
 		dispatch(logoutStart());
 
 		try{
+			//make api call
 			await userActionsApi.logout();
+
+			//success dispatch
 			dispatch(logoutSuccess());
 			dispatch(meLoadSuccess(null));
 
 			return true;
 		}
 		catch (e) {
+			//set error
 			dispatch(logoutError(e.message));
 
 			return false;

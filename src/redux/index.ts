@@ -28,7 +28,7 @@ export const myHistory = createHashHistory(),
 	routeMdl = routerMiddleware(myHistory);
 
 //create reducer
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
 	app, me, logout, profile, departments, commissions, ranks, publications, categories,
 	honors, rebukes, educations, internships, qualifications, users,
 	form: formReducer, router: connectRouter(myHistory)

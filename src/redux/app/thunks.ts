@@ -10,14 +10,18 @@ export type IAppThunkAction = ThunkAction<void, RootState, unknown, Action<any>>
 
 const thunkApp = (): IAppThunkAction => {
 	return async (dispatch: any) => {
+		//start initializing
 		dispatch(appInitializeStart());
 
 		try{
-			dispatch(thunkMe()).then((val: boolean) => {
-				dispatch(appInitializeSuccess());
-			});
+			//get me info
+			await dispatch(thunkMe());
+
+			//initialize app
+			dispatch(appInitializeSuccess());
 		}
 		catch (e) {
+			//on error log
 			console.log(e);
 		}
 	};

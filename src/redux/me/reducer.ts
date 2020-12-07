@@ -6,7 +6,7 @@ import {IUser} from '../../interfaces/models/IUser';
 
 export type IMeActionTypes = InferActionTypes<typeof actionTypes>;
 
-type IMeState = {
+export type IMeState = {
 	isLoading: boolean,
 	error: string,
 	user: IUser

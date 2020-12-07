@@ -2,7 +2,8 @@ import {
 	PROFILE_QUALIFICATIONS_CHANGE_SORT,
 	PROFILE_QUALIFICATIONS_SUCCESS,
 	PROFILE_QUALIFICATIONS_ERROR,
-	PROFILE_QUALIFICATIONS_START
+	PROFILE_QUALIFICATIONS_START,
+	PROFILE_QUALIFICATIONS_SET_NEXT
 } from './types';
 
 import {InferActionTypes} from '../../';
@@ -34,7 +35,7 @@ const initialState: IProfileQualificationsState = {
 	total: 0,
 	pageSize: 5,
 	sort: [],
-	nextDate: '20.03.2025'
+	nextDate: null
 };
 
 const profileQualificationsReducer = (state = initialState,
@@ -60,6 +61,9 @@ const profileQualificationsReducer = (state = initialState,
 
 		case PROFILE_QUALIFICATIONS_CHANGE_SORT:
 			return {...state, sort: changeSortHandler(state.sort, action.payload)}
+
+		case PROFILE_QUALIFICATIONS_SET_NEXT:
+			return {...state, nextDate: action.payload};
 	}
 
 	return state;
