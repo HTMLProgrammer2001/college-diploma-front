@@ -38,7 +38,7 @@
 	"scripts": {
 		"start": "dotenv -e .env.development react-scripts start",
 		"build": "dotenv -e .env.production react-scripts build",
-		"ci": "react-scripts test",
+		"ci": "cross-env CI=true react-scripts test",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"predeploy": "yarn run build",
