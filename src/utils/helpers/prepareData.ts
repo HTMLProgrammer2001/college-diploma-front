@@ -1,6 +1,7 @@
 export default (vals: Object): FormData => {
 	let formData = new FormData();
 
+	//convert object to form data
 	for(let key in vals){
 		const val = (vals as any)[key];
 

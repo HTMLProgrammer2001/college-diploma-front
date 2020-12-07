@@ -8,6 +8,7 @@
 		"bootstrap": "^4.5.3",
 		"classnames": "^2.2.6",
 		"connected-react-router": "^6.8.0",
+		"cross-env": "^7.0.3",
 		"dotenv": "^8.2.0",
 		"dotenv-cli": "^4.0.0",
 		"i18next": "^19.8.3",
@@ -37,6 +38,7 @@
 	"scripts": {
 		"start": "dotenv -e .env.development react-scripts start",
 		"build": "dotenv -e .env.production react-scripts build",
+		"ci": "react-scripts test",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"predeploy": "yarn run build",
@@ -62,6 +64,7 @@
 		"@testing-library/react": "^9.3.2",
 		"@testing-library/user-event": "^7.1.2",
 		"@types/axios": "^0.14.0",
+		"@types/enzyme-adapter-react-16": "^1.0.6",
 		"@types/jest": "^24.0.0",
 		"@types/node": "^12.0.0",
 		"@types/react": "^16.9.0",
@@ -73,8 +76,11 @@
 		"@types/react-toastify": "^4.1.0",
 		"@types/redux": "^3.6.0",
 		"@types/redux-form": "^8.3.0",
+		"@types/redux-mock-store": "^1.0.2",
 		"@types/reselect": "^2.2.0",
 		"enzyme": "^3.11.0",
-		"gh-pages": "^3.1.0"
+		"enzyme-adapter-react-16": "^1.15.5",
+		"gh-pages": "^3.1.0",
+		"redux-mock-store": "^1.5.4"
 	}
 }

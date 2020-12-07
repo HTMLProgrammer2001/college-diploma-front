@@ -5,7 +5,7 @@ import {InferActionTypes} from '../';
 
 export type IAppActionTypes = InferActionTypes<typeof actionTypes>;
 
-type IAppState = {
+export type IAppState = {
 	initialized: boolean,
 	isLoading: boolean,
 	error?: {code: number, msg: string}

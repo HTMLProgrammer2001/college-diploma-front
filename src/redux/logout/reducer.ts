@@ -5,7 +5,7 @@ import {InferActionTypes} from '../';
 
 export type ILogoutActionTypes = InferActionTypes<typeof actionTypes>;
 
-type ILogoutState = {
+export type ILogoutState = {
 	isLoading: boolean,
 	error: string
 };
