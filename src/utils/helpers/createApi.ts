@@ -26,7 +26,7 @@ let createApi = (options: AxiosRequestConfig): AxiosInstance => {
 		(error: AxiosError) => {
 		//set errors on not found, unauthorized and server error
 		if([403, 404, 500].includes(error.response.status) && error.config.method != 'delete')
-			store.dispatch(appSetError(403, error.response.statusText));
+			store.dispatch(appSetError(error.response.status, error.response.statusText));
 
 		return Promise.reject(error);
 	});
