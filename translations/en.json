@@ -1,6 +1,7 @@
 {
 	"common": {
 		"generate": "Generating...",
+		"errorOccurred": "Error occurred",
 		"stop": "Cancel download",
 		"edit": "Edit",
 		"import": "Import",
