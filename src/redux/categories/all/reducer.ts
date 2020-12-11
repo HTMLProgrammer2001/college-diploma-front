@@ -16,7 +16,7 @@ import changeSortHandler from '../../../utils/helpers/changeSortHandler';
 
 export type IAllCategoriesActions = InferActionTypes<typeof actionsCreators>;
 
-type IAllCategoriesState = {
+export type IAllCategoriesState = {
 	isLoading: boolean,
 	error: string,
 	categories: ICategory[],

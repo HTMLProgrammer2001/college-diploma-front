@@ -9,11 +9,11 @@ const mapStateToProps = (state: RootState) => ({
 	user: selectMeInfo(state)
 });
 
-const connected = connect(mapStateToProps);
+const connected = connect(mapStateToProps, null);
 
 type IUserCanProps = {role: number, children: any} & ConnectedProps<typeof connected>;
-const UserCan: React.FC<IUserCanProps> = ({role, children, user}) => {
+export const _UserCan: React.FC<IUserCanProps> = ({role, children, user}) => {
 	return user.role <= role ? <>{children}</> : null;
 };
 
-export default connected(UserCan);
+export default connected(_UserCan);

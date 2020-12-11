@@ -12,7 +12,7 @@ import Loader from '../../../common/Loader/Loader';
 import IsUserRoleMore from '../../../utils/HOC/IsUserRoleMore';
 import {Roles} from '../../../utils/helpers/converters/RoleCodeToName';
 import {selectEditCategoryState} from '../../../redux/categories/edit/selectors';
-import thunkEditCategoryLoad from '../../../redux/categories/edit/thunks/thunkEditCommissionLoad';
+import thunkEditCategoryLoad from '../../../redux/categories/edit/thunks/thunkEditCategoryLoad';
 import thunkEditCategory from '../../../redux/categories/edit/thunks/thunkEditCategory';
 import EditCategoryForm, {ICategoriesEditData} from './EditCategoryForm';
 

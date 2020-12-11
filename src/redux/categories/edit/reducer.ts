@@ -12,7 +12,7 @@ import * as actionsCreators from './actions';
 
 export type IEditCategoryActions = InferActionTypes<typeof actionsCreators>;
 
-type IEditCategoryState = {
+export type IEditCategoryState = {
 	isLoading: boolean,
 	error: string,
 	category: ICategory

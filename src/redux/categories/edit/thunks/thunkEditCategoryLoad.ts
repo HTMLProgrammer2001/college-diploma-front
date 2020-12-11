@@ -11,13 +11,16 @@ export type IEditCategoryLoadThunkAction = ThunkAction<void, RootState, unknown,
 
 const thunkEditCategoryLoad = (id: number): IEditCategoryLoadThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, IEditCategoryActions>) => {
+		//start submission
 		dispatch(editCategoryLoadStart());
 
 		try{
+			//get data from server
 			const resp = await categoriesApi.getCategory(id);
 			dispatch(editCategoryLoadSuccess(resp.data.data));
 		}
 		catch (e) {
+			//show error
 			dispatch(editCategoryLoadError(e.response?.data.message || e.message));
 		}
 	};

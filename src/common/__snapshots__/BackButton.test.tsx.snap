@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test back button Test rendering 1`] = `"<button type=\\"button\\" class=\\"btn btn-light\\">Назад</button>"`;

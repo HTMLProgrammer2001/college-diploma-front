@@ -13,15 +13,19 @@ export type ICategoryEditThunkAction = ThunkAction<void, RootState, unknown, Act
 
 const thunkEditCategory = (id: number, vals: ICategoriesEditData): ICategoryEditThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, Action<any>>) => {
-		dispatch(startSubmit('departmentsEditForm'));
+		//start loading
+		dispatch(startSubmit('categoriesEditForm'));
 
 		try{
+			//api call
 			await categoriesApi.editCategory(id, vals);
 
+			//success
 			dispatch(stopSubmit('categoriesEditForm'));
 			toast.success(i18next.t('messages.categories.edit'));
 		}
 		catch (e) {
+			//show error
 			dispatch(stopSubmit('categoriesEditForm', {
 				_error: e.response?.data.message || e.message,
 				...e.response?.data.errors

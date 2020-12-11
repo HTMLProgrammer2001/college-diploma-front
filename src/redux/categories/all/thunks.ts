@@ -25,7 +25,7 @@ const thunkAllCategories = (page: number = 1): IAllCategoriesThunkAction => {
 		try{
 			//get data for query
 			const form = getFormValues('categoriesFilterForm'),
-				filters = form(getState()),
+				filters = form(getState()) || {},
 				sort = selectAllCategoriesSort(getState()),
 				pagination = selectAllCategoriesPagination(getState());
 

@@ -15,16 +15,19 @@ export type ICategoryEditThunkAction = ThunkAction<void, RootState, unknown, IAc
 
 const thunkDeleteCategory = (id: number): ICategoryEditThunkAction => {
 	return async (dispatch: ThunkDispatch<{}, {}, IActions>) => {
+		//start loading
 		dispatch(deleteCategoryStart(id));
 
 		try{
 			await categoriesApi.deleteCategory(id);
 
+			//success dispatch and delete from categories list
 			dispatch(deleteCategorySuccess(id));
 			dispatch(allCategoriesDelete(id));
 			toast.success(i18next.t('messages.categories.delete', {id}));
 		}
 		catch (e) {
+			//show error
 			dispatch(deleteCategoryError(id, e.response?.data.message || e.message));
 			toast.error(e.response?.data.message || e.message);
 		}

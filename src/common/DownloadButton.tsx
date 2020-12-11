@@ -5,8 +5,6 @@ import {Button} from 'react-bootstrap';
 import DownloadContext from '../utils/contexts/DownloadContext';
 
 
-
-
 const DownloadButton: React.FC<{}> = () => {
 	const {event} = useContext(DownloadContext);
 

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test sort item element Test render 1`] = `"<i class=\\"fa cur pull-right fa-sort-amount-asc\\"></i>"`;
