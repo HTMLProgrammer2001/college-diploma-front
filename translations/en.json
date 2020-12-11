@@ -122,7 +122,7 @@
 		"lengthIn": "Field must be",
 		"lengthIn_from": "$t(validators.lengthIn) from {{min}}",
 		"lengthIn_to": "$t(validators.lengthIn) to {{max}}",
-		"lengthIn_from_to": "$t(validators.lengthIn) from {{min}} to {{max}}",
+		"lengthIn_both": "$t(validators.lengthIn) from {{min}} to {{max}}",
 		"phone": "Field must be valid phone number",
 		"positive": "Field must be positive number",
 		"required": "Field is required",
